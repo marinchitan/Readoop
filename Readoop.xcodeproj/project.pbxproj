@@ -20,9 +20,11 @@
 		3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC493203CBB37001A263D /* ProfileViewController.m */; };
 		3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC497203CD37B001A263D /* Bariol_Regular.otf */; };
 		3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */; };
+		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F505B3BD4145ECC2A5BB12D /* Pods-Readoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Readoop/Pods-Readoop.release.xcconfig"; sourceTree = "<group>"; };
 		2D7D2FBA203C8EE7005E689B /* Readoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Readoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D7D2FBD203C8EE7005E689B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D7D2FBE203C8EE7005E689B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,6 +35,7 @@
 		2D7D2FD6203C90FF005E689B /* AnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		2D7D2FD8203C91FF005E689B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2D7D2FD9203C91FF005E689B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		36B05A971F5547FB89CE10F0 /* Pods-Readoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Readoop/Pods-Readoop.debug.xcconfig"; sourceTree = "<group>"; };
 		3E366D972044864B008B9CF7 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
 		3E366D982044864B008B9CF7 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
 		3ECBC484203CB86F001A263D /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		3ECBC493203CBB37001A263D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3ECBC497203CD37B001A263D /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
 		3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular_Italic.otf; sourceTree = "<group>"; };
+		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,8 @@
 			children = (
 				2D7D2FBC203C8EE7005E689B /* Readoop */,
 				2D7D2FBB203C8EE7005E689B /* Products */,
+				78ED85CCFA4A02E1CAE71CDF /* Frameworks */,
+				ED259A6C9717C43E0DA3F069 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +165,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		78ED85CCFA4A02E1CAE71CDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED259A6C9717C43E0DA3F069 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36B05A971F5547FB89CE10F0 /* Pods-Readoop.debug.xcconfig */,
+				0F505B3BD4145ECC2A5BB12D /* Pods-Readoop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D7D2FD0203C8EE7005E689B /* Build configuration list for PBXNativeTarget "Readoop" */;
 			buildPhases = (
+				749AAD5F4118CC5518EEE566 /* [CP] Check Pods Manifest.lock */,
 				2D7D2FB6203C8EE7005E689B /* Sources */,
 				2D7D2FB7203C8EE7005E689B /* Frameworks */,
 				2D7D2FB8203C8EE7005E689B /* Resources */,
+				6FD28845D3556B39213BC48E /* [CP] Embed Pods Frameworks */,
+				CEB70EE4B75523D7EEFACE04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +252,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6FD28845D3556B39213BC48E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Readoop/Pods-Readoop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		749AAD5F4118CC5518EEE566 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Readoop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB70EE4B75523D7EEFACE04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Readoop/Pods-Readoop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D7D2FB6203C8EE7005E689B /* Sources */ = {
@@ -353,6 +431,7 @@
 		};
 		2D7D2FD1203C8EE7005E689B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36B05A971F5547FB89CE10F0 /* Pods-Readoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +445,7 @@
 		};
 		2D7D2FD2203C8EE7005E689B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F505B3BD4145ECC2A5BB12D /* Pods-Readoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

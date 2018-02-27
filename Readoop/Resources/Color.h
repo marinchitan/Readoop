@@ -12,5 +12,6 @@
 @interface Color : NSObject
 
 + (UIColor*)getMainRed;
++ (UIColor*)getSmokeWhite;
 
 @end

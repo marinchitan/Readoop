@@ -14,4 +14,8 @@
     return [UIColor colorWithRed:(244/255.0) green:(67/255.0) blue:(54/255.0) alpha:1];
 }
 
++ (UIColor *)getSmokeWhite {
+    return [UIColor colorWithRed:(239/255.0) green:(239/255.0) blue:(239/255.0) alpha:1];
+}
+
 @end
