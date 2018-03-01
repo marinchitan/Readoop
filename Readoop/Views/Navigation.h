@@ -20,5 +20,8 @@
 + (void)vanishNavBar:(UINavigationController*)navController;
 + (void)reEnableNavBar:(UINavigationController*)navController;
 
++ (void)hideNavBar:(UINavigationController*)navController;
++ (void)showNavBar:(UINavigationController*)navController;
+
 + (void)paintStatusBarWithColor:(UIColor*)color;
 @end

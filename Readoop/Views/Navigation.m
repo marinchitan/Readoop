@@ -42,6 +42,14 @@
                                       forBarMetrics:UIBarMetricsDefault];
 }
 
++ (void)hideNavBar:(UINavigationController*)navController {
+    [navController setNavigationBarHidden:YES];
+}
+
++ (void)showNavBar:(UINavigationController*)navController {
+    [navController setNavigationBarHidden:NO];
+}
+
 + (void)paintStatusBarWithColor:(UIColor *)color{
     UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
 

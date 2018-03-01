@@ -26,7 +26,7 @@
 
 - (void)setUpUI {
     self.view.backgroundColor = [Color getMainRed];
-    [self paintLabelsWithColor:[Color getSmokeWhite]];
+    [self paintLabelsWithColor:[Color getMainWhite]];
     
     [Navigation hideStatusBar];
     [Navigation vanishNavBar:self.navigationController];
