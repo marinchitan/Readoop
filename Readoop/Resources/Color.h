@@ -20,6 +20,7 @@
 #pragma mark - Flat Colors
 + (UIColor *)getSmokeWhite;
 + (UIColor *)getBariolRed;
++ (UIColor *)getPassiveBariolRed;
 + (UIColor *)getWhite;
 + (UIColor *)getSilverGray;
 + (UIColor *)getAlertYellow;

@@ -7,6 +7,9 @@ target 'Readoop' do
   pod 'JHChainableAnimations', '~> 3.0.1'
   pod 'Masonry'
   pod 'TPKeyboardAvoiding'
-  # Pods for Readoop
+  pod "ReactiveObjC" 
+  pod 'EHPlainAlert'
+  pod 'SCLAlertView-Objective-C' 
+ # Pods for Readoop
 
 end

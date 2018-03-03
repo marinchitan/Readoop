@@ -1,18 +1,30 @@
 PODS:
+  - EHPlainAlert (1.2.7):
+    - UIColor-HexRGB
   - JHChainableAnimations (3.0.1)
   - Masonry (1.1.0)
+  - ReactiveObjC (3.1.0)
+  - SCLAlertView-Objective-C (1.1.3)
   - TPKeyboardAvoiding (1.3.2)
+  - UIColor-HexRGB (1.0.1)
 
 DEPENDENCIES:
+  - EHPlainAlert
   - JHChainableAnimations (~> 3.0.1)
   - Masonry
+  - ReactiveObjC
+  - SCLAlertView-Objective-C
   - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
+  EHPlainAlert: b02e88eee87c99275082f6d3689a65348eec7b1e
   JHChainableAnimations: 0237489ed063f0ec5b351f5c7bb26c1891517074
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SCLAlertView-Objective-C: 917836fb2349afa58edc43d592d22d21d46bb2a4
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
+  UIColor-HexRGB: daccfa7e936af664369734a164b0309087d7f970
 
-PODFILE CHECKSUM: 90521e47ea8fc9d55361095a5c0dab5034f5aba1
+PODFILE CHECKSUM: 4c8cff9dffafe2398fd40bb8ea97552b16f18938
 
 COCOAPODS: 1.3.1
