@@ -12,6 +12,8 @@
 #import "Color.h"
 #import "Navigation.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <EHPlainAlert/EHPlainAlert.h>
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -116,23 +118,26 @@
 
 - (IBAction)signIn:(id)sender {
     NSLog(@"Sign in pressed");
+    [EHPlainAlert showAlertWithTitle:@"Success" message:@"Successfully loged in" type:ViewAlertSuccess];
 }
 
 - (IBAction)signUp:(id)sender {
-    self.usernameField.layer.cornerRadius = 0;
-    self.signInButton.layer.cornerRadius = 0;
-    self.passwordField.layer.cornerRadius = 0;
-    self.signUpButton.layer.cornerRadius = 0;
-    self.cancelButton.layer.cornerRadius = 0;
+    
 }
 
 - (IBAction)cancel:(id)sender {
-    self.signInButton.enabled = NO;
-    self.usernameField.layer.cornerRadius = 5.0;
-    self.signInButton.layer.cornerRadius = 5.0;
-    self.passwordField.layer.cornerRadius = 5.0;
-    self.signUpButton.layer.cornerRadius = 5.0;
-    self.cancelButton.layer.cornerRadius = 5.0;
+    //SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    //[alert showWarning:self title:@"Hello World" subTitle:@"This is a more descriptive text." closeButtonTitle:@"Done" duration:0.0f];
+    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
+    .addButtonWithActionBlock(@"Yes", ^{ exit(0); });
+    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+    .style(SCLAlertViewStyleError)
+    .title(@"Quit")
+    .closeButtonTitle(@"No")
+    .subTitle(@"Do you want to quit the application ?")
+    .duration(0);
+    [showBuilder showAlertView:builder.alertView onViewController:self];
 }
 
 
