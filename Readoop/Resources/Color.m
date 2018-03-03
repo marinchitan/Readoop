@@ -18,8 +18,12 @@
     return [Color getWhite];
 }
 
-+ (UIColor*)getMainPassiveGray {
++ (UIColor *)getMainPassiveGray {
     return [Color getSilverGray];
+}
+
++ (UIColor *)getMainAlertYellow {
+    return [Color getAlertYellow];
 }
 
 
@@ -37,6 +41,18 @@
 
 + (UIColor *)getSilverGray {
     return [UIColor colorWithRed:(74/255.0) green:(76/255.0) blue:(78/255.0) alpha:1];
+}
+
++ (UIColor *)getAlertYellow {
+    return [UIColor colorWithRed:(255/255.0) green:(204/255.0) blue:(0/255.0) alpha:1];
+}
+
++ (UIColor *)getLightGray {
+    return [UIColor colorWithRed:(204/255.0) green:(204/255.0) blue:(204/255.0) alpha:1];
+}
+
++ (UIColor *)getTextFieldBorderGray {
+    return [UIColor colorWithRed:(170/255.0) green:(170/255.0) blue:(170/255.0) alpha:1];
 }
 
 

@@ -36,10 +36,25 @@
 - (void)setUpProfilePanel {
     self.profileView.layer.cornerRadius = 30;
     self.profileView.layer.masksToBounds = YES;
-    self.profileView.backgroundColor = [[Color getWhite] colorWithAlphaComponent:0.95];
+    self.profileView.backgroundColor = [[Color getWhite] colorWithAlphaComponent:0.98];
     self.welcomeLabel.textColor = [Color getMainWhite];
-    self.signInButton.tintColor = [Color getMainWhite];
-    self.signInButton.backgroundColor = [Color getMainRed];
+    
+    self.usernameField.layer.borderColor = [[Color getTextFieldBorderGray] CGColor];
+    self.passwordField.layer.borderColor = [[Color getTextFieldBorderGray] CGColor];
+    self.usernameField.layer.masksToBounds = YES;
+    self.usernameField.layer.borderWidth = 1.0f;
+    self.passwordField.layer.masksToBounds = YES;
+    self.passwordField.layer.borderWidth = 1.0f;
 }
+
+- (IBAction)signIn:(id)sender {
+}
+
+- (IBAction)signUp:(id)sender {
+}
+
+- (IBAction)cancel:(id)sender {
+}
+
 
 @end

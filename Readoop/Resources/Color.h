@@ -12,16 +12,19 @@
 @interface Color : NSObject
 
 #pragma mark - Main Colors
-+ (UIColor*)getMainRed;
-+ (UIColor*)getMainWhite;
-+ (UIColor*)getMainPassiveGray;
++ (UIColor *)getMainRed;
++ (UIColor *)getMainWhite;
++ (UIColor *)getMainPassiveGray;
++ (UIColor *)getMainAlertYellow;
 
 #pragma mark - Flat Colors
-+ (UIColor*)getSmokeWhite;
-+ (UIColor*)getBariolRed;
-+ (UIColor*)getWhite;
-+ (UIColor*)getSilverGray;
-
++ (UIColor *)getSmokeWhite;
++ (UIColor *)getBariolRed;
++ (UIColor *)getWhite;
++ (UIColor *)getSilverGray;
++ (UIColor *)getAlertYellow;
++ (UIColor *)getLightGray;
++ (UIColor *)getTextFieldBorderGray;
   //Alternative reds
 
 
