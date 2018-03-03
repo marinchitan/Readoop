@@ -13,10 +13,12 @@
 		2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D2FD6203C90FF005E689B /* AnimationViewController.m */; };
 		2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D2FD9203C91FF005E689B /* ViewController.m */; };
 		3E366D992044864B008B9CF7 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366D982044864B008B9CF7 /* Navigation.m */; };
+		3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366D9F204804EE008B9CF7 /* Modular.storyboard */; };
+		3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA5204817BF008B9CF7 /* Profile.storyboard */; };
+		3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */; };
 		3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC484203CB86F001A263D /* Initial.storyboard */; };
 		3ECBC489203CB8B7001A263D /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC488203CB8B7001A263D /* Color.m */; };
 		3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC48B203CB8CD001A263D /* AppLabels.m */; };
-		3ECBC48E203CBAE8001A263D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC48D203CBAE8001A263D /* Profile.storyboard */; };
 		3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC493203CBB37001A263D /* ProfileViewController.m */; };
 		3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC497203CD37B001A263D /* Bariol_Regular.otf */; };
 		3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */; };
@@ -38,12 +40,14 @@
 		36B05A971F5547FB89CE10F0 /* Pods-Readoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Readoop/Pods-Readoop.debug.xcconfig"; sourceTree = "<group>"; };
 		3E366D972044864B008B9CF7 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
 		3E366D982044864B008B9CF7 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
+		3E366D9F204804EE008B9CF7 /* Modular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modular.storyboard; sourceTree = "<group>"; };
+		3E366DA5204817BF008B9CF7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3ECBC484203CB86F001A263D /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		3ECBC487203CB8B7001A263D /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		3ECBC488203CB8B7001A263D /* Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		3ECBC48A203CB8CD001A263D /* AppLabels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLabels.h; sourceTree = "<group>"; };
 		3ECBC48B203CB8CD001A263D /* AppLabels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppLabels.m; sourceTree = "<group>"; };
-		3ECBC48D203CBAE8001A263D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3ECBC492203CBB37001A263D /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3ECBC493203CBB37001A263D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3ECBC497203CD37B001A263D /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
@@ -85,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				3ECBC49B203CD3A5001A263D /* Resources */,
-				3ECBC486203CB894001A263D /* Views */,
 				2D7D2FD4203C8F19005E689B /* Storyboards */,
 				2D7D2FD3203C8F10005E689B /* ViewControllers */,
 				2D7D2FBD203C8EE7005E689B /* AppDelegate.h */,
@@ -101,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3ECBC496203CCECC001A263D /* Initial */,
-				3ECBC495203CCEBD001A263D /* Profile */,
+				3ECBC495203CCEBD001A263D /* Tabbed */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,13 +112,15 @@
 		2D7D2FD4203C8F19005E689B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				3E366DA5204817BF008B9CF7 /* Profile.storyboard */,
 				3ECBC484203CB86F001A263D /* Initial.storyboard */,
-				3ECBC48D203CBAE8001A263D /* Profile.storyboard */,
+				3E366D9F204804EE008B9CF7 /* Modular.storyboard */,
+				3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		3ECBC486203CB894001A263D /* Views */ = {
+		3ECBC486203CB894001A263D /* ViewsResources */ = {
 			isa = PBXGroup;
 			children = (
 				2D7D2FD8203C91FF005E689B /* ViewController.h */,
@@ -123,16 +128,14 @@
 				3E366D972044864B008B9CF7 /* Navigation.h */,
 				3E366D982044864B008B9CF7 /* Navigation.m */,
 			);
-			path = Views;
+			path = ViewsResources;
 			sourceTree = "<group>";
 		};
-		3ECBC495203CCEBD001A263D /* Profile */ = {
+		3ECBC495203CCEBD001A263D /* Tabbed */ = {
 			isa = PBXGroup;
 			children = (
-				3ECBC492203CBB37001A263D /* ProfileViewController.h */,
-				3ECBC493203CBB37001A263D /* ProfileViewController.m */,
 			);
-			path = Profile;
+			path = Tabbed;
 			sourceTree = "<group>";
 		};
 		3ECBC496203CCECC001A263D /* Initial */ = {
@@ -140,6 +143,8 @@
 			children = (
 				2D7D2FD5203C90FF005E689B /* AnimationViewController.h */,
 				2D7D2FD6203C90FF005E689B /* AnimationViewController.m */,
+				3ECBC492203CBB37001A263D /* ProfileViewController.h */,
+				3ECBC493203CBB37001A263D /* ProfileViewController.m */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 		3ECBC49B203CD3A5001A263D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3ECBC486203CB894001A263D /* ViewsResources */,
 				3ECBC487203CB8B7001A263D /* Color.h */,
 				3ECBC488203CB8B7001A263D /* Color.m */,
 				3ECBC48A203CB8CD001A263D /* AppLabels.h */,
@@ -243,9 +249,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ECBC48E203CBAE8001A263D /* Profile.storyboard in Resources */,
+				3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
+				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
+				3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */,
 				3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */,
 				3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */,
 			);
@@ -436,6 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Readoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinchitan.Readoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Readoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marinchitan.Readoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -6,6 +6,7 @@ target 'Readoop' do
   # use_frameworks!
   pod 'JHChainableAnimations', '~> 3.0.1'
   pod 'Masonry'
+  pod 'TPKeyboardAvoiding'
   # Pods for Readoop
 
 end

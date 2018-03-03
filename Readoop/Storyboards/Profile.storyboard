@@ -23,42 +23,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Readoop !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXj-5p-hFS">
-                                <rect key="frame" x="35" y="30" width="305" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="iX8-Ww-gyd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="29"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCD-lL-t69">
-                                <rect key="frame" x="25" y="90" width="325" height="552"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-tp-4fj" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhT-UL-03e">
-                                        <rect key="frame" x="80" y="229" width="140" height="49"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCD-lL-t69">
+                                        <rect key="frame" x="19" y="86" width="338" height="558"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                        <state key="normal" title="Sign In"/>
-                                    </button>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cNW-tg-DX9">
+                                                <rect key="frame" x="114" y="402" width="97" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhT-UL-03e">
+                                                <rect key="frame" x="114" y="164" width="140" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Sign In"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Readoop !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXj-5p-hFS">
+                                        <rect key="frame" x="59" y="40" width="257" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="eCD-lL-t69" firstAttribute="leading" secondItem="DRK-h1-QV3" secondAttribute="leading" constant="25" id="7hb-Wb-zi9"/>
-                            <constraint firstItem="DRK-h1-QV3" firstAttribute="bottom" secondItem="eCD-lL-t69" secondAttribute="bottom" constant="25" id="9si-1f-n4o"/>
-                            <constraint firstItem="RXj-5p-hFS" firstAttribute="leading" secondItem="DRK-h1-QV3" secondAttribute="leading" constant="35" id="GtT-q5-tfW"/>
-                            <constraint firstItem="DRK-h1-QV3" firstAttribute="trailing" secondItem="eCD-lL-t69" secondAttribute="trailing" constant="25" id="Kky-e8-Vya"/>
-                            <constraint firstItem="RXj-5p-hFS" firstAttribute="top" secondItem="DRK-h1-QV3" secondAttribute="top" constant="10" id="OKD-fu-pvd"/>
-                            <constraint firstItem="eCD-lL-t69" firstAttribute="centerX" secondItem="UCF-Zz-v8j" secondAttribute="centerX" id="Wqj-Q3-SR2"/>
-                            <constraint firstItem="eCD-lL-t69" firstAttribute="top" secondItem="RXj-5p-hFS" secondAttribute="bottom" id="Yyr-PD-nu9"/>
-                            <constraint firstItem="DRK-h1-QV3" firstAttribute="trailing" secondItem="RXj-5p-hFS" secondAttribute="trailing" constant="35" id="dIg-Fg-3sd"/>
+                            <constraint firstAttribute="trailing" secondItem="b4A-tp-4fj" secondAttribute="trailing" id="2pf-TL-dlv"/>
+                            <constraint firstItem="b4A-tp-4fj" firstAttribute="leading" secondItem="UCF-Zz-v8j" secondAttribute="leading" id="RsO-u5-1ya"/>
+                            <constraint firstAttribute="bottom" secondItem="b4A-tp-4fj" secondAttribute="bottom" id="erG-9J-lAQ"/>
+                            <constraint firstItem="b4A-tp-4fj" firstAttribute="top" secondItem="UCF-Zz-v8j" secondAttribute="top" id="mZs-eh-anI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DRK-h1-QV3"/>
                     </view>
                     <connections>
+                        <outlet property="modularScrollView" destination="b4A-tp-4fj" id="1sv-WY-KIK"/>
                         <outlet property="profileView" destination="eCD-lL-t69" id="Xfd-vU-pyo"/>
                         <outlet property="signInButton" destination="xhT-UL-03e" id="pMi-go-6ki"/>
                         <outlet property="welcomeLabel" destination="RXj-5p-hFS" id="KN0-Gw-AwN"/>

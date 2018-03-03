@@ -20,8 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
-    [self pushProfileVCWithDelay:5.0];
-    
+    [self setUpLeftConstraint];
+    [self pushProfileVCWithDelay:3.0];
+}
+
+- (void)setUpLeftConstraint {
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    CGFloat textWidth = self.rLabel.frame.size.width + self.eLabel.frame.size.width + self.aLabel.frame.size.width + self.dLabel.frame.size.width + self.o1Label.frame.size.width + self.o2Label.frame.size.width + self.pLabel.frame.size.width;
+    CGFloat leftConstraintConstant = (screenWidth - textWidth)/2;
+    self.leftContstraint.constant = leftConstraintConstant > 0 ? leftConstraintConstant + 5 : 0;
 }
 
 - (void)setUpUI {
@@ -56,13 +63,18 @@
 }
 
 - (void)performAnimationOnLabels {
-    self.rAnimator.wait(1).moveX(30).animate(1);
-    
-    self.pAnimator.wait(1).moveX(-30).animate(1);
+    self.rAnimator.wait(1.2).moveX(40).thenAfter(0.4).moveX(40).thenAfter(0.4).moveX(40).thenAfter(0.5).makeOpacity(0).animate(0.3);
+    self.eAnimator.wait(1.2).moveX(40).thenAfter(0.4).moveX(40).thenAfter(0.4).makeOpacity(0).animate(0.3);
+    self.aAnimator.wait(1.2).moveX(40).thenAfter(0.5).makeOpacity(0).animate(0.3);
+    self.dAnimator.wait(1.2).makeOpacity(0).animate(0.3);
+    self.o2Animator.wait(1.2).moveX(-40).thenAfter(0.4).makeOpacity(0).animate(0.3);
+    self.o1Animator.wait(1.2).moveX(-40).thenAfter(0.4).moveX(-40).thenAfter(0.4).makeOpacity(0).animate(0.3);
+    self.pAnimator.wait(1.2).moveX(-40).thenAfter(0.4).moveX(-40).thenAfter(0.4).moveX(-40).thenAfter(0.5).makeOpacity(0).animate(0.3);
 }
 
 - (void)pushProfileVCWithDelay:(int64_t)transitionDelay {
     ProfileViewController *profileVC = [ViewController getProfileVC];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(transitionDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:profileVC animated:YES];
     });

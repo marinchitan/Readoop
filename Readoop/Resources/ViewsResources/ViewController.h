@@ -11,7 +11,6 @@
 #import "AnimationViewController.h"
 #import "ProfileViewController.h"
 
-
 @interface ViewController : UIViewController
 
 + (AnimationViewController*)getAnimationVC;

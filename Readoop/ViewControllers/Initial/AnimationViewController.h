@@ -26,5 +26,6 @@
 @property (strong, nonatomic) JHChainableAnimator* o2Animator;
 @property (strong, nonatomic) JHChainableAnimator* pAnimator;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftContstraint;
 
 @end

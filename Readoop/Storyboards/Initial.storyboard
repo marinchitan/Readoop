@@ -24,19 +24,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-tD-fvg">
-                                <rect key="frame" x="108" y="283.5" width="47" height="100"/>
+                                <rect key="frame" x="107" y="283.5" width="47" height="100"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U24-Tw-9OL" userLabel="O2Label">
-                                <rect key="frame" x="205" y="283.5" width="49" height="100"/>
+                                <rect key="frame" x="201.5" y="283.5" width="49" height="100"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-Uh-4gY">
-                                <rect key="frame" x="155" y="283.5" width="50.5" height="100"/>
+                                <rect key="frame" x="153" y="283.5" width="50.5" height="100"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,13 +54,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMb-uA-wIl" userLabel="O2Label">
-                                <rect key="frame" x="254" y="283.5" width="49" height="100"/>
+                                <rect key="frame" x="250.5" y="283.5" width="49" height="100"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="p" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="202-kU-zGb" userLabel="PLabel">
-                                <rect key="frame" x="303" y="283.5" width="51" height="100"/>
+                                <rect key="frame" x="297.5" y="283.5" width="51" height="100"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -70,17 +70,17 @@
                         <constraints>
                             <constraint firstItem="gei-5L-og2" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="1oy-An-0cq"/>
                             <constraint firstItem="IYb-tD-fvg" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="4XF-fX-tq5"/>
-                            <constraint firstItem="202-kU-zGb" firstAttribute="leading" secondItem="WMb-uA-wIl" secondAttribute="trailing" id="4zm-V8-WSu"/>
-                            <constraint firstItem="IYb-tD-fvg" firstAttribute="leading" secondItem="gei-5L-og2" secondAttribute="trailing" id="GMR-vy-wPO"/>
+                            <constraint firstItem="202-kU-zGb" firstAttribute="leading" secondItem="WMb-uA-wIl" secondAttribute="trailing" constant="-2" id="4zm-V8-WSu"/>
+                            <constraint firstItem="IYb-tD-fvg" firstAttribute="leading" secondItem="gei-5L-og2" secondAttribute="trailing" constant="-1" id="GMR-vy-wPO"/>
                             <constraint firstItem="U24-Tw-9OL" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="JoS-kZ-LJL"/>
-                            <constraint firstItem="U24-Tw-9OL" firstAttribute="leading" secondItem="Jme-Uh-4gY" secondAttribute="trailing" id="W9P-Gf-8OL"/>
+                            <constraint firstItem="U24-Tw-9OL" firstAttribute="leading" secondItem="Jme-Uh-4gY" secondAttribute="trailing" constant="-2" id="W9P-Gf-8OL"/>
                             <constraint firstItem="nzJ-W2-KYA" firstAttribute="leading" secondItem="kkj-uZ-2qg" secondAttribute="leading" constant="30" id="blO-4C-1gQ"/>
                             <constraint firstItem="nzJ-W2-KYA" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="eSO-KX-9gq"/>
                             <constraint firstItem="WMb-uA-wIl" firstAttribute="leading" secondItem="U24-Tw-9OL" secondAttribute="trailing" id="eUZ-aB-W5G"/>
                             <constraint firstItem="202-kU-zGb" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="jPV-F7-kUM"/>
                             <constraint firstItem="gei-5L-og2" firstAttribute="leading" secondItem="nzJ-W2-KYA" secondAttribute="trailing" id="k4Z-fl-gkP"/>
                             <constraint firstItem="Jme-Uh-4gY" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="oNI-U7-oMw"/>
-                            <constraint firstItem="Jme-Uh-4gY" firstAttribute="leading" secondItem="IYb-tD-fvg" secondAttribute="trailing" id="xRC-B3-a1U"/>
+                            <constraint firstItem="Jme-Uh-4gY" firstAttribute="leading" secondItem="IYb-tD-fvg" secondAttribute="trailing" constant="-1" id="xRC-B3-a1U"/>
                             <constraint firstItem="WMb-uA-wIl" firstAttribute="centerY" secondItem="0k9-9l-ekJ" secondAttribute="centerY" id="ybh-81-C2s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kkj-uZ-2qg"/>
@@ -89,6 +89,7 @@
                         <outlet property="aLabel" destination="IYb-tD-fvg" id="dE5-nP-wAS"/>
                         <outlet property="dLabel" destination="Jme-Uh-4gY" id="sI2-tl-GtQ"/>
                         <outlet property="eLabel" destination="gei-5L-og2" id="x1n-zW-ntn"/>
+                        <outlet property="leftContstraint" destination="blO-4C-1gQ" id="erS-hm-KDy"/>
                         <outlet property="o1Label" destination="U24-Tw-9OL" id="ftX-Un-DlS"/>
                         <outlet property="o2Label" destination="WMb-uA-wIl" id="Iq5-Qu-DOz"/>
                         <outlet property="pLabel" destination="202-kU-zGb" id="7wr-Vd-obq"/>
