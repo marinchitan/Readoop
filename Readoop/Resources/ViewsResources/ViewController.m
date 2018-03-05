@@ -29,4 +29,9 @@
             instantiateViewControllerWithIdentifier:@"profileViewController"];
 }
 
++ (RegisterViewController*)getRegisterVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"registerViewContoller"];
+}
+
 @end

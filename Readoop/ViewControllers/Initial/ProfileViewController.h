@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *modularScrollView;
 

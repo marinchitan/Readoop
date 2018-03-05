@@ -14,6 +14,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <EHPlainAlert/EHPlainAlert.h>
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
+#import "ViewController.h"
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -29,12 +30,15 @@
     [self setUpSignals];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [Navigation hideNavBar:[self navigationController]];
+}
+
 - (void)setUpUI {
     [Navigation showStatusBar];
     [Navigation makeStatusBarLightStyle];
     [Navigation hideNavBar:[self navigationController]];
     [Navigation paintStatusBarWithColor:[Color getMainRed]];
-    
     self.view.backgroundColor = [Color getMainRed];
 }
 
@@ -63,14 +67,12 @@
     
     self.signUpButton.backgroundColor = [Color getMainRed];
     self.cancelButton.backgroundColor = [Color getMainPassiveGray];
+    
+    self.usernameLabel.hidden = NO;
+    self.passwordLabel.hidden = NO;
 }
 
 - (void)setUpSignals {
-    /*RAC(self.usernameField.layer, borderWidth) = [RACObserve(self.usernameField, isFirstResponder) map:^id _Nullable(id  _Nullable value) {
-        BOOL isFieldFocused = [value boolValue];
-        return isFieldFocused ? @3.0 : @1.0;
-    }];*/
-    
     //Handle the focus cases for the fields
     RAC(self.usernameField.layer, borderWidth) = [[[self.usernameField rac_signalForControlEvents:UIControlEventEditingDidBegin] merge:[self.usernameField rac_signalForControlEvents:UIControlEventEditingDidEnd]] map:^id _Nullable(UITextField *value) {
         return value.isFirstResponder ? @2 : @0.8;
@@ -84,13 +86,16 @@
     RAC(self.passwordField.layer, borderColor) = [[[self.passwordField rac_signalForControlEvents:UIControlEventEditingDidBegin] merge:[self.passwordField rac_signalForControlEvents:UIControlEventEditingDidEnd]] map:^id _Nullable(UITextField *value) {
         return value.isFirstResponder ? [[Color getSilverGray] CGColor] : [[Color getTextFieldBorderGray] CGColor];
     }];
-    RAC(self.usernameField, backgroundColor) = [[[self.usernameField rac_signalForControlEvents:UIControlEventEditingDidBegin] merge:[self.usernameField rac_signalForControlEvents:UIControlEventEditingDidEnd]] map:^id _Nullable(UITextField *value) {
-        return value.isFirstResponder ? [Color getWhite] : [UIColor clearColor];
-    }];
-    RAC(self.passwordField, backgroundColor) = [[[self.passwordField rac_signalForControlEvents:UIControlEventEditingDidBegin] merge:[self.passwordField rac_signalForControlEvents:UIControlEventEditingDidEnd]] map:^id _Nullable(UITextField *value) {
-        return value.isFirstResponder ? [Color getWhite] : [UIColor clearColor];
+    
+    RAC(self.usernameLabel, hidden) = [[self.usernameField rac_textSignal] map:^id _Nullable(NSString * _Nullable value) {
+        BOOL containsText = !(value.length > 0);
+        return @(containsText);
     }];
     
+    RAC(self.passwordLabel, hidden) = [[self.passwordField rac_textSignal] map:^id _Nullable(NSString * _Nullable value) {
+        BOOL containsText = !(value.length > 0);
+        return @(containsText);
+    }];
     
     RACSignal *usernameSignal = [[self.usernameField rac_textSignal] map:^id _Nullable(NSString * _Nullable value) {
         BOOL containsText = value.length > 0;
@@ -116,13 +121,19 @@
                                                         }];
 }
 
+- (BOOL)userCredentialsCheck {
+    return YES;
+}
+
 - (IBAction)signIn:(id)sender {
-    NSLog(@"Sign in pressed");
-    [EHPlainAlert showAlertWithTitle:@"Success" message:@"Successfully loged in" type:ViewAlertSuccess];
+    if([self userCredentialsCheck]){
+        [EHPlainAlert showAlertWithTitle:@"Success" message:@"Successfully loged in" type:ViewAlertSuccess];
+    }
 }
 
 - (IBAction)signUp:(id)sender {
-    
+    RegisterViewController *registerVC = [ViewController getRegisterVC];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 - (IBAction)cancel:(id)sender {

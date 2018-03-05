@@ -56,7 +56,7 @@
 }
 
 + (UIColor *)getTextFieldBorderGray {
-    return [UIColor colorWithRed:(170/255.0) green:(170/255.0) blue:(170/255.0) alpha:1];
+    return [UIColor colorWithRed:(80/255.0) green:(80/255.0) blue:(80/255.0) alpha:1];
 }
 
 

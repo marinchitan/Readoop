@@ -10,10 +10,11 @@
 #import <UIKit/UIKit.h>
 #import "AnimationViewController.h"
 #import "ProfileViewController.h"
+#import "RegisterViewController.h"
 
 @interface ViewController : UIViewController
 
 + (AnimationViewController*)getAnimationVC;
 + (ProfileViewController*)getProfileVC;
-
++ (RegisterViewController*)getRegisterVC;
 @end
