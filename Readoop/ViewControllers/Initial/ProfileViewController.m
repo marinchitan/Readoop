@@ -45,7 +45,7 @@
 - (void)setUpProfilePanel {
     self.profileView.layer.cornerRadius = 30;
     self.profileView.layer.masksToBounds = YES;
-    self.profileView.backgroundColor = [[Color getWhite] colorWithAlphaComponent:0.98];
+    self.profileView.backgroundColor = [[Color getWhite] colorWithAlphaComponent:1];
     self.welcomeLabel.textColor = [Color getMainWhite];
     
     self.usernameField.layer.cornerRadius = self.initialCornerRadius;
