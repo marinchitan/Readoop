@@ -18,6 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *fullnameField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *confirmpasswordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;

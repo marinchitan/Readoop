@@ -10,6 +10,9 @@
 #import "Color.h"
 #import "Navigation.h"
 #import "ViewController.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <EHPlainAlert/EHPlainAlert.h>
+#import <SCLAlertView-Objective-C/SCLAlertView.h>
 
 @interface RegisterViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -22,7 +25,7 @@
     self.initialCornerRadius = 5.0;
     [self setUpUI];
     [self setUpRegisterPanel];
-    
+    [self setUpSignals];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,10 +76,49 @@
     [self.doneButton setTitleColor:[Color getMainPassiveGray] forState:UIControlStateDisabled];
     self.cancelButton.backgroundColor = [Color getMainPassiveGray];
     
+    self.usernameLabel.hidden = YES;
+    self.passwordLabel.hidden = YES;
+    self.confirmpasswordLabel.hidden = YES;
+    self.fullnameLabel.hidden = YES;
+    self.emailLabel.hidden = YES;
 }
 
 - (void)setUpSignals {
+    RACSignal *usernameTextSignal = [self.usernameField rac_textSignal];
+    RACSignal *passwordTextSignal = [self.passwordFied rac_textSignal];
+    RACSignal *confirmpasswordTextSignal = [self.confirmpasswordField rac_textSignal];
+    RACSignal *fullnameTextSignal = [self.fullnameField rac_textSignal];
+    RACSignal *emailTextSignal = [self.emailField rac_textSignal];
     
+    //Signals for floating labels
+    RAC(self.usernameLabel, hidden) = [usernameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        BOOL usernameContainsText = !(value.length > 0);
+        return @(usernameContainsText);
+    }];
+    RAC(self.passwordLabel, hidden) = [passwordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        BOOL passwordContainsText = !(value.length > 0);
+        return @(passwordContainsText);
+    }];
+    RAC(self.confirmpasswordLabel, hidden) = [confirmpasswordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        BOOL confirmpassContainsText = !(value.length > 0);
+        return @(confirmpassContainsText);
+    }];
+    RAC(self.fullnameLabel, hidden) = [fullnameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        BOOL fullnameContainsText = !(value.length > 0);
+        return @(fullnameContainsText);
+    }];
+    RAC(self.emailLabel, hidden) = [emailTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        BOOL emailContainsText = !(value.length > 0);
+        return @(emailContainsText);
+    }];
+    
+}
+
+- (IBAction)done:(id)sender {
+}
+
+- (IBAction)cancel:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
