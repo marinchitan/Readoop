@@ -15,6 +15,7 @@
 #import <EHPlainAlert/EHPlainAlert.h>
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 #import "ViewController.h"
+#import "AlertUtils.h"
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -137,18 +138,13 @@
 }
 
 - (IBAction)cancel:(id)sender {
-    //SCLAlertView *alert = [[SCLAlertView alloc] init];
-    
-    //[alert showWarning:self title:@"Hello World" subTitle:@"This is a more descriptive text." closeButtonTitle:@"Done" duration:0.0f];
-    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
-    .addButtonWithActionBlock(@"Yes", ^{ exit(0); });
-    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
-    .style(SCLAlertViewStyleError)
-    .title(@"Quit")
-    .closeButtonTitle(@"No")
-    .subTitle(@"Do you want to quit the application ?")
-    .duration(0);
-    [showBuilder showAlertView:builder.alertView onViewController:self];
+    __weak ProfileViewController *weakSelf = self;
+    [AlertUtils showAlertModal:@"Do you want to quit the application?"
+                     withTitle:@"Quit"
+              withActionButton:@"Yes"
+              withCancelButton:@"No"
+                    withAction:^{ exit(0);}
+                          onVC:weakSelf];
 }
 
 

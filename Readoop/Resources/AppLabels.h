@@ -10,4 +10,10 @@
 
 @interface AppLabels : NSObject
 
+
++ (NSString *)getLengthError:(NSString *)field withExcepectedLength:(NSString *)length;
++ (NSString *)getSpaceError:(NSString *)field;
++ (NSString *)getDifferentPasswordsError;
++ (NSString *)getEmailError;
+
 @end

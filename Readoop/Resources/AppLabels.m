@@ -10,4 +10,20 @@
 
 @implementation AppLabels
 
++ (NSString *)getLengthError:(NSString *)field withExcepectedLength:(NSString *)length{
+    return [NSString stringWithFormat:@"The %@ field should be at least %@ characters long.",field,length];
+}
+
++ (NSString *)getSpaceError:(NSString *)field{
+    return [NSString stringWithFormat:@"The %@ field should not contain spaces.",field];
+}
+
++ (NSString *)getDifferentPasswordsError {
+    return [NSString stringWithFormat:@"The passwords do not match, please retype the password in Confirm password field"];
+}
+
++ (NSString *)getEmailError{
+    return [NSString stringWithFormat:@"Please supply a valid email adress."];
+}
+
 @end

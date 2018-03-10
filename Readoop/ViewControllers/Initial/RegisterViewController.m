@@ -13,6 +13,8 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <EHPlainAlert/EHPlainAlert.h>
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
+#import "AlertUtils.h"
+#import "AppLabels.h"
 
 @interface RegisterViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -84,11 +86,26 @@
 }
 
 - (void)setUpSignals {
+    //Text signals
     RACSignal *usernameTextSignal = [self.usernameField rac_textSignal];
     RACSignal *passwordTextSignal = [self.passwordFied rac_textSignal];
     RACSignal *confirmpasswordTextSignal = [self.confirmpasswordField rac_textSignal];
     RACSignal *fullnameTextSignal = [self.fullnameField rac_textSignal];
     RACSignal *emailTextSignal = [self.emailField rac_textSignal];
+    
+    //Text legnth signals for enabling the done button
+    RACSignal *userNameSignal = [usernameTextSignal map:^id _Nullable(NSString * _Nullable value) {
+        BOOL usernameContainsText = value.length > 0;
+        return @(usernameContainsText);
+    }];
+    RACSignal *passwordSignal = [passwordTextSignal map:^id _Nullable(NSString * _Nullable value) {
+        BOOL passwordContainsText = value.length > 0;
+        return @(passwordContainsText);
+    }];
+    RACSignal *conifrmpasswordSignal = [confirmpasswordTextSignal map:^id _Nullable(NSString * _Nullable value) {
+        BOOL confirmpasswordContainsText = value.length > 0;
+        return @(confirmpasswordContainsText);
+    }];
     
     //Signals for floating labels
     RAC(self.usernameLabel, hidden) = [usernameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
@@ -112,13 +129,86 @@
         return @(emailContainsText);
     }];
     
+    //Logic for done button
+    RAC(self.doneButton, enabled) = [RACSignal combineLatest:@[userNameSignal, passwordSignal, conifrmpasswordSignal]
+                                                        reduce:^id _Nonnull (NSNumber *userNameLength, NSNumber *passwordLength, NSNumber * confirmPasswordLength){
+                                                            return @([userNameLength boolValue] && [passwordLength boolValue] && [confirmPasswordLength boolValue]);
+                                                        }];
+    
+    RAC(self.doneButton, backgroundColor) = [RACSignal combineLatest:@[userNameSignal, passwordSignal, conifrmpasswordSignal]
+                                                              reduce:^id _Nonnull (NSNumber *userNameLength, NSNumber *passwordLength, NSNumber * confirmPasswordLength){
+                                                                  return [userNameLength boolValue] && [passwordLength boolValue] && [confirmPasswordLength boolValue] ? [Color getBariolRed] :
+                                                                  [Color getPassiveBariolRed];
+                                                              }];
+}
+
+- (BOOL)validateUsernameLength {
+    return self.usernameField.text.length >= 4;
+}
+
+- (BOOL)validateUsernameSpaces {
+    NSRange whiteSpaceRange = [self.usernameField.text rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]];
+    return whiteSpaceRange.location == NSNotFound ? YES : NO;
+}
+
+- (BOOL)validatePasswordLength {
+    return self.passwordFied.text.length >= 6;
+}
+
+- (BOOL)validatePasswordSpaces {
+    NSRange whiteSpaceRange = [self.passwordFied.text rangeOfCharacterFromSet:[NSCharacterSet whitespaceCharacterSet]];
+    return whiteSpaceRange.location == NSNotFound ? YES : NO;
+}
+
+- (BOOL)validateConfirmpassword {
+    return [self.confirmpasswordField.text isEqualToString:self.passwordFied.text] ? YES : NO;
 }
 
 - (IBAction)done:(id)sender {
+    NSMutableString *errorString = [NSMutableString new];
+    if(![self validateUsernameLength]) {
+        [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validatePasswordLength]) {
+        [errorString appendString:[AppLabels getLengthError:@"Password" withExcepectedLength:@"6"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validateUsernameSpaces]) {
+        [errorString appendString:[AppLabels getSpaceError:@"Username"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validatePasswordSpaces]) {
+        [errorString appendString:[AppLabels getSpaceError:@"Password"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validateConfirmpassword]) {
+        [errorString appendString:[AppLabels getDifferentPasswordsError]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    
+    __weak RegisterViewController *weakSelf = self;
+    if([errorString isEqualToString:@""]){
+        NSLog(@"No errors");
+    } else {
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied" withCancelButton:@"Got it!" onVC:weakSelf];
+    }
 }
 
 - (IBAction)cancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    __weak RegisterViewController *weakSelf = self;
+    //[self.navigationController popViewControllerAnimated:YES];
+    [AlertUtils showInformation:@"All the supplied data will be lost, do you want to continue?"
+                      withTitle:@"Cancel"
+               withActionButton:@"Yes"
+               withCancelButton:@"No"
+                     withAction:^{[self.navigationController popViewControllerAnimated:YES];}
+                           onVC:weakSelf];
 }
 
 @end
