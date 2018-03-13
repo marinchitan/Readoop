@@ -18,6 +18,9 @@
 		3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */; };
 		3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366DAD204C76ED008B9CF7 /* RegisterViewController.m */; };
 		3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50A89C20542EC9007CB900 /* AlertUtils.m */; };
+		3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E50A89E2055286C007CB900 /* ionicons.ttf */; };
+		3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */; };
+		3E59F89E205579F000D6FD5A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F89D205579F000D6FD5A /* FontAwesome.ttf */; };
 		3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC484203CB86F001A263D /* Initial.storyboard */; };
 		3ECBC489203CB8B7001A263D /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC488203CB8B7001A263D /* Color.m */; };
 		3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC48B203CB8CD001A263D /* AppLabels.m */; };
@@ -49,6 +52,10 @@
 		3E366DAD204C76ED008B9CF7 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		3E50A89B20542EC9007CB900 /* AlertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertUtils.h; sourceTree = "<group>"; };
 		3E50A89C20542EC9007CB900 /* AlertUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertUtils.m; sourceTree = "<group>"; };
+		3E50A89E2055286C007CB900 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		3E50A8A420552E84007CB900 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		3E59F89D205579F000D6FD5A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		3ECBC484203CB86F001A263D /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		3ECBC487203CB8B7001A263D /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		3ECBC488203CB8B7001A263D /* Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
@@ -168,6 +175,8 @@
 				3ECBC49C203CD3BC001A263D /* Fonts */,
 				3E50A89B20542EC9007CB900 /* AlertUtils.h */,
 				3E50A89C20542EC9007CB900 /* AlertUtils.m */,
+				3E50A8A420552E84007CB900 /* NSString+FontAwesome.h */,
+				3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -175,6 +184,8 @@
 		3ECBC49C203CD3BC001A263D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3E59F89D205579F000D6FD5A /* FontAwesome.ttf */,
+				3E50A89E2055286C007CB900 /* ionicons.ttf */,
 				3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */,
 				3ECBC497203CD37B001A263D /* Bariol_Regular.otf */,
 			);
@@ -261,8 +272,10 @@
 			files = (
 				3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
+				3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
 				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
+				3E59F89E205579F000D6FD5A /* FontAwesome.ttf in Resources */,
 				3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */,
 				3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */,
 				3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */,
@@ -313,6 +326,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Readoop/Pods-Readoop-resources.sh",
 				$PODS_CONFIGURATION_BUILD_DIR/EHPlainAlert/EHPlainAlert.bundle,
+				"${PODS_ROOT}/ionicons/ionicons/ionicons.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -334,6 +348,7 @@
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
+				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,

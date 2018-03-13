@@ -15,9 +15,20 @@
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 #import "AlertUtils.h"
 #import "AppLabels.h"
+#import "NSString+FontAwesome.h"
+#import "IonIcons.h"
 
 @interface RegisterViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
+
+@property (assign, nonatomic) FieldState userState;
+@property (assign, nonatomic) FieldState passwState;
+@property (assign, nonatomic) FieldState confpasswState;
+@property (assign, nonatomic) FieldState nameState;
+@property (assign, nonatomic) FieldState emailState;
+
+@property (strong, nonatomic) NSString *validIcon;
+@property (strong, nonatomic) NSString *invalidIcon;
 @end
 
 @implementation RegisterViewController
@@ -83,6 +94,16 @@
     self.confirmpasswordLabel.hidden = YES;
     self.fullnameLabel.hidden = YES;
     self.emailLabel.hidden = YES;
+    
+    self.usernameValidText.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    self.passwordValidText.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    self.confirmpasswValidText.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    self.nameValidText.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    self.emailValidText.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    
+    self.validIcon = [NSString fontAwesomeIconStringForEnum:FACheck];
+    self.invalidIcon = [NSString fontAwesomeIconStringForEnum:FATimes];
+    
 }
 
 - (void)setUpSignals {
@@ -140,6 +161,43 @@
                                                                   return [userNameLength boolValue] && [passwordLength boolValue] && [confirmPasswordLength boolValue] ? [Color getBariolRed] :
                                                                   [Color getPassiveBariolRed];
                                                               }];
+    
+    //Signals for suggestion labels
+    RAC(self.usernameValidText, text) = [usernameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @"";
+        } else {
+            return [self validateUsernameLength] && [self validateUsernameSpaces] ? self.validIcon : self.invalidIcon;
+        }
+    }];
+    RAC(self.passwordValidText, text) = [passwordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @"";
+        } else {
+            return [self validatePasswordLength] && [self validatePasswordSpaces] ? self.validIcon : self.invalidIcon;
+        }
+    }];
+    RAC(self.confirmpasswValidText, text) = [confirmpasswordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @"";
+        } else {
+            return [self validateConfirmpassword] ? self.validIcon : self.invalidIcon;
+        }
+    }];
+    RAC(self.nameValidText, text) = [fullnameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @"";
+        } else {
+            return [self validateName] ? self.validIcon : self.invalidIcon;
+        }
+    }];
+    RAC(self.emailValidText, text) = [emailTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @"";
+        } else {
+            return [self validateEmail] ? self.validIcon : self.invalidIcon;
+        }
+    }];
 }
 
 - (BOOL)validateUsernameLength {
@@ -162,6 +220,16 @@
 
 - (BOOL)validateConfirmpassword {
     return [self.confirmpasswordField.text isEqualToString:self.passwordFied.text] ? YES : NO;
+}
+
+- (BOOL)validateName {
+    return [self.fullnameField.text rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location == NSNotFound;
+}
+
+- (BOOL)validateEmail {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:self.emailField.text];
 }
 
 - (IBAction)done:(id)sender {
@@ -191,6 +259,15 @@
         [errorString appendString:@"\n\n"];
     }
     
+    if(![self validateEmail] && self.emailField.text.length > 0) {
+        [errorString appendString:[AppLabels getEmailError]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validateName] && self.fullnameField.text.length > 0) {
+        [errorString appendString:[AppLabels getNameError]];
+        [errorString appendString:@"\n\n"];
+    }
     
     __weak RegisterViewController *weakSelf = self;
     if([errorString isEqualToString:@""]){

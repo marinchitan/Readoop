@@ -24,6 +24,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>FontAwesome.ttf</string>
+		<string>ionicons.ttf</string>
 		<string>Bariol_Regular.otf</string>
 		<string>Bariol_Regular_Italic.otf</string>
 	</array>

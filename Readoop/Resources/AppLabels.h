@@ -15,5 +15,6 @@
 + (NSString *)getSpaceError:(NSString *)field;
 + (NSString *)getDifferentPasswordsError;
 + (NSString *)getEmailError;
++ (NSString *)getNameError;
 
 @end

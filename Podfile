@@ -10,6 +10,7 @@ target 'Readoop' do
   pod "ReactiveObjC" 
   pod 'EHPlainAlert'
   pod 'SCLAlertView-Objective-C' 
+  pod 'ionicons'
  # Pods for Readoop
 
 end

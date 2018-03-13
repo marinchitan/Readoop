@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "TPKeyboardAvoidingScrollView.h"
 
+typedef enum fieldStates{
+    empty_field,
+    valid_field,
+    invalid_field
+}FieldState;
+
 @interface RegisterViewController : UIViewController
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *modularScrollView;
 @property (weak, nonatomic) IBOutlet UIView *registerPanel;
@@ -23,6 +29,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *confirmpasswordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *usernameValidText;
+@property (weak, nonatomic) IBOutlet UILabel *passwordValidText;
+@property (weak, nonatomic) IBOutlet UILabel *confirmpasswValidText;
+@property (weak, nonatomic) IBOutlet UILabel *nameValidText;
+@property (weak, nonatomic) IBOutlet UILabel *emailValidText;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;

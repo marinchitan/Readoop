@@ -59,5 +59,13 @@
     return [UIColor colorWithRed:(80/255.0) green:(80/255.0) blue:(80/255.0) alpha:1];
 }
 
++ (UIColor *)getValidGreen{
+    return [UIColor colorWithRed:(78/255.0) green:(186/255.0) blue:(125/255.0) alpha:1];
+}
+
++ (UIColor *)getInvalidRed{
+    return [UIColor colorWithRed:(191/255.0) green:(41/255.0) blue:(50/255.0) alpha:1];
+}
+
 
 @end

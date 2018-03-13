@@ -35,4 +35,7 @@
              withAction:(void (^)())actionBlock
                    onVC:(UIViewController *)vc;
 
++ (void)getSuccesToastPanel:(NSString *)title
+                withMessage:(NSString *)message;
+
 @end

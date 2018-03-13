@@ -74,4 +74,8 @@
     [showBuilder showAlertView:builder.alertView onViewController:vc];
 }
 
++ (void)getSuccesToastPanel:(NSString *)title withMessage:(NSString *)message {
+    [EHPlainAlert showAlertWithTitle:title message:message type:ViewAlertSuccess];
+}
+
 @end

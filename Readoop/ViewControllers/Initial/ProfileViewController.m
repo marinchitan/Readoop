@@ -128,7 +128,7 @@
 
 - (IBAction)signIn:(id)sender {
     if([self userCredentialsCheck]){
-        [EHPlainAlert showAlertWithTitle:@"Success" message:@"Successfully loged in" type:ViewAlertSuccess];
+        [AlertUtils getSuccesToastPanel:@"Success" withMessage:@"Succcessfully logged in"];
     }
 }
 

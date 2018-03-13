@@ -19,11 +19,15 @@
 }
 
 + (NSString *)getDifferentPasswordsError {
-    return [NSString stringWithFormat:@"The passwords do not match, please retype the password in Confirm password field"];
+    return [NSString stringWithFormat:@"The passwords do not match, please retype the password in Confirm password field."];
 }
 
 + (NSString *)getEmailError{
     return [NSString stringWithFormat:@"Please supply a valid email adress."];
+}
+
++ (NSString *)getNameError {
+    return [NSString stringWithFormat:@"The name field can not contain numbers."];
 }
 
 @end

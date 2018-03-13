@@ -26,6 +26,9 @@
 + (UIColor *)getAlertYellow;
 + (UIColor *)getLightGray;
 + (UIColor *)getTextFieldBorderGray;
+
++ (UIColor *)getValidGreen;
++ (UIColor *)getInvalidRed;
   //Alternative reds
 
 
