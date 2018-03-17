@@ -1,6 +1,7 @@
 PODS:
   - EHPlainAlert (1.2.7):
     - UIColor-HexRGB
+  - FontAwesomeIconFactory (3.0)
   - ionicons (2.1.1)
   - JHChainableAnimations (3.0.1)
   - Masonry (1.1.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - EHPlainAlert
+  - FontAwesomeIconFactory
   - ionicons
   - JHChainableAnimations (~> 3.0.1)
   - Masonry
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   EHPlainAlert: b02e88eee87c99275082f6d3689a65348eec7b1e
+  FontAwesomeIconFactory: dfc89a126ff158d3a642aeeb265eaa9b179ad496
   ionicons: 630bcd2c2970741c3359e3a35ad544e71d3c086b
   JHChainableAnimations: 0237489ed063f0ec5b351f5c7bb26c1891517074
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -28,6 +31,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   UIColor-HexRGB: daccfa7e936af664369734a164b0309087d7f970
 
-PODFILE CHECKSUM: cbc4489f62319222ac4f0e3541735a3cb37fb04e
+PODFILE CHECKSUM: e3478aa6c235385d24018780718c865800e8e151
 
 COCOAPODS: 1.3.1

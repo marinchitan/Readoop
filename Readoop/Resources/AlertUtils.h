@@ -35,6 +35,18 @@
              withAction:(void (^)())actionBlock
                    onVC:(UIViewController *)vc;
 
++ (void)showSuccess:(NSString *)message
+              withTitle:(NSString *)title
+       withCancelButton:(NSString *)buttonLabel
+                   onVC:(UIViewController *)vc;
+
++ (void)showSuccess:(NSString *)message
+              withTitle:(NSString *)title
+       withActionButton:(NSString *)actionButtonLabel
+       withCancelButton:(NSString *)buttonLabel
+             withAction:(void (^)())actionBlock
+                   onVC:(UIViewController *)vc;
+
 + (void)getSuccesToastPanel:(NSString *)title
                 withMessage:(NSString *)message;
 

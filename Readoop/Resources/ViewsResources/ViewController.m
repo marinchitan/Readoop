@@ -34,4 +34,9 @@
             instantiateViewControllerWithIdentifier:@"registerViewContoller"];
 }
 
++ (DashboardTabbed*)getTabbedDashboard {
+    return [[UIStoryboard storyboardWithName:@"Dashboard" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"dashboardTabbed"];
+}
+
 @end

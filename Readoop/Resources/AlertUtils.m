@@ -74,6 +74,37 @@
     [showBuilder showAlertView:builder.alertView onViewController:vc];
 }
 
++ (void)showSuccess:(NSString *)message
+          withTitle:(NSString *)title
+   withCancelButton:(NSString *)buttonLabel
+               onVC:(UIViewController *)vc {
+    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new];
+    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+    .style(SCLAlertViewStyleSuccess)
+    .title(title)
+    .closeButtonTitle(buttonLabel)
+    .subTitle(message)
+    .duration(0);
+    [showBuilder showAlertView:builder.alertView onViewController:vc];
+}
+
++ (void)showSuccess:(NSString *)message
+          withTitle:(NSString *)title
+   withActionButton:(NSString *)actionButtonLabel
+   withCancelButton:(NSString *)buttonLabel
+         withAction:(void (^)())actionBlock
+               onVC:(UIViewController *)vc {
+    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
+    .addButtonWithActionBlock(actionButtonLabel, actionBlock);
+    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+    .style(SCLAlertViewStyleSuccess)
+    .title(title)
+    .closeButtonTitle(buttonLabel)
+    .subTitle(message)
+    .duration(0);
+    [showBuilder showAlertView:builder.alertView onViewController:vc];
+}
+
 + (void)getSuccesToastPanel:(NSString *)title withMessage:(NSString *)message {
     [EHPlainAlert showAlertWithTitle:title message:message type:ViewAlertSuccess];
 }

@@ -85,10 +85,12 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/EHPlainAlert/EHPlainAlert.bundle"
+  install_resource "${PODS_ROOT}/FontAwesomeIconFactory/Font-Awesome/fonts/FontAwesome.otf"
   install_resource "${PODS_ROOT}/ionicons/ionicons/ionicons.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "$PODS_CONFIGURATION_BUILD_DIR/EHPlainAlert/EHPlainAlert.bundle"
+  install_resource "${PODS_ROOT}/FontAwesomeIconFactory/Font-Awesome/fonts/FontAwesome.otf"
   install_resource "${PODS_ROOT}/ionicons/ionicons/ionicons.bundle"
 fi
 

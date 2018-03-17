@@ -29,6 +29,9 @@
 
 + (UIColor *)getValidGreen;
 + (UIColor *)getInvalidRed;
+
++ (UIColor *)getPassiveTab;
++ (UIColor *)getActiveTab;
   //Alternative reds
 
 

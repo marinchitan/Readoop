@@ -21,6 +21,14 @@
 		3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E50A89E2055286C007CB900 /* ionicons.ttf */; };
 		3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */; };
 		3E59F89E205579F000D6FD5A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F89D205579F000D6FD5A /* FontAwesome.ttf */; };
+		3E59F8A0205BD8D300D6FD5A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F89F205BD8D200D6FD5A /* Dashboard.storyboard */; };
+		3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A2205BD94800D6FD5A /* DashboardTabbed.m */; };
+		3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */; };
+		3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A8205BFE1400D6FD5A /* Font.m */; };
+		3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */; };
+		3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */; };
+		3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */; };
+		3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */; };
 		3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC484203CB86F001A263D /* Initial.storyboard */; };
 		3ECBC489203CB8B7001A263D /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC488203CB8B7001A263D /* Color.m */; };
 		3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC48B203CB8CD001A263D /* AppLabels.m */; };
@@ -56,6 +64,21 @@
 		3E50A8A420552E84007CB900 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
 		3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
 		3E59F89D205579F000D6FD5A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		3E59F89F205BD8D200D6FD5A /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		3E59F8A1205BD94800D6FD5A /* DashboardTabbed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardTabbed.h; sourceTree = "<group>"; };
+		3E59F8A2205BD94800D6FD5A /* DashboardTabbed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardTabbed.m; sourceTree = "<group>"; };
+		3E59F8A4205BFB6700D6FD5A /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
+		3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
+		3E59F8A7205BFE1400D6FD5A /* Font.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		3E59F8A8205BFE1400D6FD5A /* Font.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Font.m; sourceTree = "<group>"; };
+		3E59F8AA205C3BE900D6FD5A /* ProfileDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileDashboard.h; sourceTree = "<group>"; };
+		3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileDashboard.m; sourceTree = "<group>"; };
+		3E59F8AD205C3C0500D6FD5A /* FeedDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDashboard.h; sourceTree = "<group>"; };
+		3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDashboard.m; sourceTree = "<group>"; };
+		3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryDashboard.h; sourceTree = "<group>"; };
+		3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryDashboard.m; sourceTree = "<group>"; };
+		3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDashboars.h; sourceTree = "<group>"; };
+		3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDashboars.m; sourceTree = "<group>"; };
 		3ECBC484203CB86F001A263D /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		3ECBC487203CB8B7001A263D /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		3ECBC488203CB8B7001A263D /* Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
@@ -129,6 +152,7 @@
 				3ECBC484203CB86F001A263D /* Initial.storyboard */,
 				3E366D9F204804EE008B9CF7 /* Modular.storyboard */,
 				3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */,
+				3E59F89F205BD8D200D6FD5A /* Dashboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -147,6 +171,16 @@
 		3ECBC495203CCEBD001A263D /* Tabbed */ = {
 			isa = PBXGroup;
 			children = (
+				3E59F8A1205BD94800D6FD5A /* DashboardTabbed.h */,
+				3E59F8A2205BD94800D6FD5A /* DashboardTabbed.m */,
+				3E59F8AA205C3BE900D6FD5A /* ProfileDashboard.h */,
+				3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */,
+				3E59F8AD205C3C0500D6FD5A /* FeedDashboard.h */,
+				3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */,
+				3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */,
+				3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */,
+				3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */,
+				3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */,
 			);
 			path = Tabbed;
 			sourceTree = "<group>";
@@ -177,6 +211,10 @@
 				3E50A89C20542EC9007CB900 /* AlertUtils.m */,
 				3E50A8A420552E84007CB900 /* NSString+FontAwesome.h */,
 				3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */,
+				3E59F8A4205BFB6700D6FD5A /* UIImage+FontAwesome.h */,
+				3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */,
+				3E59F8A7205BFE1400D6FD5A /* Font.h */,
+				3E59F8A8205BFE1400D6FD5A /* Font.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -271,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */,
+				3E59F8A0205BD8D300D6FD5A /* Dashboard.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
 				3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
@@ -326,6 +365,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Readoop/Pods-Readoop-resources.sh",
 				$PODS_CONFIGURATION_BUILD_DIR/EHPlainAlert/EHPlainAlert.bundle,
+				"${PODS_ROOT}/FontAwesomeIconFactory/Font-Awesome/fonts/FontAwesome.otf",
 				"${PODS_ROOT}/ionicons/ionicons/ionicons.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -346,14 +386,21 @@
 			files = (
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
+				3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */,
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
+				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
+				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
+				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
+				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
+				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
+				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,
 				3E366D992044864B008B9CF7 /* Navigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

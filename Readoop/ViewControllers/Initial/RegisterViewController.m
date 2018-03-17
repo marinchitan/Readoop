@@ -16,6 +16,7 @@
 #import "AlertUtils.h"
 #import "AppLabels.h"
 #import "NSString+FontAwesome.h"
+
 #import "IonIcons.h"
 
 @interface RegisterViewController ()
@@ -43,6 +44,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
+    [self placeHolders];
+}
+
+- (void)placeHolders{
+    self.usernameField.text = @"dddd";
+    self.passwordFied.text = @"dddddd";
+    self.confirmpasswordField.text = @"dddddd";
+    self.doneButton.enabled = YES;
 }
 
 - (void)setUpUI {
@@ -103,7 +112,6 @@
     
     self.validIcon = [NSString fontAwesomeIconStringForEnum:FACheck];
     self.invalidIcon = [NSString fontAwesomeIconStringForEnum:FATimes];
-    
 }
 
 - (void)setUpSignals {
@@ -198,6 +206,44 @@
             return [self validateEmail] ? self.validIcon : self.invalidIcon;
         }
     }];
+    
+    //Field states logic handling
+    
+    RAC(self, userState) = [usernameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @(empty_field);
+        } else {
+            return [self validateUsernameLength] && [self validateUsernameSpaces] ? @(valid_field) : @(invalid_field);
+        }
+    }];
+    RAC(self, passwState) = [passwordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @(empty_field);
+        } else {
+            return [self validatePasswordLength] && [self validatePasswordSpaces] ? @(valid_field) : @(invalid_field);
+        }
+    }];
+    RAC(self, confpasswState) = [confirmpasswordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @(empty_field);
+        } else {
+            return [self validateConfirmpassword] ? @(valid_field) : @(invalid_field);
+        }
+    }];
+    RAC(self, nameState) = [fullnameTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @(empty_field);
+        } else {
+            return [self validateName] ? @(valid_field) : @(invalid_field);
+        }
+    }];
+    RAC(self, emailState) = [emailTextSignal map:^id _Nullable(NSString *  _Nullable value) {
+        if(value.length == 0 ){
+            return @(empty_field);
+        } else {
+            return [self validateEmail] ? @(valid_field) : @(invalid_field);
+        }
+    }];
 }
 
 - (BOOL)validateUsernameLength {
@@ -244,8 +290,8 @@
         [errorString appendString:@"\n\n"];
     }
     
-    if(![self validateUsernameSpaces]) {
-        [errorString appendString:[AppLabels getSpaceError:@"Username"]];
+    if(![self validateUsernameLength]) {
+        [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
         [errorString appendString:@"\n\n"];
     }
     
@@ -271,7 +317,7 @@
     
     __weak RegisterViewController *weakSelf = self;
     if([errorString isEqualToString:@""]){
-        NSLog(@"No errors");
+        [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied" withCancelButton:@"Got it!" onVC:weakSelf];
     }
@@ -287,5 +333,81 @@
                      withAction:^{[self.navigationController popViewControllerAnimated:YES];}
                            onVC:weakSelf];
 }
+
+- (IBAction)usernameSugest:(id)sender {
+    __weak RegisterViewController *weakSelf = self;
+    if(self.userState == valid_field) {
+        [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
+    } else if(self.userState == invalid_field) {
+        NSMutableString *errorString = [NSMutableString new];
+        if(![self validateUsernameLength]) {
+            [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
+            [errorString appendString:@"\n"];
+        }
+        if(![self validateUsernameSpaces]) {
+            [errorString appendString:[AppLabels getSpaceError:@"Username"]];
+        }
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
+        
+    }
+}
+
+- (IBAction)passwordSugest:(id)sender {
+    __weak RegisterViewController *weakSelf = self;
+    if(self.passwState == valid_field) {
+        [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
+    } else if(self.passwState == invalid_field) {
+        NSMutableString *errorString = [NSMutableString new];
+        if(![self validatePasswordLength]) {
+            [errorString appendString:[AppLabels getLengthError:@"Password" withExcepectedLength:@"6"]];
+            [errorString appendString:@"\n"];
+        }
+        if(![self validatePasswordSpaces]) {
+            [errorString appendString:[AppLabels getSpaceError:@"Password"]];
+        }
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
+        
+    }
+}
+
+- (IBAction)confirmpasswSugest:(id)sender {
+    __weak RegisterViewController *weakSelf = self;
+    if(self.confpasswState == valid_field) {
+        [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
+    } else if(self.confpasswState == invalid_field) {
+        NSMutableString *errorString = [NSMutableString new];
+        if(![self validateConfirmpassword]) {
+            [errorString appendString:[AppLabels getDifferentPasswordsError]];
+        }
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
+    }
+}
+
+- (IBAction)nameSugest:(id)sender {
+    __weak RegisterViewController *weakSelf = self;
+    if(self.nameState == valid_field) {
+        [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
+    } else if(self.nameState == invalid_field) {
+        NSMutableString *errorString = [NSMutableString new];
+        if(![self validateName]) {
+            [errorString appendString:[AppLabels getNameError]];
+        }
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
+    }
+}
+
+- (IBAction)emailSugest:(id)sender {
+    __weak RegisterViewController *weakSelf = self;
+    if(self.emailState == valid_field) {
+        [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
+    } else if(self.emailState == invalid_field) {
+        NSMutableString *errorString = [NSMutableString new];
+        if(![self validateEmail]) {
+            [errorString appendString:[AppLabels getEmailError]];
+        }
+        [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
+    }
+}
+
 
 @end

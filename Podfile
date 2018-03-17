@@ -11,6 +11,7 @@ target 'Readoop' do
   pod 'EHPlainAlert'
   pod 'SCLAlertView-Objective-C' 
   pod 'ionicons'
+  pod 'FontAwesomeIconFactory'
  # Pods for Readoop
 
 end

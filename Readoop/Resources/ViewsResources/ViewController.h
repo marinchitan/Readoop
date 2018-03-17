@@ -11,10 +11,13 @@
 #import "AnimationViewController.h"
 #import "ProfileViewController.h"
 #import "RegisterViewController.h"
+#import "DashboardTabbed.h"
 
 @interface ViewController : UIViewController
 
 + (AnimationViewController*)getAnimationVC;
 + (ProfileViewController*)getProfileVC;
 + (RegisterViewController*)getRegisterVC;
+
++ (DashboardTabbed*)getTabbedDashboard;
 @end

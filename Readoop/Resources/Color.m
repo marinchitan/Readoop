@@ -67,5 +67,12 @@
     return [UIColor colorWithRed:(191/255.0) green:(41/255.0) blue:(50/255.0) alpha:1];
 }
 
++ (UIColor *)getPassiveTab {
+    return [UIColor colorWithRed:(55/255.0) green:(55/255.0) blue:(55/255.0) alpha:1];
+}
+
++ (UIColor *)getActiveTab {
+    return [UIColor whiteColor];
+}
 
 @end
