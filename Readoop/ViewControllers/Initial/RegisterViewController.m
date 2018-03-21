@@ -16,6 +16,7 @@
 #import "AlertUtils.h"
 #import "AppLabels.h"
 #import "NSString+FontAwesome.h"
+#import "Session.h"
 
 #import "IonIcons.h"
 
@@ -30,6 +31,8 @@
 
 @property (strong, nonatomic) NSString *validIcon;
 @property (strong, nonatomic) NSString *invalidIcon;
+
+@property (nonatomic, strong) Session* appSession;
 @end
 
 @implementation RegisterViewController
@@ -40,6 +43,7 @@
     [self setUpUI];
     [self setUpRegisterPanel];
     [self setUpSignals];
+    self.appSession = [Session sharedSession];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -317,6 +321,7 @@
     
     __weak RegisterViewController *weakSelf = self;
     if([errorString isEqualToString:@""]){
+        self.appSession.wayOfArrival = register_path;
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied" withCancelButton:@"Got it!" onVC:weakSelf];

@@ -29,6 +29,15 @@
 		3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */; };
 		3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */; };
 		3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */; };
+		3E59F8B9205E845600D6FD5A /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B8205E845600D6FD5A /* Session.m */; };
+		3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */; };
+		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
+		3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE12062E88400C54EBC /* RealmUtils.m */; };
+		3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE42062E89500C54EBC /* RealmConfig.m */; };
+		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
+		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
+		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
+		3EC234B92062F00E0029225D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B82062F00E0029225D /* User.m */; };
 		3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC484203CB86F001A263D /* Initial.storyboard */; };
 		3ECBC489203CB8B7001A263D /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC488203CB8B7001A263D /* Color.m */; };
 		3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC48B203CB8CD001A263D /* AppLabels.m */; };
@@ -79,6 +88,25 @@
 		3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryDashboard.m; sourceTree = "<group>"; };
 		3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDashboars.h; sourceTree = "<group>"; };
 		3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDashboars.m; sourceTree = "<group>"; };
+		3E59F8B6205DC73400D6FD5A /* Essentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Essentials.h; sourceTree = "<group>"; };
+		3E59F8B7205E845600D6FD5A /* Session.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		3E59F8B8205E845600D6FD5A /* Session.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		3E59F8BA205E8BCE00D6FD5A /* TesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TesViewController.h; sourceTree = "<group>"; };
+		3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TesViewController.m; sourceTree = "<group>"; };
+		3E734ADD2062E87500C54EBC /* ServerPersistence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerPersistence.h; sourceTree = "<group>"; };
+		3E734ADE2062E87500C54EBC /* ServerPersistence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerPersistence.m; sourceTree = "<group>"; };
+		3E734AE02062E88400C54EBC /* RealmUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmUtils.h; sourceTree = "<group>"; };
+		3E734AE12062E88400C54EBC /* RealmUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmUtils.m; sourceTree = "<group>"; };
+		3E734AE32062E89500C54EBC /* RealmConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmConfig.h; sourceTree = "<group>"; };
+		3E734AE42062E89500C54EBC /* RealmConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmConfig.m; sourceTree = "<group>"; };
+		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		3EC234B22062EFF80029225D /* Comment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		3EC234B42062F0040029225D /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		3EC234B52062F0040029225D /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		3EC234B72062F00E0029225D /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3EC234B82062F00E0029225D /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		3ECBC484203CB86F001A263D /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		3ECBC487203CB8B7001A263D /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		3ECBC488203CB8B7001A263D /* Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
@@ -124,6 +152,7 @@
 		2D7D2FBC203C8EE7005E689B /* Readoop */ = {
 			isa = PBXGroup;
 			children = (
+				3E734ADC2062E85A00C54EBC /* Persistence */,
 				3ECBC49B203CD3A5001A263D /* Resources */,
 				2D7D2FD4203C8F19005E689B /* Storyboards */,
 				2D7D2FD3203C8F10005E689B /* ViewControllers */,
@@ -139,6 +168,7 @@
 		2D7D2FD3203C8F10005E689B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3E59F8B6205DC73400D6FD5A /* Essentials.h */,
 				3ECBC496203CCECC001A263D /* Initial */,
 				3ECBC495203CCEBD001A263D /* Tabbed */,
 			);
@@ -155,6 +185,35 @@
 				3E59F89F205BD8D200D6FD5A /* Dashboard.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3E734ADC2062E85A00C54EBC /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3E734AE62062E8A600C54EBC /* Realm Models */,
+				3E734ADD2062E87500C54EBC /* ServerPersistence.h */,
+				3E734ADE2062E87500C54EBC /* ServerPersistence.m */,
+				3E734AE02062E88400C54EBC /* RealmUtils.h */,
+				3E734AE12062E88400C54EBC /* RealmUtils.m */,
+				3E734AE32062E89500C54EBC /* RealmConfig.h */,
+				3E734AE42062E89500C54EBC /* RealmConfig.m */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		3E734AE62062E8A600C54EBC /* Realm Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EC234AE2062EFEC0029225D /* Post.h */,
+				3EC234AF2062EFEC0029225D /* Post.m */,
+				3EC234B12062EFF80029225D /* Comment.h */,
+				3EC234B22062EFF80029225D /* Comment.m */,
+				3EC234B42062F0040029225D /* Book.h */,
+				3EC234B52062F0040029225D /* Book.m */,
+				3EC234B72062F00E0029225D /* User.h */,
+				3EC234B82062F00E0029225D /* User.m */,
+			);
+			path = "Realm Models";
 			sourceTree = "<group>";
 		};
 		3ECBC486203CB894001A263D /* ViewsResources */ = {
@@ -181,6 +240,8 @@
 				3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */,
 				3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */,
 				3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */,
+				3E59F8BA205E8BCE00D6FD5A /* TesViewController.h */,
+				3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */,
 			);
 			path = Tabbed;
 			sourceTree = "<group>";
@@ -215,6 +276,8 @@
 				3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */,
 				3E59F8A7205BFE1400D6FD5A /* Font.h */,
 				3E59F8A8205BFE1400D6FD5A /* Font.m */,
+				3E59F8B7205E845600D6FD5A /* Session.h */,
+				3E59F8B8205E845600D6FD5A /* Session.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -384,20 +447,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC234B62062F0040029225D /* Book.m in Sources */,
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
+				3EC234B92062F00E0029225D /* User.m in Sources */,
+				3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */,
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
+				3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */,
 				3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */,
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
+				3EC234B02062EFEC0029225D /* Post.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
+				3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */,
 				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
 				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
+				3EC234B32062EFF80029225D /* Comment.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
 				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,
+				3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
+				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
 				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,

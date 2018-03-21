@@ -22,14 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self setUpUI];
 }
 
 - (void)setUpUI{
     self.tabBar.barTintColor = [Color getBariolRed];
     self.tabBar.translucent = NO;
-    //self.tabBar.tintColor = [Color getWhite];
     
     UITabBarItem *profileItem = [self.tabBar.items objectAtIndex:0];
     UITabBarItem *feedItem = [self.tabBar.items objectAtIndex:1];

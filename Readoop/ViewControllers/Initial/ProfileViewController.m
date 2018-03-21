@@ -16,9 +16,11 @@
 #import <SCLAlertView-Objective-C/SCLAlertView.h>
 #import "ViewController.h"
 #import "AlertUtils.h"
+#import "Session.h"
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
+@property (nonatomic, strong) Session* appSession;
 @end
 
 @implementation ProfileViewController
@@ -29,10 +31,18 @@
     [self setUpUI];
     [self setUpProfilePanel];
     [self setUpSignals];
+    [self placeHolders]; // Delete in prod
+    self.appSession = [Session sharedSession];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
+}
+
+- (void)placeHolders{
+    self.usernameField.text = @"dddddd";
+    self.passwordField.text = @"dddddd";
+    self.signInButton.enabled = YES;
 }
 
 - (void)setUpUI {
@@ -123,12 +133,19 @@
 }
 
 - (BOOL)userCredentialsCheck {
-    return YES;
+    if([self.usernameField.text isEqualToString:@"dddddd"] && [self.passwordField.text isEqualToString:@"dddddd"]){
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 - (IBAction)signIn:(id)sender {
     if([self userCredentialsCheck]){
-        [AlertUtils getSuccesToastPanel:@"Success" withMessage:@"Succcessfully logged in"];
+        self.appSession.wayOfArrival = login_path;
+        [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
+    } else {
+        [AlertUtils getErrorToastPanel:@"Oops!" withMessage:@"Wrong credentials supplied"];
     }
 }
 

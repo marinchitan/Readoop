@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Essentials.h"
 
-@interface ProfileDashboard : UIViewController
+@interface ProfileDashboard : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

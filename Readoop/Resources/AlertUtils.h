@@ -50,4 +50,7 @@
 + (void)getSuccesToastPanel:(NSString *)title
                 withMessage:(NSString *)message;
 
++ (void)getErrorToastPanel:(NSString *)title
+                withMessage:(NSString *)message;
+
 @end

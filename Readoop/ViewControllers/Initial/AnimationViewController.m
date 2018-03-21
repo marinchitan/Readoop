@@ -21,7 +21,7 @@
     [super viewDidLoad];
     [self setUpUI];
     [self setUpLeftConstraint];
-    [self pushProfileVCWithDelay:0.0]; //3.0 in prod
+    [self pushProfileVCWithDelay:1.0]; //3.0 in prod
 }
 
 - (void)setUpLeftConstraint {
