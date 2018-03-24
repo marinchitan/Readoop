@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
+#import "Book.h"
 
 @interface Comment : RLMObject
+@property NSNumber<RLMInt> *commentId;
+
+@property NSString *contents;
+@property NSNumber<RLMInt> *userId;
+
+@property NSNumber<RLMInt> *numberOfPositiveRates;
+@property NSNumber<RLMInt> *numberOfNegativeRates;
+@property (readonly) RLMLinkingObjects *commentedBook;
 
 @end

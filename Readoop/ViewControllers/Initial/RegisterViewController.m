@@ -17,8 +17,12 @@
 #import "AppLabels.h"
 #import "NSString+FontAwesome.h"
 #import "Session.h"
-
+#import "UserDefaultsManager.h"
+#import "User.h"
+#import <Realm/Realm.h>
+#import "RealmUtils.h"
 #import "IonIcons.h"
+
 
 @interface RegisterViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -321,6 +325,32 @@
     
     __weak RegisterViewController *weakSelf = self;
     if([errorString isEqualToString:@""]){
+        //create new user and add it to realm
+        User *newUser = [[User alloc] init];
+        RLMResults<User *> *currentUsers = [User allObjects];
+        NSNumber *primaryKey = [NSNumber numberWithInt:5001 + (int)currentUsers.count];
+        NSLog(@"Current user primaryKey: %@", primaryKey);
+        newUser.userId = primaryKey;
+        newUser.username = self.usernameField.text;
+        newUser.password = self.passwordFied.text;
+        
+        if([self.fullnameField.text isEqualToString:@""] && [self.emailField.text isEqualToString:@""]) {
+            //No email and name supplied
+        } else if([self.fullnameField.text isEqualToString:@""]){
+            newUser.email = self.emailField.text;
+        } else if([self.emailField.text isEqualToString:@""]){
+            newUser.fullName = self.fullnameField.text;
+        } else {
+            newUser.email = self.emailField.text;
+            newUser.fullName = self.fullnameField.text;
+        }
+        
+        //MONGOPUT
+        [RealmUtils addUserObject:newUser];
+        self.appSession.currentUser = newUser;
+        
+        //if succesessfully registered save credentials to cache, so next time will be seamless logged
+        [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordFied.text];
         self.appSession.wayOfArrival = register_path;
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {

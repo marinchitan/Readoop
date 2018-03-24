@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 
-@interface Post : NSObject
+@interface Post : RLMObject
 
 @end

@@ -17,6 +17,9 @@
 #import "ViewController.h"
 #import "AlertUtils.h"
 #import "Session.h"
+#import "UserDefaultsManager.h"
+#import "User.h"
+#import <Realm/Realm.h>
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -133,15 +136,23 @@
 }
 
 - (BOOL)userCredentialsCheck {
-    if([self.usernameField.text isEqualToString:@"dddddd"] && [self.passwordField.text isEqualToString:@"dddddd"]){
-        return YES;
-    } else {
-        return NO;
+    NSString *suppliedUserName = self.usernameField.text;
+    NSString *suppliedPassword = self.passwordField.text;
+    
+    User *retrievedUser = [[User objectsWhere:@"username == %@",suppliedUserName] firstObject];
+    if(retrievedUser){
+        if([retrievedUser.password isEqualToString:suppliedPassword]){
+            self.appSession.currentUser = retrievedUser;
+            return YES;
+        }
     }
+    return NO;
 }
 
 - (IBAction)signIn:(id)sender {
     if([self userCredentialsCheck]){
+        //if succesessfully logged save credentials to cache, so next time will be seamless logged
+        [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordField.text];
         self.appSession.wayOfArrival = login_path;
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {

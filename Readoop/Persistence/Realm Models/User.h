@@ -7,7 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
+#import "Book.h"
 
-@interface User : NSObject
+@class Book;
+@class User;
+RLM_ARRAY_TYPE(Book);
+RLM_ARRAY_TYPE(User);
+
+@interface User : RLMObject
+@property NSNumber<RLMInt> *userId;
+
+@property NSString *username;
+@property NSString *password;
+@property NSString *fullName;
+@property NSString *email;
+
+@property NSNumber<RLMInt> *status;
+@property RLMArray<Book *><Book> *books;
+@property RLMArray<User *><User> *friends;
 
 @end

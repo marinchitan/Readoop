@@ -1,5 +1,5 @@
 //
-//  RealmUtils.h
+//  PostComment.h
 //  Readoop
 //
 //  Created by Marin Chitan on 21/03/2018.
@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import <Realm/Realm.h>
 
-@interface RealmUtils : NSObject
-
-+ (void)addUserObject:(User *)user;
+@interface PostComment : RLMObject
 
 @end

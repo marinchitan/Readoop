@@ -9,6 +9,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "RealmConfig.h"
 @interface AppDelegate ()
 
 @end
@@ -22,9 +23,12 @@
     self.window.rootViewController = self.mainNavController;
     [self.window makeKeyAndVisible];
     
+    //Configure SDKs
+    RealmConfig *realmConfig = [RealmConfig new];
+    [realmConfig configRealm];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
    

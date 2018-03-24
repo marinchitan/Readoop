@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 typedef enum wayOfArrival{
    register_path,
@@ -16,7 +17,8 @@ typedef enum wayOfArrival{
 
 @interface Session : NSObject 
 
-@property  (nonatomic, assign) ArrivalWay wayOfArrival; //Give a welcome message when entering dashboard for first time from Login or Register pages
+@property(nonatomic, assign) ArrivalWay wayOfArrival; //Give a welcome message when entering dashboard for first time from Login or Register pages
+@property(nonatomic, strong) User *currentUser;
 
 + (id)sharedSession;
 

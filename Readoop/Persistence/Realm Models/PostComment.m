@@ -1,17 +1,13 @@
 //
-//  Book.m
+//  PostComment.m
 //  Readoop
 //
 //  Created by Marin Chitan on 21/03/2018.
 //  Copyright © 2018 Marin Chitan. All rights reserved.
 //
 
-#import "Book.h"
+#import "PostComment.h"
 
-@implementation Book
-
-+ (NSString *)primaryKey {
-    return @"bookId";
-}
+@implementation PostComment
 
 @end

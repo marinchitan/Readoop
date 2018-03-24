@@ -34,6 +34,7 @@
 		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
 		3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE12062E88400C54EBC /* RealmUtils.m */; };
 		3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE42062E89500C54EBC /* RealmConfig.m */; };
+		3E9050C62062FF5D006C8B56 /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9050C52062FF5D006C8B56 /* PostComment.m */; };
 		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
 		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
 		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
@@ -44,6 +45,7 @@
 		3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECBC493203CBB37001A263D /* ProfileViewController.m */; };
 		3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC497203CD37B001A263D /* Bariol_Regular.otf */; };
 		3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */; };
+		3ED979CE2063E94400B00F13 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979CD2063E94400B00F13 /* UserDefaultsManager.m */; };
 		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		3E734AE12062E88400C54EBC /* RealmUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmUtils.m; sourceTree = "<group>"; };
 		3E734AE32062E89500C54EBC /* RealmConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmConfig.h; sourceTree = "<group>"; };
 		3E734AE42062E89500C54EBC /* RealmConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmConfig.m; sourceTree = "<group>"; };
+		3E9050C42062FF5D006C8B56 /* PostComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostComment.h; sourceTree = "<group>"; };
+		3E9050C52062FF5D006C8B56 /* PostComment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostComment.m; sourceTree = "<group>"; };
 		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		3ECBC493203CBB37001A263D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3ECBC497203CD37B001A263D /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
 		3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular_Italic.otf; sourceTree = "<group>"; };
+		3ED979CC2063E94400B00F13 /* UserDefaultsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
+		3ED979CD2063E94400B00F13 /* UserDefaultsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
 		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,6 +203,8 @@
 				3E734AE12062E88400C54EBC /* RealmUtils.m */,
 				3E734AE32062E89500C54EBC /* RealmConfig.h */,
 				3E734AE42062E89500C54EBC /* RealmConfig.m */,
+				3ED979CC2063E94400B00F13 /* UserDefaultsManager.h */,
+				3ED979CD2063E94400B00F13 /* UserDefaultsManager.m */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -212,6 +220,8 @@
 				3EC234B52062F0040029225D /* Book.m */,
 				3EC234B72062F00E0029225D /* User.h */,
 				3EC234B82062F00E0029225D /* User.m */,
+				3E9050C42062FF5D006C8B56 /* PostComment.h */,
+				3E9050C52062FF5D006C8B56 /* PostComment.m */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -447,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED979CE2063E94400B00F13 /* UserDefaultsManager.m in Sources */,
 				3EC234B62062F0040029225D /* Book.m in Sources */,
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
 				3EC234B92062F00E0029225D /* User.m in Sources */,
@@ -464,6 +475,7 @@
 				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
+				3E9050C62062FF5D006C8B56 /* PostComment.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
 				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,

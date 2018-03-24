@@ -18,5 +18,6 @@
 #import "NSString+FontAwesome.h"
 #import "UIImage+FontAwesome.h"
 #import "Session.h"
+#import <Realm/Realm.h>
 
 #endif /* Essentials_h */

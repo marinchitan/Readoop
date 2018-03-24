@@ -7,7 +7,18 @@
 //
 
 #import "Comment.h"
+#import "Book.h"
 
 @implementation Comment
+
++ (NSDictionary *)linkingObjectsProperties {
+    return @{
+             @"commentedBook": [RLMPropertyDescriptor descriptorWithClass:Book.class propertyName:@"comments"],
+             };
+}
+
++ (NSString *)primaryKey {
+    return @"commentId";
+}
 
 @end

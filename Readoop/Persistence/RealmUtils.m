@@ -10,4 +10,12 @@
 
 @implementation RealmUtils
 
++ (void)addUserObject:(User *)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:user];
+    }];
+}
+
 @end

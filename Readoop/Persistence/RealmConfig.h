@@ -10,4 +10,6 @@
 
 @interface RealmConfig : NSObject
 
+- (void)configRealm;
+
 @end

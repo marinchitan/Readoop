@@ -10,4 +10,15 @@
 
 @implementation User
 
++ (NSString *)primaryKey {
+    return @"userId";
+}
+
++ (NSDictionary *)defaultPropertyValues {
+    return @{@"fullName" : @"Name Surname",
+             @"email": @"example@mail.com",
+             @"status":@0
+             };
+}
+
 @end
