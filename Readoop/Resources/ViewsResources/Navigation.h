@@ -24,4 +24,5 @@
 + (void)showNavBar:(UINavigationController*)navController;
 
 + (void)paintStatusBarWithColor:(UIColor*)color;
++ (void)paintNavigationBarWithColor:(UIColor *)color for:(UINavigationController *)navController;
 @end

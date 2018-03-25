@@ -15,9 +15,10 @@
 }
 
 + (NSDictionary *)defaultPropertyValues {
-    return @{@"fullName" : @"Name Surname",
-             @"email": @"example@mail.com",
-             @"status":@0
+    return @{@"fullName" : @"",
+             @"email": @"",
+             @"status":@0,
+             @"imageName":@"defaultImage"
              };
 }
 

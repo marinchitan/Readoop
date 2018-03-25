@@ -33,6 +33,8 @@
         [AlertUtils getSuccesToastPanel:@"Success!" withMessage:@"Succcessfully logged in."];
         self.appSession.wayOfArrival = others_path;
     }
+    
+    self.testLabel.text = self.appSession.currentUser.username;
 }
 
 

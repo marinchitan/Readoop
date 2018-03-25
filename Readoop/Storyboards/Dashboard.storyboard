@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MwB-qI-pWp">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zwf-Mq-rJB" id="FKS-Tc-c8m"/>
@@ -115,11 +115,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZgW-cL-I2A"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nwr-qN-VCu"/>
+                    <navigationItem key="navigationItem" id="Nwr-qN-VCu">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="3Zu-fo-xWc">
+                            <connections>
+                                <action selector="backItemAction:" destination="zwf-Mq-rJB" id="1jX-0n-8FZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="vMg-2e-W1s" userLabel="Separator Container">
+                            <rect key="frame" x="127.5" y="7" width="120" height="30.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="b6s-3k-3pe">
+                            <connections>
+                                <action selector="logOutItemAction:" destination="zwf-Mq-rJB" id="X9M-bc-qxl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backitem" destination="3Zu-fo-xWc" id="y6c-oD-5tc"/>
+                        <outlet property="logOutItem" destination="b6s-3k-3pe" id="g7K-6K-gjo"/>
+                        <outlet property="tableView" destination="MwB-qI-pWp" id="csE-Sl-e5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k19-dg-TtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="242"/>
+            <point key="canvasLocation" x="2685.5999999999999" y="241.52923538230885"/>
         </scene>
         <!--Tes View Controller-->
         <scene sceneID="14d-YH-UUZ">
@@ -141,10 +162,13 @@
                         <viewLayoutGuide key="safeArea" id="MLY-xv-xa6"/>
                     </view>
                     <navigationItem key="navigationItem" id="0bL-XE-Sfa"/>
+                    <connections>
+                        <outlet property="testLabel" destination="3c6-UQ-q7v" id="IEp-Tq-ySY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFS-E0-Hrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-83"/>
+            <point key="canvasLocation" x="1956" y="-386"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="shQ-bC-WrT">
@@ -206,7 +230,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BfR-9T-Axq" kind="relationship" relationship="rootViewController" id="W7O-ci-Bf6"/>
+                        <segue destination="zwf-Mq-rJB" kind="relationship" relationship="rootViewController" id="Ilt-w1-HDe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZm-MI-v3c" userLabel="First Responder" sceneMemberID="firstResponder"/>

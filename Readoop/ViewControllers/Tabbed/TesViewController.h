@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TesViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end

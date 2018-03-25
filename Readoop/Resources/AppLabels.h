@@ -13,6 +13,7 @@
 
 + (NSString *)getLengthError:(NSString *)field withExcepectedLength:(NSString *)length;
 + (NSString *)getSpaceError:(NSString *)field;
++ (NSString *)getUniqueUsernameError;
 + (NSString *)getDifferentPasswordsError;
 + (NSString *)getEmailError;
 + (NSString *)getNameError;

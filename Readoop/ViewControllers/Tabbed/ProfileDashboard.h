@@ -10,5 +10,10 @@
 #import "Essentials.h"
 
 @interface ProfileDashboard : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backitem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutItem;
+
 
 @end

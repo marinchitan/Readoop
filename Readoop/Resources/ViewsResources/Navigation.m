@@ -58,4 +58,9 @@
     }
 }
 
++ (void)paintNavigationBarWithColor:(UIColor *)color for:(UINavigationController *)navController {
+    navController.navigationBar.barTintColor = color;
+    navController.navigationBar.translucent = NO;
+}
+
 @end

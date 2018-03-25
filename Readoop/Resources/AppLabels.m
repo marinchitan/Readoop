@@ -18,6 +18,10 @@
     return [NSString stringWithFormat:@"The %@ field should not contain spaces.",field];
 }
 
++ (NSString *)getUniqueUsernameError {
+    return @"Username already in use. Please pick another one.";
+}
+
 + (NSString *)getDifferentPasswordsError {
     return [NSString stringWithFormat:@"The passwords do not match, please retype the password in Confirm password field."];
 }

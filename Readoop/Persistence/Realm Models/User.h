@@ -22,6 +22,7 @@ RLM_ARRAY_TYPE(User);
 @property NSString *password;
 @property NSString *fullName;
 @property NSString *email;
+@property NSString *imageName;
 
 @property NSNumber<RLMInt> *status;
 @property RLMArray<Book *><Book> *books;

@@ -46,6 +46,10 @@
 		3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC497203CD37B001A263D /* Bariol_Regular.otf */; };
 		3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */; };
 		3ED979CE2063E94400B00F13 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979CD2063E94400B00F13 /* UserDefaultsManager.m */; };
+		3ED979D2206675A700B00F13 /* ProfilePresentationCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979D1206675A600B00F13 /* ProfilePresentationCellModel.m */; };
+		3ED979D5206675E500B00F13 /* ProfileCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979D4206675E500B00F13 /* ProfileCellModel.m */; };
+		3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED979D720667A0200B00F13 /* ProfilePresentationCell.xib */; };
+		3ED979DB20667A5600B00F13 /* ProfilePresentationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */; };
 		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +126,13 @@
 		3ECBC499203CD394001A263D /* Bariol_Regular_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular_Italic.otf; sourceTree = "<group>"; };
 		3ED979CC2063E94400B00F13 /* UserDefaultsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		3ED979CD2063E94400B00F13 /* UserDefaultsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		3ED979D0206675A600B00F13 /* ProfilePresentationCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfilePresentationCellModel.h; sourceTree = "<group>"; };
+		3ED979D1206675A600B00F13 /* ProfilePresentationCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePresentationCellModel.m; sourceTree = "<group>"; };
+		3ED979D3206675E500B00F13 /* ProfileCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCellModel.h; sourceTree = "<group>"; };
+		3ED979D4206675E500B00F13 /* ProfileCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCellModel.m; sourceTree = "<group>"; };
+		3ED979D720667A0200B00F13 /* ProfilePresentationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePresentationCell.xib; sourceTree = "<group>"; };
+		3ED979D920667A5600B00F13 /* ProfilePresentationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfilePresentationCell.h; sourceTree = "<group>"; };
+		3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePresentationCell.m; sourceTree = "<group>"; };
 		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +185,8 @@
 		2D7D2FD3203C8F10005E689B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3ED979D6206675F300B00F13 /* Cells */,
+				3ED979CF2066754900B00F13 /* Models */,
 				3E59F8B6205DC73400D6FD5A /* Essentials.h */,
 				3ECBC496203CCECC001A263D /* Initial */,
 				3ECBC495203CCEBD001A263D /* Tabbed */,
@@ -303,6 +316,27 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		3ED979CF2066754900B00F13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3ED979D0206675A600B00F13 /* ProfilePresentationCellModel.h */,
+				3ED979D1206675A600B00F13 /* ProfilePresentationCellModel.m */,
+				3ED979D3206675E500B00F13 /* ProfileCellModel.h */,
+				3ED979D4206675E500B00F13 /* ProfileCellModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3ED979D6206675F300B00F13 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3ED979D720667A0200B00F13 /* ProfilePresentationCell.xib */,
+				3ED979D920667A5600B00F13 /* ProfilePresentationCell.h */,
+				3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		78ED85CCFA4A02E1CAE71CDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +418,7 @@
 				3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */,
 				3E59F8A0205BD8D300D6FD5A /* Dashboard.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
+				3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */,
 				3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
 				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
@@ -458,8 +493,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ED979CE2063E94400B00F13 /* UserDefaultsManager.m in Sources */,
+				3ED979DB20667A5600B00F13 /* ProfilePresentationCell.m in Sources */,
 				3EC234B62062F0040029225D /* Book.m in Sources */,
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
+				3ED979D2206675A700B00F13 /* ProfilePresentationCellModel.m in Sources */,
 				3EC234B92062F00E0029225D /* User.m in Sources */,
 				3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */,
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
@@ -469,6 +506,7 @@
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
 				3EC234B02062EFEC0029225D /* Post.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
+				3ED979D5206675E500B00F13 /* ProfileCellModel.m in Sources */,
 				3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */,
 				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,

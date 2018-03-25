@@ -22,6 +22,8 @@
 + (UIColor *)getBariolRed;
 + (UIColor *)getPassiveBariolRed;
 + (UIColor *)getWhite;
++ (UIColor *)getBlack;
++ (UIColor *)getSubTitleGray;
 + (UIColor *)getSilverGray;
 + (UIColor *)getAlertYellow;
 + (UIColor *)getLightGray;

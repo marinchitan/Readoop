@@ -52,14 +52,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
-    [self placeHolders];
 }
 
 - (void)placeHolders{
-    self.usernameField.text = @"dddd";
-    self.passwordFied.text = @"dddddd";
-    self.confirmpasswordField.text = @"dddddd";
-    self.doneButton.enabled = YES;
+
 }
 
 - (void)setUpUI {
@@ -183,7 +179,7 @@
         if(value.length == 0 ){
             return @"";
         } else {
-            return [self validateUsernameLength] && [self validateUsernameSpaces] ? self.validIcon : self.invalidIcon;
+            return [self validateUsernameLength] && [self validateUsernameSpaces] && [self validateUsernameUnique] ? self.validIcon : self.invalidIcon;
         }
     }];
     RAC(self.passwordValidText, text) = [passwordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
@@ -221,7 +217,7 @@
         if(value.length == 0 ){
             return @(empty_field);
         } else {
-            return [self validateUsernameLength] && [self validateUsernameSpaces] ? @(valid_field) : @(invalid_field);
+            return [self validateUsernameLength] && [self validateUsernameSpaces] && [self validateUsernameUnique] ? @(valid_field) : @(invalid_field);
         }
     }];
     RAC(self, passwState) = [passwordTextSignal map:^id _Nullable(NSString *  _Nullable value) {
@@ -263,6 +259,15 @@
     return whiteSpaceRange.location == NSNotFound ? YES : NO;
 }
 
+- (BOOL)validateUsernameUnique {
+    User *retrievedUser = [[User objectsWhere:@"username == %@",self.usernameField.text] firstObject];
+    if(retrievedUser){
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 - (BOOL)validatePasswordLength {
     return self.passwordFied.text.length >= 6;
 }
@@ -300,6 +305,11 @@
     
     if(![self validateUsernameLength]) {
         [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
+    if(![self validateUsernameUnique]) {
+        [errorString appendString:[AppLabels getUniqueUsernameError]];
         [errorString appendString:@"\n\n"];
     }
     
@@ -361,6 +371,7 @@
 - (IBAction)cancel:(id)sender {
     __weak RegisterViewController *weakSelf = self;
     //[self.navigationController popViewControllerAnimated:YES];
+    [self validateUsernameUnique];
     [AlertUtils showInformation:@"All the supplied data will be lost, do you want to continue?"
                       withTitle:@"Cancel"
                withActionButton:@"Yes"
@@ -375,6 +386,11 @@
         [AlertUtils showSuccess:@"Your input is eligible" withTitle:@"Correct!" withCancelButton:@"Got it" onVC:weakSelf];
     } else if(self.userState == invalid_field) {
         NSMutableString *errorString = [NSMutableString new];
+        
+        if(![self validateUsernameUnique]) {
+            [errorString appendString:[AppLabels getUniqueUsernameError]];
+            [errorString appendString:@"\n\n"];
+        }
         if(![self validateUsernameLength]) {
             [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
             [errorString appendString:@"\n"];
@@ -382,6 +398,7 @@
         if(![self validateUsernameSpaces]) {
             [errorString appendString:[AppLabels getSpaceError:@"Username"]];
         }
+        
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
         
     }

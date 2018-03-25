@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "RealmConfig.h"
+#import "NSString+FontAwesome.h"
 @interface AppDelegate ()
 
 @end
@@ -26,6 +27,20 @@
     //Configure SDKs
     RealmConfig *realmConfig = [RealmConfig new];
     [realmConfig configRealm];
+    
+    //Configure font for navigation bar items
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
+                                                                        forState:UIControlStateNormal];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
+                                                                        forState:UIControlStateSelected];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
+                                                                        forState:UIControlStateFocused];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
+                                                                        forState:UIControlStateHighlighted];
     
     return YES;
 }

@@ -43,6 +43,14 @@
     return [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
 }
 
++ (UIColor *)getBlack {
+    return [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(0/255.0) alpha:1];
+}
+
++ (UIColor *)getSubTitleGray {
+    return [UIColor colorWithRed:(150/255.0) green:(152/255.0) blue:(154/255.0) alpha:1];
+}
+
 + (UIColor *)getSilverGray {
     return [UIColor colorWithRed:(74/255.0) green:(76/255.0) blue:(78/255.0) alpha:1];
 }

@@ -34,7 +34,7 @@
     [self setUpUI];
     [self setUpProfilePanel];
     [self setUpSignals];
-    [self placeHolders]; // Delete in prod
+    [self placeHolders];
     self.appSession = [Session sharedSession];
 }
 
@@ -43,8 +43,8 @@
 }
 
 - (void)placeHolders{
-    self.usernameField.text = @"dddddd";
-    self.passwordField.text = @"dddddd";
+    self.usernameField.text = @"mike1";
+    self.passwordField.text = @"12345678";
     self.signInButton.enabled = YES;
 }
 
