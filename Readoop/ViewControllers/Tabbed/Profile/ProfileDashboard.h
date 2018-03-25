@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Essentials.h"
+#import "ContainerViewController.h"
 
-@interface ProfileDashboard : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ProfileDashboard : ContainerViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backitem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutItem;
-
 
 @end

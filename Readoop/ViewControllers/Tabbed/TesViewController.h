@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContainerViewController.h"
 
-@interface TesViewController : UIViewController
+@interface TesViewController : ContainerViewController
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end

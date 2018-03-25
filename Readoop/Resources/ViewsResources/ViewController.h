@@ -12,6 +12,7 @@
 #import "ProfileViewController.h"
 #import "RegisterViewController.h"
 #import "DashboardTabbed.h"
+#import "TesViewController.h"
 
 @interface ViewController : UIViewController
 
@@ -20,4 +21,6 @@
 + (RegisterViewController*)getRegisterVC;
 
 + (DashboardTabbed*)getTabbedDashboard;
+
++ (TesViewController*)getTestVC;
 @end

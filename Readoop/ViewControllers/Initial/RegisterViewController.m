@@ -371,7 +371,6 @@
 - (IBAction)cancel:(id)sender {
     __weak RegisterViewController *weakSelf = self;
     //[self.navigationController popViewControllerAnimated:YES];
-    [self validateUsernameUnique];
     [AlertUtils showInformation:@"All the supplied data will be lost, do you want to continue?"
                       withTitle:@"Cancel"
                withActionButton:@"Yes"

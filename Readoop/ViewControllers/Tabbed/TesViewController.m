@@ -16,10 +16,11 @@
 @implementation TesViewController
 
 - (void)viewDidLoad {
+    self.backButtonEnabled = YES;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appSession = [Session sharedSession];
-    }
+}
 
 - (void)viewDidAppear:(BOOL)animated{
     [self initialGreet];

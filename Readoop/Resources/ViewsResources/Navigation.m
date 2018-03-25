@@ -9,6 +9,18 @@
 
 #import "Navigation.h"
 #import <UIKit/UIKit.h>
+#import "NSString+FontAwesome.h"
+#import "Color.h"
+#import "AlertUtils.h"
+
+@interface Navigation()
+
+@property(nonatomic, strong) UINavigationController *currentNavController;
+@property(nonatomic, strong) UINavigationItem *currentNavItem;
+@property(nonatomic, strong) UIViewController *currentVC;
+@property(nonatomic, strong) UITabBarController *currentTabBar;
+
+@end
 
 @implementation Navigation
 

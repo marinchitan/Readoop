@@ -41,6 +41,10 @@
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
      @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
                                                                         forState:UIControlStateHighlighted];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont fontWithName:kFontAwesomeFamilyName size:20.0]}
+                                                                           forState:UIControlStateDisabled];
+    
     
     return YES;
 }

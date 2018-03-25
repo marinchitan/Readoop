@@ -16,6 +16,7 @@
 @implementation ProfileDashboard
 
 - (void)viewDidLoad {
+    self.backButtonEnabled = NO;
     [super viewDidLoad];
     self.appSession = [Session sharedSession];
     [self setUpUI];
@@ -32,25 +33,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 180;
     
-    [self setUpNavigationBar];
+   // [self.navigationController pushViewController:[ViewController getTestVC] animated:YES];
 }
-
-- (void)setUpNavigationBar {
-    //[Navigation paintNavigationBarWithColor:[Color getLightGray] for:self.navigationController];
-    [Navigation paintNavigationBarWithColor:[Color getBariolRed] for:self.navigationController];
-    self.backitem.tintColor = [Color getWhite];
-    self.logOutItem.tintColor = [Color getWhite];
-    
-    self.backitem.title = [NSString stringWithFormat:@" %@",[NSString fontAwesomeIconStringForEnum:FAChevronLeft]];
-    self.logOutItem.title = [NSString stringWithFormat:@"%@ ",[NSString fontAwesomeIconStringForEnum:FASignOut]];
-
-}
-
-- (IBAction)backItemAction:(id)sender {
-}
-- (IBAction)logOutItemAction:(id)sender {
-}
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ProfilePresentationCell *presentationCell = [tableView dequeueReusableCellWithIdentifier:@"profilePresentationCell"];

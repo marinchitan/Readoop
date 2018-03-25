@@ -117,24 +117,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nwr-qN-VCu">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="3Zu-fo-xWc">
-                            <connections>
-                                <action selector="backItemAction:" destination="zwf-Mq-rJB" id="1jX-0n-8FZ"/>
-                            </connections>
-                        </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="vMg-2e-W1s" userLabel="Separator Container">
-                            <rect key="frame" x="127.5" y="7" width="120" height="30.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="b6s-3k-3pe">
-                            <connections>
-                                <action selector="logOutItemAction:" destination="zwf-Mq-rJB" id="X9M-bc-qxl"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backitem" destination="3Zu-fo-xWc" id="y6c-oD-5tc"/>
-                        <outlet property="logOutItem" destination="b6s-3k-3pe" id="g7K-6K-gjo"/>
                         <outlet property="tableView" destination="MwB-qI-pWp" id="csE-Sl-e5X"/>
                     </connections>
                 </viewController>
@@ -168,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFS-E0-Hrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="-386"/>
+            <point key="canvasLocation" x="2354" y="-817"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="shQ-bC-WrT">
