@@ -23,6 +23,11 @@
 }
 
 - (void)populateWithCurrenUserData {
+    self.userImage.image = [UIImage imageNamed:@"defaultImage"];
+
+    self.userImage.layer.cornerRadius = self.userImage.frame.size.width/2 ;
+    self.userImage.clipsToBounds = YES;
+    
     Session *appSession = [Session sharedSession];
     
     

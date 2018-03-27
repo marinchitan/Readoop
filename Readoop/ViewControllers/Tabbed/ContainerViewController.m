@@ -45,8 +45,8 @@
 }
 
 - (IBAction)logOutItemAction:(id)sender {
-    [AlertUtils showInformation:@"Do you want to log out?"
-                      withTitle:@"Log Out"
+    [AlertUtils showInformation:@"Do you want to sign out?"
+                      withTitle:@"Sign Out"
                withActionButton:@"Yes"
                withCancelButton:@"No"
                      withAction:^{[self.tabBarController.navigationController popViewControllerAnimated:self.tabBarController];}

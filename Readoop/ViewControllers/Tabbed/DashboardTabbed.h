@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DashboardTabbed : UITabBarController
-
+@property (nonatomic, assign) BOOL seamless;
 @end

@@ -23,6 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    
+    if(self.seamless) {
+        [self insertLoginVCBack];
+    }
+}
+
+- (void)insertLoginVCBack {
+    [Navigation showStatusBar];
+    [Navigation makeStatusBarLightStyle];
+
+    NSMutableArray *viewControllers = [[self.navigationController viewControllers] mutableCopy];
+    ProfileViewController *loginVC = [ViewController getProfileVC];
+    
+    [viewControllers insertObject:loginVC atIndex:viewControllers.count - 1];
+    [self.navigationController setViewControllers:viewControllers];
 }
 
 - (void)setUpUI{

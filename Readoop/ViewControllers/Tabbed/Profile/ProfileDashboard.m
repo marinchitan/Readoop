@@ -34,6 +34,10 @@
     //[self.tableView registerClass:[UITableViewCell self] forCellReuseIdentifier:@"profilePresentationCell"];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self initialGreeting];
+}
+
 - (void)setUpUI {
     UINib* nib = [UINib nibWithNibName:@"ProfilePresentationCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"profilePresentationCell"];
@@ -98,10 +102,25 @@
 }
 
 - (IBAction)signOut:(id)sender {
-    NSLog(@"Sign out Clicked");
+    [AlertUtils showInformation:@"Do you want to sign out?"
+                      withTitle:@"Sign Out"
+               withActionButton:@"Yes"
+               withCancelButton:@"No"
+                     withAction:^{[self.tabBarController.navigationController popViewControllerAnimated:self.tabBarController];}
+                           onVC:self];
 }
 
-
-
+- (void)initialGreeting {
+    if(self.appSession.wayOfArrival == register_path){
+        [AlertUtils getSuccesToastPanel:@"Welcome!" withMessage:@"Succcessfully registered."];
+        self.appSession.wayOfArrival = others_path;
+    } else if(self.appSession.wayOfArrival == login_path){
+        [AlertUtils getSuccesToastPanel:@"Success!" withMessage:@"Succcessfully logged in."];
+        self.appSession.wayOfArrival = others_path;
+    } else if(self.appSession.wayOfArrival == seamless){
+        [AlertUtils getSuccesToastPanel:[NSString stringWithFormat:@"Welcome %@!",self.appSession.currentUser.username] withMessage:@"Seamless logged in."];
+        self.appSession.wayOfArrival = others_path;
+    }
+}
 
 @end

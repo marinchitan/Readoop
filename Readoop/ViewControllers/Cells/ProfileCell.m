@@ -30,6 +30,7 @@
     self.icon.textColor = [Color getPassiveTab];
     self.chevron.font = [Font getFAFont:25];
     self.title.font = [Font getBariolwithSize:23];
+    
 
     self.chevron.text = [NSString fontAwesomeIconStringForEnum:FAChevronRight];
     self.chevron.textColor = [Color getBariolRed];

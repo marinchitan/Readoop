@@ -7,6 +7,8 @@
 //
 
 #import "UserDefaultsManager.h"
+#import "User.h"
+#import "Session.h"
 
 @implementation UserDefaultsManager
 
@@ -22,14 +24,24 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *cachedUsername = [userDefaults objectForKey:@"cachedUsername"];
     NSString *cachedPassword = [userDefaults objectForKey:@"cachedPassword"];
-    NSLog(@"UserDefaults User:%@ Password:%@",cachedUsername,cachedPassword);
-    return YES;
+    User *retrievedUser = [[User objectsWhere:@"username == %@ AND password == %@", cachedUsername, cachedPassword] firstObject];
+    if(retrievedUser){
+        NSLog(@"Can be seamless logged");
+        Session *appSession = [Session sharedSession];
+        appSession.currentUser = retrievedUser;
+        appSession.wayOfArrival = seamless;
+        return YES;
+    }
+    NSLog(@"Can not be seamless logged");
+    return NO;
 }
 + (NSString*)getCurrentUsername {
-    return @"";
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:@"cachedUsername"];
 }
 + (NSString*)getCurrentPassword {
-    return @"";
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    return [userDefaults objectForKey:@"cachedPassword"];
 }
 
 @end

@@ -27,13 +27,7 @@
 }
 
 - (void)initialGreet {
-    if(self.appSession.wayOfArrival == register_path){
-        [AlertUtils getSuccesToastPanel:@"Welcome!" withMessage:@"Succcessfully registered."];
-        self.appSession.wayOfArrival = others_path;
-    } else if(self.appSession.wayOfArrival == login_path){
-        [AlertUtils getSuccesToastPanel:@"Success!" withMessage:@"Succcessfully logged in."];
-        self.appSession.wayOfArrival = others_path;
-    }
+   
     
     self.testLabel.text = self.appSession.currentUser.username;
 }

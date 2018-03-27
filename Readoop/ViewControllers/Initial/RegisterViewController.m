@@ -43,19 +43,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.appSession = [Session sharedSession];
     self.initialCornerRadius = 5.0;
     [self setUpUI];
     [self setUpRegisterPanel];
     [self setUpSignals];
-    self.appSession = [Session sharedSession];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
+    if(self.appSession.alreadyRegisteredThisSession){
+        [self clearFields];
+        self.appSession.alreadyRegisteredThisSession = NO;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
-- (void)placeHolders{
-
+- (void)clearFields{
+    self.usernameField.text = @"";
+    self.passwordFied.text = @"";
+    self.confirmpasswordField.text = @"";
+    self.fullnameField.text = @"";
+    self.emailField.text = @"";
 }
 
 - (void)setUpUI {
@@ -362,6 +372,8 @@
         //if succesessfully registered save credentials to cache, so next time will be seamless logged
         [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordFied.text];
         self.appSession.wayOfArrival = register_path;
+        self.appSession.alreadyRegisteredThisSession = YES;
+        
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied" withCancelButton:@"Got it!" onVC:weakSelf];

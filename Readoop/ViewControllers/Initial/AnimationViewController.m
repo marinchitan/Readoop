@@ -10,6 +10,7 @@
 #import "Color.h"
 #import "ViewController.h"
 #import "Navigation.h"
+#import "UserDefaultsManager.h"
 
 @interface AnimationViewController ()
 
@@ -22,6 +23,10 @@
     [self setUpUI];
     [self setUpLeftConstraint];
     [self pushProfileVCWithDelay:1.0]; //3.0 in prod
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [Navigation hideNavBar:[self navigationController]];
 }
 
 - (void)setUpLeftConstraint {
@@ -74,9 +79,15 @@
 
 - (void)pushProfileVCWithDelay:(int64_t)transitionDelay {
     ProfileViewController *profileVC = [ViewController getProfileVC];
-    
+    DashboardTabbed* dashboard = [ViewController getTabbedDashboard];
+    dashboard.seamless = YES;
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(transitionDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.navigationController pushViewController:profileVC animated:YES];
+        if([UserDefaultsManager checkCredentialsValability]){//Seamless login
+            [self.navigationController pushViewController:dashboard animated:YES];
+        } else { //Normal login
+            [self.navigationController pushViewController:profileVC animated:YES];
+        }
     });
 }
 

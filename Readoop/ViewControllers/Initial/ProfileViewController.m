@@ -24,6 +24,7 @@
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
 @property (nonatomic, strong) Session* appSession;
+
 @end
 
 @implementation ProfileViewController
@@ -34,7 +35,7 @@
     [self setUpUI];
     [self setUpProfilePanel];
     [self setUpSignals];
-    [self placeHolders];
+    //[self placeHolders];
     self.appSession = [Session sharedSession];
 }
 
@@ -174,6 +175,5 @@
                     withAction:^{ exit(0);}
                           onVC:weakSelf];
 }
-
 
 @end
