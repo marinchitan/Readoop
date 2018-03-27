@@ -25,6 +25,7 @@
 - (void)populateWithCurrenUserData {
     Session *appSession = [Session sharedSession];
     
+    
     NSString *fullName = appSession.currentUser.fullName;
     NSString *username = appSession.currentUser.username;
     NSString *email = appSession.currentUser.email;

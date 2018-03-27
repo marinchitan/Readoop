@@ -83,4 +83,8 @@
     return [UIColor whiteColor];
 }
 
++ (UIColor *)getUltraLightGray {
+    return [UIColor colorWithRed:(230/255.0) green:(230/255.0) blue:(230/255.0) alpha:1];
+}
+
 @end

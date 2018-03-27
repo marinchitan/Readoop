@@ -12,5 +12,6 @@
 @interface Font : NSObject
 
 + (UIFont *)getBariolwithSize:(CGFloat)size;
++ (UIFont *)getFAFont:(CGFloat)size;
 
 @end

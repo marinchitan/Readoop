@@ -12,6 +12,7 @@
 typedef enum wayOfArrival{
    register_path,
    login_path,
+   seamless,
    others_path
 }ArrivalWay;
 

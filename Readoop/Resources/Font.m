@@ -7,12 +7,16 @@
 //
 
 #import "Font.h"
-
+#import "NSString+FontAwesome.h"
 
 @implementation Font
 
 + (UIFont *)getBariolwithSize:(CGFloat)size {
     return [UIFont fontWithName:@"Bariol" size:size];
+}
+
++ (UIFont *)getFAFont:(CGFloat)size {
+    return [UIFont fontWithName:kFontAwesomeFamilyName size:20.0];
 }
 
 @end
