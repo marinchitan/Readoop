@@ -53,11 +53,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
-    if(self.appSession.alreadyRegisteredThisSession){
-        [self clearFields];
-        self.appSession.alreadyRegisteredThisSession = NO;
-        [self.navigationController popViewControllerAnimated:YES];
-    }
 }
 
 - (void)clearFields{
@@ -372,9 +367,10 @@
         //if succesessfully registered save credentials to cache, so next time will be seamless logged
         [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordFied.text];
         self.appSession.wayOfArrival = register_path;
-        self.appSession.alreadyRegisteredThisSession = YES;
+        self.appSession.justRegistered = YES;
         
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
+        
     } else {
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied" withCancelButton:@"Got it!" onVC:weakSelf];
     }

@@ -13,9 +13,10 @@
 #import "Font.h"
 #import "UIImage+FontAwesome.h"
 #import "Navigation.h"
+#import "Session.h"
 
 @interface DashboardTabbed ()
-
+@property (nonatomic, strong) Session* appSession;
 @end
 
 @implementation DashboardTabbed
@@ -25,8 +26,20 @@
     [self setUpUI];
     
     if(self.seamless) {
-        [self insertLoginVCBack];
+        [self insertLoginVCBack];  // The user just logged seamless, add the LoginVC in stack so he can log out on to it
     }
+    
+    self.appSession = [Session sharedSession];
+    if(self.appSession.justRegistered) { // The user just registered so when he loges out he must be brought to LoginVC not RegisterVC, so remove RegisterVC from stack
+        [self removeRegisterVCFromStack];
+    }
+}
+
+- (void)removeRegisterVCFromStack {
+    NSMutableArray *viewControllers = [[self.navigationController viewControllers] mutableCopy];
+    [viewControllers removeObjectAtIndex:2]; //Index of registerVC [0]AnimationVC -> [1]LoginVC -> [2]RegisterVC
+    [self.navigationController setViewControllers:viewControllers];
+    self.appSession.justRegistered = NO;
 }
 
 - (void)insertLoginVCBack {

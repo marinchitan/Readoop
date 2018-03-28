@@ -84,7 +84,7 @@
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(transitionDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if([UserDefaultsManager checkCredentialsValability]){//Seamless login
-            [self.navigationController pushViewController:dashboard animated:YES];
+            [self.navigationController pushViewController:profileVC animated:YES];
         } else { //Normal login
             [self.navigationController pushViewController:profileVC animated:YES];
         }
