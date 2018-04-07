@@ -43,23 +43,26 @@
 }
 
 - (void)setUpIcons:(int)value {
-    switch(value) {
+    switch(value) { //The order of the titles
         case 0:
-            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAPencil];
-            break;
-        case 1:
-            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUnlockAlt];
-            break;
-        case 2:
-            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAFile];
-            break;
-        case 3:
-            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUsers];
-            break;
-        case 4:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FABook];
             break;
+        case 1:
+            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUsers];
+            break;
+        case 2:
+            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAuserPlus];
+            break;
+        case 3:
+            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAPencil];
+            break;
+        case 4:
+            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUnlockAlt];
+            break;
         case 5:
+            self.icon.text = [NSString fontAwesomeIconStringForEnum:FAFile];
+            break;
+        case 6:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FASignOut];
             break;
     }

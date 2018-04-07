@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "Navigation.h"
 #import "UserDefaultsManager.h"
+#import "Session.h"
 
 @interface AnimationViewController ()
 
@@ -83,8 +84,10 @@
     dashboard.seamless = YES;
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(transitionDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if([UserDefaultsManager checkCredentialsValability]){//Seamless login
-            [self.navigationController pushViewController:profileVC animated:YES];
+        if([UserDefaultsManager checkCredentialsValability] && [UserDefaultsManager getCurrentUser].shouldBeRemembered){//Seamless login
+            Session *appSession = [Session sharedSession];
+            appSession.currentUser = [UserDefaultsManager getCurrentUser];
+            [self.navigationController pushViewController:dashboard animated:YES];
         } else { //Normal login
             [self.navigationController pushViewController:profileVC animated:YES];
         }

@@ -41,6 +41,12 @@
                    onVC:(UIViewController *)vc;
 
 + (void)showSuccess:(NSString *)message
+          withTitle:(NSString *)title
+   withActionButton:(NSString *)actionButtonLabel
+         withAction:(void (^)())actionBlock
+               onVC:(UIViewController *)vc;
+
++ (void)showSuccess:(NSString *)message
               withTitle:(NSString *)title
        withActionButton:(NSString *)actionButtonLabel
        withCancelButton:(NSString *)buttonLabel

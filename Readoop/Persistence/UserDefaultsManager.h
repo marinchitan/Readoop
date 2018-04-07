@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface UserDefaultsManager : NSObject
 
@@ -14,5 +15,6 @@
 + (BOOL)checkCredentialsValability;
 + (NSString*)getCurrentUsername;
 + (NSString*)getCurrentPassword;
++ (User*)getCurrentUser;
 
 @end

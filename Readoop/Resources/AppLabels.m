@@ -11,7 +11,7 @@
 @implementation AppLabels
 
 + (NSString *)getLengthError:(NSString *)field withExcepectedLength:(NSString *)length{
-    return [NSString stringWithFormat:@"The %@ field should be at least %@ characters long.",field,length];
+    return [NSString stringWithFormat:@"The %@ field should containt at least %@ characters.",field,length];
 }
 
 + (NSString *)getSpaceError:(NSString *)field{
@@ -32,6 +32,14 @@
 
 + (NSString *)getNameError {
     return [NSString stringWithFormat:@"The name field can not contain numbers."];
+}
+
++ (NSString *)getWrongOldPasswordError {
+    return [NSString stringWithFormat:@"Wrong old password"];
+}
+
++ (NSString *)getDifferentNewPasswordsError {
+    return [NSString stringWithFormat:@"The passwords do not match, please retype the new password."];
 }
 
 @end

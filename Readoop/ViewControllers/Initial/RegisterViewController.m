@@ -308,11 +308,6 @@
         [errorString appendString:@"\n\n"];
     }
     
-    if(![self validateUsernameLength]) {
-        [errorString appendString:[AppLabels getLengthError:@"Username" withExcepectedLength:@"4"]];
-        [errorString appendString:@"\n\n"];
-    }
-    
     if(![self validateUsernameUnique]) {
         [errorString appendString:[AppLabels getUniqueUsernameError]];
         [errorString appendString:@"\n\n"];
@@ -368,6 +363,8 @@
         [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordFied.text];
         self.appSession.wayOfArrival = register_path;
         self.appSession.justRegistered = YES;
+        
+        
         
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
         
@@ -425,7 +422,6 @@
             [errorString appendString:[AppLabels getSpaceError:@"Password"]];
         }
         [AlertUtils showAlertModal:errorString withTitle:@"Wrong data supplied!" withCancelButton:@"Got it" onVC:weakSelf];
-        
     }
 }
 

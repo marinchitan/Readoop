@@ -25,6 +25,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *rememberMeIcon;
+@property (weak, nonatomic) IBOutlet UILabel *rememberMeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *rememberMeButton;
+
+@property (nonatomic, assign) BOOL rememberMeEnabled;
+
 @property (weak, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *modularScrollView;
 
 @end

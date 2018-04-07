@@ -7,6 +7,7 @@
 //
 
 #import "FeedDashboard.h"
+#import "Color.h"
 
 @interface FeedDashboard ()
 
@@ -20,7 +21,8 @@
 }
 
 - (void)setUpUI {
-    [Navigation hideNavBar:self.navigationController];
+    //[Navigation hideNavBar:self.navigationController];
+    [Navigation paintStatusBarWithColor:[Color getBariolRed]];
 }
 
 @end

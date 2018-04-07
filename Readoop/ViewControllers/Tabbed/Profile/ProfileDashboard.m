@@ -13,7 +13,6 @@
 #import "CellModel.h"
 
 @interface ProfileDashboard ()
-@property (nonatomic, strong) Session* appSession;
 @property (nonatomic, strong) NSMutableArray* dataSource;
 @property (nonatomic, strong) NSArray* profileCellsTitles;
 @property (nonatomic, strong) NSArray* profileCellSelectors;
@@ -22,7 +21,7 @@
 @implementation ProfileDashboard
 
 - (void)viewDidLoad {
-    self.backButtonEnabled = NO;
+    self.backButtonEnabled = NO;  //Disable back button for this VC
     [super viewDidLoad];
     self.appSession = [Session sharedSession];
     
@@ -82,15 +81,18 @@
 }
 
 - (IBAction)editProfile:(id)sender {
-    NSLog(@"Edit Clicked");
+    EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
+    [self.navigationController pushViewController:editProfileVC animated:YES];
 }
 
 - (IBAction)changePassword:(id)sender {
-    NSLog(@"Ch Passw Clicked");
+    ChangePasswordVC *changePasswordVC = [ViewController getChangePasswVC];
+    [self.navigationController pushViewController:changePasswordVC animated:YES];
 }
 
 - (IBAction)additionalInfo:(id)sender {
-    NSLog(@"Additional info Clicked");
+    AdditionalInfoVC *additionalInfoVC = [ViewController getAdditionalInfoVC];
+    [self.navigationController pushViewController:additionalInfoVC animated:YES];
 }
 
 - (IBAction)myFriends:(id)sender {
@@ -99,6 +101,10 @@
 
 - (IBAction)myBooks:(id)sender {
     NSLog(@"My Books Clicked");
+}
+
+- (IBAction)requests:(id)sender {
+    NSLog(@"Requests clicked");
 }
 
 - (IBAction)signOut:(id)sender {

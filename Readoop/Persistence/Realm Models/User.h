@@ -24,6 +24,15 @@ RLM_ARRAY_TYPE(User);
 @property NSString *email;
 @property NSString *imageName;
 
+//Additional info
+@property NSDate *dateOfBirth;
+@property NSString *city;
+@property NSString *country;
+
+//Flags
+@property BOOL shouldBeRemembered;
+@property BOOL firstTimeRegsitered;
+
 @property NSNumber<RLMInt> *status;
 @property RLMArray<Book *><Book> *books;
 @property RLMArray<User *><User> *friends;

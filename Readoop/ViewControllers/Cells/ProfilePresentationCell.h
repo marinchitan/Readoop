@@ -16,4 +16,6 @@
 
 - (void)populateWithCurrenUserData;
 
+- (void)addUserWithName:(NSString*)name withPassword:(NSString*)password;
+
 @end

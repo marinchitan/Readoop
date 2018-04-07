@@ -44,4 +44,19 @@
             instantiateViewControllerWithIdentifier:@"testViewController"];
 }
 
++ (ChangePasswordVC*)getChangePasswVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"changePasswordVC"];
+}
+
++ (EditProfileVC*)getEditProfileVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"editProfileVC"];
+}
+
++ (AdditionalInfoVC*)getAdditionalInfoVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"additionalInfoVC"];
+}
+
 @end

@@ -20,6 +20,9 @@
 #import "UserDefaultsManager.h"
 #import "User.h"
 #import <Realm/Realm.h>
+#import "Font.h"
+#import "NSString+FontAwesome.h"
+#import "RealmUtils.h"
 
 @interface ProfileViewController ()
 @property (assign, nonatomic) CGFloat initialCornerRadius;
@@ -35,18 +38,19 @@
     [self setUpUI];
     [self setUpProfilePanel];
     [self setUpSignals];
-    //[self placeHolders];
     self.appSession = [Session sharedSession];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [Navigation hideNavBar:[self navigationController]];
+    if(!self.rememberMeEnabled){
+        [self clearFields];
+    }
 }
 
-- (void)placeHolders{
-    self.usernameField.text = @"mike1";
-    self.passwordField.text = @"12345678";
-    self.signInButton.enabled = YES;
+- (void)clearFields {
+    self.usernameField.text = @"";
+    self.passwordField.text = @"";
 }
 
 - (void)setUpUI {
@@ -85,6 +89,22 @@
     
     self.usernameLabel.hidden = NO;
     self.passwordLabel.hidden = NO;
+    
+    [self setUpRememberMe];
+}
+
+- (void)setUpRememberMe {
+    self.rememberMeIcon.font = [Font getFAFont:20];
+    self.rememberMeIcon.textColor = [Color getPassiveTab];
+    self.rememberMeIcon.text = [NSString fontAwesomeIconStringForEnum:FACheckSquareO];
+    
+    self.rememberMeLabel.font = [Font getBariolwithSize:14];
+    self.rememberMeEnabled = YES;
+}
+
+- (IBAction)tapRememberMe:(id)sender {
+    self.rememberMeIcon.text = self.rememberMeEnabled ? [NSString fontAwesomeIconStringForEnum:FASquareO] : [NSString fontAwesomeIconStringForEnum:FACheckSquareO];
+    self.rememberMeEnabled = !self.rememberMeEnabled;
 }
 
 - (void)setUpSignals {
@@ -137,17 +157,15 @@
 }
 
 - (BOOL)userCredentialsCheck {
-    NSString *suppliedUserName = self.usernameField.text;
-    NSString *suppliedPassword = self.passwordField.text;
-    
-    User *retrievedUser = [[User objectsWhere:@"username == %@",suppliedUserName] firstObject];
+    User *retrievedUser = [RealmUtils getUserByName:self.usernameField.text byPassword:self.passwordField.text];
     if(retrievedUser){
-        if([retrievedUser.password isEqualToString:suppliedPassword]){
-            self.appSession.currentUser = retrievedUser;
-            return YES;
-        }
+        //MONGOPUT
+        [RealmUtils changeRememberStatusForUser:retrievedUser shouldBeRemembered:self.rememberMeEnabled];
+        self.appSession.currentUser = retrievedUser;
+        return YES;
+    } else {
+        return NO;
     }
-    return NO;
 }
 
 - (IBAction)signIn:(id)sender {
@@ -155,6 +173,7 @@
         //if succesessfully logged save credentials to cache, so next time will be seamless logged
         [UserDefaultsManager saveCredentialsUsername:self.usernameField.text password:self.passwordField.text];
         self.appSession.wayOfArrival = login_path;
+        
         [self.navigationController pushViewController:[ViewController getTabbedDashboard] animated:YES];
     } else {
         [AlertUtils getErrorToastPanel:@"Oops!" withMessage:@"Wrong credentials supplied"];

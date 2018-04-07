@@ -35,6 +35,15 @@
     NSLog(@"Can not be seamless logged");
     return NO;
 }
+
++ (User*)getCurrentUser {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *cachedUsername = [userDefaults objectForKey:@"cachedUsername"];
+    NSString *cachedPassword = [userDefaults objectForKey:@"cachedPassword"];
+    User *retrievedUser = [[User objectsWhere:@"username == %@ AND password == %@", cachedUsername, cachedPassword] firstObject];
+    return retrievedUser;
+}
+
 + (NSString*)getCurrentUsername {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     return [userDefaults objectForKey:@"cachedUsername"];

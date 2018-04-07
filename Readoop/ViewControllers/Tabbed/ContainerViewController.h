@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Session.h"
 
 @interface ContainerViewController : UIViewController
 @property (nonatomic, assign) BOOL backButtonEnabled;
+@property (assign, nonatomic) CGFloat initialCornerRadius;
+@property (nonatomic, strong) Session* appSession;
 @end

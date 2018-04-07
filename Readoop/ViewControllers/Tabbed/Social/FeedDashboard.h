@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Essentials.h"
 
-@interface FeedDashboard : UIViewController
+@interface FeedDashboard : ContainerViewController
 
 @end

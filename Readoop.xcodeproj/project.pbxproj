@@ -12,6 +12,10 @@
 		2D7D2FCD203C8EE7005E689B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D2FCC203C8EE7005E689B /* main.m */; };
 		2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D2FD6203C90FF005E689B /* AnimationViewController.m */; };
 		2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7D2FD9203C91FF005E689B /* ViewController.m */; };
+		3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635D420777576001D0A09 /* ChangePasswordVC.m */; };
+		3E0635D8207775C1001D0A09 /* EditProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635D7207775C1001D0A09 /* EditProfileVC.m */; };
+		3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */; };
+		3E0635DE2077AA2B001D0A09 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635DD2077AA2B001D0A09 /* ViewUtils.m */; };
 		3E366D992044864B008B9CF7 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366D982044864B008B9CF7 /* Navigation.m */; };
 		3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366D9F204804EE008B9CF7 /* Modular.storyboard */; };
 		3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA5204817BF008B9CF7 /* Profile.storyboard */; };
@@ -69,6 +73,14 @@
 		2D7D2FD8203C91FF005E689B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2D7D2FD9203C91FF005E689B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		36B05A971F5547FB89CE10F0 /* Pods-Readoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Readoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Readoop/Pods-Readoop.debug.xcconfig"; sourceTree = "<group>"; };
+		3E0635D320777576001D0A09 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
+		3E0635D420777576001D0A09 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
+		3E0635D6207775C1001D0A09 /* EditProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileVC.h; sourceTree = "<group>"; };
+		3E0635D7207775C1001D0A09 /* EditProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileVC.m; sourceTree = "<group>"; };
+		3E0635D9207775DE001D0A09 /* AdditionalInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdditionalInfoVC.h; sourceTree = "<group>"; };
+		3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdditionalInfoVC.m; sourceTree = "<group>"; };
+		3E0635DC2077AA2B001D0A09 /* ViewUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		3E0635DD2077AA2B001D0A09 /* ViewUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
 		3E366D972044864B008B9CF7 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
 		3E366D982044864B008B9CF7 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
 		3E366D9F204804EE008B9CF7 /* Modular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modular.storyboard; sourceTree = "<group>"; };
@@ -273,7 +285,7 @@
 			children = (
 				3ED979E520680DB400B00F13 /* Settings */,
 				3ED979E420680DAD00B00F13 /* Library */,
-				3ED979E320680DA800B00F13 /* Feed */,
+				3ED979E320680DA800B00F13 /* Social */,
 				3ED979E220680DA300B00F13 /* Profile */,
 				3E59F8A1205BD94800D6FD5A /* DashboardTabbed.h */,
 				3E59F8A2205BD94800D6FD5A /* DashboardTabbed.m */,
@@ -317,6 +329,8 @@
 				3E59F8A8205BFE1400D6FD5A /* Font.m */,
 				3E59F8B7205E845600D6FD5A /* Session.h */,
 				3E59F8B8205E845600D6FD5A /* Session.m */,
+				3E0635DC2077AA2B001D0A09 /* ViewUtils.h */,
+				3E0635DD2077AA2B001D0A09 /* ViewUtils.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -359,17 +373,23 @@
 			children = (
 				3E59F8AA205C3BE900D6FD5A /* ProfileDashboard.h */,
 				3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */,
+				3E0635D320777576001D0A09 /* ChangePasswordVC.h */,
+				3E0635D420777576001D0A09 /* ChangePasswordVC.m */,
+				3E0635D6207775C1001D0A09 /* EditProfileVC.h */,
+				3E0635D7207775C1001D0A09 /* EditProfileVC.m */,
+				3E0635D9207775DE001D0A09 /* AdditionalInfoVC.h */,
+				3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		3ED979E320680DA800B00F13 /* Feed */ = {
+		3ED979E320680DA800B00F13 /* Social */ = {
 			isa = PBXGroup;
 			children = (
 				3E59F8AD205C3C0500D6FD5A /* FeedDashboard.h */,
 				3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */,
 			);
-			path = Feed;
+			path = Social;
 			sourceTree = "<group>";
 		};
 		3ED979E420680DAD00B00F13 /* Library */ = {
@@ -552,6 +572,8 @@
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
 				3EC234B92062F00E0029225D /* User.m in Sources */,
 				3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */,
+				3E0635DE2077AA2B001D0A09 /* ViewUtils.m in Sources */,
+				3E0635D8207775C1001D0A09 /* EditProfileVC.m in Sources */,
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
 				3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */,
 				3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */,
@@ -564,6 +586,7 @@
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
 				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
+				3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */,
 				3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */,
 				3E895B0F206960A30091FD3C /* CellModel.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
@@ -576,6 +599,7 @@
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
+				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
 				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,

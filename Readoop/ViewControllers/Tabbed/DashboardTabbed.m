@@ -73,7 +73,7 @@
     configurationItem.selectedImage = [[UIImage imageWithIcon:@"fa-cog" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
     profileItem.title = @"Profile";
-    feedItem.title = @"Feed";
+    feedItem.title = @"Social";
     libraryItem.title = @"Library";
     configurationItem.title = @"Settings";
     

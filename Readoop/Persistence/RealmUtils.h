@@ -13,4 +13,9 @@
 
 + (void)addUserObject:(User *)user;
 
++ (User*)getUserByName:(NSString*)name byPassword:(NSString*)password;
+
++ (void)changeRememberStatusForUser:(User*)user shouldBeRemembered:(BOOL)remember;
++ (void)changePasswordForUser:(User*)user newPassword:(NSString*)newPassword;
+
 @end

@@ -19,5 +19,8 @@
 #import "UIImage+FontAwesome.h"
 #import "Session.h"
 #import <Realm/Realm.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import "ContainerViewController.h"
+#import "ViewUtils.h"
 
 #endif /* Essentials_h */

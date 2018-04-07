@@ -20,6 +20,8 @@
     if(self.navigationController) { //If it is in a navigation stack
         [self setupNavigationBar];  //Setup navBar
     }
+    self.initialCornerRadius = 5.0f;
+    self.appSession = [Session sharedSession];
 }
 
 - (void)setupNavigationBar {

@@ -91,6 +91,21 @@
 + (void)showSuccess:(NSString *)message
           withTitle:(NSString *)title
    withActionButton:(NSString *)actionButtonLabel
+         withAction:(void (^)())actionBlock
+               onVC:(UIViewController *)vc {
+    SCLAlertViewBuilder *builder = [SCLAlertViewBuilder new]
+    .addButtonWithActionBlock(actionButtonLabel, actionBlock);
+    SCLAlertViewShowBuilder *showBuilder = [SCLAlertViewShowBuilder new]
+    .style(SCLAlertViewStyleSuccess)
+    .title(title)
+    .subTitle(message)
+    .duration(0);
+    [showBuilder showAlertView:builder.alertView onViewController:vc];
+}
+
++ (void)showSuccess:(NSString *)message
+          withTitle:(NSString *)title
+   withActionButton:(NSString *)actionButtonLabel
    withCancelButton:(NSString *)buttonLabel
          withAction:(void (^)())actionBlock
                onVC:(UIViewController *)vc {

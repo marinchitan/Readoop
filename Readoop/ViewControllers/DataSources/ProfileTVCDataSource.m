@@ -29,16 +29,17 @@
     [dataSource addObject:simpleCellModel];
     [dataSource addObject:simpleCellModel];
     [dataSource addObject:simpleCellModel];
+    [dataSource addObject:simpleCellModel];
     
     return dataSource;
 }
 
 + (NSArray *)getProfileCellsTitles {
-    return @[@"Edit profile", @"Change password", @"Additional info", @"My Friends", @"My Books", @"Sign Out"];
+    return @[@"My Books", @"My Friends", @"Requests", @"Edit profile", @"Change password", @"Additional info", @"Sign Out"];
 }
 
 + (NSArray *)getProfileCellsSelectors {
-    return @[@"editProfile:", @"changePassword:", @"additionalInfo:", @"myFriends:", @"myBooks:", @"signOut:"];
+    return @[@"myBooks:", @"myFriends:", @"requests:", @"editProfile:", @"changePassword:", @"additionalInfo:", @"myFriends:", @"myBooks:", @"signOut:"];
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface AppLabels : NSObject
 
@@ -17,5 +18,6 @@
 + (NSString *)getDifferentPasswordsError;
 + (NSString *)getEmailError;
 + (NSString *)getNameError;
-
++ (NSString *)getWrongOldPasswordError;
++ (NSString *)getDifferentNewPasswordsError;
 @end

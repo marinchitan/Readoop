@@ -13,6 +13,9 @@
 #import "RegisterViewController.h"
 #import "DashboardTabbed.h"
 #import "TesViewController.h"
+#import "ChangePasswordVC.h"
+#import "EditProfileVC.h"
+#import "AdditionalInfoVC.h"
 
 @interface ViewController : UIViewController
 
@@ -22,5 +25,10 @@
 
 + (DashboardTabbed*)getTabbedDashboard;
 
++ (ChangePasswordVC*)getChangePasswVC;
++ (EditProfileVC*)getEditProfileVC;
++ (AdditionalInfoVC*)getAdditionalInfoVC;
+
 + (TesViewController*)getTestVC;
+
 @end

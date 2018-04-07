@@ -27,8 +27,6 @@
 }
 
 - (void)initialGreet {
-   
-    
     self.testLabel.text = self.appSession.currentUser.username;
 }
 
