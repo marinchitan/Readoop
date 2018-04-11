@@ -42,4 +42,8 @@
     return [NSString stringWithFormat:@"The passwords do not match, please retype the new password."];
 }
 
++ (NSString *)getCountryNumError {
+    return @"The country and city field should not contains numbers.";
+}
+
 @end

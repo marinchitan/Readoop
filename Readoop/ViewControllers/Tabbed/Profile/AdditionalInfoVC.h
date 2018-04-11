@@ -10,6 +10,10 @@
 #import "ContainerViewController.h"
 
 @interface AdditionalInfoVC : ContainerViewController
-@property (weak, nonatomic) IBOutlet UIDatePicker *test;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *cityField;
+@property (weak, nonatomic) IBOutlet UITextField *countryField;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

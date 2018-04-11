@@ -17,5 +17,7 @@
 
 + (void)changeRememberStatusForUser:(User*)user shouldBeRemembered:(BOOL)remember;
 + (void)changePasswordForUser:(User*)user newPassword:(NSString*)newPassword;
-
++ (void)changeCountryForUser:(User*)user newCountry:(NSString*)country;
++ (void)changeCityForUser:(User*)user newCity:(NSString*)city;
++ (void)changeDateForUser:(User*)user newDate:(NSDate*)date;
 @end

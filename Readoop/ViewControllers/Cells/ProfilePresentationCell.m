@@ -35,6 +35,13 @@
     NSString *username = appSession.currentUser.username;
     NSString *email = appSession.currentUser.email;
     NSString *location = @"";
+    if(![appSession.currentUser.city isEqualToString:@""] && ![appSession.currentUser.country isEqualToString:@""]){
+        location = [NSString stringWithFormat:@"%@, %@", appSession.currentUser.country, appSession.currentUser.city];
+    } else if([appSession.currentUser.city isEqualToString:@""] && ![appSession.currentUser.country isEqualToString:@""]){
+        location = [NSString stringWithFormat:@"%@", appSession.currentUser.country];
+    } else if(![appSession.currentUser.city isEqualToString:@""] && [appSession.currentUser.country isEqualToString:@""]) {
+        location = [NSString stringWithFormat:@"%@", appSession.currentUser.city];
+    }
     
     NSMutableAttributedString *formattedNameString = [[NSMutableAttributedString alloc]
                                                        initWithAttributedString: fullName.length > 0 ?

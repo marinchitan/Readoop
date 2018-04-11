@@ -118,6 +118,8 @@
     __weak ChangePasswordVC *weakSelf = self;
     if([errorString isEqualToString:@""]){
     //success
+        //MONGOPUT
+        [RealmUtils changePasswordForUser:self.appSession.currentUser newPassword:self.nwPasswordField.text];
         [AlertUtils showSuccess:@"Password was changed"
                       withTitle:@"Success!"
                withActionButton:@"Ok"

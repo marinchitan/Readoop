@@ -20,4 +20,5 @@
 + (NSString *)getNameError;
 + (NSString *)getWrongOldPasswordError;
 + (NSString *)getDifferentNewPasswordsError;
++ (NSString *)getCountryNumError;
 @end

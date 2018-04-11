@@ -37,11 +37,35 @@
     }];
 }
 
-+ (void)changePasswordForUser:(User*)user newPasswrod:(NSString*)newPassword {
++ (void)changePasswordForUser:(User*)user newPassword:(NSString*)newPassword {
     RLMRealm *realm = [RLMRealm defaultRealm];
    
     [realm transactionWithBlock:^{
         user.password = newPassword;
+    }];
+}
+
++ (void)changeCountryForUser:(User*)user newCountry:(NSString*)country {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.country = country;
+    }];
+}
+
++ (void)changeCityForUser:(User*)user newCity:(NSString*)city {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.city = city;
+    }];
+}
+
++ (void)changeDateForUser:(User*)user newDate:(NSDate*)date {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.dateOfBirth = date;
     }];
 }
 

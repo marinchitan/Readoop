@@ -22,5 +22,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "ContainerViewController.h"
 #import "ViewUtils.h"
+#import "RealmUtils.h"
+#import "User.h"
 
 #endif /* Essentials_h */
