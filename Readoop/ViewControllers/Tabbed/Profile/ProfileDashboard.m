@@ -72,6 +72,7 @@
         [cell.actionButton addTarget:self
                               action:NSSelectorFromString(cellModel.action)
                     forControlEvents:UIControlEventTouchUpInside];
+        
         [cell setUpCellIconIndex:indexPath.row - 1];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -105,8 +106,8 @@
 
 - (IBAction)changePasswordAction:(id)sender {
     NSLog(@"changePassword clicked");
-    ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
-    [self.navigationController pushViewController:chpsswVC animated:YES];
+    //ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
+    //[self.navigationController pushViewController:chpsswVC animated:YES];
 }
 
 - (IBAction)additionalInfoAction:(id)sender {
