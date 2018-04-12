@@ -19,7 +19,11 @@ typedef enum typeOfCell{
 @property(nonatomic, strong) NSString *reuseIdentifier;
 @property(nonatomic, assign) CellType *cellType;
 
-+ (CellModel*)getCellModelWithCell:(id)cell withIdentifier:(NSString*)reuseIdentifier withType:(CellType)type;
+@property(nonatomic, strong) NSString *action;
+@property(nonatomic, strong) NSString *title;
+
+
++ (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withType:(CellType)type;
 
 @end
 

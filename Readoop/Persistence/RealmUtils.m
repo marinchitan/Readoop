@@ -69,4 +69,28 @@
     }];
 }
 
++ (void)changeUsernameForUser:(User*)user newUsername:(NSString*)username {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.username = username;
+    }];
+}
+
++ (void)changeEmailForUser:(User*)user newEmail:(NSString*)email {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.email = email;
+    }];
+}
+
++ (void)changeFullNameForUser:(User*)user newName:(NSString*)name {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.fullName = name;
+    }];
+}
+
 @end

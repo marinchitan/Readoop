@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *chevron;
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
 
-- (void)setUpCellWithTitle:(NSString*)title titleIndex:(int)value;
+- (void)setUpCellIconIndex:(int)value;
 - (void)setActionForCell:(NSString*)selectorString onVC:(UIViewController*)vc;
 
 @end

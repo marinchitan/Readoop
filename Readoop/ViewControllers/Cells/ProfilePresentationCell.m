@@ -10,6 +10,8 @@
 #import "Session.h"
 #import "Font.h"
 #import "Color.h"
+#import "AvatarChangeVC.h"
+#import "ViewController.h"
 
 @implementation ProfilePresentationCell
 
@@ -29,7 +31,6 @@
     self.userImage.clipsToBounds = YES;
     
     Session *appSession = [Session sharedSession];
-    
     
     NSString *fullName = appSession.currentUser.fullName;
     NSString *username = appSession.currentUser.username;
@@ -106,6 +107,12 @@
     self.fullNameLabel.attributedText = formattedNameString;
     self.email.attributedText = formattedEmailString;
     self.location.attributedText = formattedLocationString;
+}
+
+- (IBAction)avatarChange:(id)sender {
+    AvatarChangeVC *avatarVC = [ViewController getAvatarChangeVC];
+    //avatarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self.currentNavController presentViewController:avatarVC animated:YES completion:nil];
 }
 
 @end

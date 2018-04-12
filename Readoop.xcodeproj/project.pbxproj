@@ -16,6 +16,7 @@
 		3E0635D8207775C1001D0A09 /* EditProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635D7207775C1001D0A09 /* EditProfileVC.m */; };
 		3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */; };
 		3E0635DE2077AA2B001D0A09 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635DD2077AA2B001D0A09 /* ViewUtils.m */; };
+		3E0635E1207F47CE001D0A09 /* AvatarChangeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635E0207F47CE001D0A09 /* AvatarChangeVC.m */; };
 		3E366D992044864B008B9CF7 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366D982044864B008B9CF7 /* Navigation.m */; };
 		3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366D9F204804EE008B9CF7 /* Modular.storyboard */; };
 		3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA5204817BF008B9CF7 /* Profile.storyboard */; };
@@ -81,6 +82,8 @@
 		3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdditionalInfoVC.m; sourceTree = "<group>"; };
 		3E0635DC2077AA2B001D0A09 /* ViewUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
 		3E0635DD2077AA2B001D0A09 /* ViewUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		3E0635DF207F47CE001D0A09 /* AvatarChangeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarChangeVC.h; sourceTree = "<group>"; };
+		3E0635E0207F47CE001D0A09 /* AvatarChangeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarChangeVC.m; sourceTree = "<group>"; };
 		3E366D972044864B008B9CF7 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
 		3E366D982044864B008B9CF7 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
 		3E366D9F204804EE008B9CF7 /* Modular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modular.storyboard; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				3E0635D7207775C1001D0A09 /* EditProfileVC.m */,
 				3E0635D9207775DE001D0A09 /* AdditionalInfoVC.h */,
 				3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */,
+				3E0635DF207F47CE001D0A09 /* AvatarChangeVC.h */,
+				3E0635E0207F47CE001D0A09 /* AvatarChangeVC.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
 				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
+				3E0635E1207F47CE001D0A09 /* AvatarChangeVC.m in Sources */,
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
 				3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */,
 				3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */,

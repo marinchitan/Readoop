@@ -59,4 +59,9 @@
             instantiateViewControllerWithIdentifier:@"additionalInfoVC"];
 }
 
++ (AvatarChangeVC*)getAvatarChangeVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"avatarChangeVC"];
+}
+
 @end

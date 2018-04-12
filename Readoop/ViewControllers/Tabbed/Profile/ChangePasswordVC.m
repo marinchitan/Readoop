@@ -63,11 +63,13 @@
     }];
     
     //Save button signal
-    RAC(self.saveButton, enabled) = [RACSignal combineLatest:@[oldPassWordSignal, newPasswordSignal, reNewPasswordSignal]                       reduce:^id (NSNumber *validOld, NSNumber *validNew, NSNumber *validReNew){
+    RAC(self.saveButton, enabled) = [RACSignal combineLatest:@[oldPassWordSignal, newPasswordSignal, reNewPasswordSignal]
+                                                      reduce:^id (NSNumber *validOld, NSNumber *validNew, NSNumber *validReNew){
             return @([validOld boolValue] && [validNew boolValue] && [validReNew boolValue]);
     }];
     
-    RAC(self.saveButton, backgroundColor) = [RACSignal combineLatest:@[oldPassWordSignal, newPasswordSignal, reNewPasswordSignal]                       reduce:^id (NSNumber *validOld, NSNumber *validNew, NSNumber *validReNew){
+    RAC(self.saveButton, backgroundColor) = [RACSignal combineLatest:@[oldPassWordSignal, newPasswordSignal, reNewPasswordSignal]
+                                                              reduce:^id (NSNumber *validOld, NSNumber *validNew, NSNumber *validReNew){
             return [validOld boolValue] && [validNew boolValue] && [validReNew boolValue] ?
                 [Color getBariolRed] : [Color getPassiveBariolRed];
     }];

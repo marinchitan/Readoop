@@ -37,6 +37,10 @@
     [self initialGreeting];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)setUpUI {
     UINib* nib = [UINib nibWithNibName:@"ProfilePresentationCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"profilePresentationCell"];
@@ -59,15 +63,16 @@
     if(cellModel.cellType == profile_presentation) {
         ProfilePresentationCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
         [cell populateWithCurrenUserData];
+        cell.currentNavController = self.navigationController;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if(cellModel.cellType == profile) {
         ProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
-        [cell setUpCellWithTitle:self.profileCellsTitles[indexPath.row - 1] titleIndex:indexPath.row - 1];
-        [cell setActionForCell:self.profileCellSelectors[indexPath.row - 1] onVC:weakSelf];
-        /*[cell.actionButton addTarget:self
-                              action:NSSelectorFromString(@"editProfile:")
-                    forControlEvents:UIControlEventTouchUpInside];*/
+        cell.title.text = cellModel.title;
+        [cell.actionButton addTarget:self
+                              action:NSSelectorFromString(cellModel.action)
+                    forControlEvents:UIControlEventTouchUpInside];
+        [cell setUpCellIconIndex:indexPath.row - 1];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -80,34 +85,42 @@
     return self.dataSource.count;
 }
 
-- (IBAction)editProfile:(id)sender {
-    EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
-    [self.navigationController pushViewController:editProfileVC animated:YES];
+- (IBAction)myBooksAction:(id)sender {
+    NSLog(@"myBooksAction clicked");
 }
 
-- (IBAction)changePassword:(id)sender {
-    ChangePasswordVC *changePasswordVC = [ViewController getChangePasswVC];
-    [self.navigationController pushViewController:changePasswordVC animated:YES];
+- (IBAction)myFriendsActions:(id)sender {
+    NSLog(@"myFriendsAction clicked");
 }
 
-- (IBAction)additionalInfo:(id)sender {
-    AdditionalInfoVC *additionalInfoVC = [ViewController getAdditionalInfoVC];
-    [self.navigationController pushViewController:additionalInfoVC animated:YES];
+- (IBAction)requestsAction:(id)sender {
+    NSLog(@"requestsAction clicked");
 }
 
-- (IBAction)myFriends:(id)sender {
-    NSLog(@"My Friends Clicked");
+- (IBAction)editProfileAction:(id)sender {
+    NSLog(@"editProfileAction clicked");
+    //EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
+    //[self.navigationController pushViewController:editProfileVC animated:YES];
 }
 
-- (IBAction)myBooks:(id)sender {
-    NSLog(@"My Books Clicked");
+- (IBAction)changePasswordAction:(id)sender {
+    NSLog(@"changePassword clicked");
+    ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
+    [self.navigationController pushViewController:chpsswVC animated:YES];
 }
 
-- (IBAction)requests:(id)sender {
-    NSLog(@"Requests clicked");
+- (IBAction)additionalInfoAction:(id)sender {
+    NSLog(@"additionalInfoAction clicked");
+    //AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
+    //[self.navigationController pushViewController:addInfVC animated:YES];
 }
 
-- (IBAction)signOut:(id)sender {
+- (IBAction)signoutAction:(id)sender {
+    NSLog(@"signoutAction clicked");
+    [self signOut];
+}
+
+- (void)signOut {
     [AlertUtils showInformation:@"Do you want to sign out?"
                       withTitle:@"Sign Out"
                withActionButton:@"Yes"

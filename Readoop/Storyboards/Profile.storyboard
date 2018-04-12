@@ -81,7 +81,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yet ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-OS-6E6">
-                                                <rect key="frame" x="150.5" y="335" width="37.5" height="20"/>
+                                                <rect key="frame" x="151" y="335" width="37.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -327,7 +327,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="done:" destination="1NF-KJ-my3" eventType="touchUpInside" id="pDh-tB-b6j"/>
-                                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="BiN-gF-ghj"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dD-Et-scr">
@@ -344,7 +343,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="cancel:" destination="1NF-KJ-my3" eventType="touchUpInside" id="0De-Wx-hrq"/>
-                                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="mA1-X0-PfC"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixo-lk-4xb">
@@ -694,7 +692,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-dq-JTq">
-                                <rect key="frame" x="129" y="290" width="117.5" height="20"/>
+                                <rect key="frame" x="129.5" y="290" width="117.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -712,9 +710,7 @@
                                     <color key="titleShadowColor" red="0.1599892664" green="0.16069908720000001" blue="0.16094939720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="done:" destination="1NF-KJ-my3" eventType="touchUpInside" id="sM1-Qo-E68"/>
                                     <action selector="save:" destination="7Ly-u3-Fu4" eventType="touchUpInside" id="0Be-nI-c9E"/>
-                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="c9Z-0Q-eWP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHD-vg-XVV">
@@ -730,9 +726,7 @@
                                     <color key="titleShadowColor" red="0.1599892664" green="0.16069908720000001" blue="0.16094939720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancel:" destination="1NF-KJ-my3" eventType="touchUpInside" id="nK8-v9-5IU"/>
                                     <action selector="cancel:" destination="7Ly-u3-Fu4" eventType="touchUpInside" id="o4B-05-xHy"/>
-                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="NnO-Xi-xCl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -785,7 +779,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supply optional data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwq-iJ-BwN">
-                                <rect key="frame" x="78.5" y="40" width="218" height="27"/>
+                                <rect key="frame" x="79" y="40" width="217.5" height="27"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -818,10 +812,7 @@
                                     <color key="titleShadowColor" red="0.1599892664" green="0.16069908720000001" blue="0.16094939720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="done:" destination="1NF-KJ-my3" eventType="touchUpInside" id="J38-RM-9RF"/>
-                                    <action selector="save:" destination="7Ly-u3-Fu4" eventType="touchUpInside" id="Gll-hy-qVY"/>
                                     <action selector="saveData:" destination="UU5-rO-dLf" eventType="touchUpInside" id="062-Kf-iYy"/>
-                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="riD-NZ-9HF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLd-Vp-df9">
@@ -838,13 +829,10 @@
                                 </state>
                                 <connections>
                                     <action selector="cancel:" destination="UU5-rO-dLf" eventType="touchUpInside" id="JX7-aC-O8u"/>
-                                    <action selector="cancel:" destination="1NF-KJ-my3" eventType="touchUpInside" id="fNA-Y3-Xdh"/>
-                                    <action selector="cancel:" destination="7Ly-u3-Fu4" eventType="touchUpInside" id="kis-mX-EhZ"/>
-                                    <action selector="signUp:" destination="gwK-IX-JFV" eventType="touchUpInside" id="fQG-9k-H6G"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-3a-BFC">
-                                <rect key="frame" x="170.5" y="147" width="34.5" height="20"/>
+                                <rect key="frame" x="171" y="147" width="34.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -868,13 +856,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-nz-cNh">
-                                <rect key="frame" x="137" y="337" width="101" height="20"/>
+                                <rect key="frame" x="137.5" y="337" width="101" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-IR-4CD">
-                                <rect key="frame" x="154" y="242" width="66.5" height="20"/>
+                                <rect key="frame" x="154.5" y="242" width="66.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -928,21 +916,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-DD-85i">
-                                <rect key="frame" x="133" y="323" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-tH-deN">
+                                <rect key="frame" x="115" y="60" width="145.5" height="27"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrW-v3-gWf">
+                                <rect key="frame" x="145" y="152" width="85" height="20"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-Tc-pbT">
+                                <rect key="frame" x="94" y="187" width="187.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Png-ZG-35c"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2K-nU-moi">
+                                <rect key="frame" x="94" y="292" width="187.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="laC-L3-Khz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-WW-G17">
+                                <rect key="frame" x="164" y="257" width="47.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7If-sG-LqZ">
+                                <rect key="frame" x="146" y="362" width="83" height="20"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-lF-Tz9">
+                                <rect key="frame" x="94" y="397" width="187.5" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="nwO-Tr-lxZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fze-lu-mnP">
+                                <rect key="frame" x="30" y="567" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.26274509800000001" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Olf-9a-A8b"/>
+                                    <constraint firstAttribute="height" constant="50" id="POI-pl-uSw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.99403457949999996" green="0.9984447904" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.1599892664" green="0.16069908720000001" blue="0.16094939720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveData:" destination="Aih-uu-X8z" eventType="touchUpInside" id="QgP-pc-P5m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVL-KO-9Sc">
+                                <rect key="frame" x="195" y="567" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.74483590919999998" green="0.7578125" blue="0.75750761960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="hdv-Pr-LQt"/>
+                                    <constraint firstAttribute="height" constant="50" id="qdA-MC-4Vb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.1599892664" green="0.16069908720000001" blue="0.16094939720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="Aih-uu-X8z" eventType="touchUpInside" id="4d2-pI-ayk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CnC-bz-sCa" firstAttribute="bottom" secondItem="Fze-lu-mnP" secondAttribute="bottom" constant="50" id="0Ij-4S-UOM"/>
+                            <constraint firstItem="QrW-v3-gWf" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="44k-CR-flF"/>
+                            <constraint firstItem="M2K-nU-moi" firstAttribute="top" secondItem="YKb-WW-G17" secondAttribute="bottom" constant="15" id="5oM-qW-YMQ"/>
+                            <constraint firstItem="CnC-bz-sCa" firstAttribute="trailing" secondItem="mVL-KO-9Sc" secondAttribute="trailing" constant="30" id="8KG-nQ-4mk"/>
+                            <constraint firstItem="7If-sG-LqZ" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="8rK-2Y-uo1"/>
+                            <constraint firstItem="qGX-tH-deN" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="9GN-Le-oDs"/>
+                            <constraint firstItem="ynm-Tc-pbT" firstAttribute="top" secondItem="QrW-v3-gWf" secondAttribute="bottom" constant="15" id="BKs-oc-J3S"/>
+                            <constraint firstItem="YKb-WW-G17" firstAttribute="top" secondItem="ynm-Tc-pbT" secondAttribute="bottom" constant="35" id="P9k-9Y-kO0"/>
+                            <constraint firstItem="qGX-tH-deN" firstAttribute="top" secondItem="CnC-bz-sCa" secondAttribute="top" constant="40" id="Ur6-7P-dZk"/>
+                            <constraint firstItem="ynm-Tc-pbT" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="Wtp-G4-UiG"/>
+                            <constraint firstItem="QrW-v3-gWf" firstAttribute="top" secondItem="qGX-tH-deN" secondAttribute="bottom" constant="65" id="eS8-35-zn2"/>
+                            <constraint firstItem="7If-sG-LqZ" firstAttribute="top" secondItem="M2K-nU-moi" secondAttribute="bottom" constant="35" id="ecQ-Nq-0G7"/>
+                            <constraint firstItem="ynm-Tc-pbT" firstAttribute="width" secondItem="WKw-ff-LXq" secondAttribute="width" multiplier="0.5" id="i97-Wn-FUK"/>
+                            <constraint firstItem="Fze-lu-mnP" firstAttribute="leading" secondItem="CnC-bz-sCa" secondAttribute="leading" constant="30" id="lcK-ym-3P7"/>
+                            <constraint firstItem="CnC-bz-sCa" firstAttribute="bottom" secondItem="mVL-KO-9Sc" secondAttribute="bottom" constant="50" id="pBf-G3-kRJ"/>
+                            <constraint firstItem="M2K-nU-moi" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="qcH-f5-MjN"/>
+                            <constraint firstItem="c5K-lF-Tz9" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="qzU-sZ-cM1"/>
+                            <constraint firstItem="YKb-WW-G17" firstAttribute="centerX" secondItem="WKw-ff-LXq" secondAttribute="centerX" id="tiB-QT-x0h"/>
+                            <constraint firstItem="c5K-lF-Tz9" firstAttribute="width" secondItem="WKw-ff-LXq" secondAttribute="width" multiplier="0.5" id="uib-h7-QGB"/>
+                            <constraint firstItem="M2K-nU-moi" firstAttribute="width" secondItem="WKw-ff-LXq" secondAttribute="width" multiplier="0.5" id="yPC-lW-JLc"/>
+                            <constraint firstItem="c5K-lF-Tz9" firstAttribute="top" secondItem="7If-sG-LqZ" secondAttribute="bottom" constant="15" id="zZ0-Sa-dbe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CnC-bz-sCa"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="mVL-KO-9Sc" id="Yds-0u-lx4"/>
+                        <outlet property="doneButton" destination="Fze-lu-mnP" id="YJz-WX-Uoc"/>
+                        <outlet property="emailField" destination="M2K-nU-moi" id="S3X-2n-2xi"/>
+                        <outlet property="fullnameField" destination="c5K-lF-Tz9" id="qPG-ya-KmN"/>
+                        <outlet property="usernameField" destination="ynm-Tc-pbT" id="zOE-as-xX7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksa-gn-Y9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2871" y="91"/>
+        </scene>
+        <!--Avatar ChangeVC-->
+        <scene sceneID="4NU-hH-rRq">
+            <objects>
+                <viewController storyboardIdentifier="avatarChangeVC" id="Vrs-YE-Sz6" customClass="AvatarChangeVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="2be-VI-Ez6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.47843137254901957" green="0.43033854166666669" blue="0.39702690972222221" alpha="0.48691673801369861" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Pgp-92-JL1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULY-Vb-fP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3588" y="91"/>
         </scene>
     </scenes>
 </document>

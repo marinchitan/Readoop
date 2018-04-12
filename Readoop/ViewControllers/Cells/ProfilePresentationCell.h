@@ -14,8 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
-- (void)populateWithCurrenUserData;
+@property (nonatomic, strong) UINavigationController *currentNavController;
 
-- (void)addUserWithName:(NSString*)name withPassword:(NSString*)password;
+- (void)populateWithCurrenUserData;
 
 @end

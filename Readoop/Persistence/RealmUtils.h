@@ -20,4 +20,7 @@
 + (void)changeCountryForUser:(User*)user newCountry:(NSString*)country;
 + (void)changeCityForUser:(User*)user newCity:(NSString*)city;
 + (void)changeDateForUser:(User*)user newDate:(NSDate*)date;
++ (void)changeUsernameForUser:(User*)user newUsername:(NSString*)username;
++ (void)changeEmailForUser:(User*)user newEmail:(NSString*)email;
++ (void)changeFullNameForUser:(User*)user newName:(NSString*)name;
 @end

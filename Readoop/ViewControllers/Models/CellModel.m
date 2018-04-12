@@ -10,9 +10,8 @@
 
 @implementation CellModel
 
-+ (CellModel*)getCellModelWithCell:(id)cell withIdentifier:(NSString*)reuseIdentifier withType:(CellType)type {
++ (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withType:(CellType)type {
     CellModel *model = [CellModel new];
-    model.cell = cell;
     model.reuseIdentifier = reuseIdentifier;
     model.cellType = type;
     

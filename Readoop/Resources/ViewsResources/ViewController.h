@@ -16,6 +16,7 @@
 #import "ChangePasswordVC.h"
 #import "EditProfileVC.h"
 #import "AdditionalInfoVC.h"
+#import "AvatarChangeVC.h"
 
 @interface ViewController : UIViewController
 
@@ -28,6 +29,7 @@
 + (ChangePasswordVC*)getChangePasswVC;
 + (EditProfileVC*)getEditProfileVC;
 + (AdditionalInfoVC*)getAdditionalInfoVC;
++ (AvatarChangeVC*)getAvatarChangeVC;
 
 + (TesViewController*)getTestVC;
 

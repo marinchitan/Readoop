@@ -303,6 +303,11 @@
         [errorString appendString:@"\n\n"];
     }
     
+    if(![self validateUsernameSpaces] && self.usernameField.text.length > 0) {
+        [errorString appendString:[AppLabels getSpaceError:@"Username"]];
+        [errorString appendString:@"\n\n"];
+    }
+    
     if(![self validatePasswordLength]) {
         [errorString appendString:[AppLabels getLengthError:@"Password" withExcepectedLength:@"6"]];
         [errorString appendString:@"\n\n"];

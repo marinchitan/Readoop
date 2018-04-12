@@ -36,9 +36,7 @@
     self.chevron.textColor = [Color getBariolRed];
 }
 
-- (void)setUpCellWithTitle:(NSString*)title titleIndex:(int)value {
-    self.title.text = title;
-    
+- (void)setUpCellIconIndex:(int)value {
     [self setUpIcons:value];
 }
 
@@ -67,12 +65,6 @@
             break;
     }
  
-}
-
-- (void)setActionForCell:(NSString*)selectorString onVC:(UIViewController*)vc {
-    [self.actionButton addTarget:vc
-                          action:NSSelectorFromString(selectorString)
-       forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

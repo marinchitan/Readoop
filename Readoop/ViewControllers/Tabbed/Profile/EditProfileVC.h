@@ -10,5 +10,10 @@
 #import "ContainerViewController.h"
 
 @interface EditProfileVC : ContainerViewController
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *fullnameField;
 
 @end
