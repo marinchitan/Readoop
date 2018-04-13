@@ -16,17 +16,18 @@
 @implementation AvatarChangeVC
 
 - (void)viewDidLoad {
- 
+  self.view.backgroundColor = [UIColor colorWithDisplayP3Red:55/255 green:55/255 blue:55/255 alpha:0.7];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+   
 }
 
-- (IBAction)cancel:(id)sender {
+
+- (IBAction)dismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"dismiss clicked");
 }
 
 

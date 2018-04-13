@@ -1039,19 +1039,39 @@
             <point key="canvasLocation" x="2871" y="91"/>
         </scene>
         <!--Avatar ChangeVC-->
-        <scene sceneID="4NU-hH-rRq">
+        <scene sceneID="dW9-2Z-vgL">
             <objects>
-                <viewController storyboardIdentifier="avatarChangeVC" id="Vrs-YE-Sz6" customClass="AvatarChangeVC" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="2be-VI-Ez6">
+                <viewController storyboardIdentifier="avatarChangeVC" id="J6k-Hm-Zuh" customClass="AvatarChangeVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="POh-cw-8cf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.47843137254901957" green="0.43033854166666669" blue="0.39702690972222221" alpha="0.48691673801369861" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Pgp-92-JL1"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-gy-Vkp">
+                                <rect key="frame" x="93" y="426" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-XN-1eT">
+                                <rect key="frame" x="225" y="426" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload new"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-FO-q92">
+                                <rect key="frame" x="283" y="64" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="XX"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="J6k-Hm-Zuh" eventType="touchUpInside" id="LFb-cH-SVO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dSY-Py-HF9"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ULY-Vb-fP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6nz-eW-W3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3588" y="91"/>
+            <point key="canvasLocation" x="3648.8000000000002" y="90.404797601199405"/>
         </scene>
     </scenes>
 </document>

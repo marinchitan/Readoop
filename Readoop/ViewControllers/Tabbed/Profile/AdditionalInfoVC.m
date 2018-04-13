@@ -30,7 +30,6 @@
     NSString *currentCity = self.appSession.currentUser.city;
     NSDate *currentDate = self.appSession.currentUser.dateOfBirth;
     
-     NSLog(@"Current country: %@", self.appSession.currentUser.country);
     if(currentCountry){
         self.countryField.text = currentCountry;
     }

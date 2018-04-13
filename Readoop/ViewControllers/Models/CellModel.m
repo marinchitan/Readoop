@@ -10,11 +10,21 @@
 
 @implementation CellModel
 
++ (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title withType:(CellType)type withSubType:(CellSubType)subType {
+    CellModel *model = [CellModel new];
+    model.reuseIdentifier = reuseIdentifier;
+    model.title = title;
+    model.cellType = type;
+    model.cellSubType = subType;
+    
+    return model;
+}
+
 + (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withType:(CellType)type {
     CellModel *model = [CellModel new];
     model.reuseIdentifier = reuseIdentifier;
     model.cellType = type;
-    
+
     return model;
 }
 

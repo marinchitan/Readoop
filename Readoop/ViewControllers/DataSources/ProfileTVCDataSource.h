@@ -11,7 +11,5 @@
 @interface ProfileTVCDataSource : NSObject
 
 + (NSMutableArray *)getProfileDashboardDataSource;
-+ (NSArray *)getProfileCellsTitles;
-+ (NSArray *)getProfileCellsSelectors;
 
 @end

@@ -14,34 +14,20 @@
 @implementation ProfileTVCDataSource
 
 + (NSMutableArray *)getProfileDashboardDataSource {
-    CellModel *presentationModel = [CellModel getCellModelWithIdentifier:@"profilePresentationCell" withType:profile_presentation];
+    CellModel *presentationModel = [CellModel getCellModelWithIdentifier:@"profilePresentationCell" withType:profile_presentationCell];
     
-    CellModel *myBooksCell = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    myBooksCell.title = @"My Books";
-    myBooksCell.action = @"myBooksAction";
-    CellModel *myFriends = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    myFriends.title = @"My Friends";
-    myFriends.action = @"myFriendsAction";
-    CellModel *requests = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    requests.title = @"Requests";
-    requests.action = @"requestsAction";
-    CellModel *editProfile = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    editProfile.title = @"Edit Profile";
-    editProfile.action = @"editProfileAction";
-    CellModel *changePassword = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    changePassword.title = @"Change Password";
-    changePassword.action = @"changePasswordAction";
-    CellModel *additionalInfo = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    additionalInfo.title = @"Additional Info";
-    additionalInfo.action = @"additionalInfoAction";
-    CellModel *signOut = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
-    signOut.title = @"Sign Out";
-    signOut.action = @"signoutAction";
-    
+    CellModel *myBooks = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"My Books" withType:profileCell withSubType:myBooksCell];
+    CellModel *myFriends = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"My Friends" withType:profileCell withSubType:myFriendsCell];
+    CellModel *requests = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"Requests" withType:profileCell withSubType:requestsCell];
+    CellModel *editProfile =[CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"Edit Profile" withType:profileCell withSubType:editProfileCell];
+    CellModel *changePassword = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"Change Password" withType:profileCell withSubType:changePasswordCell];
+    CellModel *additionalInfo = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"Additional Info" withType:profileCell withSubType:additionalInfoCell];
+    CellModel *signOut = [CellModel getCellModelWithIdentifier:@"profileCell" withTitle:@"Sign Out" withType:profileCell withSubType:signOutCell];
+
     
     NSMutableArray *dataSource = [NSMutableArray new];
     [dataSource addObject:presentationModel];
-    [dataSource addObject:myBooksCell];
+    [dataSource addObject:myBooks];
     [dataSource addObject:myFriends];
     [dataSource addObject:requests];
     [dataSource addObject:editProfile];

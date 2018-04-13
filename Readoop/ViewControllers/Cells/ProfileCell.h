@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProfileDashboard.h"
+#import "CellModel.h"
 
 @interface ProfileCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
@@ -16,13 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *chevron;
 @property (weak, nonatomic) IBOutlet UIButton *actionButton;
 
-@property (strong, nonatomic) NSString *action;
-@property (strong, nonatomic) UINavigationController *currentNav;
-@property (strong, nonatomic) ProfileDashboard *currentVC;
-@property (strong, nonatomic) UITabBarController *currentTab;
+@property (strong, nonatomic) CellModel* model;
 
-
-- (void)setUpCellIconIndex:(int)value;
-- (void)setActionForCell:(NSString*)selectorString onVC:(UIViewController*)vc;
+- (void)setupCellWithModel:(CellModel *)model;
 
 @end

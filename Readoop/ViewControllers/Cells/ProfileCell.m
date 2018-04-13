@@ -25,8 +25,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setupUI {
@@ -41,31 +39,34 @@
     self.chevron.textColor = [Color getBariolRed];
 }
 
-- (void)setUpCellIconIndex:(int)value {
-    [self setUpIcons:value];
+- (void)setupCellWithModel:(CellModel *)model {
+    self.model = model;
+    
+    self.title.text = self.model.title;
+    [self setUpIcons];
 }
 
-- (void)setUpIcons:(int)value {
-    switch(value) { //The order of the titles
-        case 0:
+- (void)setUpIcons {
+    switch(self.model.cellSubType) { //The order of the titles
+        case myBooksCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FABook];
             break;
-        case 1:
+        case myFriendsCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUsers];
             break;
-        case 2:
+        case requestsCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FAuserPlus];
             break;
-        case 3:
+        case editProfileCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FAPencil];
             break;
-        case 4:
+        case changePasswordCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FAUnlockAlt];
             break;
-        case 5:
+        case additionalInfoCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FAFile];
             break;
-        case 6:
+        case signOutCell:
             self.icon.text = [NSString fontAwesomeIconStringForEnum:FASignOut];
             break;
     }
@@ -73,30 +74,38 @@
 }
 
 - (IBAction)action:(id)sender {
-    if([self.action isEqualToString:@"myBooksAction"]){
-        NSLog(@"MyBooks Action clicked");
-    } else if([self.action isEqualToString:@"myFriendsAction"]){
-        NSLog(@"MyFriends Action clicked");
-    } else if([self.action isEqualToString:@"requestsAction"]) {
-        NSLog(@"Requests Action clicked");
-    } else if([self.action isEqualToString:@"editProfileAction"]) {
-        EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
-        [self.currentNav pushViewController:editProfileVC animated:YES];
-    } else if([self.action isEqualToString:@"changePasswordAction"]) {
-        ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
-        [self.currentNav pushViewController:chpsswVC animated:YES];
-        
-    } else if([self.action isEqualToString:@"additionalInfoAction"]) {
-        AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
-        [self.currentNav pushViewController:addInfVC animated:YES];
-    } else if([self.action isEqualToString:@"signoutAction"]) {
-        [AlertUtils showInformation:@"Do you want to sign out?"
-                          withTitle:@"Sign Out"
-                   withActionButton:@"Yes"
-                   withCancelButton:@"No"
-                         withAction:^{[self.currentTab.navigationController popViewControllerAnimated:self.currentTab];}
-                               onVC:self.currentVC];
-        
+    //The navigationController, tabController and currentVC is stored on model
+    
+    EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
+    ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
+    AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
+    switch(self.model.cellSubType) {
+        case myBooksCell:
+            NSLog(@"MyBooks Action clicked");
+            break;
+        case myFriendsCell:
+            NSLog(@"MyFriends Action clicked");
+            break;
+        case requestsCell:
+            NSLog(@"Requests Action clicked");
+            break;
+        case editProfileCell:
+            [self.model.currentNav pushViewController:editProfileVC animated:YES];
+            break;
+        case changePasswordCell:
+            [self.model.currentNav pushViewController:chpsswVC animated:YES];
+            break;
+        case additionalInfoCell:
+            [self.model.currentNav pushViewController:addInfVC animated:YES];
+            break;
+        case signOutCell:
+            [AlertUtils showInformation:@"Do you want to sign out?"
+                              withTitle:@"Sign Out"
+                       withActionButton:@"Yes"
+                       withCancelButton:@"No"
+                             withAction:^{[self.model.currentTab.navigationController popViewControllerAnimated:self.model.currentTab];}
+                                   onVC:self.model.currentVC];
+            break;
     }
 }
 

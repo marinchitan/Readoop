@@ -36,12 +36,14 @@
     NSString *username = appSession.currentUser.username;
     NSString *email = appSession.currentUser.email;
     NSString *location = @"";
-    if(![appSession.currentUser.city isEqualToString:@""] && ![appSession.currentUser.country isEqualToString:@""]){
+    if(appSession.currentUser.city && appSession.currentUser.country ){
         location = [NSString stringWithFormat:@"%@, %@", appSession.currentUser.country, appSession.currentUser.city];
-    } else if([appSession.currentUser.city isEqualToString:@""] && ![appSession.currentUser.country isEqualToString:@""]){
+    } else if(!appSession.currentUser.city  && appSession.currentUser.country ){
         location = [NSString stringWithFormat:@"%@", appSession.currentUser.country];
-    } else if(![appSession.currentUser.city isEqualToString:@""] && [appSession.currentUser.country isEqualToString:@""]) {
+    } else if(appSession.currentUser.city  && !appSession.currentUser.country) {
         location = [NSString stringWithFormat:@"%@", appSession.currentUser.city];
+    } else {
+        location = @" - ";
     }
     
     NSMutableAttributedString *formattedNameString = [[NSMutableAttributedString alloc]
@@ -111,7 +113,7 @@
 
 - (IBAction)avatarChange:(id)sender {
     AvatarChangeVC *avatarVC = [ViewController getAvatarChangeVC];
-    //avatarVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    avatarVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self.currentNavController presentViewController:avatarVC animated:YES completion:nil];
 }
 

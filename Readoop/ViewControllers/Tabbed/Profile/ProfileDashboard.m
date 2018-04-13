@@ -56,26 +56,26 @@
     __weak ProfileDashboard *weakSelf = self;
     //Check the implementation with protocol
     CellModel *cellModel = self.dataSource[indexPath.row];
-    if(cellModel.cellType == profile_presentation) {
+    cellModel.currentNav = self.navigationController;
+    cellModel.currentVC = weakSelf;
+    cellModel.currentTab = self.tabBarController;
+    if(cellModel.cellType == profile_presentationCell) {
         ProfilePresentationCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
         [cell populateWithCurrenUserData];
         cell.currentNavController = self.navigationController;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
-    } else if(cellModel.cellType == profile) {
+    } else if(cellModel.cellType == profileCell) {
         ProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
-        cell.title.text = cellModel.title;
-        cell.action = cellModel.action;
-        cell.currentNav = self.navigationController;
-        cell.currentVC = weakSelf;
-        cell.currentTab = self.tabBarController;
+        [cell setupCellWithModel:cellModel];
         
-        /*[cell.actionButton addTarget:self
+        //Migrated the assigning of actions to cells in the cell class, as the old solution was adding selector
+        //multiple times when the cells where reusing, so you have to remove selectors before adding one (not a good approach)
+        /*[cell.actionButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
+        [cell.actionButton addTarget:self
                               action:NSSelectorFromString(cellModel.action)
                     forControlEvents:UIControlEventTouchUpInside];*/
-        
-        [cell setUpCellIconIndex:indexPath.row - 1];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;

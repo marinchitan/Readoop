@@ -7,24 +7,38 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "ProfileDashboard.h"
 
 typedef enum typeOfCell{
-    profile_presentation,
-    profile
+    profile_presentationCell,
+    profileCell
 }CellType;
+
+typedef enum subTypeOfcell{
+    myBooksCell,
+    myFriendsCell,
+    requestsCell,
+    editProfileCell,
+    changePasswordCell,
+    additionalInfoCell,
+    signOutCell,
+}CellSubType;
 
 @interface CellModel : NSObject
 
-@property(nonatomic, strong) id cell;
 @property(nonatomic, strong) NSString *reuseIdentifier;
 @property(nonatomic, assign) CellType cellType;
-
-@property(nonatomic, strong) NSString *action;
+@property(nonatomic, assign) CellSubType cellSubType;
 @property(nonatomic, strong) NSString *title;
 
+@property (strong, nonatomic) UINavigationController *currentNav;
+@property (strong, nonatomic) ProfileDashboard *currentVC;
+@property (strong, nonatomic) UITabBarController *currentTab;
 
+
++ (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title withType:(CellType)type withSubType:(CellSubType)subType;
 + (CellModel*)getCellModelWithIdentifier:(NSString*)reuseIdentifier withType:(CellType)type;
-
 @end
 
 
