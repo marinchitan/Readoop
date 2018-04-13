@@ -15,27 +15,28 @@
 
 + (NSMutableArray *)getProfileDashboardDataSource {
     CellModel *presentationModel = [CellModel getCellModelWithIdentifier:@"profilePresentationCell" withType:profile_presentation];
+    
     CellModel *myBooksCell = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     myBooksCell.title = @"My Books";
-    myBooksCell.action = @"myBooksAction:";
+    myBooksCell.action = @"myBooksAction";
     CellModel *myFriends = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     myFriends.title = @"My Friends";
-    myFriends.action = @"myFriendsActions:";
+    myFriends.action = @"myFriendsAction";
     CellModel *requests = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     requests.title = @"Requests";
-    requests.action = @"requestsAction:";
+    requests.action = @"requestsAction";
     CellModel *editProfile = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     editProfile.title = @"Edit Profile";
-    editProfile.action = @"editProfileAction:";
+    editProfile.action = @"editProfileAction";
     CellModel *changePassword = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     changePassword.title = @"Change Password";
-    changePassword.action = @"changePasswordAction:";
+    changePassword.action = @"changePasswordAction";
     CellModel *additionalInfo = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     additionalInfo.title = @"Additional Info";
-    additionalInfo.action = @"additionalInfoAction:";
+    additionalInfo.action = @"additionalInfoAction";
     CellModel *signOut = [CellModel getCellModelWithIdentifier:@"profileCell" withType:profile];
     signOut.title = @"Sign Out";
-    signOut.action = @"signoutAction:";
+    signOut.action = @"signoutAction";
     
     
     NSMutableArray *dataSource = [NSMutableArray new];
@@ -49,16 +50,6 @@
     [dataSource addObject:signOut];
     
     return dataSource;
-}
-
-+ (NSArray *)getProfileCellsTitles {
-    return @[@"My Books", @"My Friends", @"Requests", @"Edit profile", @"Change password", @"Additional info", @"Sign Out"];
-}
-
-
-//try to put method and title on CellModel and make cells for every cell
-+ (NSArray *)getProfileCellsSelectors {
-    return @[@"signOut:", @"signOut:", @"signOut:", @"editProfile:", @"changePassword:", @"additionalInfo:", @"signOut:"];
 }
 
 @end

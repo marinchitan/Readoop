@@ -14,8 +14,7 @@
 
 @interface ProfileDashboard ()
 @property (nonatomic, strong) NSMutableArray* dataSource;
-@property (nonatomic, strong) NSArray* profileCellsTitles;
-@property (nonatomic, strong) NSArray* profileCellSelectors;
+
 @end
 
 @implementation ProfileDashboard
@@ -26,11 +25,8 @@
     self.appSession = [Session sharedSession];
     
     self.dataSource = [ProfileTVCDataSource getProfileDashboardDataSource];
-    self.profileCellsTitles = [ProfileTVCDataSource getProfileCellsTitles];
-    self.profileCellSelectors = [ProfileTVCDataSource getProfileCellsSelectors];
     
     [self setUpUI];
-    //[self.tableView registerClass:[UITableViewCell self] forCellReuseIdentifier:@"profilePresentationCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,12 +62,18 @@
         cell.currentNavController = self.navigationController;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+        
     } else if(cellModel.cellType == profile) {
         ProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
         cell.title.text = cellModel.title;
-        [cell.actionButton addTarget:self
+        cell.action = cellModel.action;
+        cell.currentNav = self.navigationController;
+        cell.currentVC = weakSelf;
+        cell.currentTab = self.tabBarController;
+        
+        /*[cell.actionButton addTarget:self
                               action:NSSelectorFromString(cellModel.action)
-                    forControlEvents:UIControlEventTouchUpInside];
+                    forControlEvents:UIControlEventTouchUpInside];*/
         
         [cell setUpCellIconIndex:indexPath.row - 1];
         
@@ -84,50 +86,6 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
-}
-
-- (IBAction)myBooksAction:(id)sender {
-    NSLog(@"myBooksAction clicked");
-}
-
-- (IBAction)myFriendsActions:(id)sender {
-    NSLog(@"myFriendsAction clicked");
-}
-
-- (IBAction)requestsAction:(id)sender {
-    NSLog(@"requestsAction clicked");
-}
-
-- (IBAction)editProfileAction:(id)sender {
-    NSLog(@"editProfileAction clicked");
-    //EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
-    //[self.navigationController pushViewController:editProfileVC animated:YES];
-}
-
-- (IBAction)changePasswordAction:(id)sender {
-    NSLog(@"changePassword clicked");
-    //ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
-    //[self.navigationController pushViewController:chpsswVC animated:YES];
-}
-
-- (IBAction)additionalInfoAction:(id)sender {
-    NSLog(@"additionalInfoAction clicked");
-    //AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
-    //[self.navigationController pushViewController:addInfVC animated:YES];
-}
-
-- (IBAction)signoutAction:(id)sender {
-    NSLog(@"signoutAction clicked");
-    [self signOut];
-}
-
-- (void)signOut {
-    [AlertUtils showInformation:@"Do you want to sign out?"
-                      withTitle:@"Sign Out"
-               withActionButton:@"Yes"
-               withCancelButton:@"No"
-                     withAction:^{[self.tabBarController.navigationController popViewControllerAnimated:self.tabBarController];}
-                           onVC:self];
 }
 
 - (void)initialGreeting {

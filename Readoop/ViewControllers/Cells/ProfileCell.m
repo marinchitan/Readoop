@@ -10,6 +10,11 @@
 #import "Color.h"
 #import "NSString+FontAwesome.h"
 #import "Font.h"
+#import "ChangePasswordVC.h"
+#import "AdditionalInfoVC.h"
+#import "EditProfileVC.h"
+#import "AlertUtils.h"
+#import "ViewController.h"
 
 @implementation ProfileCell
 
@@ -65,6 +70,34 @@
             break;
     }
  
+}
+
+- (IBAction)action:(id)sender {
+    if([self.action isEqualToString:@"myBooksAction"]){
+        NSLog(@"MyBooks Action clicked");
+    } else if([self.action isEqualToString:@"myFriendsAction"]){
+        NSLog(@"MyFriends Action clicked");
+    } else if([self.action isEqualToString:@"requestsAction"]) {
+        NSLog(@"Requests Action clicked");
+    } else if([self.action isEqualToString:@"editProfileAction"]) {
+        EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
+        [self.currentNav pushViewController:editProfileVC animated:YES];
+    } else if([self.action isEqualToString:@"changePasswordAction"]) {
+        ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
+        [self.currentNav pushViewController:chpsswVC animated:YES];
+        
+    } else if([self.action isEqualToString:@"additionalInfoAction"]) {
+        AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
+        [self.currentNav pushViewController:addInfVC animated:YES];
+    } else if([self.action isEqualToString:@"signoutAction"]) {
+        [AlertUtils showInformation:@"Do you want to sign out?"
+                          withTitle:@"Sign Out"
+                   withActionButton:@"Yes"
+                   withCancelButton:@"No"
+                         withAction:^{[self.currentTab.navigationController popViewControllerAnimated:self.currentTab];}
+                               onVC:self.currentVC];
+        
+    }
 }
 
 @end

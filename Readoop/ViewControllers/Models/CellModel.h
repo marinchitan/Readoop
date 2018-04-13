@@ -17,7 +17,7 @@ typedef enum typeOfCell{
 
 @property(nonatomic, strong) id cell;
 @property(nonatomic, strong) NSString *reuseIdentifier;
-@property(nonatomic, assign) CellType *cellType;
+@property(nonatomic, assign) CellType cellType;
 
 @property(nonatomic, strong) NSString *action;
 @property(nonatomic, strong) NSString *title;

@@ -49,6 +49,9 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="70" id="UJ7-8b-uLg"/>
                         </constraints>
+                        <connections>
+                            <action selector="action:" destination="CHh-mK-20G" eventType="touchUpInside" id="rvT-Ff-3tI"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -50,6 +50,7 @@
 - (void)setupUI {
     [ViewUtils setUpField:self.cityField withRadius:self.initialCornerRadius];
     [ViewUtils setUpField:self.countryField withRadius:self.initialCornerRadius];
+    
     [ViewUtils setUpButton:self.doneButton withRadius:self.initialCornerRadius];
     [ViewUtils setUpButton:self.cancelButton withRadius:self.initialCornerRadius];
     
