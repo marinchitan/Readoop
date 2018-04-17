@@ -22,7 +22,7 @@ RLM_ARRAY_TYPE(User);
 @property NSString *password;
 @property NSString *fullName;
 @property NSString *email;
-@property NSString *imageName;
+@property NSData *avatar;
 
 //Additional info
 @property NSDate *dateOfBirth;

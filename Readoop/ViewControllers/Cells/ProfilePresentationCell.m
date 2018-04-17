@@ -25,12 +25,11 @@
 }
 
 - (void)populateWithCurrenUserData {
-    self.userImage.image = [UIImage imageNamed:@"defaultImage"];
+    Session *appSession = [Session sharedSession];
+    self.userImage.image = [UIImage imageWithData:appSession.currentUser.avatar];
 
     self.userImage.layer.cornerRadius = self.userImage.frame.size.width/2 ;
     self.userImage.clipsToBounds = YES;
-    
-    Session *appSession = [Session sharedSession];
     
     NSString *fullName = appSession.currentUser.fullName;
     NSString *username = appSession.currentUser.username;

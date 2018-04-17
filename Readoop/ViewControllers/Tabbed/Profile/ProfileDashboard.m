@@ -27,6 +27,7 @@
     self.dataSource = [ProfileTVCDataSource getProfileDashboardDataSource];
     
     [self setUpUI];
+    NSLog(@"User:%@",self.appSession.currentUser.username);
 }
 
 - (void)viewDidAppear:(BOOL)animated {

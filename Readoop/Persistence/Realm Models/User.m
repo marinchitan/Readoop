@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <UIKit/UIKit.h>
 
 @implementation User
 
@@ -18,7 +19,7 @@
     return @{@"fullName" : @"",
              @"email": @"",
              @"status":@0,
-             @"imageName":@"defaultImage"
+             @"avatar": UIImagePNGRepresentation([UIImage imageNamed:@"defaultImage"])
              };
 }
 

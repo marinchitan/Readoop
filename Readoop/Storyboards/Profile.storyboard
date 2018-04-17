@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,7 +82,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yet ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-OS-6E6">
-                                                <rect key="frame" x="151" y="335" width="37.5" height="20"/>
+                                                <rect key="frame" x="150.5" y="335" width="37.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -275,13 +276,13 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please supply the required " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krA-Dg-y3D">
-                                                <rect key="frame" x="58.5" y="20" width="221.5" height="21"/>
+                                                <rect key="frame" x="58" y="20" width="221.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf0-6F-UcX">
-                                                <rect key="frame" x="124" y="46" width="90.5" height="20"/>
+                                                <rect key="frame" x="123.5" y="46" width="90.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -692,7 +693,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-dq-JTq">
-                                <rect key="frame" x="129.5" y="290" width="117.5" height="20"/>
+                                <rect key="frame" x="129" y="290" width="117.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -779,7 +780,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supply optional data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwq-iJ-BwN">
-                                <rect key="frame" x="79" y="40" width="217.5" height="27"/>
+                                <rect key="frame" x="79.5" y="40" width="217.5" height="27"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -832,7 +833,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-3a-BFC">
-                                <rect key="frame" x="171" y="147" width="34.5" height="20"/>
+                                <rect key="frame" x="170.5" y="147" width="34.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -856,13 +857,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-nz-cNh">
-                                <rect key="frame" x="137.5" y="337" width="101" height="20"/>
+                                <rect key="frame" x="137" y="337" width="101" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-IR-4CD">
-                                <rect key="frame" x="154.5" y="242" width="66.5" height="20"/>
+                                <rect key="frame" x="155" y="242" width="66.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -917,13 +918,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit your data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGX-tH-deN">
-                                <rect key="frame" x="115" y="60" width="145.5" height="27"/>
+                                <rect key="frame" x="115.5" y="60" width="145.5" height="27"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrW-v3-gWf">
-                                <rect key="frame" x="145" y="152" width="85" height="20"/>
+                                <rect key="frame" x="145.5" y="152" width="85" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1046,32 +1047,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-gy-Vkp">
-                                <rect key="frame" x="93" y="426" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-gy-Vkp">
+                                <rect key="frame" x="20" y="487.5" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7di-Hs-0jd"/>
+                                    <constraint firstAttribute="width" constant="150" id="n0h-Fs-0r7"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-XN-1eT">
-                                <rect key="frame" x="225" y="426" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upload new"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-XN-1eT">
+                                <rect key="frame" x="205" y="487.5" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Mxn-cv-yXo"/>
+                                    <constraint firstAttribute="height" constant="50" id="VBe-fL-xJA"/>
+                                </constraints>
+                                <state key="normal" title="Upload New"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-FO-q92">
-                                <rect key="frame" x="283" y="64" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="XX"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-FO-q92">
+                                <rect key="frame" x="285" y="50" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="g7B-M5-bIF"/>
+                                    <constraint firstAttribute="width" constant="60" id="rAv-c6-rts"/>
+                                </constraints>
                                 <connections>
                                     <action selector="dismiss:" destination="J6k-Hm-Zuh" eventType="touchUpInside" id="LFb-cH-SVO"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="D7W-5y-RDa">
+                                <rect key="frame" x="94" y="239.5" width="188" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D7W-5y-RDa" secondAttribute="height" multiplier="1:1" id="U8W-th-TdZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASK-AS-zq0">
+                                <rect key="frame" x="285" y="50" width="60" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ASK-AS-zq0" firstAttribute="height" secondItem="bVC-FO-q92" secondAttribute="height" id="0cO-Q4-zQs"/>
+                            <constraint firstItem="Cmh-XN-1eT" firstAttribute="top" secondItem="D7W-5y-RDa" secondAttribute="bottom" constant="60" id="2fA-xc-mm7"/>
+                            <constraint firstItem="dSY-Py-HF9" firstAttribute="trailing" secondItem="bVC-FO-q92" secondAttribute="trailing" constant="30" id="Dpw-EV-dSq"/>
+                            <constraint firstItem="pDE-gy-Vkp" firstAttribute="top" secondItem="D7W-5y-RDa" secondAttribute="bottom" constant="60" id="H6T-TI-xZN"/>
+                            <constraint firstItem="ASK-AS-zq0" firstAttribute="width" secondItem="bVC-FO-q92" secondAttribute="width" id="Il8-JL-CfO"/>
+                            <constraint firstItem="D7W-5y-RDa" firstAttribute="centerX" secondItem="POh-cw-8cf" secondAttribute="centerX" id="JI8-WH-tvk"/>
+                            <constraint firstItem="ASK-AS-zq0" firstAttribute="trailing" secondItem="bVC-FO-q92" secondAttribute="trailing" id="OqS-Xu-wam"/>
+                            <constraint firstItem="bVC-FO-q92" firstAttribute="top" secondItem="dSY-Py-HF9" secondAttribute="top" constant="30" id="VeJ-6K-kTZ"/>
+                            <constraint firstItem="pDE-gy-Vkp" firstAttribute="leading" secondItem="dSY-Py-HF9" secondAttribute="leading" constant="20" id="jCG-Xt-sBb"/>
+                            <constraint firstItem="dSY-Py-HF9" firstAttribute="trailing" secondItem="Cmh-XN-1eT" secondAttribute="trailing" constant="20" id="jR4-W4-OIY"/>
+                            <constraint firstItem="D7W-5y-RDa" firstAttribute="width" secondItem="POh-cw-8cf" secondAttribute="width" multiplier="0.5" id="pUg-Tw-4DP"/>
+                            <constraint firstItem="D7W-5y-RDa" firstAttribute="centerY" secondItem="POh-cw-8cf" secondAttribute="centerY" id="qm9-Rq-PJS"/>
+                            <constraint firstItem="ASK-AS-zq0" firstAttribute="top" secondItem="bVC-FO-q92" secondAttribute="top" id="zBo-gB-aNQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dSY-Py-HF9"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarView" destination="D7W-5y-RDa" id="GR0-Bs-G4r"/>
+                        <outlet property="dismissButton" destination="bVC-FO-q92" id="UpW-w2-dKK"/>
+                        <outlet property="dismissLabel" destination="ASK-AS-zq0" id="ZX1-K0-02i"/>
+                        <outlet property="saveButton" destination="pDE-gy-Vkp" id="Am1-Zq-lz2"/>
+                        <outlet property="uploadButton" destination="Cmh-XN-1eT" id="VJE-Xn-Cew"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nz-eW-W3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3648.8000000000002" y="90.404797601199405"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultImage" width="250" height="250"/>
+    </resources>
 </document>

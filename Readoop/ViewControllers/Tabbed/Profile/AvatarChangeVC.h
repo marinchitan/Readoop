@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContainerViewController.h"
 
-@interface AvatarChangeVC : UIViewController
+@interface AvatarChangeVC : ContainerViewController
+@property (weak, nonatomic) IBOutlet UIButton *uploadButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+@property (weak, nonatomic) IBOutlet UILabel *dismissLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 
 @end

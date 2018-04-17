@@ -13,7 +13,4 @@
 @interface ProfileDashboard : ContainerViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-//Selectors for cells
-- (IBAction)editProfile:(id)sender;
-
 @end

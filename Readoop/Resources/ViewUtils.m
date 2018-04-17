@@ -9,6 +9,7 @@
 #import "ViewUtils.h"
 #import "Color.h"
 #import "NSString+FontAwesome.h"
+#import "Font.h"
 
 @implementation ViewUtils
 
@@ -31,15 +32,22 @@
     button.backgroundColor = [Color getMainRed];
     button.enabled = YES;
     [button setTitleColor:[Color getMainPassiveGray] forState:UIControlStateDisabled];
+    button.titleLabel.font = [Font getBariolwithSize:17];
+    button.tintColor = [Color getWhite];
 }
 + (void)setUpStandardInactiveButton:(UIButton*)button{
     button.enabled = NO;
     button.backgroundColor = [Color getPassiveBariolRed];
     [button setTitleColor:[Color getMainPassiveGray] forState:UIControlStateDisabled];
+    button.titleLabel.font = [Font getBariolwithSize:17];
+    button.tintColor = [Color getMainPassiveGray];
 }
 
 + (void)setUpCancelActiveBUtton:(UIButton*)button {
     button.backgroundColor = [Color getMainPassiveGray];
+    button.titleLabel.font = [Font getBariolwithSize:17];
+    button.backgroundColor = [Color getMainPassiveGray];
+    button.tintColor = [Color getBlack];
 }
 
 @end
