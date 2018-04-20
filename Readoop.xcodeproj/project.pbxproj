@@ -31,7 +31,6 @@
 		3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */; };
 		3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A8205BFE1400D6FD5A /* Font.m */; };
 		3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */; };
-		3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */; };
 		3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */; };
 		3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */; };
 		3E59F8B9205E845600D6FD5A /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B8205E845600D6FD5A /* Session.m */; };
@@ -58,6 +57,13 @@
 		3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED979D720667A0200B00F13 /* ProfilePresentationCell.xib */; };
 		3ED979DB20667A5600B00F13 /* ProfilePresentationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */; };
 		3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979EB20684EE500B00F13 /* ContainerViewController.m */; };
+		3EDE520A2086838A00D3330A /* UserPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE52092086838A00D3330A /* UserPresentationVC.m */; };
+		3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE520C208683A400D3330A /* BookPresentationVC.m */; };
+		3EDE520F2086880900D3330A /* Reusables.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE520E2086880900D3330A /* Reusables.storyboard */; };
+		3EDE5211208A1F5700D3330A /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE5210208A1F5700D3330A /* Social.storyboard */; };
+		3EFC4D9E208A73F4003D0C33 /* PeopleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4D9D208A73F4003D0C33 /* PeopleVC.m */; };
+		3EFC4DA5208A8462003D0C33 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DA3208A8462003D0C33 /* UserCell.m */; };
+		3EFC4DA6208A8462003D0C33 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC4DA4208A8462003D0C33 /* UserCell.xib */; };
 		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
@@ -106,8 +112,6 @@
 		3E59F8A8205BFE1400D6FD5A /* Font.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Font.m; sourceTree = "<group>"; };
 		3E59F8AA205C3BE900D6FD5A /* ProfileDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileDashboard.h; sourceTree = "<group>"; };
 		3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileDashboard.m; sourceTree = "<group>"; };
-		3E59F8AD205C3C0500D6FD5A /* FeedDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDashboard.h; sourceTree = "<group>"; };
-		3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDashboard.m; sourceTree = "<group>"; };
 		3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryDashboard.h; sourceTree = "<group>"; };
 		3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryDashboard.m; sourceTree = "<group>"; };
 		3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDashboars.h; sourceTree = "<group>"; };
@@ -156,6 +160,18 @@
 		3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePresentationCell.m; sourceTree = "<group>"; };
 		3ED979EA20684EE500B00F13 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		3ED979EB20684EE500B00F13 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		3EDE52042086820800D3330A /* ProfileDashboardDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileDashboardDelegateProtocol.h; sourceTree = "<group>"; };
+		3EDE52082086838A00D3330A /* UserPresentationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserPresentationVC.h; sourceTree = "<group>"; };
+		3EDE52092086838A00D3330A /* UserPresentationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserPresentationVC.m; sourceTree = "<group>"; };
+		3EDE520B208683A400D3330A /* BookPresentationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookPresentationVC.h; sourceTree = "<group>"; };
+		3EDE520C208683A400D3330A /* BookPresentationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookPresentationVC.m; sourceTree = "<group>"; };
+		3EDE520E2086880900D3330A /* Reusables.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reusables.storyboard; sourceTree = "<group>"; };
+		3EDE5210208A1F5700D3330A /* Social.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
+		3EFC4D9C208A73F4003D0C33 /* PeopleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleVC.h; sourceTree = "<group>"; };
+		3EFC4D9D208A73F4003D0C33 /* PeopleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleVC.m; sourceTree = "<group>"; };
+		3EFC4DA2208A8462003D0C33 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		3EFC4DA3208A8462003D0C33 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
+		3EFC4DA4208A8462003D0C33 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +224,7 @@
 		2D7D2FD3203C8F10005E689B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EDE52052086834700D3330A /* Reusables */,
 				3E895B09206960460091FD3C /* DataSources */,
 				3ED979D6206675F300B00F13 /* Cells */,
 				3ED979CF2066754900B00F13 /* Models */,
@@ -226,6 +243,8 @@
 				3E366D9F204804EE008B9CF7 /* Modular.storyboard */,
 				3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */,
 				3E59F89F205BD8D200D6FD5A /* Dashboard.storyboard */,
+				3EDE520E2086880900D3330A /* Reusables.storyboard */,
+				3EDE5210208A1F5700D3330A /* Social.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -367,6 +386,9 @@
 				3E895B0420695E3A0091FD3C /* ProfileCell.xib */,
 				3E895B0620695E610091FD3C /* ProfileCell.h */,
 				3E895B0720695E610091FD3C /* ProfileCell.m */,
+				3EFC4DA2208A8462003D0C33 /* UserCell.h */,
+				3EFC4DA3208A8462003D0C33 /* UserCell.m */,
+				3EFC4DA4208A8462003D0C33 /* UserCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -384,6 +406,7 @@
 				3E0635DA207775DE001D0A09 /* AdditionalInfoVC.m */,
 				3E0635DF207F47CE001D0A09 /* AvatarChangeVC.h */,
 				3E0635E0207F47CE001D0A09 /* AvatarChangeVC.m */,
+				3EDE52042086820800D3330A /* ProfileDashboardDelegateProtocol.h */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -391,8 +414,8 @@
 		3ED979E320680DA800B00F13 /* Social */ = {
 			isa = PBXGroup;
 			children = (
-				3E59F8AD205C3C0500D6FD5A /* FeedDashboard.h */,
-				3E59F8AE205C3C0500D6FD5A /* FeedDashboard.m */,
+				3EFC4D9C208A73F4003D0C33 /* PeopleVC.h */,
+				3EFC4D9D208A73F4003D0C33 /* PeopleVC.m */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -413,6 +436,17 @@
 				3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		3EDE52052086834700D3330A /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE52082086838A00D3330A /* UserPresentationVC.h */,
+				3EDE52092086838A00D3330A /* UserPresentationVC.m */,
+				3EDE520B208683A400D3330A /* BookPresentationVC.h */,
+				3EDE520C208683A400D3330A /* BookPresentationVC.m */,
+			);
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 		78ED85CCFA4A02E1CAE71CDF /* Frameworks */ = {
@@ -494,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */,
+				3EDE5211208A1F5700D3330A /* Social.storyboard in Resources */,
 				3E59F8A0205BD8D300D6FD5A /* Dashboard.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
 				3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */,
@@ -502,9 +537,11 @@
 				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
 				3E59F89E205579F000D6FD5A /* FontAwesome.ttf in Resources */,
 				3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */,
+				3EDE520F2086880900D3330A /* Reusables.storyboard in Resources */,
 				3E895B0520695E3A0091FD3C /* ProfileCell.xib in Resources */,
 				3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */,
 				3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */,
+				3EFC4DA6208A8462003D0C33 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +626,8 @@
 				3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */,
 				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
-				3E59F8AF205C3C0500D6FD5A /* FeedDashboard.m in Sources */,
+				3EFC4D9E208A73F4003D0C33 /* PeopleVC.m in Sources */,
+				3EDE520A2086838A00D3330A /* UserPresentationVC.m in Sources */,
 				3E0635E1207F47CE001D0A09 /* AvatarChangeVC.m in Sources */,
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
 				3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */,
@@ -607,8 +645,10 @@
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
+				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
 				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,
+				3EFC4DA5208A8462003D0C33 /* UserCell.m in Sources */,
 				3E366D992044864B008B9CF7 /* Navigation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

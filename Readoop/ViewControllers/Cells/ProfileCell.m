@@ -29,9 +29,9 @@
 
 - (void)setupUI {
     self.separatorView.backgroundColor = [Color getUltraLightGray];
-    self.icon.font = [Font getFAFont:26];
+    self.icon.font = [Font getFAFont:20];
     self.icon.textColor = [Color getPassiveTab];
-    self.chevron.font = [Font getFAFont:25];
+    self.chevron.font = [Font getFAFont:20];
     self.title.font = [Font getBariolwithSize:23];
     
 

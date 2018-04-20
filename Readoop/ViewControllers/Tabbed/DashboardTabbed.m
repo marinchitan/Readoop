@@ -67,15 +67,15 @@
     feedItem.image = [[UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[Color getPassiveTab] fontSize:22]
                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     feedItem.selectedImage = [[UIImage imageWithIcon:@"fa-bars" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    libraryItem.image = [[UIImage imageWithIcon:@"fa-book" backgroundColor:[UIColor clearColor] iconColor:[Color getPassiveTab] fontSize:22] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    libraryItem.selectedImage = [[UIImage imageWithIcon:@"fa-book" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    configurationItem.image = [[UIImage imageWithIcon:@"fa-cog" backgroundColor:[UIColor clearColor] iconColor:[Color getPassiveTab] fontSize:22] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    configurationItem.selectedImage = [[UIImage imageWithIcon:@"fa-cog" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    libraryItem.image = [[UIImage imageWithIcon:@"fa-users" backgroundColor:[UIColor clearColor] iconColor:[Color getPassiveTab] fontSize:22] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    libraryItem.selectedImage = [[UIImage imageWithIcon:@"fa-users" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    configurationItem.image = [[UIImage imageWithIcon:@"fa-book" backgroundColor:[UIColor clearColor] iconColor:[Color getPassiveTab] fontSize:22] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    configurationItem.selectedImage = [[UIImage imageWithIcon:@"fa-book" backgroundColor:[UIColor clearColor] iconColor:[Color getActiveTab] fontSize:26] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
     profileItem.title = @"Profile";
-    feedItem.title = @"Social";
-    libraryItem.title = @"Library";
-    configurationItem.title = @"Settings";
+    feedItem.title = @"Feed";
+    libraryItem.title = @"Social";
+    configurationItem.title = @"Library";
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [Font getBariolwithSize:15.0f],
                                                         NSForegroundColorAttributeName : [Color getPassiveTab]

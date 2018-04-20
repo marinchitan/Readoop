@@ -70,6 +70,12 @@
                                     <action selector="avatarChange:" destination="i2R-8h-QxP" eventType="touchUpInside" id="VE8-gU-22Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYP-c7-WhN">
+                                <rect key="frame" x="120" y="30" width="170" height="90"/>
+                                <connections>
+                                    <action selector="showMyProfile:" destination="i2R-8h-QxP" eventType="touchUpInside" id="HrP-SS-oah"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -77,16 +83,20 @@
                             <constraint firstItem="SeY-Qz-925" firstAttribute="top" secondItem="f5i-pY-rgP" secondAttribute="top" id="3vq-8b-dQ1"/>
                             <constraint firstAttribute="trailing" secondItem="G74-YV-vLl" secondAttribute="trailing" constant="35" id="5Bw-v5-Pf6"/>
                             <constraint firstItem="nP8-hW-vsT" firstAttribute="top" secondItem="G74-YV-vLl" secondAttribute="bottom" constant="18" id="96q-Ms-i01"/>
+                            <constraint firstAttribute="bottom" secondItem="uYP-c7-WhN" secondAttribute="bottom" constant="30" id="9aS-Ow-o4s"/>
                             <constraint firstItem="SeY-Qz-925" firstAttribute="height" secondItem="f5i-pY-rgP" secondAttribute="height" id="C5L-yS-UCc"/>
                             <constraint firstItem="SeY-Qz-925" firstAttribute="width" secondItem="f5i-pY-rgP" secondAttribute="width" id="Fxw-No-BMB"/>
                             <constraint firstItem="f5i-pY-rgP" firstAttribute="leading" secondItem="Urd-A9-zqS" secondAttribute="leading" constant="20" id="Hnv-Fo-4Ij"/>
                             <constraint firstItem="pus-2Z-ps8" firstAttribute="top" secondItem="f5i-pY-rgP" secondAttribute="top" id="J69-DX-a4d"/>
                             <constraint firstItem="G74-YV-vLl" firstAttribute="leading" secondItem="f5i-pY-rgP" secondAttribute="trailing" constant="35" id="MaR-aH-k9V"/>
+                            <constraint firstItem="uYP-c7-WhN" firstAttribute="leading" secondItem="pus-2Z-ps8" secondAttribute="leading" id="OfU-xv-ojY"/>
                             <constraint firstItem="nP8-hW-vsT" firstAttribute="trailing" secondItem="G74-YV-vLl" secondAttribute="trailing" id="Pwg-BP-mlw"/>
                             <constraint firstAttribute="height" constant="150" id="WCt-25-e7o"/>
+                            <constraint firstItem="uYP-c7-WhN" firstAttribute="top" secondItem="Urd-A9-zqS" secondAttribute="top" constant="30" id="XGu-94-dmE"/>
                             <constraint firstItem="nP8-hW-vsT" firstAttribute="leading" secondItem="G74-YV-vLl" secondAttribute="leading" id="YLa-D6-WBb"/>
                             <constraint firstAttribute="trailing" secondItem="pus-2Z-ps8" secondAttribute="trailing" constant="25" id="Zqr-cy-xuz"/>
                             <constraint firstItem="SeY-Qz-925" firstAttribute="leading" secondItem="f5i-pY-rgP" secondAttribute="leading" id="bmw-OY-Bb8"/>
+                            <constraint firstAttribute="trailing" secondItem="uYP-c7-WhN" secondAttribute="trailing" constant="85" id="cdn-Fh-jK7"/>
                             <constraint firstItem="G74-YV-vLl" firstAttribute="bottom" secondItem="f5i-pY-rgP" secondAttribute="bottom" id="eZv-ke-Yxc"/>
                             <constraint firstAttribute="width" constant="375" id="flV-Ji-77Y"/>
                             <constraint firstItem="f5i-pY-rgP" firstAttribute="top" secondItem="Urd-A9-zqS" secondAttribute="top" constant="20" id="wIn-Bj-PDw"/>

@@ -42,7 +42,7 @@
     } else if(appSession.currentUser.city  && !appSession.currentUser.country) {
         location = [NSString stringWithFormat:@"%@", appSession.currentUser.city];
     } else {
-        location = @" - ";
+        location = @" — ";
     }
     
     NSMutableAttributedString *formattedNameString = [[NSMutableAttributedString alloc]
@@ -72,7 +72,7 @@
                                                                           stringWithFormat:@"email: %@",email]] :
                                                          [[NSAttributedString alloc]
                                                           initWithString:[NSString
-                                                                          stringWithFormat:@"email: —"]]];
+                                                                          stringWithFormat:@"email: — "]]];
     
     [formattedEmailString addAttribute:NSFontAttributeName
                                 value:[Font getBariolwithSize:19]
@@ -113,7 +113,14 @@
 - (IBAction)avatarChange:(id)sender {
     AvatarChangeVC *avatarVC = [ViewController getAvatarChangeVC];
     avatarVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    avatarVC.dashboarDelegate = self.currentVC;
     [self.currentNavController presentViewController:avatarVC animated:YES completion:nil];
+}
+
+- (IBAction)showMyProfile:(id)sender {
+    UserPresentationVC *userVC = [ViewController getUserPresentationVC];
+    userVC.isOwnProfile = YES;
+    [self.currentNavController pushViewController:userVC animated:YES];
 }
 
 @end

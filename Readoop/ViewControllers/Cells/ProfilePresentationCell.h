@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProfileDashboard.h"
 
 @interface ProfilePresentationCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
@@ -14,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
-@property (nonatomic, strong) UINavigationController *currentNavController;
+@property (nonatomic, weak) UINavigationController *currentNavController;
+@property (nonatomic, weak) ProfileDashboard *currentVC;
 
 - (void)populateWithCurrenUserData;
 

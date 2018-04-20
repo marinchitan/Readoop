@@ -16,7 +16,7 @@
 }
 
 + (UIFont *)getFAFont:(CGFloat)size {
-    return [UIFont fontWithName:kFontAwesomeFamilyName size:20.0];
+    return [UIFont fontWithName:kFontAwesomeFamilyName size:size];
 }
 
 @end

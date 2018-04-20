@@ -17,6 +17,7 @@
 #import "EditProfileVC.h"
 #import "AdditionalInfoVC.h"
 #import "AvatarChangeVC.h"
+#import "UserPresentationVC.h"
 
 @interface ViewController : UIViewController
 
@@ -30,6 +31,8 @@
 + (EditProfileVC*)getEditProfileVC;
 + (AdditionalInfoVC*)getAdditionalInfoVC;
 + (AvatarChangeVC*)getAvatarChangeVC;
+
++ (UserPresentationVC*)getUserPresentationVC;
 
 + (TesViewController*)getTestVC;
 

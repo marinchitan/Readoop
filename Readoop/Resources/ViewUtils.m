@@ -22,6 +22,7 @@
 
 + (void)setUpButton:(UIButton*)button withRadius:(CGFloat)radius {
     button.layer.cornerRadius = radius;
+    button.layer.masksToBounds = YES;
 }
 
 + (void)setUpIconLabel:(UILabel*)field withSize:(CGFloat)size{

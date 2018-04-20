@@ -23,4 +23,6 @@
 + (void)changeUsernameForUser:(User*)user newUsername:(NSString*)username;
 + (void)changeEmailForUser:(User*)user newEmail:(NSString*)email;
 + (void)changeFullNameForUser:(User*)user newName:(NSString*)name;
++ (void)changeAvatarForUser:(User*)user newAvatar:(NSData*)avatar;
++ (void)changeFirstTimeRegister:(User*)user newFlag:(BOOL)flag;
 @end

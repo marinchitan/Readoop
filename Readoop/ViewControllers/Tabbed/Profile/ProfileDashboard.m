@@ -23,11 +23,22 @@
     self.backButtonEnabled = NO;  //Disable back button for this VC
     [super viewDidLoad];
     self.appSession = [Session sharedSession];
-    
     self.dataSource = [ProfileTVCDataSource getProfileDashboardDataSource];
     
     [self setUpUI];
-    NSLog(@"User:%@",self.appSession.currentUser.username);
+    [self initialInterogation];
+}
+
+- (void)initialInterogation {
+    if(self.appSession.currentUser.firstTimeRegsitered){
+        [AlertUtils showInformation:@"Do you want to supply additional information for your profile?"
+                          withTitle:@"First Time Loged"
+                   withActionButton:@"Yes"
+                   withCancelButton:@"No"
+                         withAction:^{[self.navigationController pushViewController:[ViewController getAdditionalInfoVC] animated:YES];}
+                               onVC:self];
+        [RealmUtils changeFirstTimeRegister:self.appSession.currentUser newFlag:NO];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,8 +60,6 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 180;
-    
-   // [self.navigationController pushViewController:[ViewController getTestVC] animated:YES];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -64,6 +73,7 @@
         ProfilePresentationCell *cell = [tableView dequeueReusableCellWithIdentifier:cellModel.reuseIdentifier];
         [cell populateWithCurrenUserData];
         cell.currentNavController = self.navigationController;
+        cell.currentVC = self;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
@@ -100,6 +110,12 @@
         [AlertUtils getSuccesToastPanel:[NSString stringWithFormat:@"Welcome %@!",self.appSession.currentUser.username] withMessage:@"Seamless logged in."];
         self.appSession.wayOfArrival = others_path;
     }
+}
+
+//delegate methods
+
+- (void)refreshTableView {
+    [self.tableView reloadData];
 }
 
 @end

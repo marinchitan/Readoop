@@ -64,4 +64,9 @@
             instantiateViewControllerWithIdentifier:@"avatarChangeVC"];
 }
 
++ (UserPresentationVC*)getUserPresentationVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"userPresentationVC"];
+}
+
 @end

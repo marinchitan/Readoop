@@ -93,4 +93,20 @@
     }];
 }
 
++ (void)changeAvatarForUser:(User*)user newAvatar:(NSData*)avatar {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.avatar = avatar;
+    }];
+}
+
++ (void)changeFirstTimeRegister:(User*)user newFlag:(BOOL)flag {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        user.firstTimeRegsitered = flag;
+    }];
+}
+
 @end

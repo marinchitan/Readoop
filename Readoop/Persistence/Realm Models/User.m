@@ -19,7 +19,8 @@
     return @{@"fullName" : @"",
              @"email": @"",
              @"status":@0,
-             @"avatar": UIImagePNGRepresentation([UIImage imageNamed:@"defaultImage"])
+             @"avatar": UIImagePNGRepresentation([UIImage imageNamed:@"defaultImage"]),
+             @"firstTimeRegsitered":@1
              };
 }
 
