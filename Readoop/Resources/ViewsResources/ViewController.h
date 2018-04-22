@@ -18,6 +18,7 @@
 #import "AdditionalInfoVC.h"
 #import "AvatarChangeVC.h"
 #import "UserPresentationVC.h"
+#import "RequestsTVC.h"
 
 @interface ViewController : UIViewController
 
@@ -32,6 +33,7 @@
 + (AdditionalInfoVC*)getAdditionalInfoVC;
 + (AvatarChangeVC*)getAvatarChangeVC;
 
++ (RequestsTVC*)getRequestsTVC;
 + (UserPresentationVC*)getUserPresentationVC;
 
 + (TesViewController*)getTestVC;

@@ -15,6 +15,7 @@
 #import "EditProfileVC.h"
 #import "AlertUtils.h"
 #import "ViewController.h"
+#import "RequestsTVC.h"
 
 @implementation ProfileCell
 
@@ -79,15 +80,17 @@
     EditProfileVC *editProfileVC = [ViewController getEditProfileVC];
     ChangePasswordVC *chpsswVC = [ViewController getChangePasswVC];
     AdditionalInfoVC *addInfVC = [ViewController getAdditionalInfoVC];
+    RequestsTVC *requestsTVC = [ViewController getRequestsTVC];
     switch(self.model.cellSubType) {
         case myBooksCell:
             NSLog(@"MyBooks Action clicked");
             break;
         case myFriendsCell:
             NSLog(@"MyFriends Action clicked");
+            self.model.currentTab.selectedIndex = 2;
             break;
         case requestsCell:
-            NSLog(@"Requests Action clicked");
+            [self.model.currentNav pushViewController:requestsTVC animated:YES];
             break;
         case editProfileCell:
             [self.model.currentNav pushViewController:editProfileVC animated:YES];

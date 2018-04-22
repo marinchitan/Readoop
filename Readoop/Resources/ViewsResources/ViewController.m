@@ -69,4 +69,8 @@
             instantiateViewControllerWithIdentifier:@"userPresentationVC"];
 }
 
++ (RequestsTVC*)getRequestsTVC {
+    return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]instantiateViewControllerWithIdentifier:@"requestsTVC"];
+}
+
 @end
