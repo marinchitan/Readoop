@@ -11,6 +11,7 @@
 
 @interface UserPresentationVC : ContainerViewController
 @property (assign, nonatomic) BOOL isOwnProfile;
+@property (nonatomic, strong) User *currentUser;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;

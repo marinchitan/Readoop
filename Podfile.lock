@@ -1,4 +1,5 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - EHPlainAlert (1.2.7):
     - UIColor-HexRGB
   - FontAwesomeIconFactory (3.0)
@@ -14,6 +15,7 @@ PODS:
   - UIColor-HexRGB (1.0.1)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - EHPlainAlert
   - FontAwesomeIconFactory
   - ionicons
@@ -25,6 +27,7 @@ DEPENDENCIES:
   - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EHPlainAlert: b02e88eee87c99275082f6d3689a65348eec7b1e
   FontAwesomeIconFactory: dfc89a126ff158d3a642aeeb265eaa9b179ad496
   ionicons: 630bcd2c2970741c3359e3a35ad544e71d3c086b
@@ -36,6 +39,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
   UIColor-HexRGB: daccfa7e936af664369734a164b0309087d7f970
 
-PODFILE CHECKSUM: 71fc3904f7402c603fb46327f5240510bafc9826
+PODFILE CHECKSUM: 0a1e23512264a3de00a8a492d2dbf096b8ae17be
 
 COCOAPODS: 1.3.1

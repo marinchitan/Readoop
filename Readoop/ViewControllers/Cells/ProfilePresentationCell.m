@@ -120,6 +120,8 @@
 - (IBAction)showMyProfile:(id)sender {
     UserPresentationVC *userVC = [ViewController getUserPresentationVC];
     userVC.isOwnProfile = YES;
+    Session *appS = [Session sharedSession];
+    userVC.currentUser = appS.currentUser;
     [self.currentNavController pushViewController:userVC animated:YES];
 }
 

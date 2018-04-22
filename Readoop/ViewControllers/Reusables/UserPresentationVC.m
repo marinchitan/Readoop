@@ -19,7 +19,7 @@
     self.backButtonEnabled = YES;
     [super viewDidLoad];
     [self setupUI];
-    [self populateData];
+    [self populateDataWithUser:self.currentUser];
 }
 
 - (void)setupUI {
@@ -79,19 +79,19 @@
     self.avatarView.layer.cornerRadius = self.avatarView.frame.size.width / 2;
 }
 
-- (void)populateData {
-    self.avatarView.image = [UIImage imageWithData:self.appSession.currentUser.avatar];
-    self.userNameContent.text = self.appSession.currentUser.username;
-    self.fullNameContent.text = self.appSession.currentUser.fullName ? self.appSession.currentUser.fullName : @" - ";
-    self.emailContent.text = self.appSession.currentUser.email ? self.appSession.currentUser.email : @" - ";
+- (void)populateDataWithUser:(User*)user {
+    self.avatarView.image = [UIImage imageWithData:user.avatar];
+    self.userNameContent.text = user.username;
+    self.fullNameContent.text = user.fullName ? user.fullName : @" - ";
+    self.emailContent.text = user.email ? user.email : @" - ";
     
     NSString *locationString = [NSString new];
-    if(self.appSession.currentUser.city && self.appSession.currentUser.country){
+    if(user.city && user.country){
         locationString = [NSString stringWithFormat:@"%@, %@", self.appSession.currentUser.city, self.appSession.currentUser.country];
-    } else if(self.appSession.currentUser.city) {
-        locationString = self.appSession.currentUser.city;
-    } else if(self.appSession.currentUser.country){
-        locationString = self.appSession.currentUser.country;
+    } else if(user.city) {
+        locationString = user.city;
+    } else if(user.country){
+        locationString = user.country;
     } else {
         locationString = @" - ";
     }
@@ -99,12 +99,12 @@
     self.locationContent.text = locationString;
     
     NSString *ageString = [NSString new];
-    if(self.appSession.currentUser.dateOfBirth)
+    if(user.dateOfBirth)
     {
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
         NSInteger currentYear = [components year];
         
-        NSDateComponents *userComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.appSession.currentUser.dateOfBirth];
+        NSDateComponents *userComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:user.dateOfBirth];
         NSInteger userYear = [userComponents year];
 
         ageString = [NSString stringWithFormat:@"%tu",currentYear-userYear];
@@ -113,8 +113,8 @@
         self.ageContent.text = @" - ";
     }
     
-    self.booksContent.text = [NSString stringWithFormat:@"%tu", [self.appSession.currentUser.books count]];
-    self.friendsContent.text = [NSString stringWithFormat:@"%tu", [self.appSession.currentUser.friends count]];
+    self.booksContent.text = [NSString stringWithFormat:@"%tu", [user.books count]];
+    self.friendsContent.text = [NSString stringWithFormat:@"%tu", [user.friends count]];
 }
 
 

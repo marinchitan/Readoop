@@ -26,15 +26,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="0Vb-pn-n8f">
-                        <rect key="frame" x="25" y="10" width="60" height="60"/>
+                        <rect key="frame" x="25" y="15" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="pjs-g1-TUp"/>
-                            <constraint firstAttribute="width" constant="60" id="tyX-WG-yWN"/>
+                            <constraint firstAttribute="height" constant="50" id="pjs-g1-TUp"/>
+                            <constraint firstAttribute="width" constant="50" id="tyX-WG-yWN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMS-vb-Upu">
-                        <rect key="frame" x="105" y="30.5" width="77.5" height="19"/>
-                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="19"/>
+                        <rect key="frame" x="95" y="29.5" width="85.5" height="21"/>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -45,18 +45,31 @@
                             <constraint firstAttribute="height" constant="1" id="qf7-Wt-KHe"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSg-qK-hXX">
+                        <rect key="frame" x="190.5" y="32" width="61" height="17"/>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="0Vb-pn-n8f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="4eE-pB-gav"/>
                     <constraint firstItem="hMS-vb-Upu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IhR-SY-Jom"/>
                     <constraint firstAttribute="bottom" secondItem="aIl-sb-h6M" secondAttribute="bottom" id="OCs-DA-UUL"/>
+                    <constraint firstItem="FSg-qK-hXX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="et9-3R-b6b"/>
                     <constraint firstItem="aIl-sb-h6M" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="hYX-hB-uXb"/>
+                    <constraint firstItem="FSg-qK-hXX" firstAttribute="leading" secondItem="hMS-vb-Upu" secondAttribute="trailing" constant="10" id="kNy-31-jRP"/>
                     <constraint firstItem="aIl-sb-h6M" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oup-Nk-gVR"/>
                     <constraint firstItem="0Vb-pn-n8f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="q3x-ok-2dH"/>
                     <constraint firstItem="hMS-vb-Upu" firstAttribute="leading" secondItem="0Vb-pn-n8f" secondAttribute="trailing" constant="20" id="urS-nm-NDS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="avatar" destination="0Vb-pn-n8f" id="TQ4-p5-W9i"/>
+                <outlet property="fullNameLabel" destination="FSg-qK-hXX" id="SJw-BZ-3Nf"/>
+                <outlet property="usernameLabel" destination="hMS-vb-Upu" id="T2D-3t-2uL"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="93"/>
         </tableViewCell>
     </objects>

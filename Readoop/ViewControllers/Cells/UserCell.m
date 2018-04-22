@@ -7,6 +7,7 @@
 //
 
 #import "UserCell.h"
+#import "Color.h"
 
 @implementation UserCell
 
@@ -17,8 +18,16 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)setUpCellWith:(UIImage*)avatar withUsername:(NSString*)uersname withFullName:(NSString*)fullName {
+    self.avatar.image = avatar;
+    self.usernameLabel.text = uersname;
+    self.fullNameLabel.text = [NSString stringWithFormat:@"(%@)", fullName];
+    self.fullNameLabel.textColor = [Color getSubTitleGray];
+    
+    self.avatar.layer.cornerRadius = self.avatar.frame.size.width/2;
+    self.avatar.clipsToBounds = YES;
 }
 
 @end

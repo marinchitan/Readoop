@@ -13,6 +13,7 @@ target 'Readoop' do
   pod 'ionicons'
   pod 'FontAwesomeIconFactory'
   pod 'Realm' 
+  pod 'DZNEmptyDataSet'
 # Pods for Readoop
 
 end

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UserCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
+
+- (void)setUpCellWith:(UIImage*)avatar withUsername:(NSString*)uersname withFullName:(NSString*)fullName;
 
 @end

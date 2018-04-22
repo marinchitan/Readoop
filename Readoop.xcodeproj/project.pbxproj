@@ -64,6 +64,7 @@
 		3EFC4D9E208A73F4003D0C33 /* PeopleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4D9D208A73F4003D0C33 /* PeopleVC.m */; };
 		3EFC4DA5208A8462003D0C33 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DA3208A8462003D0C33 /* UserCell.m */; };
 		3EFC4DA6208A8462003D0C33 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC4DA4208A8462003D0C33 /* UserCell.xib */; };
+		3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DA8208B149C003D0C33 /* PeopleTVCDataSource.m */; };
 		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,8 @@
 		3EFC4DA2208A8462003D0C33 /* UserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
 		3EFC4DA3208A8462003D0C33 /* UserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		3EFC4DA4208A8462003D0C33 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		3EFC4DA7208B149C003D0C33 /* PeopleTVCDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleTVCDataSource.h; sourceTree = "<group>"; };
+		3EFC4DA8208B149C003D0C33 /* PeopleTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleTVCDataSource.m; sourceTree = "<group>"; };
 		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -287,6 +290,8 @@
 			children = (
 				3E895B0A206960600091FD3C /* ProfileTVCDataSource.h */,
 				3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */,
+				3EFC4DA7208B149C003D0C33 /* PeopleTVCDataSource.h */,
+				3EFC4DA8208B149C003D0C33 /* PeopleTVCDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -643,6 +648,7 @@
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
+				3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
