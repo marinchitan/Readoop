@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-JA-laJ">
-                        <rect key="frame" x="36" y="49.5" width="4.5" height="21"/>
+                        <rect key="frame" x="20" y="49.5" width="4.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dg-Yk-XfK">
-                        <rect key="frame" x="61" y="50" width="55" height="21"/>
+                        <rect key="frame" x="45" y="50" width="55" height="21"/>
                         <attributedString key="attributedText">
                             <fragment content="Sent to">
                                 <attributes>
@@ -43,14 +42,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uc-XF-3eA">
+                        <rect key="frame" x="0.0" y="118.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="00G-r2-USE"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qPk-8W-Ejk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9wb-2X-jKR"/>
+                    <constraint firstAttribute="bottom" secondItem="1Uc-XF-3eA" secondAttribute="bottom" id="Ib1-S5-hGj"/>
                     <constraint firstItem="6dg-Yk-XfK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ie7-le-YFM"/>
-                    <constraint firstItem="aS6-JA-laJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="JoF-z8-4pC"/>
+                    <constraint firstAttribute="trailing" secondItem="1Uc-XF-3eA" secondAttribute="trailing" id="MMe-QE-mpA"/>
                     <constraint firstAttribute="trailing" secondItem="qPk-8W-Ejk" secondAttribute="trailing" constant="20" id="ZRB-lh-eA9"/>
+                    <constraint firstItem="1Uc-XF-3eA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="daO-Kq-f8g"/>
                     <constraint firstItem="6dg-Yk-XfK" firstAttribute="leading" secondItem="aS6-JA-laJ" secondAttribute="trailing" constant="20" id="lzo-te-UDP"/>
                     <constraint firstItem="aS6-JA-laJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qWQ-rG-SEb"/>
+                    <constraint firstItem="aS6-JA-laJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="wN6-XA-Atj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

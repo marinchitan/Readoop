@@ -42,7 +42,6 @@
 		3E895B0820695E610091FD3C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0720695E610091FD3C /* ProfileCell.m */; };
 		3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */; };
 		3E895B0F206960A30091FD3C /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0E206960A30091FD3C /* CellModel.m */; };
-		3E9050C62062FF5D006C8B56 /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9050C52062FF5D006C8B56 /* PostComment.m */; };
 		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
 		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
 		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
@@ -70,6 +69,9 @@
 		3EFC4DB6208D1A4E003D0C33 /* RequestsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DB5208D1A4E003D0C33 /* RequestsTVC.m */; };
 		3EFC4DBA208D20E9003D0C33 /* ReceivedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DB8208D20E9003D0C33 /* ReceivedRequest.m */; };
 		3EFC4DBB208D20E9003D0C33 /* ReceivedRequest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC4DB9208D20E9003D0C33 /* ReceivedRequest.xib */; };
+		3EFC4DBE208DC744003D0C33 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DBD208DC744003D0C33 /* Request.m */; };
+		3EFC4DC1208DE050003D0C33 /* RequestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DC0208DE050003D0C33 /* RequestCellModel.m */; };
+		3EFC4DC4208DFCA9003D0C33 /* RequestsTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC4DC3208DFCA9003D0C33 /* RequestsTVCDataSource.m */; };
 		EFAB725FF27F5BD4CDA44F72 /* libPods-Readoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */; };
 /* End PBXBuildFile section */
 
@@ -140,8 +142,6 @@
 		3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTVCDataSource.m; sourceTree = "<group>"; };
 		3E895B0D206960A30091FD3C /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
 		3E895B0E206960A30091FD3C /* CellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
-		3E9050C42062FF5D006C8B56 /* PostComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostComment.h; sourceTree = "<group>"; };
-		3E9050C52062FF5D006C8B56 /* PostComment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostComment.m; sourceTree = "<group>"; };
 		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -188,6 +188,12 @@
 		3EFC4DB7208D20E9003D0C33 /* ReceivedRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceivedRequest.h; sourceTree = "<group>"; };
 		3EFC4DB8208D20E9003D0C33 /* ReceivedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceivedRequest.m; sourceTree = "<group>"; };
 		3EFC4DB9208D20E9003D0C33 /* ReceivedRequest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceivedRequest.xib; sourceTree = "<group>"; };
+		3EFC4DBC208DC744003D0C33 /* Request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		3EFC4DBD208DC744003D0C33 /* Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		3EFC4DBF208DE050003D0C33 /* RequestCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCellModel.h; sourceTree = "<group>"; };
+		3EFC4DC0208DE050003D0C33 /* RequestCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCellModel.m; sourceTree = "<group>"; };
+		3EFC4DC2208DFCA9003D0C33 /* RequestsTVCDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestsTVCDataSource.h; sourceTree = "<group>"; };
+		3EFC4DC3208DFCA9003D0C33 /* RequestsTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestsTVCDataSource.m; sourceTree = "<group>"; };
 		C50EBEE3769E98A9A27FD5D9 /* libPods-Readoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Readoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -292,8 +298,8 @@
 				3EC234B52062F0040029225D /* Book.m */,
 				3EC234B72062F00E0029225D /* User.h */,
 				3EC234B82062F00E0029225D /* User.m */,
-				3E9050C42062FF5D006C8B56 /* PostComment.h */,
-				3E9050C52062FF5D006C8B56 /* PostComment.m */,
+				3EFC4DBC208DC744003D0C33 /* Request.h */,
+				3EFC4DBD208DC744003D0C33 /* Request.m */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 				3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */,
 				3EFC4DA7208B149C003D0C33 /* PeopleTVCDataSource.h */,
 				3EFC4DA8208B149C003D0C33 /* PeopleTVCDataSource.m */,
+				3EFC4DC2208DFCA9003D0C33 /* RequestsTVCDataSource.h */,
+				3EFC4DC3208DFCA9003D0C33 /* RequestsTVCDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -391,6 +399,8 @@
 			children = (
 				3E895B0D206960A30091FD3C /* CellModel.h */,
 				3E895B0E206960A30091FD3C /* CellModel.m */,
+				3EFC4DBF208DE050003D0C33 /* RequestCellModel.h */,
+				3EFC4DC0208DE050003D0C33 /* RequestCellModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -651,6 +661,7 @@
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
 				3EC234B02062EFEC0029225D /* Post.m in Sources */,
+				3EFC4DBE208DC744003D0C33 /* Request.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
 				3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */,
 				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
@@ -663,7 +674,6 @@
 				3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */,
 				3E895B0F206960A30091FD3C /* CellModel.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
-				3E9050C62062FF5D006C8B56 /* PostComment.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
 				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,
@@ -674,8 +684,10 @@
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3EFC4DB6208D1A4E003D0C33 /* RequestsTVC.m in Sources */,
+				3EFC4DC4208DFCA9003D0C33 /* RequestsTVCDataSource.m in Sources */,
 				3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
+				3EFC4DC1208DE050003D0C33 /* RequestCellModel.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,

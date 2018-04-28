@@ -6,20 +6,113 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Regular.otf">
+            <string>Bariol</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="receivedRequestCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ReceivedRequest">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="receivedRequestCell" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="ReceivedRequest">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lX-0n-uKU">
+                        <rect key="frame" x="20" y="34.5" width="5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2go-qM-byb">
+                        <rect key="frame" x="45" y="35" width="182.5" height="21"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Received from">
+                                <attributes>
+                                    <font key="NSFont" metaFont="system" size="17"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-NJ-n51">
+                        <rect key="frame" x="230" y="32.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="ZoH-dU-had"/>
+                            <constraint firstAttribute="height" constant="25" id="bD5-Gu-nuu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-p6-6ou">
+                        <rect key="frame" x="230" y="32.5" width="25" height="25"/>
+                        <connections>
+                            <action selector="acceptTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bEC-Zn-mPM"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHc-ij-8Eb">
+                        <rect key="frame" x="275" y="32.5" width="25" height="25"/>
+                        <connections>
+                            <action selector="rejectTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LvN-wu-tnI"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XV-Md-h3Z">
+                        <rect key="frame" x="0.0" y="88.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="71b-rP-Zsd"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOZ-LI-NSJ">
+                        <rect key="frame" x="275" y="32.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="wEN-rw-BCV"/>
+                            <constraint firstAttribute="width" constant="25" id="xRI-ng-2u9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7lX-0n-uKU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="4QN-d5-u9S"/>
+                    <constraint firstItem="2go-qM-byb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.57" id="84J-AC-4ui"/>
+                    <constraint firstItem="8yL-p6-6ou" firstAttribute="height" secondItem="fcf-NJ-n51" secondAttribute="height" id="Au5-7S-IeD"/>
+                    <constraint firstItem="8yL-p6-6ou" firstAttribute="top" secondItem="fcf-NJ-n51" secondAttribute="top" id="DlV-79-xgU"/>
+                    <constraint firstItem="8yL-p6-6ou" firstAttribute="leading" secondItem="fcf-NJ-n51" secondAttribute="leading" id="Epr-ZE-GJB"/>
+                    <constraint firstItem="2go-qM-byb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Hyl-hS-bOi"/>
+                    <constraint firstItem="fOZ-LI-NSJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Mff-xb-KeS"/>
+                    <constraint firstItem="8XV-Md-h3Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Q17-OO-sWB"/>
+                    <constraint firstItem="fOZ-LI-NSJ" firstAttribute="leading" secondItem="fcf-NJ-n51" secondAttribute="trailing" constant="20" id="RAP-yM-Bi1"/>
+                    <constraint firstAttribute="trailing" secondItem="8XV-Md-h3Z" secondAttribute="trailing" id="Snm-hs-XdG"/>
+                    <constraint firstItem="fHc-ij-8Eb" firstAttribute="height" secondItem="fOZ-LI-NSJ" secondAttribute="height" id="TcX-LH-i6L"/>
+                    <constraint firstItem="fHc-ij-8Eb" firstAttribute="leading" secondItem="fOZ-LI-NSJ" secondAttribute="leading" id="VeB-ub-gFF"/>
+                    <constraint firstItem="fHc-ij-8Eb" firstAttribute="width" secondItem="fOZ-LI-NSJ" secondAttribute="width" id="X14-nU-gRb"/>
+                    <constraint firstItem="2go-qM-byb" firstAttribute="leading" secondItem="7lX-0n-uKU" secondAttribute="trailing" constant="20" id="aPf-9d-p6N"/>
+                    <constraint firstAttribute="bottom" secondItem="8XV-Md-h3Z" secondAttribute="bottom" id="nTR-Hr-Wgq"/>
+                    <constraint firstItem="7lX-0n-uKU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rxY-Zm-95h"/>
+                    <constraint firstItem="fcf-NJ-n51" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wCp-fn-hrc"/>
+                    <constraint firstItem="fHc-ij-8Eb" firstAttribute="top" secondItem="fOZ-LI-NSJ" secondAttribute="top" id="wd8-Xe-DdQ"/>
+                    <constraint firstItem="8yL-p6-6ou" firstAttribute="width" secondItem="fcf-NJ-n51" secondAttribute="width" id="zIJ-rk-ibh"/>
+                    <constraint firstAttribute="trailing" secondItem="fOZ-LI-NSJ" secondAttribute="trailing" constant="20" id="zMD-0v-If2"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="acceptLabel" destination="fcf-NJ-n51" id="UPN-Cw-rH3"/>
+                <outlet property="icon" destination="7lX-0n-uKU" id="b6d-3m-AIH"/>
+                <outlet property="receivedFromLabel" destination="2go-qM-byb" id="xfP-EE-fzZ"/>
+                <outlet property="rejectLabel" destination="fOZ-LI-NSJ" id="Al1-Uy-RF1"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="77"/>
         </tableViewCell>
     </objects>
 </document>

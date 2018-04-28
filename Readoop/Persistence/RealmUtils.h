@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Request.h"
 
 @interface RealmUtils : NSObject
 
 + (void)addUserObject:(User *)user;
 
 + (User*)getUserByName:(NSString*)name byPassword:(NSString*)password;
++ (User*)getUserById:(NSNumber*)userId;
++ (void)addUser:(User*)user toFriendListOfUser:(User*)secondUser;
 
 + (void)changeRememberStatusForUser:(User*)user shouldBeRemembered:(BOOL)remember;
 + (void)changePasswordForUser:(User*)user newPassword:(NSString*)newPassword;
@@ -25,4 +28,7 @@
 + (void)changeFullNameForUser:(User*)user newName:(NSString*)name;
 + (void)changeAvatarForUser:(User*)user newAvatar:(NSData*)avatar;
 + (void)changeFirstTimeRegister:(User*)user newFlag:(BOOL)flag;
+
++ (void)createRequestfromUser:(User*)sender toUser:(User*)receiver;
++ (void)deleteRequest:(Request*)request;
 @end

@@ -8,6 +8,8 @@
 
 #import "UserPresentationVC.h"
 #import "Essentials.h"
+#import "Request.h"
+#import "AlertUtils.h"
 
 @interface UserPresentationVC ()
 
@@ -120,9 +122,44 @@
 
 - (IBAction)addToFriendsAction:(id)sender {
     //Check if is already friends
-    if(self.isOwnProfile){
+    if(self.isOwnProfile){ //Own profile, navigate to edit profile
         [self.navigationController popViewControllerAnimated:YES];
         [self.navigationController pushViewController:[ViewController getEditProfileVC] animated:YES];
+    } else { //Other user profile, send request
+    
+        User *retrievedUser = self.currentUser;
+        NSLog(@"Current user's page:%@   Current session user:%@", self.currentUser.userId, self.appSession.currentUser.userId);
+    
+        if([[self.appSession.currentUser.friends objectsWhere:@"username = %@", retrievedUser.username] firstObject]){
+            //Alert already has in friends
+            NSLog(@"Already has in friend list");
+            [AlertUtils showInformation:@"You already have this user in your friend list ."
+                              withTitle:@"Error"
+                       withCancelButton:@"Got it"
+                                   onVC:self];
+            
+            //Check if session user already sent a request to this user
+        } else if([[Request objectsWhere:@"receiverId == %@ AND senderId == %@",retrievedUser.userId, self.appSession.currentUser.userId] firstObject]){
+            [AlertUtils showInformation:@"You have already sent a friend request to this user."
+                              withTitle:@"Error"
+                       withCancelButton:@"Got it"
+                                   onVC:self];
+            
+            //Check if session user already received a request to this user
+        } else if([[Request objectsWhere:@"senderId == %@ AND receiverId == %@",retrievedUser.userId,self.appSession.currentUser.userId] firstObject]){
+            [AlertUtils showInformation:@"This user already sent you a friend request."
+                              withTitle:@"Error"
+                       withCancelButton:@"Got it"
+                                   onVC:self];
+            
+        } else {
+            //Do request
+            NSLog(@"Successful add");
+            [AlertUtils showSuccess:@"Request sent!" withTitle:@"Success" withCancelButton:@"Got it" onVC:self];
+            //MONGOPUT
+            [RealmUtils createRequestfromUser:self.appSession.currentUser toUser:retrievedUser];
+        }
+        
     }
 }
 

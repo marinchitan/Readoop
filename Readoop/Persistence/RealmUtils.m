@@ -8,6 +8,7 @@
 
 #import "RealmUtils.h"
 #import "User.h"
+#import "Request.h"
 
 @implementation RealmUtils
 
@@ -27,6 +28,21 @@
         }
     }
     return nil;
+}
+
++ (User*)getUserById:(NSNumber*)userId {
+    User *retrievedUser = [[User objectsWhere:@"userId == %@",userId] firstObject];
+    
+    return retrievedUser;
+    
+}
+
++ (void)addUser:(User*)user toFriendListOfUser:(User*)secondUser {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [secondUser.friends addObject:user];
+    }];
 }
 
 + (void)changeRememberStatusForUser:(User*)user shouldBeRemembered:(BOOL)remember {
@@ -106,6 +122,27 @@
     
     [realm transactionWithBlock:^{
         user.firstTimeRegsitered = flag;
+    }];
+}
+
++ (void)createRequestfromUser:(User*)sender toUser:(User*)receiver {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    Request *request = [Request new];
+    request.senderId = sender.userId;
+    request.receiverId = receiver.userId;
+    request.creationTime = [NSDate date];
+    request.requestId = [NSNumber numberWithInt:(int)([[Request allObjects] count] + 1)];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:request];
+    }];
+}
+
++ (void)deleteRequest:(Request*)request {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [realm deleteObject:request];
     }];
 }
 
