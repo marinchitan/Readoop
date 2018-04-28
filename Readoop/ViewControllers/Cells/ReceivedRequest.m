@@ -87,12 +87,16 @@
     [RealmUtils addUser:sender toFriendListOfUser:receiver];
     
     [RealmUtils deleteRequest:self.model.request];
+    [self.model.currentVC fetchDataSource];
     [self.model.currentVC.tableView reloadData];
+    [self.model.currentVC.navigationController popViewControllerAnimated:self.model.currentVC];
 }
 
 - (void)rejectRequest {
     [RealmUtils deleteRequest:self.model.request];
+    [self.model.currentVC fetchDataSource];
     [self.model.currentVC.tableView reloadData];
+    [self.model.currentVC.navigationController popViewControllerAnimated:self.model.currentVC];
 }
 
 @end

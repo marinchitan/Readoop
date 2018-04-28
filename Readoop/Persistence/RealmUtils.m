@@ -131,7 +131,8 @@
     request.senderId = sender.userId;
     request.receiverId = receiver.userId;
     request.creationTime = [NSDate date];
-    request.requestId = [NSNumber numberWithInt:(int)([[Request allObjects] count] + 1)];
+    int primaryKey = [[Request allObjects] maxOfProperty:@"requestId"];
+    request.requestId = [NSNumber numberWithInt:primaryKey + 1];
     
     [realm transactionWithBlock:^{
         [realm addObject:request];

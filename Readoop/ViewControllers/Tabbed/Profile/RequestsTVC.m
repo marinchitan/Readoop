@@ -26,13 +26,17 @@
 - (void)viewDidLoad {
     self.backButtonEnabled = YES;
     [super viewDidLoad];
+    [self fetchDataSource];
+
+    [self setupUI];
+}
+
+- (void)fetchDataSource {
     RequestsTVCDataSource *requestsDataSource = [RequestsTVCDataSource new];
     self.receivedDataSource = [requestsDataSource getReceivedRequestsDataSource];
     self.pendingDataSource = [requestsDataSource getPendingRequestsDataSource];
     self.numberOfReceivedRequests = [requestsDataSource getNumberOfReceivedRequests];
     self.numberOfPendingRequests = [requestsDataSource getNumberOfPendingRequests];
-
-    [self setupUI];
 }
 
 - (void)setupUI {

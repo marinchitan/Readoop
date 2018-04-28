@@ -12,4 +12,6 @@
 @interface RequestsTVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+- (void)fetchDataSource;
+
 @end
