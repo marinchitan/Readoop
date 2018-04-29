@@ -9,6 +9,7 @@
 #import "PeopleVC.h"
 #import "Essentials.h"
 #import "UserCell.h"
+#import "User.h"
 #import "PeopleTVCDataSource.h"
 
 
@@ -27,7 +28,7 @@
     self.isMyFriendsEnabled = YES; //hardcoded
     [self setupUI];
     [self setDataSource];
-    
+    [self setupSignal];
 }
 
 - (void)setupUI {
@@ -53,6 +54,36 @@
         self.currentDataSource = [PeopleTVCDataSource getFriendsOfUser:self.appSession.currentUser];
     } else {
         self.currentDataSource = [PeopleTVCDataSource getAllUsers];
+    }
+    [self.tableVIew reloadData];
+}
+
+- (void)setupSignal {
+    RACSignal *searchTextSignal = [self.searchViewButton rac_textSignal];
+    
+    [searchTextSignal subscribeNext:^(id  _Nullable x) {
+        [self filterCurrentDataSource:x];
+    }];
+}
+
+- (void)filterCurrentDataSource:(NSString*)wildcard {
+    if([wildcard isEqualToString:@""]) {//No search show all people
+        if(self.isMyFriendsEnabled){
+            self.currentDataSource = [PeopleTVCDataSource getFriendsOfUser:self.appSession.currentUser];
+        } else {
+            self.currentDataSource = [PeopleTVCDataSource getAllUsers];
+        }
+    } else { //Do the filtering
+        NSString *predicate = [NSString stringWithFormat:@"%@*", wildcard];
+        //filteredDataSource = [initialFilteredDataSource objectsWhere:@"username LIKE %@", predicate];
+       
+        if(self.isMyFriendsEnabled){
+            //Search after username or full name
+            self.currentDataSource = [self.appSession.currentUser.friends objectsWhere:@"username != %@ AND username LIKE %@ OR fullName LIKE %@", self.appSession.currentUser.username, predicate, predicate];
+        } else {
+            //Search after username or full name
+            self.currentDataSource = [User objectsWhere:@"username != %@ AND username LIKE %@ OR fullName LIKE %@", self.appSession.currentUser.username, predicate, predicate];
+        }
     }
     [self.tableVIew reloadData];
 }

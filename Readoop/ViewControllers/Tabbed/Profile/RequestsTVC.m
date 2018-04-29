@@ -11,6 +11,7 @@
 #import "ReceivedRequest.h"
 #import "Request.h"
 #import "RequestsTVCDataSource.h"
+#import "Font.h"
 
 @interface RequestsTVC ()
 
@@ -40,6 +41,9 @@
 }
 
 - (void)setupUI {
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"PendingRequest" bundle:nil] forCellReuseIdentifier:@"pendingRequestCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ReceivedRequest" bundle:nil] forCellReuseIdentifier:@"receivedRequestCell"];
     
@@ -92,6 +96,16 @@
     } else {
         return @"Pending requests";
     }
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"No requests";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [Font getBariolwithSize:32],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
 

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface RequestsTVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource>
+@interface RequestsTVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (void)fetchDataSource;
