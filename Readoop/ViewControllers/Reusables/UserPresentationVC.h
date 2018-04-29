@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
+#import "PeopleVC.h"
 
 @interface UserPresentationVC : ContainerViewController
 @property (assign, nonatomic) BOOL isOwnProfile;
 @property (nonatomic, strong) User *currentUser;
+@property (weak, nonatomic) id<PeopleVCDelegate> peopleDelegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;

@@ -147,4 +147,12 @@
     }];
 }
 
++ (void)deleteUser:(User*)user fromFriendListOfUser:(User*)secondUser {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    NSUInteger index = [secondUser.friends indexOfObject:user];
+    [realm transactionWithBlock:^{
+        [secondUser.friends removeObjectAtIndex:index];
+    }];
+}
+
 @end

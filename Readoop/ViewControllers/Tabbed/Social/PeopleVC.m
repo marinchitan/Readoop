@@ -118,7 +118,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UserPresentationVC *userVC = [ViewController getUserPresentationVC];
     userVC.isOwnProfile = NO;
-    userVC.currentUser = self.currentDataSource[indexPath.row];
+    if(self.currentDataSource[indexPath.row]) {
+        userVC.currentUser = self.currentDataSource[indexPath.row];
+    }
+    userVC.peopleDelegate = self;
     [self.navigationController pushViewController:userVC animated:YES];
 }
 
@@ -147,6 +150,11 @@
                                  NSParagraphStyleAttributeName: paragraph};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (void)refreshTableView {
+    [self setDataSource];
+    [self.tableVIew reloadData];
 }
 
 @end

@@ -10,7 +10,13 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "ContainerViewController.h"
 
-@interface PeopleVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@protocol PeopleVCDelegate
+
+- (void)refreshTableView;
+
+@end
+
+@interface PeopleVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, PeopleVCDelegate>
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIButton *myFriendsButton;

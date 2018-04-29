@@ -75,10 +75,23 @@
     if(self.isOwnProfile) {
         [self.addToFriendsButton setTitle:@"Edit profie" forState:UIControlStateNormal];
         [self.addToFriendsButton setTitle:@"Edit profie" forState:UIControlStateFocused];
+    } else if([self alreadyHasInFriends]) {
+        [self.addToFriendsButton setTitle:@"Remove friend" forState:UIControlStateNormal];
+        [self.addToFriendsButton setTitle:@"Remove friend" forState:UIControlStateFocused];
     }
     
     self.avatarView.clipsToBounds = YES;
     self.avatarView.layer.cornerRadius = self.avatarView.frame.size.width / 2;
+}
+
+- (BOOL)alreadyHasInFriends {
+    RLMArray *friends = self.appSession.currentUser.friends;
+    User *foundUser = [[friends objectsWhere:@"userId == %@", self.currentUser.userId] firstObject];
+    if(foundUser){
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 - (void)populateDataWithUser:(User*)user {
@@ -119,12 +132,28 @@
     self.friendsContent.text = [NSString stringWithFormat:@"%tu", [user.friends count]];
 }
 
+- (void)deleteFromFriends {
+    //Delete people from each others friend list
+    [RealmUtils deleteUser:self.currentUser fromFriendListOfUser:self.appSession.currentUser];
+    [RealmUtils deleteUser:self.appSession.currentUser fromFriendListOfUser:self.currentUser];
+    [self.peopleDelegate refreshTableView];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)addToFriendsAction:(id)sender {
     //Check if is already friends
     if(self.isOwnProfile){ //Own profile, navigate to edit profile
         [self.navigationController popViewControllerAnimated:YES];
         [self.navigationController pushViewController:[ViewController getEditProfileVC] animated:YES];
+    } else if([self alreadyHasInFriends]) {
+        
+        [AlertUtils showInformation:@"Are you sure you want to remove this person from friends?"
+                          withTitle:@"Remove from friends"
+                   withActionButton:@"Remove"
+                   withCancelButton:@"Cancel"
+                         withAction:^{[self deleteFromFriends];}
+                               onVC:self];
+        
     } else { //Other user profile, send request
     
         User *retrievedUser = self.currentUser;
