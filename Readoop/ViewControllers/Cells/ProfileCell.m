@@ -86,7 +86,6 @@
             NSLog(@"MyBooks Action clicked");
             break;
         case myFriendsCell:
-            NSLog(@"MyFriends Action clicked");
             self.model.currentTab.selectedIndex = 2;
             break;
         case requestsCell:

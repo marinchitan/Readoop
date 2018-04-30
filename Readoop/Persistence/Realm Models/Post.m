@@ -10,4 +10,8 @@
 
 @implementation Post
 
++ (NSString *)primaryKey {
+    return @"postId";
+}
+
 @end

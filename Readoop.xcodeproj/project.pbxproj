@@ -42,6 +42,9 @@
 		3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */; };
 		3E895B0F206960A30091FD3C /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0E206960A30091FD3C /* CellModel.m */; };
 		3EAC24642096305600D1AED5 /* FeedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24632096305600D1AED5 /* FeedVC.m */; };
+		3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */; };
+		3EAC246B2097207900D1AED5 /* FeedPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24692097207900D1AED5 /* FeedPostCell.m */; };
+		3EAC246C2097207900D1AED5 /* FeedPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EAC246A2097207900D1AED5 /* FeedPostCell.xib */; };
 		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
 		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
 		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
@@ -142,6 +145,11 @@
 		3E895B0E206960A30091FD3C /* CellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
 		3EAC24622096305600D1AED5 /* FeedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedVC.h; sourceTree = "<group>"; };
 		3EAC24632096305600D1AED5 /* FeedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedVC.m; sourceTree = "<group>"; };
+		3EAC24652097204E00D1AED5 /* FeedTVCDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTVCDataSource.h; sourceTree = "<group>"; };
+		3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedTVCDataSource.m; sourceTree = "<group>"; };
+		3EAC24682097207900D1AED5 /* FeedPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedPostCell.h; sourceTree = "<group>"; };
+		3EAC24692097207900D1AED5 /* FeedPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedPostCell.m; sourceTree = "<group>"; };
+		3EAC246A2097207900D1AED5 /* FeedPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostCell.xib; sourceTree = "<group>"; };
 		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -313,6 +321,8 @@
 				3EFC4DA8208B149C003D0C33 /* PeopleTVCDataSource.m */,
 				3EFC4DC2208DFCA9003D0C33 /* RequestsTVCDataSource.h */,
 				3EFC4DC3208DFCA9003D0C33 /* RequestsTVCDataSource.m */,
+				3EAC24652097204E00D1AED5 /* FeedTVCDataSource.h */,
+				3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -423,6 +433,9 @@
 				3EFC4DB7208D20E9003D0C33 /* ReceivedRequest.h */,
 				3EFC4DB8208D20E9003D0C33 /* ReceivedRequest.m */,
 				3EFC4DB9208D20E9003D0C33 /* ReceivedRequest.xib */,
+				3EAC24682097207900D1AED5 /* FeedPostCell.h */,
+				3EAC24692097207900D1AED5 /* FeedPostCell.m */,
+				3EAC246A2097207900D1AED5 /* FeedPostCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -570,6 +583,7 @@
 				3E59F8A0205BD8D300D6FD5A /* Dashboard.storyboard in Resources */,
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
 				3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */,
+				3EAC246C2097207900D1AED5 /* FeedPostCell.xib in Resources */,
 				3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
 				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
@@ -659,6 +673,7 @@
 				3EFC4DBA208D20E9003D0C33 /* ReceivedRequest.m in Sources */,
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
+				3EAC246B2097207900D1AED5 /* FeedPostCell.m in Sources */,
 				3EC234B02062EFEC0029225D /* Post.m in Sources */,
 				3EFC4DBE208DC744003D0C33 /* Request.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
@@ -680,6 +695,7 @@
 				3E895B0820695E610091FD3C /* ProfileCell.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
 				3EFC4DAD208D17AF003D0C33 /* PendingRequest.m in Sources */,
+				3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */,
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3EFC4DB6208D1A4E003D0C33 /* RequestsTVC.m in Sources */,

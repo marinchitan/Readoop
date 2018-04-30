@@ -8,7 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
+#import "User.h"
+
+RLM_ARRAY_TYPE(User);
 
 @interface Post : RLMObject
+
+@property NSNumber<RLMInt> *postId;
+@property NSNumber<RLMInt> *userId;
+@property NSDate* datePosted;
+
+@property NSString *content;
+
+@property RLMArray<User *><User> *upRates;
+@property RLMArray<User *><User> *downRates;
 
 @end

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Regular.otf">
+            <string>Bariol</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="feedPostCell" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="FeedPostCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr7-w0-cm6">
+                        <rect key="frame" x="20" y="5" width="50" height="17"/>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxP-wy-XaG">
+                        <rect key="frame" x="90" y="5" width="80.5" height="17"/>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emh-55-XKC">
+                        <rect key="frame" x="36" y="37" width="256" height="20"/>
+                        <color key="backgroundColor" red="1" green="0.2412560429401186" blue="0.12052358806190366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
+                        <color key="textColor" red="0.99419651642150841" green="0.99278213810853067" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-Dq-7xm">
+                        <rect key="frame" x="15" y="67" width="30" height="37.5"/>
+                        <state key="normal" title="Up"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-05-kNz">
+                        <rect key="frame" x="60" y="67" width="39" height="37.5"/>
+                        <state key="normal" title="Down"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.86721801556783329" green="0.92480964467005078" blue="0.87442094529354852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Ocf-05-kNz" firstAttribute="top" secondItem="Emh-55-XKC" secondAttribute="bottom" constant="10" id="2ec-wU-9LW"/>
+                    <constraint firstItem="Emh-55-XKC" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="42M-d6-IOs"/>
+                    <constraint firstAttribute="bottom" secondItem="jqR-Dq-7xm" secondAttribute="bottom" constant="10" id="6lW-V6-ZZV"/>
+                    <constraint firstItem="dxP-wy-XaG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="9YM-2H-hOv"/>
+                    <constraint firstItem="dxP-wy-XaG" firstAttribute="leading" secondItem="jr7-w0-cm6" secondAttribute="trailing" constant="20" id="C5x-Kg-D8w"/>
+                    <constraint firstItem="jqR-Dq-7xm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="NAe-nB-ajj"/>
+                    <constraint firstItem="Emh-55-XKC" firstAttribute="top" secondItem="jr7-w0-cm6" secondAttribute="bottom" constant="15" id="RDu-Ir-0I8"/>
+                    <constraint firstItem="jqR-Dq-7xm" firstAttribute="top" secondItem="Emh-55-XKC" secondAttribute="bottom" constant="10" id="ch1-MS-rtO"/>
+                    <constraint firstAttribute="bottom" secondItem="Ocf-05-kNz" secondAttribute="bottom" constant="10" id="e1T-kb-oWN"/>
+                    <constraint firstItem="Emh-55-XKC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="oUh-xd-7WO"/>
+                    <constraint firstItem="Ocf-05-kNz" firstAttribute="leading" secondItem="jqR-Dq-7xm" secondAttribute="trailing" constant="15" id="ujW-OR-rVT"/>
+                    <constraint firstItem="jr7-w0-cm6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="zJJ-f1-Med"/>
+                    <constraint firstItem="jr7-w0-cm6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="zU2-KC-bdp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="postContentLabel" destination="Emh-55-XKC" id="CV9-dm-pVi"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="137.5"/>
+        </tableViewCell>
+    </objects>
+</document>

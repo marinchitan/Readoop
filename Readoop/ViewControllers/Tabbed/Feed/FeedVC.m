@@ -8,10 +8,13 @@
 
 #import "FeedVC.h"
 #import "Essentials.h"
+#import "FeedTVCDataSource.h"
+#import "FeedPostCell.h"
 
 @interface FeedVC ()
 @property (nonatomic, assign) BOOL isMyFriendsEnabled;
 @property (nonatomic, assign) BOOL isAllPeopleEnabled;
+@property (nonatomic, strong) RLMArray *dataSource;
 @end
 
 @implementation FeedVC
@@ -22,10 +25,10 @@
     self.isMyFriendsEnabled = NO;
     
     [self setupUI];
+    self.dataSource = [FeedTVCDataSource getAllFeedPosts];
 }
 
 - (void)setupUI {
-    
     [ViewUtils setUpButton:self.postButton withRadius:self.initialCornerRadius];
     [ViewUtils setUpButton:self.allPostsTab withRadius:self.initialCornerRadius];
     [ViewUtils setUpButton:self.friendsPostTab withRadius:self.initialCornerRadius];
@@ -47,14 +50,21 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 80;
     
+    UINib *nib = [UINib nibWithNibName:@"FeedPostCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"feedPostCell"];
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return [UITableViewCell new];
+    FeedPostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"feedPostCell"];
+    
+    [cell setupCellWithModel:self.dataSource[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [self.dataSource count];
 }
 
 
