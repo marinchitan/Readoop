@@ -87,4 +87,9 @@
     return [UIColor colorWithRed:(230/255.0) green:(230/255.0) blue:(230/255.0) alpha:1];
 }
 
++ (UIColor *)getFeedPostGray {
+    //return [UIColor colorWithRed:(220/255.0) green:(220/255.0) blue:(220/255.0) alpha:1];
+    return [UIColor colorWithRed:(232/255.0) green:(232/255.0) blue:(232/255.0) alpha:1];
+}
+
 @end

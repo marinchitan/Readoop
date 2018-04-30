@@ -128,4 +128,8 @@
     [EHPlainAlert showAlertWithTitle:title message:message type:ViewAlertPanic];
 }
 
++ (void)getInfoToastPanel:(NSString *)title withMessage:(NSString *)message {
+    [EHPlainAlert showAlertWithTitle:title message:message type:ViewAlertError];
+}
+
 @end

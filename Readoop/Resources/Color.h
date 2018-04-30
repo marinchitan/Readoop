@@ -37,5 +37,7 @@
 + (UIColor *)getActiveTab;
   //Alternative reds
 
++ (UIColor *)getFeedPostGray;
+
 
 @end

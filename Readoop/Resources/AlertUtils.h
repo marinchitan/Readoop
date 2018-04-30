@@ -59,4 +59,7 @@
 + (void)getErrorToastPanel:(NSString *)title
                 withMessage:(NSString *)message;
 
++ (void)getInfoToastPanel:(NSString *)title
+              withMessage:(NSString *)message;
+
 @end

@@ -25,7 +25,7 @@
     self.isMyFriendsEnabled = NO;
     
     [self setupUI];
-    self.dataSource = [FeedTVCDataSource getAllFeedPosts];
+    [self fetchDataSource];
 }
 
 - (void)setupUI {
@@ -53,6 +53,15 @@
     UINib *nib = [UINib nibWithNibName:@"FeedPostCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"feedPostCell"];
     
+    self.postButton.backgroundColor = [Color getFeedPostGray];
+    [self.postButton setTitleColor:[Color getBlack] forState:UIControlStateNormal];
+    [self.postButton setTitleColor:[Color getBlack] forState:UIControlStateFocused];
+    
+    self.postField.autocorrectionType = UITextAutocorrectionTypeNo;
+}
+
+- (void)fetchDataSource {
+    self.dataSource = [FeedTVCDataSource getAllFeedPosts];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -110,6 +119,15 @@
 }
 
 - (IBAction)postTap:(id)sender {
+    if(![self.postField.text isEqualToString:@""]){
+        [RealmUtils createFeedPostByUser:self.appSession.currentUser withContent:self.postField.text];
+        [self fetchDataSource];
+        [self.tableView reloadData];
+        self.postField.text = @"";
+    } else {
+        [AlertUtils getInfoToastPanel:@"Empty post!" withMessage:@"Your input is empty."];
+    }
+    
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
@@ -150,8 +168,6 @@
         self.showHideLabel.text = [NSString fontAwesomeIconStringForEnum:FAAngleDoubleUp];
         
     }
-    
-    
 }
 
 @end

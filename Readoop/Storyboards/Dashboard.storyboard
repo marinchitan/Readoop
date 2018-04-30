@@ -196,11 +196,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbs-he-ETa">
-                                        <rect key="frame" x="210" y="9" width="100" height="27"/>
+                                        <rect key="frame" x="205" y="9" width="120" height="27"/>
                                         <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="NTk-Yc-sCr"/>
-                                            <constraint firstAttribute="width" constant="100" id="nCW-us-q0f"/>
+                                            <constraint firstAttribute="width" constant="120" id="nCW-us-q0f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
                                         <state key="normal" title="Friends' post">
@@ -211,10 +211,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srk-Lm-zzo">
-                                        <rect key="frame" x="65" y="9" width="100" height="27"/>
+                                        <rect key="frame" x="50" y="9" width="120" height="27"/>
                                         <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="c9V-O9-5ih"/>
+                                            <constraint firstAttribute="width" constant="120" id="c9V-O9-5ih"/>
                                             <constraint firstAttribute="height" constant="27" id="iHC-sf-nAh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
@@ -230,8 +230,8 @@
                                 <constraints>
                                     <constraint firstItem="bbs-he-ETa" firstAttribute="centerY" secondItem="fUG-5v-dtT" secondAttribute="centerY" id="794-0P-jLi"/>
                                     <constraint firstItem="srk-Lm-zzo" firstAttribute="centerY" secondItem="fUG-5v-dtT" secondAttribute="centerY" id="I0n-aW-2Fb"/>
-                                    <constraint firstAttribute="trailing" secondItem="bbs-he-ETa" secondAttribute="trailing" constant="65" id="Z0E-hr-E8e"/>
-                                    <constraint firstItem="srk-Lm-zzo" firstAttribute="leading" secondItem="fUG-5v-dtT" secondAttribute="leading" constant="65" id="fV3-cE-dFJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bbs-he-ETa" secondAttribute="trailing" constant="50" id="Z0E-hr-E8e"/>
+                                    <constraint firstItem="srk-Lm-zzo" firstAttribute="leading" secondItem="fUG-5v-dtT" secondAttribute="leading" constant="50" id="fV3-cE-dFJ"/>
                                     <constraint firstAttribute="height" constant="45" id="yUz-gR-9Be"/>
                                 </constraints>
                             </view>
@@ -239,7 +239,7 @@
                                 <rect key="frame" x="0.0" y="109" width="375" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpK-ZT-KHP">
-                                        <rect key="frame" x="260" y="29" width="50" height="37.5"/>
+                                        <rect key="frame" x="275" y="29" width="50" height="37.5"/>
                                         <color key="backgroundColor" red="0.99856574189571989" green="1" blue="0.96466214349146895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="Ykv-D4-e0F"/>
@@ -253,7 +253,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-LJ-zZC">
-                                        <rect key="frame" x="65" y="10" width="185" height="75"/>
+                                        <rect key="frame" x="50" y="10" width="215" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

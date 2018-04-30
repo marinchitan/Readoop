@@ -9,6 +9,7 @@
 #import "RealmUtils.h"
 #import "User.h"
 #import "Request.h"
+#import "Post.h"
 
 @implementation RealmUtils
 
@@ -131,8 +132,9 @@
     request.senderId = sender.userId;
     request.receiverId = receiver.userId;
     request.creationTime = [NSDate date];
-    int primaryKey = [[Request allObjects] maxOfProperty:@"requestId"];
-    request.requestId = [NSNumber numberWithInt:primaryKey + 1];
+    NSNumber *primaryKey = [[Request allObjects] maxOfProperty:@"requestId"];
+    int key = [primaryKey intValue] + 1;
+    request.requestId = [NSNumber numberWithInt:key];
     
     [realm transactionWithBlock:^{
         [realm addObject:request];
@@ -152,6 +154,22 @@
     NSUInteger index = [secondUser.friends indexOfObject:user];
     [realm transactionWithBlock:^{
         [secondUser.friends removeObjectAtIndex:index];
+    }];
+}
+
++ (void)createFeedPostByUser:(User*)user withContent:(NSString*)content {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    Post *post = [Post new];
+    post.userId = user.userId;
+    NSNumber *primaryKey = [[Post allObjects] maxOfProperty:@"postId"];
+    int key = [primaryKey intValue] + 1;
+    post.postId = [NSNumber numberWithInt:key];
+    post.content = content;
+    post.datePosted = [NSDate date];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:post];
+        //[realm deleteObjects:[Post allObjects]];
     }];
 }
 

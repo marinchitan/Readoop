@@ -34,5 +34,5 @@
 + (void)createRequestfromUser:(User*)sender toUser:(User*)receiver;
 + (void)deleteRequest:(Request*)request;
 
-
++ (void)createFeedPostByUser:(User*)user withContent:(NSString*)content;
 @end
