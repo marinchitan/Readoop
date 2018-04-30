@@ -32,7 +32,6 @@
 		3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A8205BFE1400D6FD5A /* Font.m */; };
 		3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */; };
 		3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */; };
-		3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */; };
 		3E59F8B9205E845600D6FD5A /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B8205E845600D6FD5A /* Session.m */; };
 		3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */; };
 		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
@@ -42,6 +41,7 @@
 		3E895B0820695E610091FD3C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0720695E610091FD3C /* ProfileCell.m */; };
 		3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */; };
 		3E895B0F206960A30091FD3C /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0E206960A30091FD3C /* CellModel.m */; };
+		3EAC24642096305600D1AED5 /* FeedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24632096305600D1AED5 /* FeedVC.m */; };
 		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
 		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
 		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
@@ -122,8 +122,6 @@
 		3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileDashboard.m; sourceTree = "<group>"; };
 		3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryDashboard.h; sourceTree = "<group>"; };
 		3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryDashboard.m; sourceTree = "<group>"; };
-		3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsDashboars.h; sourceTree = "<group>"; };
-		3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsDashboars.m; sourceTree = "<group>"; };
 		3E59F8B6205DC73400D6FD5A /* Essentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Essentials.h; sourceTree = "<group>"; };
 		3E59F8B7205E845600D6FD5A /* Session.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		3E59F8B8205E845600D6FD5A /* Session.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
@@ -142,6 +140,8 @@
 		3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTVCDataSource.m; sourceTree = "<group>"; };
 		3E895B0D206960A30091FD3C /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
 		3E895B0E206960A30091FD3C /* CellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
+		3EAC24622096305600D1AED5 /* FeedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedVC.h; sourceTree = "<group>"; };
+		3EAC24632096305600D1AED5 /* FeedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedVC.m; sourceTree = "<group>"; };
 		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 		3ECBC495203CCEBD001A263D /* Tabbed */ = {
 			isa = PBXGroup;
 			children = (
-				3ED979E520680DB400B00F13 /* Settings */,
+				3ED979E520680DB400B00F13 /* Feed */,
 				3ED979E420680DAD00B00F13 /* Library */,
 				3ED979E320680DA800B00F13 /* Social */,
 				3ED979E220680DA300B00F13 /* Profile */,
@@ -465,13 +465,13 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
-		3ED979E520680DB400B00F13 /* Settings */ = {
+		3ED979E520680DB400B00F13 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				3E59F8B3205C3C3D00D6FD5A /* SettingsDashboars.h */,
-				3E59F8B4205C3C3D00D6FD5A /* SettingsDashboars.m */,
+				3EAC24622096305600D1AED5 /* FeedVC.h */,
+				3EAC24632096305600D1AED5 /* FeedVC.m */,
 			);
-			path = Settings;
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		3EDE52052086834700D3330A /* Reusables */ = {
@@ -657,7 +657,6 @@
 				2D7D2FCD203C8EE7005E689B /* main.m in Sources */,
 				3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */,
 				3EFC4DBA208D20E9003D0C33 /* ReceivedRequest.m in Sources */,
-				3E59F8B5205C3C3D00D6FD5A /* SettingsDashboars.m in Sources */,
 				3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */,
 				3ECBC489203CB8B7001A263D /* Color.m in Sources */,
 				3EC234B02062EFEC0029225D /* Post.m in Sources */,
@@ -690,6 +689,7 @@
 				3EFC4DC1208DE050003D0C33 /* RequestCellModel.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
+				3EAC24642096305600D1AED5 /* FeedVC.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
 				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,
 				3EFC4DA5208A8462003D0C33 /* UserCell.m in Sources */,

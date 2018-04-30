@@ -160,7 +160,7 @@
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"No people found ";
+    NSString *text = @"No people found";
     
     NSDictionary *attributes = @{NSFontAttributeName: [Font getBariolwithSize:30],
                                  NSForegroundColorAttributeName: [UIColor darkGrayColor]};
