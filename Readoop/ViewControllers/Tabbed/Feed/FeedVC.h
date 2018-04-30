@@ -18,7 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITextView *postField;
 @property (weak, nonatomic) IBOutlet UIButton *postButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *showHideButton;
+@property (weak, nonatomic) IBOutlet UILabel *showHideLabel;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *postFieldHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *postFieldRaportConstant;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *postFieldNullRaportConstant;
 
 
 @end

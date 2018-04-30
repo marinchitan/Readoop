@@ -36,6 +36,10 @@
     self.postField.layer.cornerRadius = self.initialCornerRadius;
     self.postField.clipsToBounds = YES;
     
+    [ViewUtils setUpIconLabel:self.showHideLabel withSize:22];
+    self.showHideLabel.textColor = [Color getWhite];
+    self.showHideLabel.text = [NSString fontAwesomeIconStringForEnum:FAAngleDoubleUp];
+    
     [self setUpTabs];
     
     self.tableView.bounces = NO;
@@ -121,6 +125,23 @@
                                  NSParagraphStyleAttributeName: paragraph};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (IBAction)showHideTap:(id)sender {
+    if(self.postFieldHeightConstraint.constant == 100) {
+        self.postFieldHeightConstraint.constant = 20;
+        self.postFieldRaportConstant.active = NO;
+        self.postFieldNullRaportConstant.active = YES;
+        self.showHideLabel.text = [NSString fontAwesomeIconStringForEnum:FAAngleDoubleDown];
+    } else {
+        self.postFieldHeightConstraint.constant = 100;
+        self.postFieldRaportConstant.active = YES;
+        self.postFieldNullRaportConstant.active = NO;
+        self.showHideLabel.text = [NSString fontAwesomeIconStringForEnum:FAAngleDoubleUp];
+        
+    }
+    
+    
 }
 
 @end
