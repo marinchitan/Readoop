@@ -60,8 +60,6 @@
 }
 
 - (void)setupCellWithModel:(Post*)post {
-    self.isUpActive = NO;
-    self.isDownActive = NO;
     [self deactivateUpTab];
     [self deactivateDownTab];
     self.postContentLabel.text = post.content;
