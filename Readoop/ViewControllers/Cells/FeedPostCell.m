@@ -14,11 +14,15 @@
 #import "NSString+FontAwesome.h"
 #import "Font.h"
 #import "Session.h"
+#import "RealmUtils.h"
+#import "User.h"
 
 @implementation FeedPostCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.isUpActive = NO;
+    self.isDownActive = NO;
     self.postContentLabel.layer.zPosition = 500;
     self.containerView.layer.zPosition = 100;
     self.containerView.layer.cornerRadius = 10;
@@ -39,6 +43,16 @@
     [self refereshRating];
 }
 
+- (void)statusCheck {
+    Session *session = [Session sharedSession];
+    if([[self.currentPost.upRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
+        NSLog(@"Current post id:%@", self.currentPost.postId);
+        [self activateUpTab];
+    } else if([[self.currentPost.downRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
+        [self activateDownTab];
+    }
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -46,10 +60,14 @@
 }
 
 - (void)setupCellWithModel:(Post*)post {
-    Session *appSession = [Session sharedSession];
+    self.isUpActive = NO;
+    self.isDownActive = NO;
+    [self deactivateUpTab];
+    [self deactivateDownTab];
     self.postContentLabel.text = post.content;
     self.byUserLabel.font = [Font getBariolwithSize:17];
-    self.byUserLabel.text = [NSString stringWithFormat:@"By %@", appSession.currentUser.username];
+    User *poster = [[User objectsWhere:@"userId == %@",post.userId] firstObject];
+    self.byUserLabel.text = [NSString stringWithFormat:@"By %@", poster.username];
     self.datePostedLabel.font = [Font getBariolwithSize:15];
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd-mm-yyyy hh:MM"];
@@ -58,28 +76,47 @@
     self.datePostedLabel.textColor = [Color getSubTitleGray];
     
     self.currentPost = post;
+    [self statusCheck];
+    [self refereshRating];
 }
      
 - (IBAction)upTap:(id)sender {
+    Session *session = [Session sharedSession];
     [self deactivateDownTab];
+    self.isDownActive = NO;
+    [RealmUtils removeUserToDowns:session.currentUser forFeedPost:self.currentPost];
+    
     if(self.isUpActive){
         [self deactivateUpTab];
         self.isUpActive = NO;
+        [RealmUtils removeUserToUps:session.currentUser forFeedPost:self.currentPost];
+        
     } else {
         [self activateUpTab];
         self.isUpActive = YES;
+        [RealmUtils insertUserToUps:session.currentUser forFeedPost:self.currentPost];
     }
+    
+    [self refereshRating];
 }
 
 - (IBAction)downTap:(id)sender {
+    Session *session = [Session sharedSession];
     [self deactivateUpTab];
+    self.isUpActive = NO;
+    [RealmUtils removeUserToUps:session.currentUser forFeedPost:self.currentPost];
+    
     if(self.isDownActive){
         [self deactivateDownTab];
         self.isDownActive = NO;
+        [RealmUtils removeUserToDowns:session.currentUser forFeedPost:self.currentPost];
     } else {
         [self activateDownTab];
         self.isDownActive = YES;
+        [RealmUtils insertUserToDowns:session.currentUser forFeedPost:self.currentPost];
     }
+    
+    [self refereshRating];
 }
 
 - (void)deactivateUpTab {
@@ -106,7 +143,6 @@
     int downs = [self.currentPost.downRates count];
     int rating = ups - downs;
     self.averageRatingLabel.text = [NSString stringWithFormat:@"Rating: %d", rating];
-    
 }
 
 @end

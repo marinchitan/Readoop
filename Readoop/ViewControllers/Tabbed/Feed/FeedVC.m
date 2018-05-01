@@ -61,13 +61,21 @@
 }
 
 - (void)fetchDataSource {
-    self.dataSource = [FeedTVCDataSource getAllFeedPosts];
+    if(self.isMyFriendsEnabled){
+        self.dataSource = [FeedTVCDataSource getFriendsFeedPosts];
+    } else {
+        self.dataSource = [FeedTVCDataSource getAllFeedPosts];
+    }
+    [self.tableView reloadData];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedPostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"feedPostCell"];
     
     [cell setupCellWithModel:self.dataSource[indexPath.row]];
+    
+    Post *post = self.dataSource[indexPath.row];
+    //NSLog(@"Cell index: %tu,  post id:%@",indexPath.row, post.postId);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -107,14 +115,14 @@
     self.isMyFriendsEnabled = NO;
     self.isAllPeopleEnabled = YES;
     [self setUpTabs];
-    //[self setDataSource];
+    [self fetchDataSource];
 }
 
 - (IBAction)friendsTap:(id)sender {
     self.isMyFriendsEnabled = YES;
     self.isAllPeopleEnabled = NO;
     [self setUpTabs];
-    //[self setDataSource];
+    [self fetchDataSource];
 
 }
 

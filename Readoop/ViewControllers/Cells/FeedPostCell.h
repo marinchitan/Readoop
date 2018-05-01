@@ -23,8 +23,9 @@
 @property (assign, nonatomic) BOOL isUpActive;
 @property (assign, nonatomic) BOOL isDownActive;
 
-@property (weak, nonatomic) Post *currentPost;
+@property (strong, nonatomic) Post *currentPost;
 
 - (void)setupCellWithModel:(Post*)post;
+- (void)statusCheck;
 
 @end

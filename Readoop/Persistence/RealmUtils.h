@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "Request.h"
+#import "Post.h"
 
 @interface RealmUtils : NSObject
 
@@ -35,4 +36,11 @@
 + (void)deleteRequest:(Request*)request;
 
 + (void)createFeedPostByUser:(User*)user withContent:(NSString*)content;
+
++ (void)insertUserToUps:(User*)user forFeedPost:(Post*)feedPost;
++ (void)insertUserToDowns:(User*)user forFeedPost:(Post*)feedPost;
++ (void)removeUserToUps:(User*)user forFeedPost:(Post*)feedPost;
++ (void)removeUserToDowns:(User*)user forFeedPost:(Post*)feedPost;
+
+
 @end

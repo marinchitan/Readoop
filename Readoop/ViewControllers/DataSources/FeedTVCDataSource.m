@@ -8,6 +8,8 @@
 
 #import "FeedTVCDataSource.h"
 #import "Post.h"
+#import "Session.h"
+#import "User.h"
 
 @implementation FeedTVCDataSource
 
@@ -15,4 +17,22 @@
     return [Post allObjects];
 }
 
++ (RLMArray*)getFriendsFeedPosts {
+    RLMArray *friendsPost = [[RLMArray alloc] initWithObjectClassName:Post.className];
+    NSMutableArray *usersFriends = [NSMutableArray new];
+    Session *session = [Session sharedSession];
+    
+    for(User* user in session.currentUser.friends){
+        [usersFriends addObject:user.userId];
+    }
+    
+    for(Post *post in [Post allObjects]){
+        if([usersFriends containsObject:post.userId]) {
+            [friendsPost addObject:post];
+        }
+    }
+    
+    return friendsPost;
+    
+}
 @end

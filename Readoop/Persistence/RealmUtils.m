@@ -173,4 +173,40 @@
     }];
 }
 
++ (void)insertUserToUps:(User*)user forFeedPost:(Post*)feedPost {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [feedPost.upRates addObject:user];
+    }];
+}
+
++ (void)insertUserToDowns:(User*)user forFeedPost:(Post*)feedPost {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [feedPost.downRates addObject:user];
+    }];
+}
+
++ (void)removeUserToUps:(User*)user forFeedPost:(Post*)feedPost {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    if([[feedPost.upRates objectsWhere:@"userId == %@",user.userId] firstObject]){ //remove user if it exists in upRates
+        NSUInteger index = [feedPost.upRates indexOfObject:user];
+        [realm transactionWithBlock:^{
+            [feedPost.upRates removeObjectAtIndex:index];
+        }];
+    }
+}
+
++ (void)removeUserToDowns:(User*)user forFeedPost:(Post*)feedPost {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    if([[feedPost.downRates objectsWhere:@"userId == %@",user.userId] firstObject]){ //remove user if it exists in downRates
+        NSUInteger index = [feedPost.downRates indexOfObject:user];
+        [realm transactionWithBlock:^{
+            [feedPost.downRates removeObjectAtIndex:index];
+        }];
+    }
+}
+
 @end

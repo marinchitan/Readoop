@@ -12,5 +12,6 @@
 @interface FeedTVCDataSource : NSObject
 
 + (RLMArray*)getAllFeedPosts;
++ (RLMArray*)getFriendsFeedPosts;
 
 @end
