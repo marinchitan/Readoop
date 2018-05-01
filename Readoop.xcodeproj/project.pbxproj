@@ -31,7 +31,6 @@
 		3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A5205BFB6700D6FD5A /* UIImage+FontAwesome.m */; };
 		3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8A8205BFE1400D6FD5A /* Font.m */; };
 		3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */; };
-		3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */; };
 		3E59F8B9205E845600D6FD5A /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B8205E845600D6FD5A /* Session.m */; };
 		3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */; };
 		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
@@ -45,6 +44,7 @@
 		3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */; };
 		3EAC246B2097207900D1AED5 /* FeedPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24692097207900D1AED5 /* FeedPostCell.m */; };
 		3EAC246C2097207900D1AED5 /* FeedPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EAC246A2097207900D1AED5 /* FeedPostCell.xib */; };
+		3EAC24722098D07800D1AED5 /* LibraryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24712098D07800D1AED5 /* LibraryVC.m */; };
 		3EC234B02062EFEC0029225D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234AF2062EFEC0029225D /* Post.m */; };
 		3EC234B32062EFF80029225D /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B22062EFF80029225D /* Comment.m */; };
 		3EC234B62062F0040029225D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC234B52062F0040029225D /* Book.m */; };
@@ -123,8 +123,6 @@
 		3E59F8A8205BFE1400D6FD5A /* Font.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Font.m; sourceTree = "<group>"; };
 		3E59F8AA205C3BE900D6FD5A /* ProfileDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileDashboard.h; sourceTree = "<group>"; };
 		3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileDashboard.m; sourceTree = "<group>"; };
-		3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryDashboard.h; sourceTree = "<group>"; };
-		3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryDashboard.m; sourceTree = "<group>"; };
 		3E59F8B6205DC73400D6FD5A /* Essentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Essentials.h; sourceTree = "<group>"; };
 		3E59F8B7205E845600D6FD5A /* Session.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		3E59F8B8205E845600D6FD5A /* Session.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
@@ -150,6 +148,8 @@
 		3EAC24682097207900D1AED5 /* FeedPostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedPostCell.h; sourceTree = "<group>"; };
 		3EAC24692097207900D1AED5 /* FeedPostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedPostCell.m; sourceTree = "<group>"; };
 		3EAC246A2097207900D1AED5 /* FeedPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedPostCell.xib; sourceTree = "<group>"; };
+		3EAC24702098D07800D1AED5 /* LibraryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryVC.h; sourceTree = "<group>"; };
+		3EAC24712098D07800D1AED5 /* LibraryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryVC.m; sourceTree = "<group>"; };
 		3EC234AE2062EFEC0029225D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3EC234AF2062EFEC0029225D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3EC234B12062EFF80029225D /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -472,8 +472,8 @@
 		3ED979E420680DAD00B00F13 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				3E59F8B0205C3C2200D6FD5A /* LibraryDashboard.h */,
-				3E59F8B1205C3C2200D6FD5A /* LibraryDashboard.m */,
+				3EAC24702098D07800D1AED5 /* LibraryVC.h */,
+				3EAC24712098D07800D1AED5 /* LibraryVC.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -678,7 +678,6 @@
 				3EFC4DBE208DC744003D0C33 /* Request.m in Sources */,
 				3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */,
 				3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */,
-				3E59F8B2205C3C2200D6FD5A /* LibraryDashboard.m in Sources */,
 				2D7D2FDA203C91FF005E689B /* ViewController.m in Sources */,
 				3EFC4D9E208A73F4003D0C33 /* PeopleVC.m in Sources */,
 				3EDE520A2086838A00D3330A /* UserPresentationVC.m in Sources */,
@@ -699,6 +698,7 @@
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3EFC4DB6208D1A4E003D0C33 /* RequestsTVC.m in Sources */,
+				3EAC24722098D07800D1AED5 /* LibraryVC.m in Sources */,
 				3EFC4DC4208DFCA9003D0C33 /* RequestsTVCDataSource.m in Sources */,
 				3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,

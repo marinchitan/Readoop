@@ -16,33 +16,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Settings Dashboars-->
-        <scene sceneID="gpp-OG-Zbv">
-            <objects>
-                <viewController restorationIdentifier="settingsDashboard" storyboardIdentifier="settingsDashboard" id="4Jb-cQ-aZb" customClass="SettingsDashboars" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YzB-d7-Q2E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-cx-ScG">
-                                <rect key="frame" x="68" y="310" width="239" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.9551652665" green="0.96828817349999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <color key="textColor" red="0.9971110836" green="1" blue="0.90525189760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.5764690154720522" green="1" blue="0.86423831586221489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="4xU-lm-Kwa"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="jGP-gn-T9U"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H8L-Dp-a2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3042" y="4"/>
-        </scene>
         <!--Profile Dashboard-->
         <scene sceneID="Z3b-N1-sdY">
             <objects>
@@ -342,6 +315,121 @@
             </objects>
             <point key="canvasLocation" x="1808.8" y="1191.4542728635683"/>
         </scene>
+        <!--LibraryVC-->
+        <scene sceneID="Yiy-Qk-fj5">
+            <objects>
+                <viewController storyboardIdentifier="libraryVC" id="kfO-DC-uBp" customClass="LibraryVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nV7-6N-7d2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-mg-7d2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.34075997504588196" blue="0.031645978670871489" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ojn-xg-D48"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yC-y9-awc">
+                                <rect key="frame" x="205" y="75.5" width="120" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="0Oe-SB-ezV"/>
+                                    <constraint firstAttribute="height" constant="27" id="mXZ-WA-tWf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="Friends' post">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.028078071959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rk-Ws-Pqa">
+                                <rect key="frame" x="50" y="75.5" width="120" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="Uz2-W2-IKU"/>
+                                    <constraint firstAttribute="width" constant="120" id="wE3-je-tVR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="All posts">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.15923816120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5C5-xM-7e6">
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.50803942356614784" blue="0.16415882419182759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qmQ-4D-YZN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjx-k4-s7a">
+                                <rect key="frame" x="205" y="125.5" width="120" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="74d-DH-P8I"/>
+                                    <constraint firstAttribute="width" constant="120" id="zfj-6C-Axj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="Friends' post">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.028078071959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pn-a0-gfJ">
+                                <rect key="frame" x="50" y="125.5" width="120" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.99306716070000001" blue="0.97941563890000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="DB1-QL-Zq6"/>
+                                    <constraint firstAttribute="height" constant="27" id="Qfe-4C-yVO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="All posts">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.15923816120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQ1-lu-5ry">
+                                <rect key="frame" x="0.0" y="164" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.25326892067064199" blue="0.086814872064977067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QeJ-hA-I4O"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ntw-sz-w6P">
+                                <rect key="frame" x="50" y="174" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gsD-ZJ-49a" firstAttribute="trailing" secondItem="Tjx-k4-s7a" secondAttribute="trailing" constant="50" id="0tl-Pu-Gw9"/>
+                            <constraint firstItem="tQ1-lu-5ry" firstAttribute="leading" secondItem="gsD-ZJ-49a" secondAttribute="leading" id="1EL-3K-vAh"/>
+                            <constraint firstItem="7yC-y9-awc" firstAttribute="centerY" secondItem="8bb-mg-7d2" secondAttribute="centerY" id="1d4-1J-uM3"/>
+                            <constraint firstItem="gsD-ZJ-49a" firstAttribute="trailing" secondItem="5C5-xM-7e6" secondAttribute="trailing" id="4E7-7H-42V"/>
+                            <constraint firstItem="5C5-xM-7e6" firstAttribute="top" secondItem="8bb-mg-7d2" secondAttribute="bottom" id="68H-GE-TF6"/>
+                            <constraint firstItem="8bb-mg-7d2" firstAttribute="top" secondItem="gsD-ZJ-49a" secondAttribute="top" id="6cY-JS-7gt"/>
+                            <constraint firstItem="5C5-xM-7e6" firstAttribute="leading" secondItem="gsD-ZJ-49a" secondAttribute="leading" id="7G4-oj-HR6"/>
+                            <constraint firstItem="Ntw-sz-w6P" firstAttribute="centerY" secondItem="tQ1-lu-5ry" secondAttribute="centerY" id="8Ob-nV-25r"/>
+                            <constraint firstItem="tQ1-lu-5ry" firstAttribute="top" secondItem="5C5-xM-7e6" secondAttribute="bottom" id="Q25-ol-sWw"/>
+                            <constraint firstItem="8bb-mg-7d2" firstAttribute="leading" secondItem="gsD-ZJ-49a" secondAttribute="leading" id="Z4y-b0-bUg"/>
+                            <constraint firstItem="gsD-ZJ-49a" firstAttribute="trailing" secondItem="tQ1-lu-5ry" secondAttribute="trailing" id="bin-jN-Igg"/>
+                            <constraint firstItem="Tjx-k4-s7a" firstAttribute="centerY" secondItem="5C5-xM-7e6" secondAttribute="centerY" id="jDI-Es-xFc"/>
+                            <constraint firstItem="Ntw-sz-w6P" firstAttribute="leading" secondItem="8pn-a0-gfJ" secondAttribute="leading" id="jVp-mS-Msz"/>
+                            <constraint firstItem="8pn-a0-gfJ" firstAttribute="centerY" secondItem="5C5-xM-7e6" secondAttribute="centerY" id="nCR-yJ-rd4"/>
+                            <constraint firstItem="gsD-ZJ-49a" firstAttribute="trailing" secondItem="8bb-mg-7d2" secondAttribute="trailing" id="pfN-cv-JO8"/>
+                            <constraint firstItem="8pn-a0-gfJ" firstAttribute="leading" secondItem="gsD-ZJ-49a" secondAttribute="leading" constant="50" id="qCB-8t-yLP"/>
+                            <constraint firstItem="gsD-ZJ-49a" firstAttribute="trailing" secondItem="7yC-y9-awc" secondAttribute="trailing" constant="50" id="rAq-d8-2r1"/>
+                            <constraint firstItem="0Rk-Ws-Pqa" firstAttribute="leading" secondItem="gsD-ZJ-49a" secondAttribute="leading" constant="50" id="v8R-qr-aI0"/>
+                            <constraint firstItem="Ntw-sz-w6P" firstAttribute="trailing" secondItem="Tjx-k4-s7a" secondAttribute="trailing" id="vka-zl-fuJ"/>
+                            <constraint firstItem="0Rk-Ws-Pqa" firstAttribute="centerY" secondItem="8bb-mg-7d2" secondAttribute="centerY" id="xfl-dc-hBT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gsD-ZJ-49a"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D6X-lV-XGX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lry-UW-S6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2886" y="9"/>
+        </scene>
         <!--Item-->
         <scene sceneID="oEK-KQ-kRn">
             <objects>
@@ -354,7 +442,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4Jb-cQ-aZb" kind="relationship" relationship="rootViewController" id="biP-4A-BC9"/>
+                        <segue destination="kfO-DC-uBp" kind="relationship" relationship="rootViewController" id="bv8-BR-Uay"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X81-YR-tUx" userLabel="First Responder" sceneMemberID="firstResponder"/>

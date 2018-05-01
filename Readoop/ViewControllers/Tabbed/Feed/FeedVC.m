@@ -74,8 +74,6 @@
     
     [cell setupCellWithModel:self.dataSource[indexPath.row]];
     
-    Post *post = self.dataSource[indexPath.row];
-    //NSLog(@"Cell index: %tu,  post id:%@",indexPath.row, post.postId);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
