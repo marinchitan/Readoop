@@ -73,8 +73,8 @@
     
     
     if(self.isOwnProfile) {
-        [self.addToFriendsButton setTitle:@"Edit profie" forState:UIControlStateNormal];
-        [self.addToFriendsButton setTitle:@"Edit profie" forState:UIControlStateFocused];
+        [self.addToFriendsButton setTitle:@"Edit profile" forState:UIControlStateNormal];
+        [self.addToFriendsButton setTitle:@"Edit profile" forState:UIControlStateFocused];
     } else if([self alreadyHasInFriends]) {
         [self.addToFriendsButton setTitle:@"Remove friend" forState:UIControlStateNormal];
         [self.addToFriendsButton setTitle:@"Remove friend" forState:UIControlStateFocused];

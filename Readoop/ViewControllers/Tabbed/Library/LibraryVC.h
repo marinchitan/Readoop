@@ -10,5 +10,23 @@
 #import "ContainerViewController.h"
 
 @interface LibraryVC : ContainerViewController
+@property (weak, nonatomic) IBOutlet UIView *mainTabsView;
+@property (weak, nonatomic) IBOutlet UIView *secondaryTabsView;
+@property (weak, nonatomic) IBOutlet UIView *searchFieldView;
 
+@property (weak, nonatomic) IBOutlet UIButton *libraryTab;
+@property (weak, nonatomic) IBOutlet UIButton *shopTab;
+
+@property (weak, nonatomic) IBOutlet UIButton *firstSecondaryTab;
+@property (weak, nonatomic) IBOutlet UIButton *secondSecondaryTab;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
+@property (weak, nonatomic) IBOutlet UILabel *searchExpandLabelFirst;
+@property (weak, nonatomic) IBOutlet UILabel *searchExpandLabelSecond;
+
+@property (weak, nonatomic) IBOutlet UILabel *secondaryTabExpandLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *secondaryTabsViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewHeight;
 @end
