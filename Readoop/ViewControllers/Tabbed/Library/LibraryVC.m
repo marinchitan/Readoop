@@ -139,9 +139,6 @@
         [self setupActiveTab:self.secondSecondaryTab];
         [self setupInActiveTab:self.firstSecondaryTab];
     }
-    
-    //BUG, FIXME: In Shop page tabs do not change position
-    NSLog(@"isMyWr:%d", self.isMyWritingsEnabledboo)
 }
 
 - (void)setupActiveTab:(UIButton*)button {
@@ -193,19 +190,15 @@
 
 - (IBAction)firstTabTap:(id)sender {
     if(self.isLibraryEnabled){ //Library secondary tabs
-        if(self.isMyBooksEnabled){
-            self.isMyBooksEnabled = NO;
-            self.isAllBooksEnabled = YES;
-            
-            self.isMyWritingsEnabled = NO;
-            self.isAllWritingsEnabled = NO;
-        } else { //Shop secondary tabs
-            self.isMyBooksEnabled = NO;
-            self.isAllBooksEnabled = NO;
-            
-            self.isMyWritingsEnabled = NO;
-            self.isAllWritingsEnabled = YES;
-        }
+        self.isAllBooksEnabled = YES;
+        self.isMyBooksEnabled = NO;
+        self.isAllWritingsEnabled = NO;
+        self.isMyWritingsEnabled = NO;
+    } else {
+        self.isAllBooksEnabled = NO;
+        self.isMyBooksEnabled = NO;
+        self.isAllWritingsEnabled = YES;
+        self.isMyWritingsEnabled = NO;
     }
     
     [self setUpTabs];
@@ -213,19 +206,15 @@
 
 - (IBAction)secondTabTap:(id)sender {
     if(self.isLibraryEnabled){ //Library secondary tabs
-        if(self.isMyBooksEnabled){
-            self.isMyBooksEnabled = YES;
-            self.isAllBooksEnabled = NO;
-            
-            self.isMyWritingsEnabled = NO;
-            self.isAllWritingsEnabled = NO;
-        } else { //Shop secondary tabs
-            self.isMyBooksEnabled = NO;
-            self.isAllBooksEnabled = NO;
-            
-            self.isMyWritingsEnabled = YES;
-            self.isAllWritingsEnabled = NO;
-        }
+        self.isAllBooksEnabled = NO;
+        self.isMyBooksEnabled = YES;
+        self.isAllWritingsEnabled = NO;
+        self.isMyWritingsEnabled = NO;
+    } else {
+        self.isAllBooksEnabled = NO;
+        self.isMyBooksEnabled = NO;
+        self.isAllWritingsEnabled = NO;
+        self.isMyWritingsEnabled = YES;
     }
     
     [self setUpTabs];
