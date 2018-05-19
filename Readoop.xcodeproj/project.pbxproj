@@ -22,6 +22,14 @@
 		3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA5204817BF008B9CF7 /* Profile.storyboard */; };
 		3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */; };
 		3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366DAD204C76ED008B9CF7 /* RegisterViewController.m */; };
+		3E3CCBA420A84C430069350D /* BookRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CCBA320A84C430069350D /* BookRate.m */; };
+		3E3CCBA820A84FF10069350D /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CCBA620A84FF10069350D /* BookCell.m */; };
+		3E3CCBA920A84FF10069350D /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3CCBA720A84FF10069350D /* BookCell.xib */; };
+		3E3CCBAD20A850150069350D /* WritingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CCBAB20A850150069350D /* WritingCell.m */; };
+		3E3CCBAE20A850150069350D /* WritingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3CCBAC20A850150069350D /* WritingCell.xib */; };
+		3E4EDACE20AFFBF300FD0205 /* Writing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4EDACD20AFFBF300FD0205 /* Writing.m */; };
+		3E4EDAD120B0547B00FD0205 /* BookDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4EDAD020B0547B00FD0205 /* BookDetailsVC.m */; };
+		3E4EDAD420B0549000FD0205 /* WritingDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4EDAD320B0549000FD0205 /* WritingDetailsVC.m */; };
 		3E50A89D20542EC9007CB900 /* AlertUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50A89C20542EC9007CB900 /* AlertUtils.m */; };
 		3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E50A89E2055286C007CB900 /* ionicons.ttf */; };
 		3E50A8A620552E84007CB900 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50A8A520552E84007CB900 /* NSString+FontAwesome.m */; };
@@ -36,6 +44,8 @@
 		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
 		3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE12062E88400C54EBC /* RealmUtils.m */; };
 		3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE42062E89500C54EBC /* RealmConfig.m */; };
+		3E7C99ED20A96A7500B3174A /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C99EC20A96A7500B3174A /* BookModel.m */; };
+		3E7C99F020A96CB600B3174A /* LibraryTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C99EF20A96CB600B3174A /* LibraryTVCDataSource.m */; };
 		3E895B0520695E3A0091FD3C /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E895B0420695E3A0091FD3C /* ProfileCell.xib */; };
 		3E895B0820695E610091FD3C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0720695E610091FD3C /* ProfileCell.m */; };
 		3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */; };
@@ -108,6 +118,20 @@
 		3E366DA720485639008B9CF7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E366DAC204C76ED008B9CF7 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		3E366DAD204C76ED008B9CF7 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		3E3CCBA220A84C430069350D /* BookRate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookRate.h; sourceTree = "<group>"; };
+		3E3CCBA320A84C430069350D /* BookRate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookRate.m; sourceTree = "<group>"; };
+		3E3CCBA520A84FF10069350D /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
+		3E3CCBA620A84FF10069350D /* BookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
+		3E3CCBA720A84FF10069350D /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
+		3E3CCBAA20A850150069350D /* WritingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritingCell.h; sourceTree = "<group>"; };
+		3E3CCBAB20A850150069350D /* WritingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingCell.m; sourceTree = "<group>"; };
+		3E3CCBAC20A850150069350D /* WritingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WritingCell.xib; sourceTree = "<group>"; };
+		3E4EDACC20AFFBF300FD0205 /* Writing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Writing.h; sourceTree = "<group>"; };
+		3E4EDACD20AFFBF300FD0205 /* Writing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Writing.m; sourceTree = "<group>"; };
+		3E4EDACF20B0547B00FD0205 /* BookDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailsVC.h; sourceTree = "<group>"; };
+		3E4EDAD020B0547B00FD0205 /* BookDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailsVC.m; sourceTree = "<group>"; };
+		3E4EDAD220B0549000FD0205 /* WritingDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritingDetailsVC.h; sourceTree = "<group>"; };
+		3E4EDAD320B0549000FD0205 /* WritingDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingDetailsVC.m; sourceTree = "<group>"; };
 		3E50A89B20542EC9007CB900 /* AlertUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertUtils.h; sourceTree = "<group>"; };
 		3E50A89C20542EC9007CB900 /* AlertUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertUtils.m; sourceTree = "<group>"; };
 		3E50A89E2055286C007CB900 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
@@ -134,6 +158,10 @@
 		3E734AE12062E88400C54EBC /* RealmUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmUtils.m; sourceTree = "<group>"; };
 		3E734AE32062E89500C54EBC /* RealmConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmConfig.h; sourceTree = "<group>"; };
 		3E734AE42062E89500C54EBC /* RealmConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmConfig.m; sourceTree = "<group>"; };
+		3E7C99EB20A96A7500B3174A /* BookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		3E7C99EC20A96A7500B3174A /* BookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		3E7C99EE20A96CB600B3174A /* LibraryTVCDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryTVCDataSource.h; sourceTree = "<group>"; };
+		3E7C99EF20A96CB600B3174A /* LibraryTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryTVCDataSource.m; sourceTree = "<group>"; };
 		3E895B0420695E3A0091FD3C /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		3E895B0620695E610091FD3C /* ProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
 		3E895B0720695E610091FD3C /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
@@ -308,6 +336,10 @@
 				3EC234B82062F00E0029225D /* User.m */,
 				3EFC4DBC208DC744003D0C33 /* Request.h */,
 				3EFC4DBD208DC744003D0C33 /* Request.m */,
+				3E3CCBA220A84C430069350D /* BookRate.h */,
+				3E3CCBA320A84C430069350D /* BookRate.m */,
+				3E4EDACC20AFFBF300FD0205 /* Writing.h */,
+				3E4EDACD20AFFBF300FD0205 /* Writing.m */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -323,6 +355,8 @@
 				3EFC4DC3208DFCA9003D0C33 /* RequestsTVCDataSource.m */,
 				3EAC24652097204E00D1AED5 /* FeedTVCDataSource.h */,
 				3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */,
+				3E7C99EE20A96CB600B3174A /* LibraryTVCDataSource.h */,
+				3E7C99EF20A96CB600B3174A /* LibraryTVCDataSource.m */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -411,6 +445,8 @@
 				3E895B0E206960A30091FD3C /* CellModel.m */,
 				3EFC4DBF208DE050003D0C33 /* RequestCellModel.h */,
 				3EFC4DC0208DE050003D0C33 /* RequestCellModel.m */,
+				3E7C99EB20A96A7500B3174A /* BookModel.h */,
+				3E7C99EC20A96A7500B3174A /* BookModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,6 +472,12 @@
 				3EAC24682097207900D1AED5 /* FeedPostCell.h */,
 				3EAC24692097207900D1AED5 /* FeedPostCell.m */,
 				3EAC246A2097207900D1AED5 /* FeedPostCell.xib */,
+				3E3CCBA520A84FF10069350D /* BookCell.h */,
+				3E3CCBA620A84FF10069350D /* BookCell.m */,
+				3E3CCBA720A84FF10069350D /* BookCell.xib */,
+				3E3CCBAA20A850150069350D /* WritingCell.h */,
+				3E3CCBAB20A850150069350D /* WritingCell.m */,
+				3E3CCBAC20A850150069350D /* WritingCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -474,6 +516,10 @@
 			children = (
 				3EAC24702098D07800D1AED5 /* LibraryVC.h */,
 				3EAC24712098D07800D1AED5 /* LibraryVC.m */,
+				3E4EDACF20B0547B00FD0205 /* BookDetailsVC.h */,
+				3E4EDAD020B0547B00FD0205 /* BookDetailsVC.m */,
+				3E4EDAD220B0549000FD0205 /* WritingDetailsVC.h */,
+				3E4EDAD320B0549000FD0205 /* WritingDetailsVC.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -584,6 +630,7 @@
 				3ECBC49A203CD394001A263D /* Bariol_Regular_Italic.otf in Resources */,
 				3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */,
 				3EAC246C2097207900D1AED5 /* FeedPostCell.xib in Resources */,
+				3E3CCBAE20A850150069350D /* WritingCell.xib in Resources */,
 				3E50A89F2055286C007CB900 /* ionicons.ttf in Resources */,
 				2D7D2FC7203C8EE7005E689B /* Assets.xcassets in Resources */,
 				3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */,
@@ -592,6 +639,7 @@
 				3EDE520F2086880900D3330A /* Reusables.storyboard in Resources */,
 				3E895B0520695E3A0091FD3C /* ProfileCell.xib in Resources */,
 				3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */,
+				3E3CCBA920A84FF10069350D /* BookCell.xib in Resources */,
 				3ECBC498203CD37B001A263D /* Bariol_Regular.otf in Resources */,
 				3EFC4DA6208A8462003D0C33 /* UserCell.xib in Resources */,
 			);
@@ -662,9 +710,12 @@
 			files = (
 				3ED979CE2063E94400B00F13 /* UserDefaultsManager.m in Sources */,
 				3ED979DB20667A5600B00F13 /* ProfilePresentationCell.m in Sources */,
+				3E7C99ED20A96A7500B3174A /* BookModel.m in Sources */,
 				3EC234B62062F0040029225D /* Book.m in Sources */,
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
 				3EC234B92062F00E0029225D /* User.m in Sources */,
+				3E3CCBA420A84C430069350D /* BookRate.m in Sources */,
+				3E7C99F020A96CB600B3174A /* LibraryTVCDataSource.m in Sources */,
 				3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */,
 				3E0635DE2077AA2B001D0A09 /* ViewUtils.m in Sources */,
 				3E0635D8207775C1001D0A09 /* EditProfileVC.m in Sources */,
@@ -685,16 +736,19 @@
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
 				3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */,
 				3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */,
+				3E4EDAD420B0549000FD0205 /* WritingDetailsVC.m in Sources */,
 				3E895B0F206960A30091FD3C /* CellModel.m in Sources */,
 				3E366DAE204C76ED008B9CF7 /* RegisterViewController.m in Sources */,
 				3ECBC494203CBB37001A263D /* ProfileViewController.m in Sources */,
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
+				3E4EDACE20AFFBF300FD0205 /* Writing.m in Sources */,
 				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,
 				3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */,
 				3E895B0820695E610091FD3C /* ProfileCell.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
 				3EFC4DAD208D17AF003D0C33 /* PendingRequest.m in Sources */,
 				3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */,
+				3E3CCBA820A84FF10069350D /* BookCell.m in Sources */,
 				3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */,
 				3E59F8B9205E845600D6FD5A /* Session.m in Sources */,
 				3EFC4DB6208D1A4E003D0C33 /* RequestsTVC.m in Sources */,
@@ -703,8 +757,10 @@
 				3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
 				3EFC4DC1208DE050003D0C33 /* RequestCellModel.m in Sources */,
+				3E4EDAD120B0547B00FD0205 /* BookDetailsVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
+				3E3CCBAD20A850150069350D /* WritingCell.m in Sources */,
 				3EAC24642096305600D1AED5 /* FeedVC.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,
 				3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */,

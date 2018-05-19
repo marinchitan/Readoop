@@ -8,6 +8,10 @@
 
 #import "LibraryVC.h"
 #import "Essentials.h"
+#import "LibraryTVCDataSource.h"
+#import "BookModel.h"
+#import "BookCell.h"
+#import "WritingCell.h"
 
 @interface LibraryVC ()
 @property(nonatomic, assign) BOOL isSearchViewExpanded;
@@ -23,6 +27,8 @@
 @property (nonatomic, assign) BOOL isAllWritingsEnabled;
 @property (nonatomic, assign) BOOL isMyWritingsEnabled;
 
+@property (nonatomic, strong) NSArray *dataSource;
+
 @end
 
 @implementation LibraryVC
@@ -34,6 +40,7 @@
     [self setupUI];
     [self initialFlagSetup];
     [self setUpTabs];
+    [self fetchDataSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,6 +70,14 @@
     self.searchExpandLabelFirst.textColor = [Color getWhite];
     self.searchExpandLabelSecond.textColor = [Color getWhite];
     self.secondaryTabExpandLabel.textColor = [Color getWhite];
+
+    self.tableView.bounces = NO;
+    self.tableView.separatorColor = [UIColor whiteColor];
+    
+    UINib *nib = [UINib nibWithNibName:@"BookCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"bookCell"];
+    UINib *nib2 = [UINib nibWithNibName:@"WritingCell" bundle:nil];
+    [self.tableView registerNib:nib2 forCellReuseIdentifier:@"writingCell"];
 }
 
 - (void)initialFlagSetup {
@@ -170,7 +185,12 @@
     self.isLibraryEnabled = YES;
     self.isShopEnabled = NO;
     
+    if(!self.isSecondTabsViewExpanded){
+        [self showSecondaryTab];
+    }
+    
     [self setUpTabs];
+    [self fetchDataSource];
 }
 
 - (IBAction)shopTap:(id)sender {
@@ -185,7 +205,13 @@
     
     self.isLibraryEnabled = NO;
     self.isShopEnabled = YES;
+    
+    if(!self.isSecondTabsViewExpanded){
+        [self showSecondaryTab];
+    }
+    
     [self setUpTabs];
+    [self fetchDataSource];
 }
 
 - (IBAction)firstTabTap:(id)sender {
@@ -202,6 +228,7 @@
     }
     
     [self setUpTabs];
+    [self fetchDataSource];
 }
 
 - (IBAction)secondTabTap:(id)sender {
@@ -218,8 +245,89 @@
     }
     
     [self setUpTabs];
+    [self fetchDataSource];
 }
 
+- (void)fetchDataSource {
+    //Get all data necessary according to flags
+    self.dataSource = [NSArray new]; //clear dataSource
+    if(self.isLibraryEnabled && self.isAllBooksEnabled) {//Get all books datasource
+        self.dataSource = [LibraryTVCDataSource getAllBooks];
+    } else if(self.isLibraryEnabled && self.isMyBooksEnabled) {
+        self.dataSource = [LibraryTVCDataSource getBooksForCurrentUser];
+    } else if(self.isShopEnabled && self.isAllWritingsEnabled) {
+        self.dataSource = [LibraryTVCDataSource getAllWritings];
+    } else if(self.isShopEnabled && self.isMyWritingsEnabled) {
+        self.dataSource = [LibraryTVCDataSource getWritingsForCurrentUser];
+    }
+    
+    [self.tableView reloadData];
+}
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    BookModel *currentModel = self.dataSource[indexPath.row];
+    
+    if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]) { //Book cell
+        BookCell *bookcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
+        [bookcell setupCellWithModel:currentModel.object];
+        bookcell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return bookcell;
+        
+    } else { //Writing cell
+        WritingCell *writingcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
+        [writingcell setupCellWithModel:currentModel.object];
+        writingcell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return writingcell;
+    }
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BookModel *currentModel = self.dataSource[indexPath.row];
+    if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]){
+        return 185;
+    } else {
+        return 140;
+    }
+    
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    
+    NSString *text = @"";
+    if(self.isLibraryEnabled){
+        text = @"No books";
+    } else {
+        text = @"No writings";
+    }
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [Font getBariolwithSize:30],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"";
+    if(self.isLibraryEnabled){
+        text = @"It seems like there are no books for your selection.";
+    } else {
+        text = @"It seems like there are no writings for your selection.";
+    }
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [Font getBariolwithSize:20],
+                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
 
 @end

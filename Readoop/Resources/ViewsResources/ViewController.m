@@ -73,4 +73,13 @@
     return [[UIStoryboard storyboardWithName:@"Profile" bundle:nil]instantiateViewControllerWithIdentifier:@"requestsTVC"];
 }
 
++ (BookDetailsVC*)getBookDetailsVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"bookDetailsVC"];
+}
++ (WritingDetailsVC*)getWritingDetailsVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"writingDetailsVC"];
+}
+
 @end

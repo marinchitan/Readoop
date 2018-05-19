@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 #import "Book.h"
+#import "Writing.h"
 
 @class Book;
 @class User;
+@class Writing;
 RLM_ARRAY_TYPE(Book);
 RLM_ARRAY_TYPE(User);
+RLM_ARRAY_TYPE(Writing);
 
 @interface User : RLMObject
 @property NSNumber<RLMInt> *userId;
@@ -36,5 +39,6 @@ RLM_ARRAY_TYPE(User);
 @property NSNumber<RLMInt> *status;
 @property RLMArray<Book *><Book> *books;
 @property RLMArray<User *><User> *friends;
+@property RLMArray<Writing *><Writing> *writings;
 
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface LibraryVC : ContainerViewController
+@interface LibraryVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (weak, nonatomic) IBOutlet UIView *mainTabsView;
 @property (weak, nonatomic) IBOutlet UIView *secondaryTabsView;
 @property (weak, nonatomic) IBOutlet UIView *searchFieldView;
@@ -29,4 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *secondaryTabsViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewHeight;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end

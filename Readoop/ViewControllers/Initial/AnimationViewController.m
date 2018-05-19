@@ -44,7 +44,7 @@
     [Navigation hideStatusBar];
     [Navigation vanishNavBar:self.navigationController];
     
-    [self initAnimators];
+    [self initAnimators]; 
     [self performAnimationOnLabels];
 }
 

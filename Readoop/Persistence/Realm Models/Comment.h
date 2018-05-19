@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 #import "Book.h"
+#import "User.h"
+
+@class User;
+RLM_ARRAY_TYPE(User);
 
 @interface Comment : RLMObject
 @property NSNumber<RLMInt> *commentId;
@@ -16,8 +20,9 @@
 @property NSString *contents;
 @property NSNumber<RLMInt> *userId;
 
-@property NSNumber<RLMInt> *numberOfPositiveRates;
-@property NSNumber<RLMInt> *numberOfNegativeRates;
+@property RLMArray<User *><User> *upRates;
+@property RLMArray<User *><User> *downRates;
+
 @property (readonly) RLMLinkingObjects *commentedBook;
 
 @end
