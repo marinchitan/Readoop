@@ -270,6 +270,7 @@
     if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]) { //Book cell
         BookCell *bookcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
         [bookcell setupCellWithModel:currentModel.object];
+        bookcell.navController = self.navigationController;
         bookcell.selectionStyle = UITableViewCellSelectionStyleNone;
         return bookcell;
         
@@ -290,7 +291,7 @@
     if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]){
         return 185;
     } else {
-        return 140;
+        return 105;
     }
     
 }

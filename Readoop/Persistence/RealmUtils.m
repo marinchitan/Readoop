@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Request.h"
 #import "Post.h"
+#import "BookRate.h"
 
 @implementation RealmUtils
 
@@ -207,6 +208,94 @@
             [feedPost.downRates removeObjectAtIndex:index];
         }];
     }
+}
+
++ (NSString*)getRatingOfUser:(User*)user ofBook:(Book*)book {
+    RLMArray *rates = book.rates;
+    NSString *stringRate = @" - ";
+    for(BookRate *rate in rates){
+        if(user.userId == rate.userId){
+            stringRate = [NSString stringWithFormat:@"%1.1f",[rate.rate floatValue]];
+        }
+    }
+    return stringRate;
+}
+
++ (NSString*)getAvgRatingOfBook:(Book*)book {
+    RLMArray *rates = book.rates;
+    if([rates count] == 0){
+        return @" - ";
+    }
+    NSString *averageString = [NSString new];
+    float sum = 0.0;
+    for(BookRate *rate in rates){
+        sum = sum + [rate.rate floatValue];
+    }
+    float average = sum / [rates count];
+    
+    averageString = [NSString stringWithFormat:@"%1.1f",average];
+    return averageString;
+}
+
++ (void)setRatingForBook:(Book*)book rating:(float)rating byUser:(User*)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    NSNumber<RLMFloat> *newRating = [NSNumber numberWithFloat:rating];
+    RLMArray *rates = book.rates;
+    BOOL userAlreadyRatedTheBook = NO;
+    
+    for(BookRate *rate in rates){
+        if(rate.userId == user.userId) {
+            //Update rating of this user
+            [realm transactionWithBlock:^{
+                 rate.rate = newRating;
+            }];
+            userAlreadyRatedTheBook = YES;
+        }
+    }
+    
+    if(!userAlreadyRatedTheBook) {
+        //Add new rate by user
+        BookRate *newRate = [BookRate new];
+        newRate.rate = newRating;
+        newRate.userId = user.userId;
+        [realm transactionWithBlock:^{
+            [realm addObject:newRate];
+            [book.rates addObject:newRate];
+        }];
+    }
+}
+
++ (float)getInitialRatingForBook:(Book*)book forUser:(User*)user {
+    RLMArray *rates = book.rates;
+    for(BookRate *rate in rates){
+        if(rate.userId == user.userId) {
+            return [rate.rate floatValue];
+        }
+    }
+    return 2.5;
+}
+
++ (void)addBook:(Book*)book toUser:(User*)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [user.books addObject:book];
+    }];
+    
+}
+
++ (void)removeBook:(Book*)book fromUser:(User*)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [user.books removeObjectAtIndex:[user.books indexOfObject:book]];
+    }];
+}
+
++ (BOOL)user:(User*)user hasBook:(Book*)book {
+    int index = [user.books indexOfObject:book];
+    int notFound = -1;
+    return index != notFound;
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "BookCell.h"
 #import "Color.h"
 #import "Book.h"
+#import "ViewController.h"
+#import "BookDetailsVC.h"
 
 @implementation BookCell
 
@@ -52,7 +54,9 @@
 }
 
 - (IBAction)tapAction:(id)sender {
-
+    BookDetailsVC *bookDetailsVC = [ViewController getBookDetailsVC];
+    [bookDetailsVC setUpVCWithBook:self.currentBook];
+    [self.navController pushViewController:bookDetailsVC animated:YES];
 }
 
 @end

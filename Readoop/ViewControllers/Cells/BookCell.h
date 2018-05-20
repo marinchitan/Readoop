@@ -26,6 +26,8 @@
 
 @property (strong, nonatomic) Book* currentBook;
 
+@property (strong, nonatomic) UINavigationController *navController;
+
 - (void)setupCellWithModel:(Book*)book;
 
 @end

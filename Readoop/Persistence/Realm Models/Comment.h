@@ -23,6 +23,6 @@ RLM_ARRAY_TYPE(User);
 @property RLMArray<User *><User> *upRates;
 @property RLMArray<User *><User> *downRates;
 
-@property (readonly) RLMLinkingObjects *commentedBook;
+//@property (readonly) RLMLinkingObjects *commentedBook; //post-pred
 
 @end

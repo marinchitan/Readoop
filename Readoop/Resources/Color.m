@@ -92,4 +92,8 @@
     return [UIColor colorWithRed:(232/255.0) green:(232/255.0) blue:(232/255.0) alpha:1];
 }
 
++ (UIColor *)getNeutralYellow {
+    return [UIColor colorWithRed:(247/255.0) green:(222/255.0) blue:(0/255.0) alpha:1];
+}
+
 @end

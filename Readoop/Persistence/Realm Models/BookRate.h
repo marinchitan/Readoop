@@ -12,6 +12,6 @@
 @interface BookRate : RLMObject
 
 @property NSNumber<RLMInt> *userId;
-@property NSNumber<RLMInt> *rate; //1 to 5
+@property NSNumber<RLMFloat> *rate; //1 to 5
 
 @end

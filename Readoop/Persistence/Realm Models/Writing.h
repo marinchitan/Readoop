@@ -8,16 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
-#import "BookRate.h"
-#import "Comment.h"
 
-@class Comment;
-@class User;
-RLM_ARRAY_TYPE(Comment)
-RLM_ARRAY_TYPE(BookRate);
 
 @interface Writing : RLMObject
 @property NSNumber<RLMInt> *writingId;
+@property NSNumber<RLMInt> *authorId;
 
 @property NSString *writingTitle;
 @property NSString *writingAuthor;

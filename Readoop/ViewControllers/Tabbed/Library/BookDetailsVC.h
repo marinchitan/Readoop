@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addToMyBooksButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *sliderValue;
 
 - (void)setUpVCWithBook:(Book*)book;
 

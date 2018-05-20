@@ -32,6 +32,7 @@
 
 + (UIColor *)getValidGreen;
 + (UIColor *)getInvalidRed;
++ (UIColor *)getNeutralYellow;
 
 + (UIColor *)getPassiveTab;
 + (UIColor *)getActiveTab;
