@@ -10,7 +10,13 @@
 #import "ContainerViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface LibraryVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@protocol LibraryTVCDelegate
+
+- (void)reloadData;
+
+@end
+
+@interface LibraryVC : ContainerViewController <UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate, LibraryTVCDelegate>
 @property (weak, nonatomic) IBOutlet UIView *mainTabsView;
 @property (weak, nonatomic) IBOutlet UIView *secondaryTabsView;
 @property (weak, nonatomic) IBOutlet UIView *searchFieldView;

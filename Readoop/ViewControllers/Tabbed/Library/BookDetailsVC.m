@@ -11,6 +11,7 @@
 #import "ViewUtils.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "RealmUtils.h"
+#import "AlertUtils.h"
 
 @interface BookDetailsVC ()
 
@@ -100,7 +101,16 @@
 }
 
 - (UIColor*)getInitialSliderColor {
-    float yourInitialRating = [[self getYourRating] floatValue];
+    
+    float yourInitialRating;
+    if([[self getYourRating] isEqualToString:@" - "]){//didn't had an rating set yet
+        yourInitialRating = 2.5;
+    } else {//get your rating
+        yourInitialRating = [[self getYourRating] floatValue];
+    }
+    NSLog(@"Your rating: %@", [self getYourRating]);
+    
+    
     if(yourInitialRating < 2){
         return [Color getBariolRed];
     } else if (yourInitialRating > 4) {
@@ -155,13 +165,27 @@
 
 - (IBAction)addToMyBooks:(id)sender {
     if(self.alreadyHasCurrentBook) {//already has book action = remove book
-        [RealmUtils removeBook:self.currentBook fromUser:self.appSession.currentUser];
-        self.alreadyHasCurrentBook = NO;
-        [self actionButtonCheck];
+        [AlertUtils showInformation:@"Are you sure you want to remove this book from your collection?"
+                          withTitle:@"Remove from collection"
+                   withActionButton:@"Remove"
+                   withCancelButton:@"Cancel"
+                         withAction:^{
+                             [RealmUtils removeBook:self.currentBook fromUser:self.appSession.currentUser];
+                             [self.delegate reloadData];
+                             [self.navigationController popViewControllerAnimated:YES];
+                         }
+                               onVC:self];
     } else { //doesn't have book in colleciton action = add book
-        [RealmUtils addBook:self.currentBook toUser:self.appSession.currentUser];
-        self.alreadyHasCurrentBook = YES;
-        [self actionButtonCheck];
+        [AlertUtils showInformation:@"Are you sure you want to add this book to your collection?"
+                          withTitle:@"Add to collection"
+                   withActionButton:@"Add"
+                   withCancelButton:@"Cancel"
+                         withAction:^{
+                             [RealmUtils addBook:self.currentBook toUser:self.appSession.currentUser];
+                             [self.delegate reloadData];
+                             [self.navigationController popViewControllerAnimated:YES];
+                         }
+                               onVC:self];
     }
 }
 

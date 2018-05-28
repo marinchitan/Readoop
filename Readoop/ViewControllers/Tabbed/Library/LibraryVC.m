@@ -271,12 +271,14 @@
         BookCell *bookcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
         [bookcell setupCellWithModel:currentModel.object];
         bookcell.navController = self.navigationController;
+        bookcell.delegate = self;
         bookcell.selectionStyle = UITableViewCellSelectionStyleNone;
         return bookcell;
         
     } else { //Writing cell
         WritingCell *writingcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
         [writingcell setupCellWithModel:currentModel.object];
+        //bookcell.delegate = self;
         writingcell.selectionStyle = UITableViewCellSelectionStyleNone;
         return writingcell;
     }
@@ -329,6 +331,11 @@
                                  NSParagraphStyleAttributeName: paragraph};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (void)reloadData {
+    [self fetchDataSource];
+    [self.tableView reloadData];
 }
 
 @end

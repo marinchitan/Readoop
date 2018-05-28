@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Book.h"
+#import "LibraryVC.h"
 @interface BookCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bookImage;
 
@@ -27,6 +28,8 @@
 @property (strong, nonatomic) Book* currentBook;
 
 @property (strong, nonatomic) UINavigationController *navController;
+
+@property (strong, nonatomic) id<LibraryTVCDelegate> delegate;
 
 - (void)setupCellWithModel:(Book*)book;
 

@@ -30,6 +30,8 @@ RLM_ARRAY_TYPE(BookRate);
 @property NSString *imageName;
 @property NSString *imageWithURL;
 
+@property NSData *coverImage;
+
 @property RLMArray<BookRate *><BookRate> *rates;
 //@property RLMArray<Comment *><Comment> *comments; //post-pred
 

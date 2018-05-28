@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ContainerViewController.h"
 #import "Book.h"
+#import "LibraryVC.h"
 
 @interface BookDetailsVC : ContainerViewController
 
@@ -36,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *sliderValue;
+
+@property (strong, nonatomic) id<LibraryTVCDelegate> delegate;
 
 - (void)setUpVCWithBook:(Book*)book;
 

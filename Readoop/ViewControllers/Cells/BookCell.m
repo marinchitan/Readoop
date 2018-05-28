@@ -56,6 +56,7 @@
 - (IBAction)tapAction:(id)sender {
     BookDetailsVC *bookDetailsVC = [ViewController getBookDetailsVC];
     [bookDetailsVC setUpVCWithBook:self.currentBook];
+    bookDetailsVC.delegate = self.delegate;
     [self.navController pushViewController:bookDetailsVC animated:YES];
 }
 
