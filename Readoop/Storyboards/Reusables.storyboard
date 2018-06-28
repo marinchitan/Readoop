@@ -359,7 +359,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ECY-JF-aLe">
-                                <rect key="frame" x="99" y="348.5" width="177.5" height="20"/>
+                                <rect key="frame" x="99.5" y="348.5" width="177.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avgerage Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9h-Fu-Jek">
                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="20"/>
@@ -376,7 +376,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UCx-3O-bdK">
-                                <rect key="frame" x="137" y="298.5" width="101" height="20"/>
+                                <rect key="frame" x="137.5" y="298.5" width="101" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-gm-0AV">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="20"/>
@@ -393,7 +393,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QaB-u8-Q6G">
-                                <rect key="frame" x="118" y="383.5" width="140.5" height="20"/>
+                                <rect key="frame" x="117.5" y="383.5" width="140.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY4-Xc-Bbs">
                                         <rect key="frame" x="0.0" y="0.0" width="87.5" height="20"/>
@@ -530,6 +530,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelTap:" destination="eaN-Rk-5Qx" eventType="touchUpInside" id="5h1-Kx-y6h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8m-P8-JNn">
                                 <rect key="frame" x="20" y="597" width="150" height="50"/>
@@ -537,12 +540,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kl2-vu-GtG"/>
                                 </constraints>
-                                <state key="normal" title="Add to my books">
+                                <state key="normal" title="Buy writing">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dwa-42-vP1">
-                                <rect key="frame" x="95.5" y="524" width="184.5" height="38"/>
+                                <rect key="frame" x="96" y="524" width="184.5" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noe-oi-3XZ">
                                         <rect key="frame" x="0.0" y="0.0" width="80.5" height="38"/>
@@ -565,7 +568,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-bf-bGu">
-                                <rect key="frame" x="71.5" y="215" width="232.5" height="20"/>
+                                <rect key="frame" x="72" y="215" width="232.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's username: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-W7-j8u">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="20"/>
@@ -664,6 +667,8 @@
                         <outlet property="authorLabel" destination="7da-Mj-dzx" id="YSE-3D-pbe"/>
                         <outlet property="authorUsernameContents" destination="llM-AJ-mr5" id="yKu-HP-Bt6"/>
                         <outlet property="authorUsernameLabel" destination="1Hb-W7-j8u" id="JbO-D1-ggT"/>
+                        <outlet property="buyButton" destination="t8m-P8-JNn" id="d36-ux-pbk"/>
+                        <outlet property="cancelButton" destination="m65-hP-9Og" id="Ogu-hi-Sat"/>
                         <outlet property="coverImage" destination="ZX5-8W-UwT" id="ajA-9C-b67"/>
                         <outlet property="priceContents" destination="9tH-Wr-x0W" id="jNC-6q-C37"/>
                         <outlet property="shortDescriptionContents" destination="4H6-qV-gyf" id="82o-41-WtH"/>

@@ -18,7 +18,7 @@
 @property NSString *writingAuthor;
 
 @property NSString *writingDescription;
-@property NSDate *dateAdded
+@property NSDate *dateAdded;
 @property NSData *writingContent;
 
 @property NSData *coverImage;

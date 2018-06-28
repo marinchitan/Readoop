@@ -22,6 +22,8 @@
 
 @property (strong , nonatomic) Writing *currentWriting;
 
+@property (strong, nonatomic) UINavigationController *navController;
+
 - (void)setupCellWithModel:(Writing*)writing;
 
 @end

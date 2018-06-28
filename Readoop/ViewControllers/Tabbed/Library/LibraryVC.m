@@ -279,6 +279,7 @@
         WritingCell *writingcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
         [writingcell setupCellWithModel:currentModel.object];
         //bookcell.delegate = self;
+        writingcell.navController = self.navigationController;
         writingcell.selectionStyle = UITableViewCellSelectionStyleNone;
         return writingcell;
     }

@@ -82,7 +82,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yet ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-OS-6E6">
-                                                <rect key="frame" x="151" y="335" width="37.5" height="20"/>
+                                                <rect key="frame" x="150.5" y="335" width="37.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -276,13 +276,13 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please supply the required " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krA-Dg-y3D">
-                                                <rect key="frame" x="58.5" y="20" width="221.5" height="21"/>
+                                                <rect key="frame" x="58" y="20" width="221.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf0-6F-UcX">
-                                                <rect key="frame" x="124" y="46" width="90.5" height="20"/>
+                                                <rect key="frame" x="123.5" y="46" width="90.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -780,7 +780,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supply optional data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwq-iJ-BwN">
-                                <rect key="frame" x="79" y="40" width="217.5" height="27"/>
+                                <rect key="frame" x="79.5" y="40" width="217.5" height="27"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -833,7 +833,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-3a-BFC">
-                                <rect key="frame" x="171" y="147" width="34.5" height="20"/>
+                                <rect key="frame" x="170.5" y="147" width="34.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -857,13 +857,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of birth:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saA-nz-cNh">
-                                <rect key="frame" x="137.5" y="337" width="101" height="20"/>
+                                <rect key="frame" x="137" y="337" width="101" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-IR-4CD">
-                                <rect key="frame" x="154.5" y="242" width="66.5" height="20"/>
+                                <rect key="frame" x="155" y="242" width="66.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

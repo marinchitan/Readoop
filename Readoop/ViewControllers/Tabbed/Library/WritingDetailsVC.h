@@ -22,7 +22,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *addedDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceContents;
 
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *coverImage;
+
+@property (nonatomic, strong) Writing* currentWriting;
+
+- (void)setupVCwithWriting:(Writing*)writing;
 
 @end

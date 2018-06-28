@@ -8,6 +8,8 @@
 
 #import "WritingCell.h"
 #import "Color.h"
+#import "WritingDetailsVC.h"
+#import "ViewController.h"
 
 @implementation WritingCell
 
@@ -38,7 +40,10 @@
 }
 
 - (IBAction)tapAction:(id)sender {
-    
+    WritingDetailsVC *writingDetailsVC = [ViewController getWritingDetailsVC];
+    //[writingDetailsVC setupVCwithWriting:writing];
+    //bookDetailsVC.delegate = self.delegate;
+    [self.navController pushViewController:writingDetailsVC animated:YES];
 }
 
 @end
