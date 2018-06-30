@@ -258,6 +258,7 @@
         BookRate *newRate = [BookRate new];
         newRate.rate = newRating;
         newRate.userId = user.userId;
+        newRate.bookId = book.bookId;
         [realm transactionWithBlock:^{
             [realm addObject:newRate];
             [book.rates addObject:newRate];
@@ -303,7 +304,7 @@
     
     [realm transactionWithBlock:^{
         for(Book *book in books) {
-            [realm addObject:book];
+            [realm addOrUpdateObject:book];
         }
     }];
 }

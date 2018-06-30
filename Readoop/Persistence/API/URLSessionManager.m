@@ -15,17 +15,13 @@
 @implementation URLSessionManager
 
 - (NSArray *)getAuthorsForBooks {
-    return @[@"Lucian%20Blaga", @"Marin%20Preda", @"Mark%20Twain", @"Ray%20Bradbury", @"George%20Orwell", @"Kurt%20Vonnegut", @"Tolstoy", @"Dostoievski", @"Dickens", @"Tolkien", @"Victor%20Hugo", @"Oscar%20Wilde", @"Franz%20Kafka", @"Hemingway", @"Joyce", @"Dumas", @"Verne", @"Christie"];
+    return @[@"Lucian%20Blaga", @"Marin%20Preda", @"Mark%20Twain", @"Ray%20Bradbury", @"George%20Orwell", @"Kurt%20Vonnegut", @"Tolstoy", @"Dostoievski", @"Dickens", @"Tolkien", @"Victor%20Hugo", @"Oscar%20Wilde", @"Franz%20Kafka", @"Hemingway", @"Joyce", @"Dumas", @"Verne", @"Christie", @"Camus", @"Kipling"];
 }
 
-- (void)startBookRequests {
-    [RealmUtils clearBooks];
-    
+- (void)startBookRequests {    
     for(NSString *author in [self getAuthorsForBooks]) {
         [self loadBooksFromGoogleAPIForAuthor:author];
     }
-
-
 }
 
 

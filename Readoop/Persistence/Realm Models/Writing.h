@@ -15,13 +15,9 @@
 @property NSNumber<RLMInt> *authorId;
 
 @property NSString *writingTitle;
-@property NSString *writingAuthor;
-
 @property NSString *writingDescription;
-@property NSDate *dateAdded;
-@property NSData *writingContent;
 
-@property NSData *coverImage;
+@property NSData *writingContent;
 
 @property NSNumber<RLMInt> *writingPrice;
 

@@ -130,6 +130,11 @@
 }
 
 - (void)setUpVCWithBookData {
+    if([self.currentBook.imageWithURL isEqualToString:@""]) {
+        self.coverImageView.image = [UIImage imageNamed:self.currentBook.imageName];
+    } else {
+        self.coverImageView.image = [UIImage imageWithData:self.currentBook.coverImage];
+    }
     self.titleContents.text = self.currentBook.bookTitle;
     self.authorContents.text = self.currentBook.bookAuthor;
     self.publisherContents.text = self.currentBook.bookPublisher;

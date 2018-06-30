@@ -32,7 +32,7 @@
     self.priceContents.text = [NSString stringWithFormat:@"%@ €",writing.writingPrice];
     self.priceContents.textColor = [Color getValidGreen];
     self.titleContents.text = writing.writingTitle;
-    self.authorContents.text = writing.writingAuthor;
+   // self.authorContents.text = writing.writingAuthor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
