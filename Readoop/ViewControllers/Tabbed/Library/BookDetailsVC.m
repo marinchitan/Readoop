@@ -108,8 +108,6 @@
     } else {//get your rating
         yourInitialRating = [[self getYourRating] floatValue];
     }
-    NSLog(@"Your rating: %@", [self getYourRating]);
-    
     
     if(yourInitialRating < 2){
         return [Color getBariolRed];
@@ -121,8 +119,15 @@
 }
 
 - (void)initialRateCheck {
-    self.ratingSlider.value = [RealmUtils getInitialRatingForBook:self.currentBook forUser:self.appSession.currentUser];
-    self.sliderValue.text = [NSString stringWithFormat:@"%1.1f", self.ratingSlider.value];
+    NSString *initialRating = [self getYourRating];
+    if(![initialRating isEqualToString:@" - "]) {
+        self.ratingSlider.value = [[self getYourRating] floatValue];
+        self.sliderValue.text = [self getYourRating];
+    } else {
+        self.ratingSlider.value = 2.5;
+        self.sliderValue.text = @"2.5";
+    }
+    
 }
 
 - (void)setUpVCWithBook:(Book*)book {
@@ -139,7 +144,12 @@
     self.authorContents.text = self.currentBook.bookAuthor;
     self.publisherContents.text = self.currentBook.bookPublisher;
     self.yearContents.text = self.currentBook.bookPublishedYear;
-    self.pagesContents.text = [NSString stringWithFormat:@"%@",self.currentBook.pages];
+    
+    if([self.currentBook.pages isEqualToString:@"(null)"]){
+        self.pagesContents.text = @"-";
+    } else {
+        self.pagesContents.text = self.currentBook.pages;
+    }
     
     if(!self.currentBook.bookPublisher || [self.currentBook.bookPublisher isEqualToString:@""]) {
         self.publisherContents.text = @" - ";
@@ -154,7 +164,7 @@
 }
 
 - (NSString*)getAverageRating {
-    return [RealmUtils getAvgRatingOfBook:self.currentBook];
+    return [RealmUtils getAverageRatingOfBook:self.currentBook];
 }
 
 - (NSString*)getYourRating {
@@ -166,6 +176,7 @@
     [RealmUtils setRatingForBook:self.currentBook rating:self.ratingSlider.value byUser:self.appSession.currentUser];
     self.yourRatingContenes.text = [NSString stringWithFormat:@"%1.1f",self.ratingSlider.value];
     self.avgRatingContents.text = [self getAverageRating];
+    [self.delegate reloadData];
 }
 
 - (IBAction)addToMyBooks:(id)sender {

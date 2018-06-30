@@ -211,16 +211,18 @@
 }
 
 + (NSString*)getRatingOfUser:(User*)user ofBook:(Book*)book {
-    RLMArray *rates = book.rates;
-    NSString *stringRate = @" - ";
-    for(BookRate *rate in rates){
-        if(user.userId == rate.userId){
-            stringRate = [NSString stringWithFormat:@"%1.1f",[rate.rate floatValue]];
-        }
+    NSString *primaryKey = [NSString stringWithFormat:@"%@%@", user.userId, book.bookId];
+    
+    RLMResults *rates = [BookRate objectsWhere:@"bookRateId == %@",primaryKey];
+    if(rates.count > 0){
+        BookRate *rate = [rates firstObject];
+        return [NSString stringWithFormat:@"%1.1f",[rate.rate floatValue]];
+    } else {
+        return @" - ";
     }
-    return stringRate;
 }
 
+//Get average rating of books by RLMArray of rates
 + (NSString*)getAvgRatingOfBook:(Book*)book {
     RLMArray *rates = book.rates;
     if([rates count] == 0){
@@ -239,31 +241,17 @@
 
 + (void)setRatingForBook:(Book*)book rating:(float)rating byUser:(User*)user {
     RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    BookRate *newRate = [BookRate new];
     NSNumber<RLMFloat> *newRating = [NSNumber numberWithFloat:rating];
-    RLMArray *rates = book.rates;
-    BOOL userAlreadyRatedTheBook = NO;
+    newRate.rate = newRating;
+    newRate.userId = user.userId;
+    newRate.bookId = book.bookId;
+    newRate.bookRateId = [NSString stringWithFormat:@"%@%@", user.userId, book.bookId];
     
-    for(BookRate *rate in rates){
-        if(rate.userId == user.userId) {
-            //Update rating of this user
-            [realm transactionWithBlock:^{
-                 rate.rate = newRating;
-            }];
-            userAlreadyRatedTheBook = YES;
-        }
-    }
-    
-    if(!userAlreadyRatedTheBook) {
-        //Add new rate by user
-        BookRate *newRate = [BookRate new];
-        newRate.rate = newRating;
-        newRate.userId = user.userId;
-        newRate.bookId = book.bookId;
-        [realm transactionWithBlock:^{
-            [realm addObject:newRate];
-            [book.rates addObject:newRate];
-        }];
-    }
+    [realm transactionWithBlock:^{
+        [realm addOrUpdateObject:newRate];
+    }];
 }
 
 + (float)getInitialRatingForBook:(Book*)book forUser:(User*)user {
@@ -317,4 +305,21 @@
     }];
 }
 
+//UNUSED
++ (NSString *)getAverageRatingOfBook:(Book *)book {
+    RLMResults *bookRates = [BookRate objectsWhere:@"bookId == %@", book.bookId];
+    NSInteger count = 0;
+    float totalRate = 0.0;
+    for(BookRate *rate in bookRates){
+        totalRate += [rate.rate floatValue];
+        count++;
+    }
+    if(count == 0){
+        return @"-";
+    } else {
+        float average = totalRate / count;
+        return [NSString stringWithFormat:@"%1.1f",average];
+        
+    }
+}
 @end

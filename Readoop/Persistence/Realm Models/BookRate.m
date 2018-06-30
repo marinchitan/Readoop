@@ -10,4 +10,8 @@
 
 @implementation BookRate
 
++ (NSString *)primaryKey {
+    return @"bookRateId";
+}
+
 @end

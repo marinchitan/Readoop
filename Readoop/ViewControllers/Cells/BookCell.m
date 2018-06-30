@@ -11,6 +11,7 @@
 #import "Book.h"
 #import "ViewController.h"
 #import "BookDetailsVC.h"
+#import "RealmUtils.h"
 
 @implementation BookCell
 
@@ -48,13 +49,12 @@
     
     self.publisherContents.text = book.bookPublisher;
     
-    self.ratingContents.text = @"-"; //TODO: implement
+    self.ratingContents.text = [RealmUtils getAverageRatingOfBook:book]; 
     if([book.imageWithURL isEqualToString:@""]) {
         self.bookImage.image = [UIImage imageNamed:book.imageName];
     } else {
         self.bookImage.image = [UIImage imageWithData:book.coverImage];
     }
-    
 
 }
 

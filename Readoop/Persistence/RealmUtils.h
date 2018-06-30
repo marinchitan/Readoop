@@ -54,4 +54,6 @@
 + (void)addBooksFromAPI:(NSMutableArray *)books;
 + (void)clearBooks;
 
++ (NSString *)getAverageRatingOfBook:(Book *)book;
+
 @end

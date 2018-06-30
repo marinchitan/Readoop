@@ -12,7 +12,7 @@
 
 @implementation RealmConfig
 
-#define REALM_SCHEMAVERSION 21
+#define REALM_SCHEMAVERSION 22
 
 - (void)configRealm {
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
