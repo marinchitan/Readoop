@@ -50,4 +50,8 @@
 + (void)addBook:(Book*)book toUser:(User*)user;
 + (void)removeBook:(Book*)book fromUser:(User*)user;
 + (BOOL)user:(User*)user hasBook:(Book*)book;
+
++ (void)addBooksFromAPI:(NSMutableArray *)books;
++ (void)clearBooks;
+
 @end

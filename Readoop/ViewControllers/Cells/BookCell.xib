@@ -25,7 +25,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaul" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-YM-0p3">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultLoadBook" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-YM-0p3">
                         <rect key="frame" x="10" y="15" width="105.5" height="154.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J00-DD-7zY">
@@ -96,7 +96,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSv-i5-CjX">
-                        <rect key="frame" x="25" y="0.0" width="225" height="184.5"/>
+                        <rect key="frame" x="15" y="0.0" width="155" height="184.5"/>
                         <connections>
                             <action selector="tapAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jSL-HD-XFj"/>
                         </connections>
@@ -123,10 +123,10 @@
                     <constraint firstItem="X9Q-sB-fmz" firstAttribute="leading" secondItem="FIf-OH-O5T" secondAttribute="trailing" constant="5" id="X5O-d1-jf9"/>
                     <constraint firstItem="wAD-h5-NW3" firstAttribute="leading" secondItem="5v3-YM-0p3" secondAttribute="trailing" constant="10" id="c87-XF-GTy"/>
                     <constraint firstItem="OTe-Wu-j8q" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="c8h-8a-2hG"/>
-                    <constraint firstAttribute="trailing" secondItem="YSv-i5-CjX" secondAttribute="trailing" constant="70" id="caF-W2-DKX"/>
+                    <constraint firstAttribute="trailing" secondItem="YSv-i5-CjX" secondAttribute="trailing" constant="150" id="caF-W2-DKX"/>
                     <constraint firstItem="tsq-LH-5DR" firstAttribute="top" secondItem="J00-DD-7zY" secondAttribute="bottom" constant="16" id="euY-Zw-w9J"/>
                     <constraint firstItem="YSv-i5-CjX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jHG-cG-085"/>
-                    <constraint firstItem="YSv-i5-CjX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="koC-Nc-QVB"/>
+                    <constraint firstItem="YSv-i5-CjX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="koC-Nc-QVB"/>
                     <constraint firstItem="4cG-6h-lEH" firstAttribute="top" secondItem="J00-DD-7zY" secondAttribute="top" id="kvu-L8-xeH"/>
                     <constraint firstItem="87f-kR-81G" firstAttribute="leading" secondItem="50R-r0-RSK" secondAttribute="trailing" constant="5" id="l7e-Gh-3BH"/>
                     <constraint firstItem="J00-DD-7zY" firstAttribute="top" secondItem="5v3-YM-0p3" secondAttribute="top" constant="2" id="qzM-xZ-6xY"/>
@@ -155,6 +155,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="defaul" width="16" height="16"/>
+        <image name="defaultLoadBook" width="297" height="456"/>
     </resources>
 </document>

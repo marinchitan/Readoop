@@ -50,6 +50,8 @@
 		3E895B0820695E610091FD3C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0720695E610091FD3C /* ProfileCell.m */; };
 		3E895B0C206960600091FD3C /* ProfileTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */; };
 		3E895B0F206960A30091FD3C /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E895B0E206960A30091FD3C /* CellModel.m */; };
+		3E9F65CA20E6D4D00038CA2A /* URLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F65C920E6D4D00038CA2A /* URLSessionManager.m */; };
+		3E9F65CD20E76E800038CA2A /* NetworkingConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F65CC20E76E800038CA2A /* NetworkingConfig.m */; };
 		3EAC24642096305600D1AED5 /* FeedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24632096305600D1AED5 /* FeedVC.m */; };
 		3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24662097204E00D1AED5 /* FeedTVCDataSource.m */; };
 		3EAC246B2097207900D1AED5 /* FeedPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC24692097207900D1AED5 /* FeedPostCell.m */; };
@@ -169,6 +171,10 @@
 		3E895B0B206960600091FD3C /* ProfileTVCDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileTVCDataSource.m; sourceTree = "<group>"; };
 		3E895B0D206960A30091FD3C /* CellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellModel.h; sourceTree = "<group>"; };
 		3E895B0E206960A30091FD3C /* CellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellModel.m; sourceTree = "<group>"; };
+		3E9F65C820E6D4D00038CA2A /* URLSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionManager.h; sourceTree = "<group>"; };
+		3E9F65C920E6D4D00038CA2A /* URLSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionManager.m; sourceTree = "<group>"; };
+		3E9F65CB20E76E800038CA2A /* NetworkingConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingConfig.h; sourceTree = "<group>"; };
+		3E9F65CC20E76E800038CA2A /* NetworkingConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingConfig.m; sourceTree = "<group>"; };
 		3EAC24622096305600D1AED5 /* FeedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedVC.h; sourceTree = "<group>"; };
 		3EAC24632096305600D1AED5 /* FeedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedVC.m; sourceTree = "<group>"; };
 		3EAC24652097204E00D1AED5 /* FeedTVCDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedTVCDataSource.h; sourceTree = "<group>"; };
@@ -310,6 +316,7 @@
 		3E734ADC2062E85A00C54EBC /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				3E9F65C720E6D4AE0038CA2A /* API */,
 				3E734AE62062E8A600C54EBC /* Realm Models */,
 				3E734ADD2062E87500C54EBC /* ServerPersistence.h */,
 				3E734ADE2062E87500C54EBC /* ServerPersistence.m */,
@@ -359,6 +366,17 @@
 				3E7C99EF20A96CB600B3174A /* LibraryTVCDataSource.m */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		3E9F65C720E6D4AE0038CA2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3E9F65C820E6D4D00038CA2A /* URLSessionManager.h */,
+				3E9F65C920E6D4D00038CA2A /* URLSessionManager.m */,
+				3E9F65CB20E76E800038CA2A /* NetworkingConfig.h */,
+				3E9F65CC20E76E800038CA2A /* NetworkingConfig.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		3ECBC486203CB894001A263D /* ViewsResources */ = {
@@ -734,6 +752,7 @@
 				3EDE520A2086838A00D3330A /* UserPresentationVC.m in Sources */,
 				3E0635E1207F47CE001D0A09 /* AvatarChangeVC.m in Sources */,
 				3EC234B32062EFF80029225D /* Comment.m in Sources */,
+				3E9F65CA20E6D4D00038CA2A /* URLSessionManager.m in Sources */,
 				3E0635D520777576001D0A09 /* ChangePasswordVC.m in Sources */,
 				3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */,
 				3E4EDAD420B0549000FD0205 /* WritingDetailsVC.m in Sources */,
@@ -746,6 +765,7 @@
 				3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */,
 				3E895B0820695E610091FD3C /* ProfileCell.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
+				3E9F65CD20E76E800038CA2A /* NetworkingConfig.m in Sources */,
 				3EFC4DAD208D17AF003D0C33 /* PendingRequest.m in Sources */,
 				3EAC24672097204E00D1AED5 /* FeedTVCDataSource.m in Sources */,
 				3E3CCBA820A84FF10069350D /* BookCell.m in Sources */,

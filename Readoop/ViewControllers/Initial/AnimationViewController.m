@@ -12,6 +12,7 @@
 #import "Navigation.h"
 #import "UserDefaultsManager.h"
 #import "Session.h"
+#import "URLSessionManager.h"
 
 @interface AnimationViewController ()
 
@@ -24,6 +25,7 @@
     [self setUpUI];
     [self setUpLeftConstraint];
     [self pushProfileVCWithDelay:3.0]; //3.0 in prod
+    [[URLSessionManager sharedSession] startBookRequests];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

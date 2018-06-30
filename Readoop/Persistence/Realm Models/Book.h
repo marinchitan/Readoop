@@ -19,13 +19,13 @@ RLM_ARRAY_TYPE(BookRate);
 
 
 @interface Book : RLMObject
-@property NSNumber<RLMInt> *bookId;
+@property NSString *bookId;
 
 @property NSString *bookTitle;
 @property NSString *bookAuthor;
 @property NSString *bookPublisher;
 @property NSString *bookPublishedYear;
-@property NSNumber<RLMInt> *pages;
+@property NSString *pages;
 
 @property NSString *imageName;
 @property NSString *imageWithURL;

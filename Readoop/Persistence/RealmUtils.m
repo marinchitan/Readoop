@@ -298,4 +298,22 @@
     return index != notFound;
 }
 
++ (void)addBooksFromAPI:(NSMutableArray *)books {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        for(Book *book in books) {
+            [realm addObject:book];
+        }
+    }];
+}
+
++ (void)clearBooks {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [realm deleteObjects:[Book allObjects]];
+    }];
+}
+
 @end
