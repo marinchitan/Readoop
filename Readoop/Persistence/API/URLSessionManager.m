@@ -15,15 +15,17 @@
 @implementation URLSessionManager
 
 - (NSArray *)getAuthorsForBooks {
-    return @[@"Lucian Blaga", @"Marin Preda", @"Mark Twain", @"Ray Bradbury"];
+    return @[@"Lucian%20Blaga", @"Marin%20Preda", @"Mark%20Twain", @"Ray%20Bradbury", @"George%20Orwell", @"Kurt%20Vonnegut", @"Tolstoy", @"Dostoievski", @"Dickens", @"Tolkien", @"Victor%20Hugo", @"Oscar%20Wilde", @"Franz%20Kafka", @"Hemingway", @"Joyce", @"Dumas", @"Verne", @"Christie"];
 }
 
 - (void)startBookRequests {
-    /*for(NSString *author in [self getAuthorsForBooks]) {
-        [self loadBooksFromGoogleAPIForAuthor:author];
-    }*/
     [RealmUtils clearBooks];
-    [self loadBooksFromGoogleAPIForAuthor:@"Marin%20Preda"];
+    
+    for(NSString *author in [self getAuthorsForBooks]) {
+        [self loadBooksFromGoogleAPIForAuthor:author];
+    }
+
+
 }
 
 
@@ -74,7 +76,7 @@
     if(publisher != NULL && publisher != (id)[NSNull null]) {
         bookObject.bookPublisher = publisher;
     } else {
-        bookObject.bookPublisher = bookFromAPI[@"volumeInfo"][@"industryIdentifiers"][0][@"indentifier"];
+        bookObject.bookPublisher = @"-";
     }
     
     NSString *imageURL = bookFromAPI[@"volumeInfo"][@"imageLinks"][@"thumbnail"];
@@ -91,7 +93,7 @@
     
    
     
-    NSString *numberOfPages = bookFromAPI[@"volumeInfo"][@"pageCount"];
+    NSString *numberOfPages = [NSString stringWithFormat:@"%@", bookFromAPI[@"volumeInfo"][@"pageCount"]];
     if(publisher != NULL && publisher != (id)[NSNull null]) {
         bookObject.pages = numberOfPages;
     } else {

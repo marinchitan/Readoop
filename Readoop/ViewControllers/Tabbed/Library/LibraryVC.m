@@ -41,6 +41,8 @@
     [self initialFlagSetup];
     [self setUpTabs];
     [self fetchDataSource];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 140;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -289,7 +291,7 @@
     return self.dataSource.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     BookModel *currentModel = self.dataSource[indexPath.row];
     if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]){
         return 185;
@@ -297,7 +299,7 @@
         return 105;
     }
     
-}
+}*/
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     

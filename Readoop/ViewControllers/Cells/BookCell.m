@@ -39,7 +39,15 @@
     self.currentBook = book;
     self.authorContents.text = book.bookAuthor;
     self.titleContents.text = book.bookTitle;
-    self.pagesContents.text = [NSString stringWithFormat:@"%@",book.pages];
+    
+    if([book.pages isEqualToString:@"(null)"]){
+        self.pagesContents.text = @"-";
+    } else {
+        self.pagesContents.text = book.pages;
+    }
+    
+    self.publisherContents.text = book.bookPublisher;
+    
     self.ratingContents.text = @"-"; //TODO: implement
     if([book.imageWithURL isEqualToString:@""]) {
         self.bookImage.image = [UIImage imageNamed:book.imageName];
