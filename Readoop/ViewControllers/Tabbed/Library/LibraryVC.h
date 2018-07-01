@@ -39,5 +39,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UIButton *addNewWritingButton;
+@property (weak, nonatomic) IBOutlet UILabel *addNewWritingLabel;
+
 
 @end

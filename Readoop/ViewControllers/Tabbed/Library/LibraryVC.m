@@ -12,6 +12,7 @@
 #import "BookModel.h"
 #import "BookCell.h"
 #import "WritingCell.h"
+#import "ViewUtils.h"
 
 @interface LibraryVC ()
 @property(nonatomic, assign) BOOL isSearchViewExpanded;
@@ -105,6 +106,8 @@
     self.searchExpandLabelFirst.textColor = [Color getWhite];
     self.searchExpandLabelSecond.textColor = [Color getWhite];
     self.secondaryTabExpandLabel.textColor = [Color getWhite];
+    
+    [self setupAddWritingButton];
 
     self.tableView.bounces = NO;
     self.tableView.separatorColor = [UIColor whiteColor];
@@ -113,6 +116,14 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"bookCell"];
     UINib *nib2 = [UINib nibWithNibName:@"WritingCell" bundle:nil];
     [self.tableView registerNib:nib2 forCellReuseIdentifier:@"writingCell"];
+}
+
+- (void)setupAddWritingButton {
+    self.addNewWritingLabel.hidden = YES;
+    self.addNewWritingButton.hidden = YES;
+    [ViewUtils setUpIconLabel:self.addNewWritingLabel withSize:20];
+    self.addNewWritingLabel.text = [NSString fontAwesomeIconStringForEnum:FAPlus];
+    self.addNewWritingLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)initialFlagSetup {
@@ -226,6 +237,8 @@
     
     [self setUpTabs];
     [self fetchDataSource];
+    
+    [self hideAddWritingButton];
 }
 
 - (IBAction)shopTap:(id)sender {
@@ -247,6 +260,8 @@
     
     [self setUpTabs];
     [self fetchDataSource];
+    
+    [self showAddWritingButton];
 }
 
 - (IBAction)firstTabTap:(id)sender {
@@ -362,6 +377,20 @@
 - (void)reloadData {
     [self fetchDataSource];
     [self.tableView reloadData];
+}
+
+- (IBAction)addWritingAction:(id)sender {
+    NSLog(@"Add new writing");
+}
+
+- (void)hideAddWritingButton {
+    self.addNewWritingLabel.hidden = YES;
+    self.addNewWritingButton.hidden = YES;
+}
+
+- (void)showAddWritingButton {
+    self.addNewWritingLabel.hidden = NO;
+    self.addNewWritingButton.hidden = NO;
 }
 
 @end
