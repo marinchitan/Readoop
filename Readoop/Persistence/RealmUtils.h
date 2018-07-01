@@ -50,6 +50,7 @@
 + (void)removeBook:(Book*)book fromUser:(User*)user;
 + (BOOL)user:(User*)user hasBook:(Book*)book;
 
++ (void)addWriting:(Writing*)writing toUser:(User*)user;
 + (BOOL)user:(User*)user hasBoughtWriting:(Writing*)writing;
 + (BOOL)user:(User*)user isAuthorOfWriting:(Writing*)writing;
 

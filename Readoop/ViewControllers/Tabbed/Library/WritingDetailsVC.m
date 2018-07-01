@@ -79,20 +79,50 @@
 }
 
 - (IBAction)buyAction:(id)sender {
-    [AlertUtils showInformation:@"Are you sure you want to buy this writing?"
+    if(self.alreadyBoughtThisWriting) {
+        [AlertUtils showInformation:@"Are you sure you want to download this writing?"
+                          withTitle:@"Download writing"
+                   withActionButton:@"Download"
+                   withCancelButton:@"Cancel"
+                         withAction:^{
+                             [self saveCurrentWritingToDevice];
+                             [self.delegate reloadData];
+                             [self.navigationController popViewControllerAnimated:YES];}
+                               onVC:self];
+    } else if(self.isTheAuthorOfTheWriting) {
+        //Show the edit screen
+    } else {
+        [AlertUtils showInformation:@"Are you sure you want to buy this writing?"
                       withTitle:@"Buy writing"
                withActionButton:@"Buy"
                withCancelButton:@"Cancel"
                      withAction:^{
-                         //[RealmUtils addBook:self.currentBook toUser:self.appSession.currentUser];
+                         [RealmUtils addWriting:self.currentWriting toUser:self.appSession.currentUser];
                          [self.delegate reloadData];
-                         [self.navigationController popViewControllerAnimated:YES];
-                     }
+                         [self.navigationController popViewControllerAnimated:YES];}
                            onVC:self];
+    }
 }
 
 - (IBAction)cancelAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)saveCurrentWritingToDevice {
+    NSData *writingData = self.currentWriting.writingContent;
+    NSString *fileName = [NSString stringWithFormat:@"%@.pdf",self.currentWriting.writingTitle];
+    NSString *path = [[self applicationDocumentsDirectory].path
+                      stringByAppendingPathComponent:fileName];
+    NSLog(@"Save writing to path:%@", path);
+    
+    NSFileManager *manager = [NSFileManager defaultManager];
+    [manager createFileAtPath:path contents:writingData attributes:nil];
+}
+
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
+}
+
 @end
+

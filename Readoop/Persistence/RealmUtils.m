@@ -317,6 +317,13 @@
     }
 }
 
++ (void)addWriting:(Writing*)writing toUser:(User*)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [user.writings addObject:writing];
+    }];
+}
 
 
 @end
