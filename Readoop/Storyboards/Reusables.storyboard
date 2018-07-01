@@ -615,6 +615,36 @@
             </objects>
             <point key="canvasLocation" x="1285.5999999999999" y="251.42428785607197"/>
         </scene>
+        <!--ViewerVC-->
+        <scene sceneID="mbS-Cp-uzw">
+            <objects>
+                <viewController storyboardIdentifier="pdfVC" id="f3P-uO-PSI" customClass="PDFViewerVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xav-Sy-AoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-k7-QAt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AEZ-k7-QAt" firstAttribute="leading" secondItem="fRA-dW-Vbt" secondAttribute="leading" id="9Jk-9o-e4b"/>
+                            <constraint firstItem="fRA-dW-Vbt" firstAttribute="trailing" secondItem="AEZ-k7-QAt" secondAttribute="trailing" id="Vs3-bT-Ro6"/>
+                            <constraint firstItem="AEZ-k7-QAt" firstAttribute="top" secondItem="fRA-dW-Vbt" secondAttribute="top" id="iNE-Lp-VPH"/>
+                            <constraint firstItem="fRA-dW-Vbt" firstAttribute="bottom" secondItem="AEZ-k7-QAt" secondAttribute="bottom" id="s8R-5o-7ao"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fRA-dW-Vbt"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="AEZ-k7-QAt" id="sUj-97-hFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBH-ww-ygR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="251"/>
+        </scene>
     </scenes>
     <resources>
         <image name="defaultLoadBook" width="297" height="456"/>

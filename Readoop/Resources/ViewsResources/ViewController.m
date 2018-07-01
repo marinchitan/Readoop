@@ -82,4 +82,9 @@
             instantiateViewControllerWithIdentifier:@"writingDetailsVC"];
 }
 
++ (PDFViewerVC *)getPdfVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"pdfVC"];
+}
+
 @end

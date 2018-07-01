@@ -9,6 +9,7 @@
 #import "WritingDetailsVC.h"
 #import "Essentials.h"
 #import "User.h"
+#import "PDFViewerVC.h"
 
 @interface WritingDetailsVC ()
 
@@ -51,8 +52,8 @@
 
 - (void)actionButtonCheck {
     if(self.alreadyBoughtThisWriting){
-        [self.buyButton setTitle:@"Download writing" forState:UIControlStateNormal];
-        [self.buyButton setTitle:@"Download writing" forState:UIControlStateFocused];
+        [self.buyButton setTitle:@"Open writing" forState:UIControlStateNormal];
+        [self.buyButton setTitle:@"Open writing" forState:UIControlStateFocused];
     } else if(self.isTheAuthorOfTheWriting) {
         [self.buyButton setTitle:@"Edit writing" forState:UIControlStateNormal];
         [self.buyButton setTitle:@"Edit writing" forState:UIControlStateFocused];
@@ -80,15 +81,11 @@
 
 - (IBAction)buyAction:(id)sender {
     if(self.alreadyBoughtThisWriting) {
-        [AlertUtils showInformation:@"Are you sure you want to download this writing?"
-                          withTitle:@"Download writing"
-                   withActionButton:@"Download"
-                   withCancelButton:@"Cancel"
-                         withAction:^{
-                             [self saveCurrentWritingToDevice];
-                             [self.delegate reloadData];
-                             [self.navigationController popViewControllerAnimated:YES];}
-                               onVC:self];
+        NSString *path = [self saveCurrentWritingToDevice];
+        PDFViewerVC *pdfVC = [ViewController getPdfVC];
+        pdfVC.filePath = path;
+        
+        [self.navigationController pushViewController:pdfVC animated:YES];
     } else if(self.isTheAuthorOfTheWriting) {
         //Show the edit screen
     } else {
@@ -108,7 +105,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)saveCurrentWritingToDevice {
+- (NSString *)saveCurrentWritingToDevice {
     NSData *writingData = self.currentWriting.writingContent;
     NSString *fileName = [NSString stringWithFormat:@"%@.pdf",self.currentWriting.writingTitle];
     NSString *path = [[self applicationDocumentsDirectory].path
@@ -116,7 +113,14 @@
     NSLog(@"Save writing to path:%@", path);
     
     NSFileManager *manager = [NSFileManager defaultManager];
-    [manager createFileAtPath:path contents:writingData attributes:nil];
+    if ([manager fileExistsAtPath:path]){
+   //     [manager removeItemAtPath:path error:nil];
+     //   [manager createFileAtPath:path contents:writingData attributes:nil];
+    } else {
+        [manager createFileAtPath:path contents:writingData attributes:nil];
+    }
+    
+    return path;
 }
 
 - (NSURL *)applicationDocumentsDirectory {

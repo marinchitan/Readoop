@@ -21,6 +21,7 @@
 #import "RequestsTVC.h"
 #import "BookDetailsVC.h"
 #import "WritingDetailsVC.h"
+#import "PDFViewerVC.h"
 
 @interface ViewController : UIViewController
 
@@ -42,5 +43,7 @@
 + (WritingDetailsVC*)getWritingDetailsVC;
 
 + (TesViewController*)getTestVC;
+
++ (PDFViewerVC *)getPdfVC;
 
 @end
