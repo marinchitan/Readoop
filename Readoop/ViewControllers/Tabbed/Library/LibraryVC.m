@@ -280,7 +280,7 @@
     } else { //Writing cell
         WritingCell *writingcell = [self.tableView dequeueReusableCellWithIdentifier:currentModel.reuseIdentifier];
         [writingcell setupCellWithModel:currentModel.object];
-        //bookcell.delegate = self;
+        writingcell.delegate = self;
         writingcell.navController = self.navigationController;
         writingcell.selectionStyle = UITableViewCellSelectionStyleNone;
         return writingcell;
@@ -290,16 +290,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
-
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BookModel *currentModel = self.dataSource[indexPath.row];
-    if([currentModel.reuseIdentifier isEqualToString:@"bookCell"]){
-        return 185;
-    } else {
-        return 105;
-    }
-    
-}*/
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
     

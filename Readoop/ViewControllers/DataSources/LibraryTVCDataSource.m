@@ -8,6 +8,7 @@
 
 #import "LibraryTVCDataSource.h"
 #import "BookModel.h"
+#import "WritingModel.h"
 #import <Realm/Realm.h>
 #import "Book.h"
 #import "Writing.h"
@@ -54,9 +55,9 @@
 + (NSArray*)getWritingsForCurrentUser {
     Session *appSession = [Session sharedSession];
     NSMutableArray *writingsModels = [NSMutableArray new];
-    RLMArray *writings = appSession.currentUser.books;
+    RLMArray *writings = appSession.currentUser.writings;
     for(Writing *writing in writings){
-        BookModel *model = [BookModel getBookModel:writing withReuseId:@"writingCell"];
+        WritingModel *model = [WritingModel getWritingModel:writing withReuseId:@"writingCell"];
         [writingsModels addObject:model];
     }
     

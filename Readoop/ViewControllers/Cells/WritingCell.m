@@ -10,6 +10,7 @@
 #import "Color.h"
 #import "WritingDetailsVC.h"
 #import "ViewController.h"
+#import "RealmUtils.h"
 
 @implementation WritingCell
 
@@ -19,7 +20,7 @@
 }
 
 - (void)setupUI {
-    self.ratingLabel.textColor = [Color getSubTitleGray];
+    //self.ratingLabel.textColor = [Color getSubTitleGray];
     self.priceLabel.textColor = [Color getSubTitleGray];
     self.titleLabel.textColor = [Color getSubTitleGray];
     self.authorLabel.textColor = [Color getSubTitleGray];
@@ -28,11 +29,11 @@
 
 - (void)setupCellWithModel:(Writing*)writing {
     self.currentWriting = writing;
-    self.ratingContents.text = @"-"; //implement rating calculator
     self.priceContents.text = [NSString stringWithFormat:@"%@ €",writing.writingPrice];
     self.priceContents.textColor = [Color getValidGreen];
     self.titleContents.text = writing.writingTitle;
-   // self.authorContents.text = writing.writingAuthor;
+    User *user = [RealmUtils getUserById:self.currentWriting.authorId];
+    self.authorContents.text = [user.fullName isEqualToString:@""] ? user.username : user.fullName;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,8 +42,8 @@
 
 - (IBAction)tapAction:(id)sender {
     WritingDetailsVC *writingDetailsVC = [ViewController getWritingDetailsVC];
-    //[writingDetailsVC setupVCwithWriting:writing];
-    //bookDetailsVC.delegate = self.delegate;
+    [writingDetailsVC setupVCwithWriting:self.currentWriting];
+    writingDetailsVC.delegate = self.delegate;
     [self.navController pushViewController:writingDetailsVC animated:YES];
 }
 

@@ -69,7 +69,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb6-ET-bJ1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="103.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="103.5"/>
                         <connections>
                             <action selector="tapAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="njr-AP-9Dc"/>
                         </connections>
@@ -89,7 +89,7 @@
                     <constraint firstItem="nb6-ET-bJ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="h9C-Tw-9HN"/>
                     <constraint firstItem="qX2-Pe-nUT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="nov-fu-5pB"/>
                     <constraint firstItem="fhj-AF-Ogw" firstAttribute="centerY" secondItem="QRz-1X-uQA" secondAttribute="centerY" id="onT-8n-V6Q"/>
-                    <constraint firstAttribute="trailing" secondItem="nb6-ET-bJ1" secondAttribute="trailing" id="pCf-Sd-6UA"/>
+                    <constraint firstAttribute="trailing" secondItem="nb6-ET-bJ1" secondAttribute="trailing" constant="160" id="pCf-Sd-6UA"/>
                     <constraint firstItem="nb6-ET-bJ1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pwa-xE-5AA"/>
                     <constraint firstItem="QRz-1X-uQA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qSW-9p-Eoz"/>
                     <constraint firstItem="lgZ-mR-mE6" firstAttribute="centerY" secondItem="ezc-0u-V8e" secondAttribute="centerY" id="uZk-tL-DVC"/>

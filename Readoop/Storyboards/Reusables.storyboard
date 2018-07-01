@@ -491,7 +491,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelTap:" destination="eaN-Rk-5Qx" eventType="touchUpInside" id="5h1-Kx-y6h"/>
+                                    <action selector="cancelAction:" destination="eaN-Rk-5Qx" eventType="touchUpInside" id="WO8-AB-0AK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8m-P8-JNn">
@@ -503,64 +503,45 @@
                                 <state key="normal" title="Buy writing">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyAction:" destination="eaN-Rk-5Qx" eventType="touchUpInside" id="ItF-q8-skI"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dwa-42-vP1">
-                                <rect key="frame" x="96" y="524" width="184.5" height="38"/>
+                                <rect key="frame" x="109.5" y="530" width="157" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noe-oi-3XZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="38"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tH-Wr-x0W">
-                                        <rect key="frame" x="90.5" y="0.0" width="94" height="38"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="38"/>
+                                        <rect key="frame" x="78" y="0.0" width="79" height="32"/>
+                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="32"/>
                                         <color key="textColor" red="0.42735822214351171" green="0.70927189086294418" blue="0.47729284372571484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7da-Mj-dzx">
-                                <rect key="frame" x="189" y="110.5" width="55.5" height="18"/>
+                                <rect key="frame" x="189" y="113" width="55.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-bf-bGu">
-                                <rect key="frame" x="72" y="215" width="232.5" height="20"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's username: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-W7-j8u">
-                                        <rect key="frame" x="0.0" y="0.0" width="141" height="20"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llM-AJ-mr5">
-                                        <rect key="frame" x="151" y="0.0" width="81.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kJC-ei-hL0">
-                                <rect key="frame" x="126.5" y="255" width="123.5" height="43"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-Gx-UK3">
-                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="18"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-qV-gyf">
-                                        <rect key="frame" x="17.5" y="23" width="88.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4H6-qV-gyf">
+                                <rect key="frame" x="15" y="228" width="345" height="20"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-Gx-UK3">
+                                <rect key="frame" x="125" y="200" width="123.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultWritingCover3" translatesAutoresizingMaskIntoConstraints="NO" id="ZX5-8W-UwT">
                                 <rect key="frame" x="40" y="45" width="135" height="135"/>
                                 <constraints>
@@ -575,46 +556,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53z-Rl-Yz7">
-                                <rect key="frame" x="189" y="70.5" width="43" height="20"/>
+                                <rect key="frame" x="189" y="73" width="43" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-gZ-3vK">
-                                <rect key="frame" x="189" y="142" width="96" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-gZ-3vK">
+                                <rect key="frame" x="189" y="141" width="77.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added on ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wq-dx-Cjy">
-                                <rect key="frame" x="149.5" y="488" width="76" height="16"/>
-                                <fontDescription key="fontDescription" name="Bariol" family="Bariol" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4H6-qV-gyf" firstAttribute="leading" secondItem="u28-oa-MWB" secondAttribute="leading" constant="15" id="1TX-gn-QCP"/>
+                            <constraint firstItem="3Xk-Gx-UK3" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="2SW-Wk-6XX"/>
                             <constraint firstItem="m65-hP-9Og" firstAttribute="width" secondItem="Mjv-Wb-yLJ" secondAttribute="width" multiplier="0.4" id="2ng-KD-RSe"/>
                             <constraint firstItem="u28-oa-MWB" firstAttribute="bottom" secondItem="t8m-P8-JNn" secondAttribute="bottom" constant="20" id="3mi-MD-Ua0"/>
-                            <constraint firstItem="53z-Rl-Yz7" firstAttribute="top" secondItem="UOW-PZ-knU" secondAttribute="bottom" constant="7" id="4sT-yp-JfB"/>
+                            <constraint firstItem="53z-Rl-Yz7" firstAttribute="top" secondItem="UOW-PZ-knU" secondAttribute="bottom" constant="10" id="4sT-yp-JfB"/>
+                            <constraint firstItem="u28-oa-MWB" firstAttribute="trailing" secondItem="4H6-qV-gyf" secondAttribute="trailing" constant="15" id="64F-e0-lo0"/>
+                            <constraint firstItem="5nQ-gZ-3vK" firstAttribute="top" secondItem="7da-Mj-dzx" secondAttribute="bottom" constant="10" id="Dls-p2-1X8"/>
+                            <constraint firstItem="4H6-qV-gyf" firstAttribute="top" secondItem="3Xk-Gx-UK3" secondAttribute="bottom" constant="10" id="EFV-ZX-HIZ"/>
                             <constraint firstItem="u28-oa-MWB" firstAttribute="trailing" secondItem="m65-hP-9Og" secondAttribute="trailing" constant="20" id="Fim-Tf-xiD"/>
-                            <constraint firstItem="HLg-bf-bGu" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="Jox-hQ-gnd"/>
+                            <constraint firstItem="4H6-qV-gyf" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="IkO-rW-FvI"/>
                             <constraint firstItem="7da-Mj-dzx" firstAttribute="leading" secondItem="ZX5-8W-UwT" secondAttribute="trailing" constant="14" id="Mji-05-u6b"/>
-                            <constraint firstItem="4wq-dx-Cjy" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="RIo-xA-V5i"/>
-                            <constraint firstItem="HLg-bf-bGu" firstAttribute="top" secondItem="ZX5-8W-UwT" secondAttribute="bottom" constant="35" id="aGL-ny-ghd"/>
                             <constraint firstItem="ZX5-8W-UwT" firstAttribute="top" secondItem="u28-oa-MWB" secondAttribute="top" constant="25" id="aZA-UF-zuf"/>
-                            <constraint firstItem="kJC-ei-hL0" firstAttribute="top" secondItem="HLg-bf-bGu" secondAttribute="bottom" constant="20" id="bK4-gD-Z5k"/>
-                            <constraint firstItem="dwa-42-vP1" firstAttribute="top" secondItem="4wq-dx-Cjy" secondAttribute="bottom" constant="20" id="d4y-Xp-ekt"/>
+                            <constraint firstItem="3Xk-Gx-UK3" firstAttribute="top" secondItem="ZX5-8W-UwT" secondAttribute="bottom" constant="20" id="ag0-OR-DuR"/>
                             <constraint firstItem="t8m-P8-JNn" firstAttribute="width" secondItem="Mjv-Wb-yLJ" secondAttribute="width" multiplier="0.4" id="g6f-2Z-NyA"/>
                             <constraint firstItem="m65-hP-9Og" firstAttribute="top" secondItem="dwa-42-vP1" secondAttribute="bottom" constant="35" id="jEF-P3-W6h"/>
                             <constraint firstItem="53z-Rl-Yz7" firstAttribute="leading" secondItem="ZX5-8W-UwT" secondAttribute="trailing" constant="14" id="jbP-oa-9ov"/>
                             <constraint firstItem="t8m-P8-JNn" firstAttribute="leading" secondItem="u28-oa-MWB" secondAttribute="leading" constant="20" id="n9r-Xc-FTV"/>
                             <constraint firstItem="ZX5-8W-UwT" firstAttribute="leading" secondItem="u28-oa-MWB" secondAttribute="leading" constant="40" id="oOn-Kn-3I8"/>
-                            <constraint firstItem="kJC-ei-hL0" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="uEs-2F-K45"/>
                             <constraint firstItem="UOW-PZ-knU" firstAttribute="leading" secondItem="ZX5-8W-UwT" secondAttribute="trailing" constant="14" id="uQ0-eB-GcP"/>
                             <constraint firstItem="u28-oa-MWB" firstAttribute="bottom" secondItem="m65-hP-9Og" secondAttribute="bottom" constant="20" id="vWQ-4T-gnk"/>
+                            <constraint firstItem="5nQ-gZ-3vK" firstAttribute="leading" secondItem="ZX5-8W-UwT" secondAttribute="trailing" constant="14" id="wZC-dM-vqA"/>
                             <constraint firstItem="UOW-PZ-knU" firstAttribute="top" secondItem="ZX5-8W-UwT" secondAttribute="top" id="xRI-8e-ppy"/>
                             <constraint firstItem="dwa-42-vP1" firstAttribute="centerX" secondItem="Mjv-Wb-yLJ" secondAttribute="centerX" id="zRC-2L-S9R"/>
                             <constraint firstItem="7da-Mj-dzx" firstAttribute="top" secondItem="53z-Rl-Yz7" secondAttribute="bottom" constant="20" id="zfu-qc-5HU"/>
@@ -622,19 +598,17 @@
                         <viewLayoutGuide key="safeArea" id="u28-oa-MWB"/>
                     </view>
                     <connections>
-                        <outlet property="addedDateLabel" destination="4wq-dx-Cjy" id="cXh-Jz-N2u"/>
-                        <outlet property="authorContents" destination="5nQ-gZ-3vK" id="p4v-k0-E1H"/>
-                        <outlet property="authorLabel" destination="7da-Mj-dzx" id="YSE-3D-pbe"/>
-                        <outlet property="authorUsernameContents" destination="llM-AJ-mr5" id="yKu-HP-Bt6"/>
-                        <outlet property="authorUsernameLabel" destination="1Hb-W7-j8u" id="JbO-D1-ggT"/>
-                        <outlet property="buyButton" destination="t8m-P8-JNn" id="d36-ux-pbk"/>
-                        <outlet property="cancelButton" destination="m65-hP-9Og" id="Ogu-hi-Sat"/>
-                        <outlet property="coverImage" destination="ZX5-8W-UwT" id="ajA-9C-b67"/>
-                        <outlet property="priceContents" destination="9tH-Wr-x0W" id="jNC-6q-C37"/>
-                        <outlet property="shortDescriptionContents" destination="4H6-qV-gyf" id="82o-41-WtH"/>
-                        <outlet property="shortDescriptionLabel" destination="3Xk-Gx-UK3" id="4iy-bl-42z"/>
-                        <outlet property="titleContents" destination="7da-Mj-dzx" id="j8g-SP-Huh"/>
-                        <outlet property="titleLabel" destination="UOW-PZ-knU" id="7Hv-5Z-HyQ"/>
+                        <outlet property="authorContents" destination="5nQ-gZ-3vK" id="9vu-Ot-0fR"/>
+                        <outlet property="authorLabel" destination="7da-Mj-dzx" id="T0S-9Z-awj"/>
+                        <outlet property="avatarImageView" destination="ZX5-8W-UwT" id="86Y-BH-hcs"/>
+                        <outlet property="buyButton" destination="t8m-P8-JNn" id="knA-2N-cPt"/>
+                        <outlet property="cancelButton" destination="m65-hP-9Og" id="em9-Tp-iGr"/>
+                        <outlet property="descriptionContents" destination="4H6-qV-gyf" id="pgd-9N-aWG"/>
+                        <outlet property="descriptionLabel" destination="3Xk-Gx-UK3" id="Ll7-aO-oSl"/>
+                        <outlet property="priceContents" destination="9tH-Wr-x0W" id="0Ge-HQ-aRb"/>
+                        <outlet property="priceLabel" destination="noe-oi-3XZ" id="Ejy-Ii-SiU"/>
+                        <outlet property="titleContents" destination="53z-Rl-Yz7" id="Xie-57-Nr5"/>
+                        <outlet property="titleLabel" destination="UOW-PZ-knU" id="oWI-JB-lT3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nZ-GZ-Uga" userLabel="First Responder" sceneMemberID="firstResponder"/>

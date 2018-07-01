@@ -21,6 +21,4 @@
 
 @property NSNumber<RLMInt> *writingPrice;
 
-//@property RLMArray<Comment *><Comment> *comments; //post-pred
-
 @end

@@ -8,6 +8,7 @@
 
 #import "WritingDetailsVC.h"
 #import "Essentials.h"
+#import "User.h"
 
 @interface WritingDetailsVC ()
 
@@ -27,15 +28,11 @@
     
     [self setupInitialFlags];
     [self setupUI];
-   // [self setupWritingWithData];
+    [self setupVCWithWritingData];
 }
 
 - (void)setupInitialFlags {
     
-}
-
-- (IBAction)cancelTap:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)setupUI {
@@ -47,15 +44,45 @@
 
     self.titleContents.textColor = [Color getSubTitleGray];
     self.authorContents.textColor = [Color getSubTitleGray];
-    self.authorUsernameContents.textColor = [Color getSubTitleGray];
-    self.shortDescriptionContents.textColor = [Color getSubTitleGray];
-    self.addedDateLabel.textColor = [Color getSubTitleGray];
+    self.descriptionContents.textColor = [Color getSubTitleGray];
+    
+    
+    
     
     //use raccommand for buy button
 }
 
-- (void)setupWritingWithData {
+- (void)setupVCWithWritingData {
+    self.titleContents.text = self.currentWriting.writingTitle;
+    User *user = [RealmUtils getUserById:self.currentWriting.authorId];
+    self.authorContents.text = [user.fullName isEqualToString:@""] ? user.username : user.fullName;
+    self.descriptionContents.text = self.currentWriting.writingDescription;
+    self.avatarImageView.image = [UIImage imageWithData:user.avatar];
+    self.priceContents.text = [NSString stringWithFormat:@"%@ €",self.currentWriting.writingPrice];
+    
+    self.avatarImageView.clipsToBounds = YES;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2;
 }
 
+- (void)setupVCwithWriting:(Writing*)writing {
+    self.currentWriting = writing;
+}
+
+- (IBAction)buyAction:(id)sender {
+    [AlertUtils showInformation:@"Are you sure you want to buy this writing?"
+                      withTitle:@"Buy writing"
+               withActionButton:@"Buy"
+               withCancelButton:@"Cancel"
+                     withAction:^{
+                         //[RealmUtils addBook:self.currentBook toUser:self.appSession.currentUser];
+                         [self.delegate reloadData];
+                         [self.navigationController popViewControllerAnimated:YES];
+                     }
+                           onVC:self];
+}
+
+- (IBAction)cancelAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
