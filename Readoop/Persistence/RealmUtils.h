@@ -43,7 +43,6 @@
 + (void)removeUserToDowns:(User*)user forFeedPost:(Post*)feedPost;
 
 + (NSString*)getRatingOfUser:(User*)user ofBook:(Book*)book;
-+ (NSString*)getAvgRatingOfBook:(Book*)book;
 + (void)setRatingForBook:(Book*)book rating:(float)rating byUser:(User*)user;
 + (float)getInitialRatingForBook:(Book*)book forUser:(User*)user;
 
@@ -51,9 +50,14 @@
 + (void)removeBook:(Book*)book fromUser:(User*)user;
 + (BOOL)user:(User*)user hasBook:(Book*)book;
 
++ (BOOL)user:(User*)user hasBoughtWriting:(Writing*)writing;
++ (BOOL)user:(User*)user isAuthorOfWriting:(Writing*)writing;
+
 + (void)addBooksFromAPI:(NSMutableArray *)books;
 + (void)clearBooks;
 
 + (NSString *)getAverageRatingOfBook:(Book *)book;
+
+
 
 @end

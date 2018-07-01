@@ -41,6 +41,7 @@
     [self initialFlagSetup];
     [self setUpTabs];
     [self fetchDataSource];
+    [self setupFieldSignal];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 140;
 }
@@ -51,6 +52,38 @@
     self.isSecondTabsViewExpanded = YES;
 }
 
+- (void)setupFieldSignal {
+    RACSignal *fieldSignal = [self.searchField rac_textSignal];
+    [fieldSignal subscribeNext:^(id  _Nullable x) {
+        [self filterCurrentDataSource:x];
+    }];
+}
+
+- (void)filterCurrentDataSource:(NSString*)wildCard {
+    if([wildCard isEqualToString:@""]) {
+        if(self.isLibraryEnabled && self.isAllBooksEnabled) {
+            self.dataSource = [LibraryTVCDataSource getAllBooks];
+        } else if(self.isLibraryEnabled && self.isMyBooksEnabled) {
+            self.dataSource = [LibraryTVCDataSource getBooksForCurrentUser];
+        } else if(self.isShopEnabled && self.isAllWritingsEnabled) {
+            self.dataSource = [LibraryTVCDataSource getAllWritings];
+        } else if(self.isShopEnabled && self.isMyWritingsEnabled) {
+            self.dataSource = [LibraryTVCDataSource getWritingsForCurrentUser];
+        }
+    } else {//Filter data source
+        if(self.isLibraryEnabled && self.isAllBooksEnabled) {
+            self.dataSource = [LibraryTVCDataSource getAllBooksWithWildCard:wildCard];
+        } else if(self.isLibraryEnabled && self.isMyBooksEnabled) {
+            self.dataSource = [LibraryTVCDataSource getBooksForCurrentUserWithWildCard:wildCard];
+        } else if(self.isShopEnabled && self.isAllWritingsEnabled) {
+            self.dataSource = [LibraryTVCDataSource getAllWritingsWithWildCard:wildCard];
+        } else if(self.isShopEnabled && self.isMyWritingsEnabled) {
+            self.dataSource = [LibraryTVCDataSource getWritingsForCurrentUserWithWildCard:wildCard];
+        }
+    }
+    
+    [self.tableView reloadData];
+}
 
 - (void)setupUI {
     self.mainTabsView.backgroundColor = [Color getBariolRed];

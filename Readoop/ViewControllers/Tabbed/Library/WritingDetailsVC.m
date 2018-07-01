@@ -13,7 +13,7 @@
 @interface WritingDetailsVC ()
 
 @property (nonatomic, assign) BOOL alreadyBoughtThisWriting;
-@property (nonatomic, assign) BOOL isTheAuthorOfTHewriting;
+@property (nonatomic, assign) BOOL isTheAuthorOfTheWriting;
 
 
 
@@ -25,14 +25,14 @@
     self.backButtonEnabled = YES;
     [super viewDidLoad];
     
-    
     [self setupInitialFlags];
     [self setupUI];
     [self setupVCWithWritingData];
 }
 
 - (void)setupInitialFlags {
-    
+    self.alreadyBoughtThisWriting = [RealmUtils user:self.appSession.currentUser hasBoughtWriting:self.currentWriting];
+    self.isTheAuthorOfTheWriting = [RealmUtils user:self.appSession.currentUser isAuthorOfWriting:self.currentWriting];
 }
 
 - (void)setupUI {
@@ -46,10 +46,20 @@
     self.authorContents.textColor = [Color getSubTitleGray];
     self.descriptionContents.textColor = [Color getSubTitleGray];
     
-    
-    
-    
-    //use raccommand for buy button
+    [self actionButtonCheck];
+}
+
+- (void)actionButtonCheck {
+    if(self.alreadyBoughtThisWriting){
+        [self.buyButton setTitle:@"Download writing" forState:UIControlStateNormal];
+        [self.buyButton setTitle:@"Download writing" forState:UIControlStateFocused];
+    } else if(self.isTheAuthorOfTheWriting) {
+        [self.buyButton setTitle:@"Edit writing" forState:UIControlStateNormal];
+        [self.buyButton setTitle:@"Edit writing" forState:UIControlStateFocused];
+    } else {
+        [self.buyButton setTitle:@"Buy writing" forState:UIControlStateNormal];
+        [self.buyButton setTitle:@"Buy writing" forState:UIControlStateFocused];
+    }
 }
 
 - (void)setupVCWithWritingData {

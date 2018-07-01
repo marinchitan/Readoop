@@ -222,23 +222,6 @@
     }
 }
 
-//Get average rating of books by RLMArray of rates
-+ (NSString*)getAvgRatingOfBook:(Book*)book {
-    RLMArray *rates = book.rates;
-    if([rates count] == 0){
-        return @" - ";
-    }
-    NSString *averageString = [NSString new];
-    float sum = 0.0;
-    for(BookRate *rate in rates){
-        sum = sum + [rate.rate floatValue];
-    }
-    float average = sum / [rates count];
-    
-    averageString = [NSString stringWithFormat:@"%1.1f",average];
-    return averageString;
-}
-
 + (void)setRatingForBook:(Book*)book rating:(float)rating byUser:(User*)user {
     RLMRealm *realm = [RLMRealm defaultRealm];
     
@@ -287,6 +270,17 @@
     return index != notFound;
 }
 
++ (BOOL)user:(User*)user hasBoughtWriting:(Writing*)writing {
+    int index = [user.writings indexOfObject:writing];
+    int notFound = -1;
+    return index != notFound;
+}
+
++ (BOOL)user:(User*)user isAuthorOfWriting:(Writing*)writing {
+    return [user.userId intValue] == [writing.authorId intValue];
+}
+
+
 + (void)addBooksFromAPI:(NSMutableArray *)books {
     RLMRealm *realm = [RLMRealm defaultRealm];
     
@@ -305,7 +299,7 @@
     }];
 }
 
-//UNUSED
+
 + (NSString *)getAverageRatingOfBook:(Book *)book {
     RLMResults *bookRates = [BookRate objectsWhere:@"bookId == %@", book.bookId];
     NSInteger count = 0;
@@ -322,4 +316,7 @@
         
     }
 }
+
+
+
 @end

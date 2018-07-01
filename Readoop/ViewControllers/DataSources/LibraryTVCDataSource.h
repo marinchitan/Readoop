@@ -15,4 +15,10 @@
 + (NSArray*)getBooksForCurrentUser;
 + (NSArray*)getWritingsForCurrentUser;
 
++ (NSArray*)getAllBooksWithWildCard:(NSString*)wildCard;
++ (NSArray*)getAllWritingsWithWildCard:(NSString*)wildCard;
++ (NSArray*)getBooksForCurrentUserWithWildCard:(NSString*)wildCard;
++ (NSArray*)getWritingsForCurrentUserWithWildCard:(NSString*)wildCard;
+
+
 @end
