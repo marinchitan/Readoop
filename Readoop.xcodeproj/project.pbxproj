@@ -19,6 +19,7 @@
 		3E0635E1207F47CE001D0A09 /* AvatarChangeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0635E0207F47CE001D0A09 /* AvatarChangeVC.m */; };
 		3E2AC47F20E904C80096D12D /* WritingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2AC47E20E904C80096D12D /* WritingModel.m */; };
 		3E2AC48220E926C80096D12D /* PDFViewerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2AC48120E926C80096D12D /* PDFViewerVC.m */; };
+		3E2AC48520EA50DF0096D12D /* StatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2AC48420EA50DF0096D12D /* StatusManager.m */; };
 		3E366D992044864B008B9CF7 /* Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E366D982044864B008B9CF7 /* Navigation.m */; };
 		3E366DA0204804EE008B9CF7 /* Modular.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366D9F204804EE008B9CF7 /* Modular.storyboard */; };
 		3E366DA6204817BF008B9CF7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E366DA5204817BF008B9CF7 /* Profile.storyboard */; };
@@ -119,6 +120,8 @@
 		3E2AC47E20E904C80096D12D /* WritingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingModel.m; sourceTree = "<group>"; };
 		3E2AC48020E926C80096D12D /* PDFViewerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFViewerVC.h; sourceTree = "<group>"; };
 		3E2AC48120E926C80096D12D /* PDFViewerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFViewerVC.m; sourceTree = "<group>"; };
+		3E2AC48320EA50DF0096D12D /* StatusManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusManager.h; sourceTree = "<group>"; };
+		3E2AC48420EA50DF0096D12D /* StatusManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusManager.m; sourceTree = "<group>"; };
 		3E366D972044864B008B9CF7 /* Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Navigation.h; sourceTree = "<group>"; };
 		3E366D982044864B008B9CF7 /* Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation.m; sourceTree = "<group>"; };
 		3E366D9F204804EE008B9CF7 /* Modular.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Modular.storyboard; sourceTree = "<group>"; };
@@ -447,6 +450,8 @@
 				3E59F8B8205E845600D6FD5A /* Session.m */,
 				3E0635DC2077AA2B001D0A09 /* ViewUtils.h */,
 				3E0635DD2077AA2B001D0A09 /* ViewUtils.m */,
+				3E2AC48320EA50DF0096D12D /* StatusManager.h */,
+				3E2AC48420EA50DF0096D12D /* StatusManager.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -786,6 +791,7 @@
 				3EAC24722098D07800D1AED5 /* LibraryVC.m in Sources */,
 				3EFC4DC4208DFCA9003D0C33 /* RequestsTVCDataSource.m in Sources */,
 				3EFC4DA9208B149C003D0C33 /* PeopleTVCDataSource.m in Sources */,
+				3E2AC48520EA50DF0096D12D /* StatusManager.m in Sources */,
 				3E0635DB207775DE001D0A09 /* AdditionalInfoVC.m in Sources */,
 				3EFC4DC1208DE050003D0C33 /* RequestCellModel.m in Sources */,
 				3E4EDAD120B0547B00FD0205 /* BookDetailsVC.m in Sources */,

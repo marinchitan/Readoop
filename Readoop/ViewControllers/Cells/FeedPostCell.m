@@ -97,7 +97,6 @@
         [RealmUtils insertUserToUps:session.currentUser forFeedPost:self.currentPost];
     }
     
-    
     [self refereshRating];
 }
 
@@ -118,7 +117,6 @@
         [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
         [RealmUtils insertUserToDowns:session.currentUser forFeedPost:self.currentPost];
     }
-    
     
     [self refereshRating];
 }

@@ -40,5 +40,9 @@
 
 + (UIColor *)getFeedPostGray;
 
++ (UIColor *)getBeginnerStatus;
++ (UIColor *)getAmateurStatus;
++ (UIColor *)getExperiencedStatus;
++ (UIColor *)getProffesionalStatus;
 
 @end

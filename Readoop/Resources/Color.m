@@ -96,4 +96,17 @@
     return [UIColor colorWithRed:(247/255.0) green:(222/255.0) blue:(0/255.0) alpha:1];
 }
 
++ (UIColor *)getBeginnerStatus {
+    return [UIColor colorWithRed:(15/255.0) green:(185/255.0) blue:(177/255.0) alpha:1];
+}
++ (UIColor *)getAmateurStatus {
+    return [UIColor colorWithRed:(32/255.0) green:(191/255.0) blue:(107/255.0) alpha:1];
+}
++ (UIColor *)getExperiencedStatus {
+    return [UIColor colorWithRed:(250/255.0) green:(130/255.0) blue:(49/255.0) alpha:1];
+}
++ (UIColor *)getProffesionalStatus {
+    return [UIColor colorWithRed:(235/255.0) green:(59/255.0) blue:(90/255.0) alpha:1];
+}
+
 @end

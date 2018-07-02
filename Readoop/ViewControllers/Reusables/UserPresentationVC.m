@@ -10,6 +10,7 @@
 #import "Essentials.h"
 #import "Request.h"
 #import "AlertUtils.h"
+#import "StatusManager.h"
 
 @interface UserPresentationVC ()
 
@@ -55,7 +56,6 @@
     self.ageContent.textColor = [Color getPassiveTab];
     self.booksContent.textColor = [Color getPassiveTab];
     self.friendsContent.textColor = [Color getPassiveTab];
-    self.statusContent.textColor = [Color getValidGreen];
     
     self.userNameContent.font = [Font getBariolwithSize:22];
     self.fullNameContent.font = [Font getBariolwithSize:22];
@@ -66,6 +66,8 @@
     self.friendsContent.font = [Font getBariolwithSize:17];
     self.statusContent.font = [Font getBariolwithSize:17];
     
+    self.statusContent.textColor = [StatusManager getStatusColorForUser:self.currentUser];
+    self.statusContent.text = [StatusManager getStatusNameForUser:self.currentUser];
     
     
     if(self.isOwnProfile) {

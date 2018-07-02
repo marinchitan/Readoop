@@ -13,6 +13,7 @@
 #import "BookCell.h"
 #import "WritingCell.h"
 #import "ViewUtils.h"
+#import "StatusManager.h"
 
 @interface LibraryVC ()
 @property(nonatomic, assign) BOOL isSearchViewExpanded;
@@ -389,8 +390,14 @@
 }
 
 - (void)showAddWritingButton {
-    self.addNewWritingLabel.hidden = NO;
-    self.addNewWritingButton.hidden = NO;
+    if([StatusManager getStatusForUser:self.appSession.currentUser] != Beginner) { //if user is not Beginner he can add new writings
+        self.addNewWritingLabel.hidden = NO;
+        self.addNewWritingButton.hidden = NO;
+    } else {
+        self.addNewWritingLabel.hidden = YES;
+        self.addNewWritingButton.hidden = YES;
+    }
+    
 }
 
 @end

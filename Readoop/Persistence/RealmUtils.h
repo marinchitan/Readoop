@@ -62,5 +62,6 @@
 + (void)addStatusPoint:(User *)user;
 + (void)removeStatusPoint:(User *)user;
 
++ (int)getStatusPointsForUser:(User *)user;
 
 @end

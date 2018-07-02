@@ -347,4 +347,8 @@
     }];
 }
 
++ (int)getStatusPointsForUser:(User *)user {
+    return [user.status integerValue];
+}
+
 @end
