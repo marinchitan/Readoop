@@ -59,6 +59,8 @@
 
 + (NSString *)getAverageRatingOfBook:(Book *)book;
 
++ (void)addStatusPoint:(User *)user;
++ (void)removeStatusPoint:(User *)user;
 
 
 @end

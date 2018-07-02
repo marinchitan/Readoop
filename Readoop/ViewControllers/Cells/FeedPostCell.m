@@ -68,7 +68,7 @@
     self.byUserLabel.text = [NSString stringWithFormat:@"By %@", poster.username];
     self.datePostedLabel.font = [Font getBariolwithSize:15];
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"dd-mm-yyyy hh:MM"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm"];
     
     self.datePostedLabel.text = [NSString stringWithFormat:@"Posted at %@", [dateFormatter stringFromDate:post.datePosted]];
     self.datePostedLabel.textColor = [Color getSubTitleGray];
@@ -88,12 +88,15 @@
         [self deactivateUpTab];
         self.isUpActive = NO;
         [RealmUtils removeUserToUps:session.currentUser forFeedPost:self.currentPost];
+        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
         
     } else {
         [self activateUpTab];
         self.isUpActive = YES;
+        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
         [RealmUtils insertUserToUps:session.currentUser forFeedPost:self.currentPost];
     }
+    
     
     [self refereshRating];
 }
@@ -107,12 +110,15 @@
     if(self.isDownActive){
         [self deactivateDownTab];
         self.isDownActive = NO;
+        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
         [RealmUtils removeUserToDowns:session.currentUser forFeedPost:self.currentPost];
     } else {
         [self activateDownTab];
         self.isDownActive = YES;
+        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
         [RealmUtils insertUserToDowns:session.currentUser forFeedPost:self.currentPost];
     }
+    
     
     [self refereshRating];
 }

@@ -28,12 +28,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *ageContent;
 @property (weak, nonatomic) IBOutlet UILabel *booksLabel;
 @property (weak, nonatomic) IBOutlet UILabel *booksContent;
-@property (weak, nonatomic) IBOutlet UILabel *showBooksLabel;
-@property (weak, nonatomic) IBOutlet UIButton *showBooksButton;
+
 @property (weak, nonatomic) IBOutlet UILabel *friendsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *friendsContent;
-@property (weak, nonatomic) IBOutlet UILabel *showFriendsLabel;
-@property (weak, nonatomic) IBOutlet UIButton *showFriendsButton;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusContent;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *addToFriendsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;

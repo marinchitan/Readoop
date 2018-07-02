@@ -37,6 +37,7 @@
     self.ageLabel.textColor = [Color getSubTitleGray];
     self.booksLabel.textColor = [Color getSubTitleGray];
     self.friendsLabel.textColor = [Color getSubTitleGray];
+    self.statusLabel.textColor = [Color getSubTitleGray];
     
     self.userNameLabel.font = [Font getBariolwithSize:22];
     self.fullNameLabel.font = [Font getBariolwithSize:22];
@@ -45,6 +46,7 @@
     self.ageLabel.font = [Font getBariolwithSize:17];
     self.booksLabel.font = [Font getBariolwithSize:17];
     self.friendsLabel.font = [Font getBariolwithSize:17];
+    self.statusLabel.font = [Font getBariolwithSize:17];
     
     self.userNameContent.textColor = [Color getPassiveTab];
     self.fullNameContent.textColor = [Color getPassiveTab];
@@ -53,6 +55,7 @@
     self.ageContent.textColor = [Color getPassiveTab];
     self.booksContent.textColor = [Color getPassiveTab];
     self.friendsContent.textColor = [Color getPassiveTab];
+    self.statusContent.textColor = [Color getValidGreen];
     
     self.userNameContent.font = [Font getBariolwithSize:22];
     self.fullNameContent.font = [Font getBariolwithSize:22];
@@ -61,15 +64,8 @@
     self.ageContent.font = [Font getBariolwithSize:17];
     self.booksContent.font = [Font getBariolwithSize:17];
     self.friendsContent.font = [Font getBariolwithSize:17];
+    self.statusContent.font = [Font getBariolwithSize:17];
     
-    self.showBooksLabel.font = [Font getFAFont:14];
-    self.showFriendsLabel.font = [Font getFAFont:14];
-    self.showBooksLabel.text = [NSString stringWithFormat:@"%@%@",[NSString fontAwesomeIconStringForEnum:FAChevronRight],
-                                [NSString fontAwesomeIconStringForEnum:FAChevronRight]];
-    self.showFriendsLabel.text = [NSString stringWithFormat:@"%@%@",[NSString fontAwesomeIconStringForEnum:FAChevronRight],
-                                  [NSString fontAwesomeIconStringForEnum:FAChevronRight]];
-    self.showBooksLabel.textColor = [Color getPassiveTab];
-    self.showFriendsLabel.textColor = [Color getPassiveTab];
     
     
     if(self.isOwnProfile) {

@@ -325,5 +325,26 @@
     }];
 }
 
++ (void)addStatusPoint:(User *)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    NSInteger currentStatus = [user.status integerValue];
+    currentStatus += 1;
+    NSNumber<RLMInt> *finalStatus = [NSNumber numberWithInteger:currentStatus];
+    [realm transactionWithBlock:^{
+        user.status = finalStatus;
+    }];
+}
+
++ (void)removeStatusPoint:(User *)user {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    NSInteger currentStatus = [user.status integerValue];
+    currentStatus -= 1;
+    NSNumber<RLMInt> *finalStatus = [NSNumber numberWithInteger:currentStatus];
+    [realm transactionWithBlock:^{
+        user.status = finalStatus;
+    }];
+}
 
 @end
