@@ -14,6 +14,7 @@
 #import "WritingCell.h"
 #import "ViewUtils.h"
 #import "StatusManager.h"
+#import "AddWritingVC.h"
 
 @interface LibraryVC ()
 @property(nonatomic, assign) BOOL isSearchViewExpanded;
@@ -381,7 +382,8 @@
 }
 
 - (IBAction)addWritingAction:(id)sender {
-    NSLog(@"Add new writing");
+    AddWritingVC *newWritingVC = [ViewController getAddWritingVC];
+    [self.navigationController pushViewController:newWritingVC animated:YES];
 }
 
 - (void)hideAddWritingButton {
@@ -397,7 +399,6 @@
         self.addNewWritingLabel.hidden = YES;
         self.addNewWritingButton.hidden = YES;
     }
-    
 }
 
 @end

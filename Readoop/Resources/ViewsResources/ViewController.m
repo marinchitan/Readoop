@@ -87,4 +87,9 @@
             instantiateViewControllerWithIdentifier:@"pdfVC"];
 }
 
++ (AddWritingVC *)getAddWritingVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"addWritingVC"];
+}
+
 @end
