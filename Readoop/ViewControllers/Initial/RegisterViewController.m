@@ -343,7 +343,9 @@
         //create new user and add it to realm
         User *newUser = [[User alloc] init];
         RLMResults<User *> *currentUsers = [User allObjects];
-        NSNumber *primaryKey = [NSNumber numberWithInt:5001 + (int)currentUsers.count];
+        
+        NSInteger maxprimaryKey = [[[User allObjects] maxOfProperty:@"userId"] integerValue];
+        NSNumber *primaryKey = [NSNumber numberWithInt:maxprimaryKey + 1];
         NSLog(@"Current user primaryKey: %@", primaryKey);
         newUser.userId = primaryKey;
         newUser.username = self.usernameField.text;

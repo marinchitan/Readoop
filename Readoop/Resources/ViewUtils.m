@@ -20,6 +20,13 @@
     field.layer.borderWidth = 1.0f;
 }
 
++ (void)setUpTextView:(UITextView*)field withRadius:(CGFloat)radius {
+    field.layer.cornerRadius = radius;
+    field.layer.borderColor = [[Color getTextFieldBorderGray] CGColor];
+    field.layer.masksToBounds = YES;
+    field.layer.borderWidth = 1.0f;
+}
+
 + (void)setUpButton:(UIButton*)button withRadius:(CGFloat)radius {
     button.layer.cornerRadius = radius;
     button.layer.masksToBounds = YES;

@@ -64,4 +64,6 @@
 
 + (int)getStatusPointsForUser:(User *)user;
 
++ (void)insertWriting:(Writing *)writing;
+
 @end

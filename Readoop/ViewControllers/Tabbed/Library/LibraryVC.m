@@ -383,6 +383,7 @@
 
 - (IBAction)addWritingAction:(id)sender {
     AddWritingVC *newWritingVC = [ViewController getAddWritingVC];
+    newWritingVC.delegate = self;
     [self.navigationController pushViewController:newWritingVC animated:YES];
 }
 

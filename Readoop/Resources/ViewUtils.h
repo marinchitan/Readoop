@@ -12,6 +12,8 @@
 @interface ViewUtils : NSObject
 
 + (void)setUpField:(UITextField*)field withRadius:(CGFloat)radius;
++ (void)setUpTextView:(UITextView*)field withRadius:(CGFloat)radius;
+
 + (void)setUpButton:(UIButton*)button withRadius:(CGFloat)radius;
 + (void)setUpIconLabel:(UILabel*)field withSize:(CGFloat)size;
 + (void)setUpStandardActiveButton:(UIButton*)button;

@@ -38,14 +38,15 @@
                                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                                     NSLog(@"Start request for author: %@", author);
                                                     NSError *jsonError;
-                                                    NSDictionary *dict = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data
+                                                    if(data != nil) {
+                                                        NSDictionary *dict = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data
                                                                                                                          options:NSJSONReadingAllowFragments
                                                                                                                            error:&jsonError];
-                                                    books = dict[@"items"];
-                                                    [session finishTasksAndInvalidate];
-                                                    NSLog(@"Finish request for author: %@", author);
-                                                    
-                                                    [RealmUtils addBooksFromAPI:[self getBookObjects:books]];
+                                                        books = dict[@"items"];
+                                                        [session finishTasksAndInvalidate];
+                                                        NSLog(@"Finish request for author: %@", author);
+                                                        [RealmUtils addBooksFromAPI:[self getBookObjects:books]];
+                                                    }
                                                 }];
     [booksGetTask resume];
     

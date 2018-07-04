@@ -351,4 +351,12 @@
     return [user.status integerValue];
 }
 
++ (void)insertWriting:(Writing *)writing {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:writing];
+    }];
+}
+
 @end

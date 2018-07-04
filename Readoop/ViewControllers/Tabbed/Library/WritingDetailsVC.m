@@ -114,8 +114,7 @@
     
     NSFileManager *manager = [NSFileManager defaultManager];
     if ([manager fileExistsAtPath:path]){
-   //     [manager removeItemAtPath:path error:nil];
-     //   [manager createFileAtPath:path contents:writingData attributes:nil];
+        //if the file already exists do not write it again to the drive
     } else {
         [manager createFileAtPath:path contents:writingData attributes:nil];
     }
