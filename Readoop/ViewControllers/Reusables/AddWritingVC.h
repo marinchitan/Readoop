@@ -25,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
+@property (strong, nonatomic) NSData *currentFile;
 @property (strong, nonatomic) id<LibraryTVCDelegate> delegate;
+
+@property (assign, nonatomic) BOOL isEditing;
+@property (strong, nonatomic) NSNumber *editedWritingId;
 
 @end

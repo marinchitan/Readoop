@@ -10,13 +10,12 @@
 #import "Essentials.h"
 #import "User.h"
 #import "PDFViewerVC.h"
+#import "AddWritingVC.h"
 
 @interface WritingDetailsVC ()
 
 @property (nonatomic, assign) BOOL alreadyBoughtThisWriting;
 @property (nonatomic, assign) BOOL isTheAuthorOfTheWriting;
-
-
 
 @end
 
@@ -87,7 +86,11 @@
         
         [self.navigationController pushViewController:pdfVC animated:YES];
     } else if(self.isTheAuthorOfTheWriting) {
-        //Show the edit screen
+        AddWritingVC *addVC = [ViewController getAddWritingVC];
+        addVC.isEditing = YES;
+        addVC.editedWritingId = self.currentWriting.writingId;
+        [self.navigationController pushViewController:addVC animated:YES];
+        
     } else {
         [AlertUtils showInformation:@"Are you sure you want to buy this writing?"
                       withTitle:@"Buy writing"

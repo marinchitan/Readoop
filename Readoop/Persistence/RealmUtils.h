@@ -66,4 +66,6 @@
 
 + (void)insertWriting:(Writing *)writing;
 
++ (Writing *)getWritingById:(NSNumber *)writingId;
+
 @end

@@ -14,7 +14,7 @@
 @implementation FeedTVCDataSource
 
 + (RLMArray*)getAllFeedPosts {
-    return [Post allObjects];
+    return [[Post allObjects] sortedResultsUsingKeyPath:@"datePosted" ascending:NO];
 }
 
 + (RLMArray*)getFriendsFeedPosts {

@@ -15,7 +15,7 @@
 
 @interface AddWritingVC ()
 
-@property (strong, nonatomic) NSData *currentFile;
+@property (nonatomic, strong) NSString *currentFileName;
 
 @end
 
@@ -38,6 +38,12 @@
     [ViewUtils setUpField:self.titleField withRadius:self.initialCornerRadius];
     [ViewUtils setUpField:self.priceField withRadius:self.initialCornerRadius];
     [ViewUtils setUpTextView:self.descriptionTextView withRadius:self.initialCornerRadius];
+    
+    if(self.isEditing){
+        [self.uploadButton setTitle:@"Edit writing" forState:UIControlStateNormal];
+        [self.uploadButton setTitle:@"Edit writing" forState:UIControlStateFocused];
+        [self setupWithExistingWriting:self.editedWritingId];
+    }
 }
 
 - (IBAction)chooseFileAction:(id)sender {
@@ -53,7 +59,12 @@
 
 - (IBAction)uploadAction:(id)sender {
     if(self.currentFile){
-        [self addNewWritingWithValidaitons];
+        if(self.isEditing){
+            [self editWritingWithValidaitons];
+        } else {
+            [self addNewWritingWithValidaitons];
+        }
+        
     } else {
         [AlertUtils showInformation:@"You must add a file first."
                           withTitle:@"No files"
@@ -74,7 +85,7 @@
         NSData *fileData = [NSData dataWithContentsOfURL:fileURL];
         self.currentFile = fileData;
         self.fileNameLabel.text = [self getNameOfFile:fileURL];
-        [self getNameOfFile:fileURL];
+        self.currentFileName = [self getNameOfFile:fileURL];
     } else {
         @strongify(self)
         [AlertUtils showInformation:@"Only PDF files are allowed."
@@ -119,7 +130,8 @@
                                onVC:self];
     } else {
         Writing *newWriting = [Writing new];
-        NSInteger maxprimaryKey = [[Writing allObjects] maxOfProperty:@"writingId"];
+        NSInteger maxprimaryKey = [[[Writing allObjects] maxOfProperty:@"writingId"] integerValue];
+        
         newWriting.writingId = [NSNumber numberWithInteger:maxprimaryKey + 1];
         newWriting.authorId = self.appSession.currentUser.userId;
         newWriting.writingTitle = self.titleField.text;
@@ -127,11 +139,71 @@
         NSInteger price = [self.priceField.text integerValue];
         newWriting.writingPrice = [NSNumber numberWithInteger:price];
         newWriting.writingContent = self.currentFile;
+        newWriting.writingFileName = self.currentFileName;
      
         [RealmUtils insertWriting:newWriting];
         [self.delegate reloadData];
+        
+        [AlertUtils showSuccess:@"Successfully addded new writing!"
+                          withTitle:@"New writing"
+                   withActionButton:@"Got it"
+                     withAction:^{[self.navigationController popViewControllerAnimated:YES];}
+                               onVC:self];
     }
-    
+}
+
+- (void)editWritingWithValidaitons {
+    if([self.titleField.text isEqualToString:@""]) {
+        [AlertUtils showInformation:@"Supply a title for your writing."
+                          withTitle:@"Incorrect input"
+                   withCancelButton:@"Got it"
+                               onVC:self];
+    } else if([self.descriptionTextView.text isEqualToString:@""]) {
+        [AlertUtils showInformation:@"Supply a description for your writing."
+                          withTitle:@"Incorrect input"
+                   withCancelButton:@"Got it"
+                               onVC:self];
+    } else if([self.priceField.text isEqualToString:@""]) {
+        [AlertUtils showInformation:@"Supply a price for your writing."
+                          withTitle:@"Incorrect input"
+                   withCancelButton:@"Got it"
+                               onVC:self];
+    } else if([self.priceField.text rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location == NSNotFound) {
+        [AlertUtils showInformation:@"The price should be a numeric value."
+                          withTitle:@"Incorrect input"
+                   withCancelButton:@"Got it"
+                               onVC:self];
+    } else {
+        
+        NSInteger maxprimaryKey = [[[Writing allObjects] maxOfProperty:@"writingId"] integerValue];
+        Writing *newWriting = [Writing new];
+        newWriting.writingId = self.editedWritingId;
+        newWriting.authorId = self.appSession.currentUser.userId;
+        newWriting.writingTitle = self.titleField.text;
+        newWriting.writingDescription = self.descriptionTextView.text;
+        NSInteger price = [self.priceField.text integerValue];
+        newWriting.writingPrice = [NSNumber numberWithInteger:price];
+        newWriting.writingContent = self.currentFile;
+        newWriting.writingFileName = self.currentFileName;
+        
+        [RealmUtils insertWriting:newWriting];
+        [self.delegate reloadData];
+        
+        [AlertUtils showSuccess:@"Successfully edited writing!"
+                      withTitle:@"Edit writing"
+               withActionButton:@"Got it"
+                     withAction:^{[self.navigationController popViewControllerAnimated:YES];}
+                           onVC:self];
+    }
+}
+
+- (void)setupWithExistingWriting:(NSNumber *)writingId {
+    Writing *writing = [RealmUtils getWritingById:writingId];
+    self.titleField.text = writing.writingTitle;
+    self.descriptionTextView.text = writing.writingDescription;
+    self.priceField.text = [NSString stringWithFormat:@"%@",writing.writingPrice];
+    self.fileNameLabel.text = writing.writingFileName;
+    self.currentFile = writing.writingContent;
 }
 
 @end

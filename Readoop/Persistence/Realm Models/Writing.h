@@ -17,6 +17,7 @@
 @property NSString *writingTitle;
 @property NSString *writingDescription;
 
+@property NSString *writingFileName;
 @property NSData *writingContent;
 
 @property NSNumber<RLMInt> *writingPrice;

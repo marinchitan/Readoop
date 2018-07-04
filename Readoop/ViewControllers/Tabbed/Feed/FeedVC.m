@@ -128,6 +128,7 @@
     if(![self.postField.text isEqualToString:@""]){
         [RealmUtils createFeedPostByUser:self.appSession.currentUser withContent:self.postField.text];
         [self fetchDataSource];
+        [self sortDataSourceByData];
         [self.tableView reloadData];
         self.postField.text = @"";
     } else {
@@ -174,6 +175,11 @@
         self.showHideLabel.text = [NSString fontAwesomeIconStringForEnum:FAAngleDoubleUp];
         
     }
+}
+
+- (void)sortDataSourceByData {
+    RLMArray *currentDataSource = self.dataSource;
+    
 }
 
 @end

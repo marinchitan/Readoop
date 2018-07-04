@@ -355,8 +355,12 @@
     RLMRealm *realm = [RLMRealm defaultRealm];
     
     [realm transactionWithBlock:^{
-        [realm addObject:writing];
+        [realm addOrUpdateObject:writing];
     }];
+}
+
++ (Writing *)getWritingById:(NSNumber *)writingId {
+    return [[Writing objectsWhere:@"writingId == %@", writingId] firstObject];
 }
 
 @end
