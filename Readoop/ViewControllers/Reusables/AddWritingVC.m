@@ -12,6 +12,7 @@
 #import "Writing.h"
 #import "RealmUtils.h"
 #import "Essentials.h"
+#import "WritingCommentsVC.h"
 
 @interface AddWritingVC ()
 
@@ -204,6 +205,10 @@
     self.priceField.text = [NSString stringWithFormat:@"%@",writing.writingPrice];
     self.fileNameLabel.text = writing.writingFileName;
     self.currentFile = writing.writingContent;
+}
+- (IBAction)commentOpen:(id)sender {
+    WritingCommentsVC *comments = [ViewController getWritingCommentsVC];
+    [self.navigationController pushViewController:comments animated:YES];
 }
 
 @end

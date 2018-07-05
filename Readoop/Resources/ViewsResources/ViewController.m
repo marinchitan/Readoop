@@ -92,4 +92,9 @@
             instantiateViewControllerWithIdentifier:@"addWritingVC"];
 }
 
++ (WritingCommentsVC *)getWritingCommentsVC {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"writingCommentsVC"];
+}
+
 @end

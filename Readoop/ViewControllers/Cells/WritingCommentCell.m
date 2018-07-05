@@ -1,11 +1,12 @@
 //
-//  FeedPostCell.m
+//  WritingCommentCell.m
 //  Readoop
 //
-//  Created by Marin Chitan on 30/04/2018.
+//  Created by Marin Chitan on 04/07/2018.
 //  Copyright © 2018 Marin Chitan. All rights reserved.
 //
 
+#import "WritingCommentCell.h"
 #import "FeedPostCell.h"
 #import "Post.h"
 #import "Color.h"
@@ -16,8 +17,9 @@
 #import "Session.h"
 #import "RealmUtils.h"
 #import "User.h"
+#import "WritingComment.h"
 
-@implementation FeedPostCell
+@implementation WritingCommentCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -45,56 +47,56 @@
 
 - (void)statusCheck {
     Session *session = [Session sharedSession];
-    if([[self.currentPost.upRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
-        NSLog(@"Current post id:%@", self.currentPost.postId);
+    if([[self.currentWritingComment.upRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
+        
         [self activateUpTab];
-    } else if([[self.currentPost.downRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
+    } else if([[self.currentWritingComment.downRates objectsWhere:@"userId == %@", session.currentUser.userId] firstObject]){
         [self activateDownTab];
     }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
-- (void)setupCellWithModel:(Post *)post {
+- (void)setupCellWithModel:(WritingComment *)writingComment {
     [self deactivateUpTab];
     [self deactivateDownTab];
-    self.postContentLabel.text = post.content;
+    self.postContentLabel.text = writingComment.content;
     self.byUserLabel.font = [Font getBariolwithSize:17];
-    User *poster = [[User objectsWhere:@"userId == %@",post.userId] firstObject];
+    User *poster = [[User objectsWhere:@"userId == %@",writingComment.userId] firstObject];
     self.byUserLabel.text = [NSString stringWithFormat:@"By %@", poster.username];
     self.datePostedLabel.font = [Font getBariolwithSize:15];
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm"];
     
-    self.datePostedLabel.text = [NSString stringWithFormat:@"Posted at %@", [dateFormatter stringFromDate:post.datePosted]];
+    self.datePostedLabel.text = [NSString stringWithFormat:@"Posted at %@", [dateFormatter stringFromDate:writingComment.datePosted]];
     self.datePostedLabel.textColor = [Color getSubTitleGray];
     
-    self.currentPost = post;
+    self.currentWritingComment = writingComment;
     [self statusCheck];
     [self refereshRating];
 }
-  
+
 - (IBAction)upTap:(id)sender {
     Session *session = [Session sharedSession];
     [self deactivateDownTab];
     self.isDownActive = NO;
-    [RealmUtils removeUserToDowns:session.currentUser forFeedPost:self.currentPost];
+    [RealmUtils removeUserToDowns:session.currentUser forWritingComment:self.currentWritingComment];
     
     if(self.isUpActive){
         [self deactivateUpTab];
         self.isUpActive = NO;
-        [RealmUtils removeUserToUps:session.currentUser forFeedPost:self.currentPost];
-        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
+        [RealmUtils removeUserToUps:session.currentUser forWritingComment:self.currentWritingComment];
+        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentWritingComment.userId]];
         
     } else {
         [self activateUpTab];
         self.isUpActive = YES;
-        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
-        [RealmUtils insertUserToUps:session.currentUser forFeedPost:self.currentPost];
+        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentWritingComment.userId]];
+        [RealmUtils insertUserToUps:session.currentUser forWritingComment:self.currentWritingComment];
     }
     
     [self refereshRating];
@@ -104,18 +106,18 @@
     Session *session = [Session sharedSession];
     [self deactivateUpTab];
     self.isUpActive = NO;
-    [RealmUtils removeUserToUps:session.currentUser forFeedPost:self.currentPost];
+    [RealmUtils removeUserToUps:session.currentUser forWritingComment:self.currentWritingComment];
     
     if(self.isDownActive){
         [self deactivateDownTab];
         self.isDownActive = NO;
-        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
-        [RealmUtils removeUserToDowns:session.currentUser forFeedPost:self.currentPost];
+        [RealmUtils addStatusPoint:[RealmUtils getUserById:self.currentWritingComment.userId]];
+        [RealmUtils removeUserToDowns:session.currentUser forWritingComment:self.currentWritingComment];
     } else {
         [self activateDownTab];
         self.isDownActive = YES;
-        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentPost.userId]];
-        [RealmUtils insertUserToDowns:session.currentUser forFeedPost:self.currentPost];
+        [RealmUtils removeStatusPoint:[RealmUtils getUserById:self.currentWritingComment.userId]];
+        [RealmUtils insertUserToDowns:session.currentUser forWritingComment:self.currentWritingComment];
     }
     
     [self refereshRating];
@@ -141,10 +143,11 @@
 }
 
 - (void)refereshRating {
-    int ups = [self.currentPost.upRates count];
-    int downs = [self.currentPost.downRates count];
+    int ups = [self.currentWritingComment.upRates count];
+    int downs = [self.currentWritingComment.downRates count];
     int rating = ups - downs;
     self.averageRatingLabel.text = [NSString stringWithFormat:@"Rating: %d", rating];
 }
+
 
 @end

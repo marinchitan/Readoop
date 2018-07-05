@@ -11,6 +11,7 @@
 #import "User.h"
 #import "PDFViewerVC.h"
 #import "AddWritingVC.h"
+#import "WritingCommentsVC.h"
 
 @interface WritingDetailsVC ()
 
@@ -128,6 +129,12 @@
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                    inDomains:NSUserDomainMask] lastObject];
+}
+
+- (IBAction)commentsTap:(id)sender {
+    WritingCommentsVC *commentsVC = [ViewController getWritingCommentsVC];
+    commentsVC.currentWriting = self.currentWriting;
+    [self.navigationController pushViewController:commentsVC animated:YES];
 }
 
 @end

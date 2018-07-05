@@ -363,4 +363,59 @@
     return [[Writing objectsWhere:@"writingId == %@", writingId] firstObject];
 }
 
+
++ (void)insertUserToUps:(User*)user forWritingComment:(WritingComment*)writingComment {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [writingComment.upRates addObject:user];
+    }];
+}
+
++ (void)insertUserToDowns:(User*)user forWritingComment:(WritingComment*)writingComment {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    [realm transactionWithBlock:^{
+        [writingComment.downRates addObject:user];
+    }];
+}
+
++ (void)removeUserToUps:(User*)user forWritingComment:(WritingComment*)writingComment {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    if([[writingComment.upRates objectsWhere:@"userId == %@",user.userId] firstObject]){ //remove user if it exists in upRates
+        NSUInteger index = [writingComment.upRates indexOfObject:user];
+        [realm transactionWithBlock:^{
+            [writingComment.upRates removeObjectAtIndex:index];
+        }];
+    }
+}
+
++ (void)removeUserToDowns:(User*)user forWritingComment:(WritingComment*)writingComment {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    if([[writingComment.downRates objectsWhere:@"userId == %@",user.userId] firstObject]){ //remove user if it exists in downRates
+        NSUInteger index = [writingComment.downRates indexOfObject:user];
+        [realm transactionWithBlock:^{
+            [writingComment.downRates removeObjectAtIndex:index];
+        }];
+    }
+}
+
++ (void)createWritingCommentPostByUser:(User*)user withContent:(NSString*)content forWriting:(Writing *)writing{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    WritingComment *writingComment = [WritingComment new];
+    writingComment.userId = user.userId;
+    NSNumber *primaryKey = [[WritingComment allObjects] maxOfProperty:@"writingCommentId"];
+    int key = [primaryKey intValue] + 1;
+    writingComment.writingCommentId = [NSNumber numberWithInt:key];
+    writingComment.writingId = writing.writingId;
+    writingComment.content = content;
+    writingComment.datePosted = [NSDate date];
+    
+    [realm transactionWithBlock:^{
+        [realm addObject:writingComment];
+    }];
+}
+
+
+
 @end

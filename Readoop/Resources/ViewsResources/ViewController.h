@@ -23,6 +23,7 @@
 #import "WritingDetailsVC.h"
 #import "PDFViewerVC.h"
 #import "AddWritingVC.h"
+#import "WritingCommentsVC.h"
 
 @interface ViewController : UIViewController
 
@@ -47,5 +48,6 @@
 
 + (PDFViewerVC *)getPdfVC;
 + (AddWritingVC *)getAddWritingVC;
++ (WritingCommentsVC *)getWritingCommentsVC;
 
 @end

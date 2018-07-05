@@ -45,6 +45,10 @@
 		3E59F8AC205C3BEA00D6FD5A /* ProfileDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8AB205C3BEA00D6FD5A /* ProfileDashboard.m */; };
 		3E59F8B9205E845600D6FD5A /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8B8205E845600D6FD5A /* Session.m */; };
 		3E59F8BC205E8BCE00D6FD5A /* TesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */; };
+		3E5DA18820ED1C3F00F9BA61 /* WritingComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DA18720ED1C3F00F9BA61 /* WritingComment.m */; };
+		3E5DA18B20ED1E0400F9BA61 /* WritingCommentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DA18A20ED1E0400F9BA61 /* WritingCommentsVC.m */; };
+		3E5DA19220ED391100F9BA61 /* WritingCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5DA19020ED391100F9BA61 /* WritingCommentCell.m */; };
+		3E5DA19320ED391100F9BA61 /* WritingCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E5DA19120ED391100F9BA61 /* WritingCommentCell.xib */; };
 		3E734ADF2062E87500C54EBC /* ServerPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734ADE2062E87500C54EBC /* ServerPersistence.m */; };
 		3E734AE22062E88400C54EBC /* RealmUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE12062E88400C54EBC /* RealmUtils.m */; };
 		3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E734AE42062E89500C54EBC /* RealmConfig.m */; };
@@ -166,6 +170,13 @@
 		3E59F8B8205E845600D6FD5A /* Session.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		3E59F8BA205E8BCE00D6FD5A /* TesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TesViewController.h; sourceTree = "<group>"; };
 		3E59F8BB205E8BCE00D6FD5A /* TesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TesViewController.m; sourceTree = "<group>"; };
+		3E5DA18620ED1C3E00F9BA61 /* WritingComment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritingComment.h; sourceTree = "<group>"; };
+		3E5DA18720ED1C3F00F9BA61 /* WritingComment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingComment.m; sourceTree = "<group>"; };
+		3E5DA18920ED1E0400F9BA61 /* WritingCommentsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritingCommentsVC.h; sourceTree = "<group>"; };
+		3E5DA18A20ED1E0400F9BA61 /* WritingCommentsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingCommentsVC.m; sourceTree = "<group>"; };
+		3E5DA18F20ED391100F9BA61 /* WritingCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WritingCommentCell.h; sourceTree = "<group>"; };
+		3E5DA19020ED391100F9BA61 /* WritingCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WritingCommentCell.m; sourceTree = "<group>"; };
+		3E5DA19120ED391100F9BA61 /* WritingCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WritingCommentCell.xib; sourceTree = "<group>"; };
 		3E734ADD2062E87500C54EBC /* ServerPersistence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerPersistence.h; sourceTree = "<group>"; };
 		3E734ADE2062E87500C54EBC /* ServerPersistence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerPersistence.m; sourceTree = "<group>"; };
 		3E734AE02062E88400C54EBC /* RealmUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmUtils.h; sourceTree = "<group>"; };
@@ -359,6 +370,8 @@
 				3E3CCBA320A84C430069350D /* BookRate.m */,
 				3E4EDACC20AFFBF300FD0205 /* Writing.h */,
 				3E4EDACD20AFFBF300FD0205 /* Writing.m */,
+				3E5DA18620ED1C3E00F9BA61 /* WritingComment.h */,
+				3E5DA18720ED1C3F00F9BA61 /* WritingComment.m */,
 			);
 			path = "Realm Models";
 			sourceTree = "<group>";
@@ -512,6 +525,9 @@
 				3E3CCBAA20A850150069350D /* WritingCell.h */,
 				3E3CCBAB20A850150069350D /* WritingCell.m */,
 				3E3CCBAC20A850150069350D /* WritingCell.xib */,
+				3E5DA18F20ED391100F9BA61 /* WritingCommentCell.h */,
+				3E5DA19020ED391100F9BA61 /* WritingCommentCell.m */,
+				3E5DA19120ED391100F9BA61 /* WritingCommentCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -578,6 +594,8 @@
 				3EDE520C208683A400D3330A /* BookPresentationVC.m */,
 				3E2AC48620EA87950096D12D /* AddWritingVC.h */,
 				3E2AC48720EA87950096D12D /* AddWritingVC.m */,
+				3E5DA18920ED1E0400F9BA61 /* WritingCommentsVC.h */,
+				3E5DA18A20ED1E0400F9BA61 /* WritingCommentsVC.m */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -675,6 +693,7 @@
 				3E59F89E205579F000D6FD5A /* FontAwesome.ttf in Resources */,
 				3E366DA82048563A008B9CF7 /* LaunchScreen.storyboard in Resources */,
 				3EDE520F2086880900D3330A /* Reusables.storyboard in Resources */,
+				3E5DA19320ED391100F9BA61 /* WritingCommentCell.xib in Resources */,
 				3E895B0520695E3A0091FD3C /* ProfileCell.xib in Resources */,
 				3ECBC485203CB86F001A263D /* Initial.storyboard in Resources */,
 				3E3CCBA920A84FF10069350D /* BookCell.xib in Resources */,
@@ -752,6 +771,7 @@
 				3E7C99ED20A96A7500B3174A /* BookModel.m in Sources */,
 				3EC234B62062F0040029225D /* Book.m in Sources */,
 				2D7D2FD7203C90FF005E689B /* AnimationViewController.m in Sources */,
+				3E5DA19220ED391100F9BA61 /* WritingCommentCell.m in Sources */,
 				3EC234B92062F00E0029225D /* User.m in Sources */,
 				3E3CCBA420A84C430069350D /* BookRate.m in Sources */,
 				3E7C99F020A96CB600B3174A /* LibraryTVCDataSource.m in Sources */,
@@ -783,6 +803,7 @@
 				3ECBC48C203CB8CD001A263D /* AppLabels.m in Sources */,
 				3E4EDACE20AFFBF300FD0205 /* Writing.m in Sources */,
 				3E59F8A6205BFB6800D6FD5A /* UIImage+FontAwesome.m in Sources */,
+				3E5DA18B20ED1E0400F9BA61 /* WritingCommentsVC.m in Sources */,
 				3E734AE52062E89500C54EBC /* RealmConfig.m in Sources */,
 				3E895B0820695E610091FD3C /* ProfileCell.m in Sources */,
 				2D7D2FBF203C8EE7005E689B /* AppDelegate.m in Sources */,
@@ -803,6 +824,7 @@
 				3E4EDAD120B0547B00FD0205 /* BookDetailsVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
+				3E5DA18820ED1C3F00F9BA61 /* WritingComment.m in Sources */,
 				3E3CCBAD20A850150069350D /* WritingCell.m in Sources */,
 				3EAC24642096305600D1AED5 /* FeedVC.m in Sources */,
 				3E59F8A9205BFE1400D6FD5A /* Font.m in Sources */,

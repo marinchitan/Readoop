@@ -10,6 +10,7 @@
 #import "User.h"
 #import "Request.h"
 #import "Post.h"
+#import "WritingComment.h"
 
 @interface RealmUtils : NSObject
 
@@ -67,5 +68,12 @@
 + (void)insertWriting:(Writing *)writing;
 
 + (Writing *)getWritingById:(NSNumber *)writingId;
+
++ (void)insertUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment;
++ (void)insertUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment;
++ (void)removeUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment;
++ (void)removeUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment;
+
++ (void)createWritingCommentPostByUser:(User*)user withContent:(NSString*)content forWriting:(Writing *)writing;
 
 @end
