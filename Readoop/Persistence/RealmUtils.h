@@ -76,4 +76,7 @@
 
 + (void)createWritingCommentPostByUser:(User*)user withContent:(NSString*)content forWriting:(Writing *)writing;
 
+#pragma mark: Mongo bridging
++ (void)populateRequestsFromMongo:(NSArray *)requests;
+
 @end

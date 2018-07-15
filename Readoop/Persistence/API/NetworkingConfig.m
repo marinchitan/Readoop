@@ -22,5 +22,13 @@
     return finalUrlSting;
 }
 
++ (NSString *)getRequestsHostString {
+    return @"http://localhost:3000/requests";
+}
+
++ (NSString *)getWritingCommentHostString {
+    return @"http://localhost:3000/writingComments"
+}
+
 @end
 

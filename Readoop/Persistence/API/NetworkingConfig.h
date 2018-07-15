@@ -12,5 +12,7 @@
 
 + (NSString *)getGoogleAPIKey;
 + (NSString *)getGoogleURLStringWithAuthor:(NSString *)author withKey:(NSString *)apiKey;
++ (NSString *)getRequestsHostString;
++ (NSString *)getWritingCommentHostString;
 
 @end

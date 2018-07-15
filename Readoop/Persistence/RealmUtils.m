@@ -11,6 +11,7 @@
 #import "Request.h"
 #import "Post.h"
 #import "BookRate.h"
+#import "URLSessionManager.h"
 
 @implementation RealmUtils
 
@@ -137,6 +138,7 @@
     int key = [primaryKey intValue] + 1;
     request.requestId = [NSNumber numberWithInt:key];
     
+    [[URLSessionManager sharedSession] postRequestToMongo:request]; //MONGO POST
     [realm transactionWithBlock:^{
         [realm addObject:request];
     }];
@@ -145,6 +147,7 @@
 + (void)deleteRequest:(Request*)request {
     RLMRealm *realm = [RLMRealm defaultRealm];
     
+    [[URLSessionManager sharedSession] deleteRequest:request.requestId];
     [realm transactionWithBlock:^{
         [realm deleteObject:request];
     }];
@@ -411,11 +414,35 @@
     writingComment.content = content;
     writingComment.datePosted = [NSDate date];
     
+    [[URLSessionManager sharedSession] postWritingCommentsToMongo:writingComment];
+    
     [realm transactionWithBlock:^{
         [realm addObject:writingComment];
     }];
 }
 
++ (void)populateRequestsFromMongo:(NSArray *)requests {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(Request *req in requests) {
+        if(![RealmUtils requestExists:req]){
+            NSLog(@"Adding request <%@>",req.requestId);
+            [realm transactionWithBlock:^{
+                [realm addObject:req];
+            }];
+        } else {
+            NSLog(@"Request <%@> skipped", req.requestId);
+        }
+    }
+}
 
++ (BOOL)requestExists:(Request*)req {
+    RLMResults *existingRequests = [Request allObjects];
+    for(Request *request in existingRequests) {
+        if(request.requestId == req.requestId){
+            return true;
+        }
+    }
+    return false;
+}
 
 @end

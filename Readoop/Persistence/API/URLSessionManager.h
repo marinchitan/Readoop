@@ -7,10 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Request.h"
+#import "WritingComment.h"
 
 @interface URLSessionManager : NSObject
 
+//Google API Books
 - (void)startBookRequests;
+
+//Request
+- (void)loadRequestsFromMongo;
+
+- (void)postRequestToMongo:(Request *)request;
+
+- (void)deleteRequest:(NSNumber *)requestId;
+
+//WritingComment
+- (void)loadWritingCommentsFromMongo;
+
+- (void)postWritingCommentsToMongo:(WritingComment *)writingComment;
+
+- (void)deleteWritingComment:(NSNumber *)writingCommentId; //ftre
 
 + (id)sharedSession;
 

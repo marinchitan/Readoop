@@ -14,16 +14,173 @@
 
 @implementation URLSessionManager
 
+#pragma mark: Requests(social) handling
+
+- (void)loadRequestsFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getRequestsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *requests = [NSArray new];
+    
+    NSURLSessionDataTask *requestsGetTask = [session dataTaskWithURL:url
+                                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                    NSError *jsonError;
+                                                    if(data != nil) {
+                                                        requests = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                             options:NSJSONReadingAllowFragments
+                                                                                                                               error:&jsonError];
+                                                        
+                                                        [RealmUtils populateRequestsFromMongo:[self getRequestsObjects:requests]];
+                                                    } else {
+                                                        NSLog(@"Can not connect to Mongo");
+                                                    }
+                                                    
+                                                    }];
+    
+    [requestsGetTask resume];
+}
+
+- (void)postRequestToMongo:(Request *)request {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-yyyy"];
+    
+    NSString *dateString = [dateFormat stringFromDate:request.creationTime];
+    NSDictionary *dictionary = @{@"requestId": request.requestId, @"senderId": request.senderId, @"receiverId": request.receiverId, @"dateAdded": dateString};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getRequestsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *requestsPostTask = [session uploadTaskWithRequest:postRequest
+                                                                     fromData:data
+                                                            completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                    if(data != nil) {
+                                                                        NSLog(@"POST request status: %@", response.description); //Post request status
+                                                                    } else {
+                                                                        NSLog(@"Can not connect to Mongo");
+                                                                    }
+                                                            }];
+    [requestsPostTask resume];
+}
+
+- (void)deleteRequest:(NSNumber *)requestId {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getRequestsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *deleteRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [deleteRequest setHTTPMethod:@"DELETE"];
+    [deleteRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary *dict = @{@"requestId":requestId};
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dict
+                                                   options:kNilOptions error:&error];
+    
+    
+    
+    
+    [deleteRequest setHTTPBody:data];
+    
+    NSURLSessionDataTask *requestDeleteTask = [session dataTaskWithRequest:deleteRequest
+                                                     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                         if(data != nil) {
+                                                             NSLog(@"DELETE request status: %@", response.description); //Delete request status
+                                                         } else {
+                                                             NSLog(@"Can not connect to Mongo");
+                                                         }
+                                                     }];
+    [requestDeleteTask resume];
+}
+
+- (NSArray *)getRequestsObjects:(NSArray *)apiDict {
+    NSMutableArray *newRequests = [NSMutableArray new];
+    for(id object in apiDict){
+        NSLog(@"Request: %@", object[@"requestId"]);
+        Request *newRequest = [Request new];
+        newRequest.requestId = object[@"requestId"];
+        newRequest.senderId = object[@"senderId"];
+        newRequest.receiverId = object[@"receiverId"];
+        NSString *dateString = object[@"dateAdded"];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        NSDate *date = [dateFormat dateFromString:dateString];
+        newRequest.creationTime = date;
+        
+        [newRequests addObject:newRequest];
+    }
+    return newRequests;
+}
+
+#pragma mark: WritingComment handling
+
+- (void)loadWritingCommentsFromMongo {
+    
+}
+
+- (void)postWritingCommentsToMongo:(WritingComment *)writingComment {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-yyyy"];
+    
+    NSString *dateString = [dateFormat stringFromDate:writingComment.datePosted];
+    NSDictionary *dictionary = @{@"writingCommentId": writingComment.writingCommentId, @"userId": writingComment.userId, @"writingId": writingComment.writingId, @"datePosted":dateString, @"content":writingComment.content, @"upRates":@[], "downRates":@[]};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getWritingCommentHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *writingCommentPostTask = [session uploadTaskWithRequest:postRequest
+                                                                     fromData:data
+                                                            completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                if(data != nil) {
+                                                                    NSLog(@"POST request status: %@", response.description); //Post request status
+                                                                } else {
+                                                                    NSLog(@"Can not connect to Mongo");
+                                                                }
+                                                            }];
+    [writingCommentPostTask resume];
+}
+
+- (void)deleteWritingComment:(NSNumber *)writingCommentId {
+    
+}
+
+
+#pragma mark: Books from Google API
+
 - (NSArray *)getAuthorsForBooks {
     return @[@"Lucian%20Blaga", @"Marin%20Preda", @"Mark%20Twain", @"Ray%20Bradbury", @"George%20Orwell", @"Kurt%20Vonnegut", @"Tolstoy", @"Dostoievski", @"Dickens", @"Tolkien", @"Victor%20Hugo", @"Oscar%20Wilde", @"Franz%20Kafka", @"Hemingway", @"Joyce", @"Dumas", @"Verne", @"Christie", @"Camus", @"Kipling"];
 }
 
-- (void)startBookRequests {    
+- (void)startBookRequests {
     for(NSString *author in [self getAuthorsForBooks]) {
         [self loadBooksFromGoogleAPIForAuthor:author];
     }
 }
-
 
 - (void)loadBooksFromGoogleAPIForAuthor:(NSString *)author {
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -49,8 +206,6 @@
                                                     }
                                                 }];
     [booksGetTask resume];
-    
-   
 }
 
 - (NSMutableArray *)getBookObjects:(NSArray*)books {
@@ -123,5 +278,7 @@
     }
     return self;
 }
+
+
 
 @end
