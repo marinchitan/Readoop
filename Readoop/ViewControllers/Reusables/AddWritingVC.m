@@ -82,7 +82,7 @@
     @weakify(self)
     NSURL *fileURL = urls[0];
     if([fileURL.absoluteString containsString:@".pdf"]){
-        NSLog(@"URL string:%@", fileURL);
+        NSLog(@"URL string:%@", fileURL.absoluteString);
         NSData *fileData = [NSData dataWithContentsOfURL:fileURL];
         self.currentFile = fileData;
         self.fileNameLabel.text = [self getNameOfFile:fileURL];

@@ -11,6 +11,7 @@
 #import "Request.h"
 #import "Post.h"
 #import "WritingComment.h"
+#import "BookRate.h"
 
 @interface RealmUtils : NSObject
 
@@ -33,50 +34,58 @@
 + (void)changeAvatarForUser:(User*)user newAvatar:(NSData*)avatar;
 + (void)changeFirstTimeRegister:(User*)user newFlag:(BOOL)flag;
 
-+ (void)createRequestfromUser:(User*)sender toUser:(User*)receiver;
-+ (void)deleteRequest:(Request*)request;
++ (void)createRequestfromUser:(User*)sender toUser:(User*)receiver; //
++ (void)deleteRequest:(Request*)request; //
 
-+ (void)createFeedPostByUser:(User*)user withContent:(NSString*)content;
++ (void)createFeedPostByUser:(User*)user withContent:(NSString*)content; //
 
-+ (void)insertUserToUps:(User*)user forFeedPost:(Post*)feedPost;
-+ (void)insertUserToDowns:(User*)user forFeedPost:(Post*)feedPost;
-+ (void)removeUserToUps:(User*)user forFeedPost:(Post*)feedPost;
-+ (void)removeUserToDowns:(User*)user forFeedPost:(Post*)feedPost;
++ (void)insertUserToUps:(User*)user forFeedPost:(Post*)feedPost; //
++ (void)insertUserToDowns:(User*)user forFeedPost:(Post*)feedPost; //
++ (void)removeUserToUps:(User*)user forFeedPost:(Post*)feedPost; //
++ (void)removeUserToDowns:(User*)user forFeedPost:(Post*)feedPost; //
 
-+ (NSString*)getRatingOfUser:(User*)user ofBook:(Book*)book;
++ (NSString*)getRatingOfUser:(User*)user ofBook:(Book*)book; //
 + (void)setRatingForBook:(Book*)book rating:(float)rating byUser:(User*)user;
-+ (float)getInitialRatingForBook:(Book*)book forUser:(User*)user;
++ (float)getInitialRatingForBook:(Book*)book forUser:(User*)user; //
 
-+ (void)addBook:(Book*)book toUser:(User*)user;
-+ (void)removeBook:(Book*)book fromUser:(User*)user;
-+ (BOOL)user:(User*)user hasBook:(Book*)book;
++ (void)addBook:(Book*)book toUser:(User*)user; //
++ (void)removeBook:(Book*)book fromUser:(User*)user; //
++ (BOOL)user:(User*)user hasBook:(Book*)book; //
 
-+ (void)addWriting:(Writing*)writing toUser:(User*)user;
-+ (BOOL)user:(User*)user hasBoughtWriting:(Writing*)writing;
-+ (BOOL)user:(User*)user isAuthorOfWriting:(Writing*)writing;
++ (void)addWriting:(Writing*)writing toUser:(User*)user; 
++ (BOOL)user:(User*)user hasBoughtWriting:(Writing*)writing; //
++ (BOOL)user:(User*)user isAuthorOfWriting:(Writing*)writing; //
 
-+ (void)addBooksFromAPI:(NSMutableArray *)books;
-+ (void)clearBooks;
++ (void)addBooksFromAPI:(NSMutableArray *)books; //
++ (void)clearBooks; //
 
-+ (NSString *)getAverageRatingOfBook:(Book *)book;
++ (NSString *)getAverageRatingOfBook:(Book *)book; //
 
-+ (void)addStatusPoint:(User *)user;
-+ (void)removeStatusPoint:(User *)user;
++ (void)addStatusPoint:(User *)user; //
++ (void)removeStatusPoint:(User *)user; //
 
-+ (int)getStatusPointsForUser:(User *)user;
++ (int)getStatusPointsForUser:(User *)user; //
 
 + (void)insertWriting:(Writing *)writing;
 
-+ (Writing *)getWritingById:(NSNumber *)writingId;
++ (Writing *)getWritingById:(NSNumber *)writingId; //
 
-+ (void)insertUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment;
-+ (void)insertUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment;
-+ (void)removeUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment;
-+ (void)removeUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment;
++ (void)insertUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment; //
++ (void)insertUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment; //
++ (void)removeUserToUps:(User*)user forWritingComment:(WritingComment *)writingComment; //
++ (void)removeUserToDowns:(User*)user forWritingComment:(WritingComment *)writingComment; //
 
-+ (void)createWritingCommentPostByUser:(User*)user withContent:(NSString*)content forWriting:(Writing *)writing;
++ (void)createWritingCommentPostByUser:(User*)user withContent:(NSString*)content forWriting:(Writing *)writing; //
 
 #pragma mark: Mongo bridging
 + (void)populateRequestsFromMongo:(NSArray *)requests;
+
++ (void)populateWritinCommentsFromMongo:(NSArray *)comments;
+
++ (void)populateBookRatesFromMongo:(NSArray *)bookRates;
+
++ (void)populatePostsFromMongo:(NSArray *)posts;
+
++ (void)populateWritingsFromMongo:(NSArray *)writings;
 
 @end

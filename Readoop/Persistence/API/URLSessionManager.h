@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Request.h"
 #import "WritingComment.h"
+#import "BookRate.h"
+#import "Post.h"
 
 @interface URLSessionManager : NSObject
 
@@ -27,8 +29,25 @@
 
 - (void)postWritingCommentsToMongo:(WritingComment *)writingComment;
 
-- (void)deleteWritingComment:(NSNumber *)writingCommentId; //ftre
+//BookRate
+- (void)loadBookRatesFromMongo;
+
+- (void)postBookRateToMongo:(BookRate *)bookRate;
+
+//Post
+- (void)loadPostsFromMongo;
+
+- (void)postPostToMongo:(Post *)post;
+
+
+//Wrting
+
+- (void)postWritingToMongo:(Writing *)writing;
+
+- (void)loadWritingsFromMongo;
+
 
 + (id)sharedSession;
+
 
 @end

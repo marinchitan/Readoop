@@ -10,6 +10,7 @@
 #import "NetworkingConfig.h"
 #import <Realm/Realm.h>
 #import "Book.h"
+#import "WritingComment.h"
 #import "RealmUtils.h"
 
 @implementation URLSessionManager
@@ -110,7 +111,6 @@
 - (NSArray *)getRequestsObjects:(NSArray *)apiDict {
     NSMutableArray *newRequests = [NSMutableArray new];
     for(id object in apiDict){
-        NSLog(@"Request: %@", object[@"requestId"]);
         Request *newRequest = [Request new];
         newRequest.requestId = object[@"requestId"];
         newRequest.senderId = object[@"senderId"];
@@ -129,7 +129,49 @@
 #pragma mark: WritingComment handling
 
 - (void)loadWritingCommentsFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
+    NSString *urlString = [NetworkingConfig getWritingCommentHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *comments = [NSArray new];
+    
+    NSURLSessionDataTask *writincGommentGetTask = [session dataTaskWithURL:url
+                                                   completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                       NSError *jsonError;
+                                                       if(data != nil) {
+                                                           comments = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                 options:NSJSONReadingAllowFragments
+                                                                                                                   error:&jsonError];
+                                                           
+                                                           [RealmUtils populateWritinCommentsFromMongo:[self getWritingCommentObjects:comments]];
+                                                       } else {
+                                                           NSLog(@"Can not connect to Mongo");
+                                                       }
+                                                       
+                                                   }];
+    
+    [writincGommentGetTask resume];
+}
+
+- (NSArray *)getWritingCommentObjects:(NSArray *)apiDict {
+    NSMutableArray *newComments = [NSMutableArray new];
+    for(id object in apiDict){
+        WritingComment *comment = [WritingComment new];
+        comment.writingCommentId = object[@"writingCommentId"];
+        comment.writingId = object[@"writingId"];
+        comment.userId = object[@"userId"];
+        NSString *dateString = object[@"datePosted"];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        NSDate *date = [dateFormat dateFromString:dateString];
+        comment.datePosted = date;
+        comment.content = object[@"content"];
+        
+        [newComments addObject:comment];
+    }
+    return newComments;
 }
 
 - (void)postWritingCommentsToMongo:(WritingComment *)writingComment {
@@ -137,7 +179,7 @@
     [dateFormat setDateFormat:@"dd-MM-yyyy"];
     
     NSString *dateString = [dateFormat stringFromDate:writingComment.datePosted];
-    NSDictionary *dictionary = @{@"writingCommentId": writingComment.writingCommentId, @"userId": writingComment.userId, @"writingId": writingComment.writingId, @"datePosted":dateString, @"content":writingComment.content, @"upRates":@[], "downRates":@[]};
+    NSDictionary *dictionary = @{@"writingCommentId": writingComment.writingCommentId, @"userId": writingComment.userId, @"writingId": writingComment.writingId, @"datePosted":dateString, @"content":writingComment.content, @"upRates":@"", @"downRates":@""};
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
@@ -157,7 +199,7 @@
                                                                      fromData:data
                                                             completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                                                 if(data != nil) {
-                                                                    NSLog(@"POST request status: %@", response.description); //Post request status
+                                                                    NSLog(@"POST writing comment status: %@", response.description); //Post request status
                                                                 } else {
                                                                     NSLog(@"Can not connect to Mongo");
                                                                 }
@@ -165,9 +207,246 @@
     [writingCommentPostTask resume];
 }
 
-- (void)deleteWritingComment:(NSNumber *)writingCommentId {
+#pragma mark: BookRate handling
+
+- (void)loadBookRatesFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
     
+    NSString *urlString = [NetworkingConfig getBookRateHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *rates = [NSArray new];
+    
+    NSURLSessionDataTask *ratesGetTask = [session dataTaskWithURL:url
+                                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                             NSError *jsonError;
+                                                             if(data != nil) {
+                                                                 rates = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                       options:NSJSONReadingAllowFragments
+                                                                                                                         error:&jsonError];
+                                                                 
+                                                                 [RealmUtils populateBookRatesFromMongo:[self getBookRates:rates]];
+                                                             } else {
+                                                                 NSLog(@"Can not connect to Mongo");
+                                                             }
+                                                             
+                                                         }];
+    
+    [ratesGetTask resume];
 }
+
+- (void)postBookRateToMongo:(BookRate *)bookRate {
+ 
+    NSDictionary *dictionary = @{@"bookRateId": bookRate.bookRateId, @"bookId": bookRate.bookId, @"userId": bookRate.userId, @"rate":bookRate.rate};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getBookRateHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *ratePostTask = [session uploadTaskWithRequest:postRequest
+                                                                           fromData:data
+                                                                  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                      if(data != nil) {
+                                                                          NSLog(@"POST writing comment status: %@", response.description); //Post request status
+                                                                      } else {
+                                                                          NSLog(@"Can not connect to Mongo");
+                                                                      }
+                                                                  }];
+    [ratePostTask resume];
+}
+
+- (NSArray *)getBookRates:(NSArray *)apiDict {
+    NSMutableArray *newRates = [NSMutableArray new];
+    for(id object in apiDict){
+        BookRate *rate = [BookRate new];
+        rate.bookId = object[@"bookId"];
+        rate.userId = object[@"userId"];
+        rate.bookRateId = object[@"bookRateId"];
+        rate.rate = object[@"rate"];
+        
+        [newRates addObject:rate];
+    }
+    return newRates;
+}
+
+
+#pragma mark: Post handling
+
+- (void)loadPostsFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getPostsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *posts = [NSArray new];
+    
+    NSURLSessionDataTask *postsGetTask = [session dataTaskWithURL:url
+                                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                             NSError *jsonError;
+                                                             if(data != nil) {
+                                                                 posts = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                       options:NSJSONReadingAllowFragments
+                                                                                                                         error:&jsonError];
+                                                                 
+                                                                 [RealmUtils populatePostsFromMongo:[self getPostsObjects:posts]];
+                                                             } else {
+                                                                 NSLog(@"Can not connect to Mongo");
+                                                             }
+                                                             
+                                                         }];
+    
+    [postsGetTask resume];
+}
+
+- (NSArray *)getPostsObjects:(NSArray *)apiDict {
+    NSMutableArray *newPosts = [NSMutableArray new];
+    for(id object in apiDict){
+        Post *post = [Post new];
+        post.postId = object[@"postId"];
+        post.userId = object[@"userId"];
+        NSString *dateString = object[@"datePosted"];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd-MM-yyyy"];
+        NSDate *date = [dateFormat dateFromString:dateString];
+        post.datePosted = date;
+        post.content = object[@"content"];
+        
+        [newPosts addObject:post];
+    }
+    return newPosts;
+}
+
+- (void)postPostToMongo:(Post *)post {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-yyyy"];
+    
+    NSString *dateString = [dateFormat stringFromDate:post.datePosted];
+    NSDictionary *dictionary = @{@"postId": post.postId, @"userId": post.userId, @"datePosted":dateString, @"content":post.content, @"upRates":@"", @"downRates":@""};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getPostsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *postPostTask = [session uploadTaskWithRequest:postRequest
+                                                                           fromData:data
+                                                                  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                      if(data != nil) {
+                                                                          NSLog(@"POST writing comment status: %@", response.description); //Post request status
+                                                                      } else {
+                                                                          NSLog(@"Can not connect to Mongo");
+                                                                      }
+                                                                  }];
+    [postPostTask resume];
+}
+
+
+#pragma mark: Writing handling
+
+- (void)loadWritingsFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getWritingsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *writings = [NSArray new];
+    
+    NSURLSessionDataTask *writingsGetTask = [session dataTaskWithURL:url
+                                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                    NSError *jsonError;
+                                                    if(data != nil) {
+                                                        writings = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                           options:NSJSONReadingAllowFragments
+                                                                                                             error:&jsonError];
+                                                        
+                                                        [RealmUtils populateWritingsFromMongo:[self getWritingsObjects:writings]];
+                                                    } else {
+                                                        NSLog(@"Can not connect to Mongo");
+                                                    }
+                                                    
+                                                }];
+    
+    [writingsGetTask resume];
+}
+
+- (NSArray *)getWritingsObjects:(NSArray *)apiDict {
+    NSMutableArray *newWritings = [NSMutableArray new];
+    for(id object in apiDict){
+        Writing *newWriting = [Writing new];
+        
+        newWriting.writingId = object[@"writingId"];
+        newWriting.authorId = object[@"authorId"];
+        newWriting.writingTitle = object[@"writingTitle"];
+        newWriting.writingDescription = object[@"writingDescription"];
+        newWriting.writingFileName = object[@"writingFileName"];
+        newWriting.writingPrice = object[@"writingPrice"];
+        
+        NSString *dataString = object[@"writingContent"];
+        NSData *fileData = [NSData new];
+        NSData *data = [fileData initWithBase64EncodedString:dataString options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        
+        newWriting.writingContent = data;
+        
+        [newWritings addObject:newWriting];
+    }
+    
+    return newWritings;
+}
+
+
+
+- (void)postWritingToMongo:(Writing *)writing {
+
+    NSDictionary *dictionary = @{@"writingId": writing.writingId, @"authorId": writing.authorId, @"writingTitle":writing.writingTitle, @"writingDescription":writing.writingDescription, @"writingFileName":writing.writingFileName, @"writingContent":[writing.writingContent base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed], @"writingPrice":writing.writingPrice};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getWritingsHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *postPostTask = [session uploadTaskWithRequest:postRequest
+                                                                 fromData:data
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                            if(data != nil) {
+                                                                NSLog(@"POST writing comment status: %@", response.description); //Post request status
+                                                            } else {
+                                                                NSLog(@"Can not connect to Mongo");
+                                                            }
+                                                        }];
+    [postPostTask resume];
+}
+
 
 
 #pragma mark: Books from Google API

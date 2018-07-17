@@ -27,6 +27,10 @@
     [self pushProfileVCWithDelay:3.0]; //3.0 in prod
     [[URLSessionManager sharedSession] startBookRequests];
     [[URLSessionManager sharedSession] loadRequestsFromMongo];
+    [[URLSessionManager sharedSession] loadWritingCommentsFromMongo];
+    [[URLSessionManager sharedSession] loadBookRatesFromMongo];
+    [[URLSessionManager sharedSession] loadPostsFromMongo];
+    [[URLSessionManager sharedSession] loadWritingsFromMongo];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

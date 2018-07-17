@@ -14,5 +14,8 @@
 + (NSString *)getGoogleURLStringWithAuthor:(NSString *)author withKey:(NSString *)apiKey;
 + (NSString *)getRequestsHostString;
 + (NSString *)getWritingCommentHostString;
++ (NSString *)getBookRateHostString;
++ (NSString *)getPostsHostString;
++ (NSString *)getWritingsHostString;
 
 @end

@@ -171,6 +171,8 @@
     post.content = content;
     post.datePosted = [NSDate date];
     
+    [[URLSessionManager sharedSession] postPostToMongo:post];
+    
     [realm transactionWithBlock:^{
         [realm addObject:post];
         //[realm deleteObjects:[Post allObjects]];
@@ -234,6 +236,8 @@
     newRate.userId = user.userId;
     newRate.bookId = book.bookId;
     newRate.bookRateId = [NSString stringWithFormat:@"%@%@", user.userId, book.bookId];
+    
+    [[URLSessionManager sharedSession] postBookRateToMongo:newRate];
     
     [realm transactionWithBlock:^{
         [realm addOrUpdateObject:newRate];
@@ -357,6 +361,8 @@
 + (void)insertWriting:(Writing *)writing {
     RLMRealm *realm = [RLMRealm defaultRealm];
     
+    [[URLSessionManager sharedSession] postWritingToMongo:writing];
+    
     [realm transactionWithBlock:^{
         [realm addOrUpdateObject:writing];
     }];
@@ -439,6 +445,102 @@
     RLMResults *existingRequests = [Request allObjects];
     for(Request *request in existingRequests) {
         if(request.requestId == req.requestId){
+            return true;
+        }
+    }
+    return false;
+}
+
++ (void)populateWritinCommentsFromMongo:(NSArray *)comments {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(WritingComment *comm in comments) {
+        if(![RealmUtils writingCommentExists:comm]){
+            NSLog(@"Adding writing comment <%@>",comm.writingCommentId);
+            [realm transactionWithBlock:^{
+                [realm addObject:comm];
+            }];
+        } else {
+            NSLog(@"Writing comment <%@> skipped", comm.writingCommentId);
+        }
+    }
+}
+
++ (BOOL)writingCommentExists:(WritingComment*)comment {
+    RLMResults *writingComments = [WritingComment allObjects];
+    for(WritingComment *comm in writingComments) {
+        if(comment.writingCommentId == comm.writingCommentId){
+            return true;
+        }
+    }
+    return false;
+}
+
++ (void)populateBookRatesFromMongo:(NSArray *)bookRates {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(BookRate *rate in bookRates) {
+        if(![RealmUtils bookRatesExist:rate]){
+            NSLog(@"Adding book rate <%@>",rate.bookRateId);
+            [realm transactionWithBlock:^{
+                [realm addObject:rate];
+            }];
+        } else {
+            NSLog(@"Book rate <%@> skipped", rate.bookRateId);
+        }
+    }
+}
+
++ (BOOL)bookRatesExist:(BookRate*)bookRate {
+    RLMResults *bookRates = [BookRate allObjects];
+    for(BookRate *rate in bookRates) {
+        if([rate.bookRateId isEqualToString:bookRate.bookRateId]){
+            return true;
+        }
+    }
+    return false;
+}
+
++ (void)populatePostsFromMongo:(NSArray *)posts {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(Post *post in posts) {
+        if(![RealmUtils postExists:post]){
+            NSLog(@"Adding post <%@>",post.postId);
+            [realm transactionWithBlock:^{
+                [realm addObject:post];
+            }];
+        } else {
+            NSLog(@"Post <%@> skipped", post.postId);
+        }
+    }
+}
+
++ (BOOL)postExists:(Post*)post {
+    RLMResults *posts = [Post allObjects];
+    for(Post *pt in posts) {
+        if(post.postId == pt.postId){
+            return true;
+        }
+    }
+    return false;
+}
+
++ (void)populateWritingsFromMongo:(NSArray *)writings {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(Writing *writing in writings) {
+        if(![RealmUtils writingsExists:writing]){
+            NSLog(@"Adding writing <%@>",writing.writingId);
+            [realm transactionWithBlock:^{
+                [realm addObject:writing];
+            }];
+        } else {
+            NSLog(@"Writing <%@> skipped", writing.writingId);
+        }
+    }
+}
+
++ (BOOL)writingsExists:(Writing*)writing {
+    RLMResults *writings = [Writing allObjects];
+    for(Writing *wr in writings) {
+        if(writing.writingId == wr.writingId){
             return true;
         }
     }

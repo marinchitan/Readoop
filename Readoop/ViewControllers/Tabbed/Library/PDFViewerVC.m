@@ -23,6 +23,7 @@
 
 - (void)loadFile {
     NSLog(@"Displaying file: %@", self.filePath);
+    NSLog(@"File path: %@", self.filePath);
   
     NSURL *detailURL = [NSURL fileURLWithPath:self.filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:detailURL];

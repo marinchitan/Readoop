@@ -27,7 +27,19 @@
 }
 
 + (NSString *)getWritingCommentHostString {
-    return @"http://localhost:3000/writingComments"
+    return @"http://localhost:3000/writingComments";
+}
+
++ (NSString *)getBookRateHostString {
+    return @"http://localhost:3000/bookRates";
+}
+
++ (NSString *)getPostsHostString {
+    return @"http://localhost:3000/posts";
+}
+
++ (NSString *)getWritingsHostString {
+    return @"http://localhost:3000/writings";
 }
 
 @end
