@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buyButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 
 @property (nonatomic, strong) Writing* currentWriting;
 @property (strong, nonatomic) id<LibraryTVCDelegate> delegate;

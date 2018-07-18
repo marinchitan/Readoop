@@ -586,8 +586,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBE-fu-R5H">
-                                <rect key="frame" x="164.5" y="466" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="137.5" y="461" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4aU-RZ-lk7"/>
+                                    <constraint firstAttribute="width" constant="100" id="q0E-Kb-mTc"/>
+                                </constraints>
+                                <state key="normal" title="Comments"/>
                                 <connections>
                                     <action selector="commentsTap:" destination="eaN-Rk-5Qx" eventType="touchUpInside" id="mTf-90-Y2E"/>
                                 </connections>
@@ -630,6 +634,7 @@
                         <outlet property="avatarImageView" destination="ZX5-8W-UwT" id="86Y-BH-hcs"/>
                         <outlet property="buyButton" destination="t8m-P8-JNn" id="knA-2N-cPt"/>
                         <outlet property="cancelButton" destination="m65-hP-9Og" id="em9-Tp-iGr"/>
+                        <outlet property="commentsButton" destination="pBE-fu-R5H" id="5Rq-Kr-xWw"/>
                         <outlet property="descriptionContents" destination="4H6-qV-gyf" id="pgd-9N-aWG"/>
                         <outlet property="descriptionLabel" destination="3Xk-Gx-UK3" id="Ll7-aO-oSl"/>
                         <outlet property="priceContents" destination="9tH-Wr-x0W" id="0Ge-HQ-aRb"/>

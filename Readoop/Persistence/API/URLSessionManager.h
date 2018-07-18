@@ -46,6 +46,12 @@
 
 - (void)loadWritingsFromMongo;
 
+//User
+
+- (void)postUserToMongo:(User *)user;
+
+- (void)loadUsersFromMongo;
+
 
 + (id)sharedSession;
 

@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.215238"
+            timestampString = "553599679.340999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "+insertUserToUps:forFeedPost:"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.219108"
+            timestampString = "553599679.3428479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "+insertUserToDowns:forFeedPost:"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.220968"
+            timestampString = "553599679.345361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "+removeUserToUps:forFeedPost:"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.22421"
+            timestampString = "553599679.3465509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "+removeUserToDowns:forFeedPost:"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.2262191"
+            timestampString = "553599679.372802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "+removeUserToUps:forFeedPost:"
             landmarkType = "7">
             <Locations>
@@ -713,11 +713,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.2291189"
+            timestampString = "553599679.375501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "+user:hasBook:"
             landmarkType = "7">
          </BreakpointContent>
@@ -729,11 +729,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.2310081"
+            timestampString = "553599679.379679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "+user:hasBook:"
             landmarkType = "7">
          </BreakpointContent>
@@ -745,7 +745,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.232482"
+            timestampString = "553599679.389151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -761,7 +761,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.234581"
+            timestampString = "553599679.391392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -777,11 +777,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.2359461"
+            timestampString = "553599679.392936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
@@ -793,11 +793,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.237602"
+            timestampString = "553599679.395093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-pushProfileVCWithDelay:"
             landmarkType = "7">
          </BreakpointContent>
@@ -809,11 +809,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.239085"
+            timestampString = "553599679.396366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-pushProfileVCWithDelay:"
             landmarkType = "7">
             <Locations>
@@ -857,11 +857,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.240407"
+            timestampString = "553599679.3977799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
             landmarkName = "-loadBooksFromGoogleAPIForAuthor:"
             landmarkType = "7">
          </BreakpointContent>
@@ -873,11 +873,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.241654"
+            timestampString = "553599679.3982511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "571"
+            endingLineNumber = "571"
             landmarkName = "-getBookObjects:"
             landmarkType = "7">
          </BreakpointContent>
@@ -889,11 +889,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.242994"
+            timestampString = "553599679.398803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "533"
-            endingLineNumber = "533"
+            startingLineNumber = "613"
+            endingLineNumber = "613"
             landmarkName = "-getBookObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -937,11 +937,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.244436"
+            timestampString = "553599679.399845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "512"
-            endingLineNumber = "512"
+            startingLineNumber = "592"
+            endingLineNumber = "592"
             landmarkName = "-getBookObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -953,11 +953,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.245563"
+            timestampString = "553599679.400571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
             landmarkName = "-getPages"
             landmarkType = "7">
          </BreakpointContent>
@@ -969,11 +969,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.246339"
+            timestampString = "553599679.401105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "529"
-            endingLineNumber = "529"
+            startingLineNumber = "609"
+            endingLineNumber = "609"
             landmarkName = "-getBookObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -985,11 +985,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.249153"
+            timestampString = "553599679.401637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "531"
-            endingLineNumber = "531"
+            startingLineNumber = "611"
+            endingLineNumber = "611"
             landmarkName = "-getBookObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1129,23 +1129,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Tabbed/Library/WritingDetailsVC.m"
-            timestampString = "553509154.25014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-saveCurrentWritingToDevice"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Readoop/ViewControllers/Tabbed/Library/WritingDetailsVC.m"
-            timestampString = "553509154.250432"
+            timestampString = "553599679.402524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -1161,11 +1145,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Tabbed/Library/WritingDetailsVC.m"
-            timestampString = "553509154.250639"
+            timestampString = "553599679.402889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-saveCurrentWritingToDevice"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/ViewControllers/Tabbed/Library/WritingDetailsVC.m"
+            timestampString = "553599679.403212"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-saveCurrentWritingToDevice"
             landmarkType = "7">
          </BreakpointContent>
@@ -1209,7 +1209,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Reusables/AddWritingVC.m"
-            timestampString = "553509154.250886"
+            timestampString = "553599679.404302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -1225,11 +1225,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Tabbed/Library/WritingDetailsVC.m"
-            timestampString = "553509154.251918"
+            timestampString = "553599679.405266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-buyAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1241,7 +1241,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Reusables/AddWritingVC.m"
-            timestampString = "553509154.25216"
+            timestampString = "553599679.40598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
@@ -1257,7 +1257,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Reusables/AddWritingVC.m"
-            timestampString = "553509154.252768"
+            timestampString = "553599679.406643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -1273,7 +1273,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Reusables/AddWritingVC.m"
-            timestampString = "553509154.25357"
+            timestampString = "553599679.407032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -1289,7 +1289,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Reusables/AddWritingVC.m"
-            timestampString = "553509154.254643"
+            timestampString = "553599679.407467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
@@ -1321,43 +1321,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.25552"
+            timestampString = "553599679.407909"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "+createWritingCommentPostByUser:withContent:forWriting:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.409175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "+createWritingCommentPostByUser:withContent:forWriting:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.4107161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "416"
             endingLineNumber = "416"
-            landmarkName = "+createWritingCommentPostByUser:withContent:forWriting:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.256879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "+createWritingCommentPostByUser:withContent:forWriting:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Readoop/Persistence/RealmUtils.m"
-            timestampString = "553509154.257921"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
             landmarkName = "+createWritingCommentPostByUser:withContent:forWriting:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1385,11 +1385,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.259575"
+            timestampString = "553599679.412913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-pushProfileVCWithDelay:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1401,11 +1401,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.260867"
+            timestampString = "553599679.415009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-pushProfileVCWithDelay:"
             landmarkType = "7">
             <Locations>
@@ -1449,23 +1449,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.262974"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-setUpUI"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.264186"
+            timestampString = "553599679.418214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -1481,12 +1465,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.2653641"
+            timestampString = "553599679.420399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-performAnimationOnLabels"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-setUpUI"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1497,7 +1481,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
-            timestampString = "553509154.266764"
+            timestampString = "553599679.421947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -1512,8 +1496,24 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "Readoop/ViewControllers/Initial/AnimationViewController.m"
+            timestampString = "553599679.423528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-performAnimationOnLabels"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "Readoop/ViewControllers/Tabbed/Library/PDFViewerVC.m"
-            timestampString = "553509154.268291"
+            timestampString = "553599679.424755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -1529,7 +1529,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.268567"
+            timestampString = "553599679.4248821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "382"
@@ -1545,12 +1545,236 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Readoop/Persistence/API/URLSessionManager.m"
-            timestampString = "553509154.269341"
+            timestampString = "553599679.425109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "411"
             endingLineNumber = "411"
             landmarkName = "-getWritingsObjects:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.425274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "502"
+            endingLineNumber = "502"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.42544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.4256409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.425761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "516"
+            endingLineNumber = "516"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.426335"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "503"
+            endingLineNumber = "503"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.426829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "553"
+            endingLineNumber = "553"
+            landmarkName = "+populateUsersFromMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.4290659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
+            landmarkName = "+populateUsersFromMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.431002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "562"
+            endingLineNumber = "562"
+            landmarkName = "+populateUsersFromMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.4317729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
+            landmarkName = "+populateUsersFromMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.432645"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
+            landmarkName = "+populateUsersFromMongo:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[RealmUtils populateUsersFromMongo:]"
+                  moduleName = "Readoop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrianburcin/readoop/Readoop/Persistence/RealmUtils.m"
+                  timestampString = "553599300.383497"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "557"
+                  endingLineNumber = "557"
+                  offsetFromSymbolStart = "498">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__37+[RealmUtils populateUsersFromMongo:]_block_invoke"
+                  moduleName = "Readoop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adrianburcin/readoop/Readoop/Persistence/RealmUtils.m"
+                  timestampString = "553599300.386979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "557"
+                  endingLineNumber = "557"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/API/URLSessionManager.m"
+            timestampString = "553599679.433764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
+            landmarkName = "-postUserToMongo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Readoop/Persistence/RealmUtils.m"
+            timestampString = "553599679.434008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
+            landmarkName = "+populateUsersFromMongo:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

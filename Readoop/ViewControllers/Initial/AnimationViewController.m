@@ -31,6 +31,7 @@
     [[URLSessionManager sharedSession] loadBookRatesFromMongo];
     [[URLSessionManager sharedSession] loadPostsFromMongo];
     [[URLSessionManager sharedSession] loadWritingsFromMongo];
+    [[URLSessionManager sharedSession] loadUsersFromMongo];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

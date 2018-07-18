@@ -18,6 +18,8 @@
 + (void)addUserObject:(User *)user {
     RLMRealm *realm = [RLMRealm defaultRealm];
     
+    [[URLSessionManager sharedSession] postUserToMongo:user];
+    
     [realm transactionWithBlock:^{
         [realm addObject:user];
     }];
@@ -541,6 +543,31 @@
     RLMResults *writings = [Writing allObjects];
     for(Writing *wr in writings) {
         if(writing.writingId == wr.writingId){
+            return true;
+        }
+    }
+    return false;
+}
+
++ (void)populateUsersFromMongo:(NSArray *)users {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    for(User *user in users) {
+        if(![RealmUtils userExists:user]){
+            NSLog(@"Adding user <%@>",user.userId);
+            [realm transactionWithBlock:^{
+                [realm addObject:user];
+            }];
+        } else {
+            NSLog(@"user <%@> skipped", user.userId);
+        }
+    }
+    
+}
+
++ (BOOL)userExists:(User *)user {
+    RLMResults *users = [User allObjects];
+    for(User *usr in users) {
+        if(usr.userId == user.userId){
             return true;
         }
     }

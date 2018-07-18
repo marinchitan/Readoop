@@ -42,6 +42,9 @@
     [ViewUtils setUpButton:self.cancelButton withRadius:5.0];
     [ViewUtils setUpCancelActiveBUtton:self.cancelButton];
     [ViewUtils setUpStandardActiveButton:self.buyButton];
+    
+    [ViewUtils setUpButton:self.commentsButton withRadius:5.0];
+    [ViewUtils setUpStandardActiveButton:self.commentsButton];
 
     self.titleContents.textColor = [Color getSubTitleGray];
     self.authorContents.textColor = [Color getSubTitleGray];

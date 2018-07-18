@@ -17,5 +17,7 @@
 + (NSString *)getBookRateHostString;
 + (NSString *)getPostsHostString;
 + (NSString *)getWritingsHostString;
++ (NSString *)getUsersHostString;
+
 
 @end

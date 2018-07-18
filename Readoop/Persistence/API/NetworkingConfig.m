@@ -42,5 +42,9 @@
     return @"http://localhost:3000/writings";
 }
 
++ (NSString *)getUsersHostString {
+    return @"http://localhost:3000/users";
+}
+
 @end
 

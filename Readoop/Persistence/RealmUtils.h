@@ -66,7 +66,7 @@
 
 + (int)getStatusPointsForUser:(User *)user; //
 
-+ (void)insertWriting:(Writing *)writing;
++ (void)insertWriting:(Writing *)writing; //
 
 + (Writing *)getWritingById:(NSNumber *)writingId; //
 
@@ -87,5 +87,7 @@
 + (void)populatePostsFromMongo:(NSArray *)posts;
 
 + (void)populateWritingsFromMongo:(NSArray *)writings;
+
++ (void)populateUsersFromMongo:(NSArray *)users;
 
 @end

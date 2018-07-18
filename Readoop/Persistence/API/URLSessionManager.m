@@ -448,6 +448,86 @@
 }
 
 
+#pragma mark: Users handling
+
+- (void)loadUsersFromMongo {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getUsersHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    __block NSArray *users = [NSArray new];
+    
+    NSURLSessionDataTask *usersGetTask = [session dataTaskWithURL:url
+                                                   completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                       NSError *jsonError;
+                                                       if(data != nil) {
+                                                           users = (NSArray *)[NSJSONSerialization JSONObjectWithData:data
+                                                                                                                 options:NSJSONReadingAllowFragments
+                                                                                                                   error:&jsonError];
+                                                           
+                                                           [RealmUtils populateUsersFromMongo:[self getUsersObjects:users]];
+                                                       } else {
+                                                           NSLog(@"Can not connect to Mongo");
+                                                       }
+                                                       
+                                                   }];
+    
+    [usersGetTask resume];
+}
+
+- (NSArray *)getUsersObjects:(NSArray *)apiDict {
+    NSMutableArray *newUsers = [NSMutableArray new];
+    for(id object in apiDict){
+        User *newUser = [User new];
+        
+        newUser.userId = object[@"userId"];
+        newUser.username = object[@"username"];
+        newUser.password = object[@"password"];
+        newUser.fullName = object[@"fullName"];
+        newUser.email = object[@"email"];
+        
+        [newUsers addObject:newUser];
+    }
+    
+    return newUsers;
+}
+
+
+- (void)postUserToMongo:(User *)user {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd-MM-yyyy"];
+    NSDictionary *dictionary = @{@"userId":user.userId, @"username":user.username, @"password":user.password, @"fullName":user.fullName, @"email":user.email};
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSString *urlString = [NetworkingConfig getUsersHostString];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    [postRequest setHTTPBody:data];
+    
+    NSURLSessionUploadTask *userPostTask = [session uploadTaskWithRequest:postRequest
+                                                                 fromData:data
+                                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                            if(data != nil) {
+                                                                NSLog(@"POST writing comment status: %@", response.description); //Post request status
+                                                            } else {
+                                                                NSLog(@"Can not connect to Mongo");
+                                                            }
+                                                        }];
+    [userPostTask resume];
+}
+
+
+
 
 #pragma mark: Books from Google API
 
