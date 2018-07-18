@@ -161,6 +161,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-sM-QF8">
+                                <rect key="frame" x="226" y="357" width="45" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="bsc-xN-buo"/>
+                                    <constraint firstAttribute="width" constant="45" id="zPy-ZM-C5y"/>
+                                </constraints>
+                                <state key="normal" title="show"/>
+                                <connections>
+                                    <action selector="showBooksAction:" destination="MlO-4y-aXS" eventType="touchUpInside" id="CF6-uf-lGt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -176,8 +187,10 @@
                             <constraint firstItem="xjZ-x8-aif" firstAttribute="top" secondItem="val-Io-TlT" secondAttribute="top" id="FTk-Pr-LMY"/>
                             <constraint firstItem="yUK-zj-vHf" firstAttribute="top" secondItem="Wsg-le-XZp" secondAttribute="bottom" constant="10" id="Fbc-pr-oyn"/>
                             <constraint firstItem="AJP-u9-egq" firstAttribute="trailing" secondItem="XMr-Ma-vT7" secondAttribute="trailing" id="GdT-kR-mIp"/>
+                            <constraint firstItem="YVU-sM-QF8" firstAttribute="centerY" secondItem="Njg-zZ-MNO" secondAttribute="centerY" id="Ghe-ZY-pNs"/>
                             <constraint firstItem="8ZL-b4-A0D" firstAttribute="leading" secondItem="5FZ-sx-7fX" secondAttribute="trailing" constant="15" id="IDu-zf-E3T"/>
                             <constraint firstItem="O1P-wt-6LK" firstAttribute="top" secondItem="ZNi-mS-rhH" secondAttribute="top" constant="30" id="IYF-ni-MSe"/>
+                            <constraint firstItem="YVU-sM-QF8" firstAttribute="leading" secondItem="Njg-zZ-MNO" secondAttribute="trailing" constant="15" id="KOa-gJ-CcN"/>
                             <constraint firstItem="5XM-WV-qJE" firstAttribute="leading" secondItem="vgC-lz-QKp" secondAttribute="trailing" constant="15" id="NRg-Vv-tk4"/>
                             <constraint firstItem="EYw-Aq-J1Z" firstAttribute="width" secondItem="ZNi-mS-rhH" secondAttribute="width" multiplier="0.4" id="P7e-H9-FVt"/>
                             <constraint firstItem="RMC-fp-qgc" firstAttribute="top" secondItem="XMr-Ma-vT7" secondAttribute="top" id="QBc-dd-b6k"/>
@@ -226,6 +239,7 @@
                         <outlet property="fullNameLabel" destination="Wsg-le-XZp" id="RbC-6d-MU6"/>
                         <outlet property="locaitonLabel" destination="5FZ-sx-7fX" id="sxS-fS-ZEE"/>
                         <outlet property="locationContent" destination="8ZL-b4-A0D" id="jPx-jS-nvd"/>
+                        <outlet property="showBooksButton" destination="YVU-sM-QF8" id="6kv-Ey-YNE"/>
                         <outlet property="statusContent" destination="x2c-V4-XGL" id="347-de-kZP"/>
                         <outlet property="statusLabel" destination="hsF-Wd-XYB" id="zGw-jb-Qc5"/>
                         <outlet property="userNameContent" destination="Jki-3E-j3a" id="xOU-13-zYm"/>
@@ -906,6 +920,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9V-S0-e3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3295" y="250"/>
+        </scene>
+        <!--Empty Data Set Delegate-->
+        <scene sceneID="t4d-nc-zeT">
+            <objects>
+                <viewController storyboardIdentifier="usersBooksVC" id="N5Z-HC-00R" customClass="UsersBooks" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vgl-9r-LIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-xq-d0q">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="N5Z-HC-00R" id="qPV-yg-gg1"/>
+                                    <outlet property="delegate" destination="N5Z-HC-00R" id="BaM-Fn-4Su"/>
+                                    <outlet property="emptyDataSetDelegate" destination="N5Z-HC-00R" id="h6R-fs-92K"/>
+                                    <outlet property="emptyDataSetSource" destination="N5Z-HC-00R" id="ddL-NS-Kji"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aIG-7u-gls" firstAttribute="trailing" secondItem="FoQ-xq-d0q" secondAttribute="trailing" id="MPN-FL-oh7"/>
+                            <constraint firstItem="FoQ-xq-d0q" firstAttribute="leading" secondItem="aIG-7u-gls" secondAttribute="leading" id="Y6J-QO-0Fm"/>
+                            <constraint firstItem="FoQ-xq-d0q" firstAttribute="top" secondItem="aIG-7u-gls" secondAttribute="top" id="ZGw-b9-gQq"/>
+                            <constraint firstItem="aIG-7u-gls" firstAttribute="bottom" secondItem="FoQ-xq-d0q" secondAttribute="bottom" id="s5T-Z6-VCu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aIG-7u-gls"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="FoQ-xq-d0q" id="04S-KR-gP5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x87-v0-l5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3966" y="250"/>
         </scene>
     </scenes>
     <resources>

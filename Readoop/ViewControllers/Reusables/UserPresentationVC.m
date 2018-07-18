@@ -11,6 +11,7 @@
 #import "Request.h"
 #import "AlertUtils.h"
 #import "StatusManager.h"
+#import "UsersBooks.h"
 
 @interface UserPresentationVC ()
 
@@ -80,6 +81,9 @@
     
     self.avatarView.clipsToBounds = YES;
     self.avatarView.layer.cornerRadius = self.avatarView.frame.size.width / 2;
+    
+    [ViewUtils setUpStandardActiveButton:self.showBooksButton];
+    [ViewUtils setUpButton:self.showBooksButton withRadius:5];
 }
 
 - (BOOL)alreadyHasInFriends {
@@ -195,9 +199,12 @@
 }
 
 - (IBAction)showBooksAction:(id)sender {
+    UsersBooks *vc = [ViewController getUsersBooks];
+    vc.currentUser = self.currentUser;
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)showFriendsAction:(id)sender {
-}
+
 
 @end

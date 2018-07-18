@@ -38,5 +38,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *addToFriendsButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *showBooksButton;
 
 @end

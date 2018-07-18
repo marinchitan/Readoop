@@ -97,4 +97,9 @@
             instantiateViewControllerWithIdentifier:@"writingCommentsVC"];
 }
 
++ (UsersBooks *)getUsersBooks {
+    return [[UIStoryboard storyboardWithName:@"Reusables" bundle:nil]
+            instantiateViewControllerWithIdentifier:@"usersBooksVC"];
+}
+
 @end

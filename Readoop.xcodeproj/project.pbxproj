@@ -79,6 +79,7 @@
 		3ED979D820667A0200B00F13 /* ProfilePresentationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ED979D720667A0200B00F13 /* ProfilePresentationCell.xib */; };
 		3ED979DB20667A5600B00F13 /* ProfilePresentationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */; };
 		3ED979EC20684EE500B00F13 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED979EB20684EE500B00F13 /* ContainerViewController.m */; };
+		3EDB897020FF56E900CBDB16 /* UsersBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB896F20FF56E900CBDB16 /* UsersBooks.m */; };
 		3EDE520A2086838A00D3330A /* UserPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE52092086838A00D3330A /* UserPresentationVC.m */; };
 		3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE520C208683A400D3330A /* BookPresentationVC.m */; };
 		3EDE520F2086880900D3330A /* Reusables.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE520E2086880900D3330A /* Reusables.storyboard */; };
@@ -231,6 +232,8 @@
 		3ED979DA20667A5600B00F13 /* ProfilePresentationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePresentationCell.m; sourceTree = "<group>"; };
 		3ED979EA20684EE500B00F13 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		3ED979EB20684EE500B00F13 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		3EDB896E20FF56E900CBDB16 /* UsersBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsersBooks.h; sourceTree = "<group>"; };
+		3EDB896F20FF56E900CBDB16 /* UsersBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersBooks.m; sourceTree = "<group>"; };
 		3EDE52042086820800D3330A /* ProfileDashboardDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileDashboardDelegateProtocol.h; sourceTree = "<group>"; };
 		3EDE52082086838A00D3330A /* UserPresentationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserPresentationVC.h; sourceTree = "<group>"; };
 		3EDE52092086838A00D3330A /* UserPresentationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserPresentationVC.m; sourceTree = "<group>"; };
@@ -596,6 +599,8 @@
 				3E2AC48720EA87950096D12D /* AddWritingVC.m */,
 				3E5DA18920ED1E0400F9BA61 /* WritingCommentsVC.h */,
 				3E5DA18A20ED1E0400F9BA61 /* WritingCommentsVC.m */,
+				3EDB896E20FF56E900CBDB16 /* UsersBooks.h */,
+				3EDB896F20FF56E900CBDB16 /* UsersBooks.m */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -824,6 +829,7 @@
 				3E4EDAD120B0547B00FD0205 /* BookDetailsVC.m in Sources */,
 				3E59F8A3205BD94800D6FD5A /* DashboardTabbed.m in Sources */,
 				3EDE520D208683A400D3330A /* BookPresentationVC.m in Sources */,
+				3EDB897020FF56E900CBDB16 /* UsersBooks.m in Sources */,
 				3E5DA18820ED1C3F00F9BA61 /* WritingComment.m in Sources */,
 				3E3CCBAD20A850150069350D /* WritingCell.m in Sources */,
 				3EAC24642096305600D1AED5 /* FeedVC.m in Sources */,

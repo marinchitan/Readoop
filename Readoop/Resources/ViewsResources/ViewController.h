@@ -24,6 +24,7 @@
 #import "PDFViewerVC.h"
 #import "AddWritingVC.h"
 #import "WritingCommentsVC.h"
+#import "UsersBooks.h"
 
 @interface ViewController : UIViewController
 
@@ -49,5 +50,7 @@
 + (PDFViewerVC *)getPdfVC;
 + (AddWritingVC *)getAddWritingVC;
 + (WritingCommentsVC *)getWritingCommentsVC;
+
++ (UsersBooks *)getUsersBooks;
 
 @end
