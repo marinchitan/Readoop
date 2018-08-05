@@ -55,7 +55,7 @@
                                                                                      stringWithFormat:@"%@",username]]]  ;
 
     [formattedNameString addAttribute:NSFontAttributeName
-                                value:[Font getBariolwithSize:24]
+                                value:[Font getBariolwithSize:21]
                                 range:NSMakeRange(0, formattedNameString.length)];
     
     if(fullName.length > 0){
@@ -115,6 +115,8 @@
     avatarVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     avatarVC.dashboarDelegate = self.currentVC;
     [self.currentNavController presentViewController:avatarVC animated:YES completion:nil];
+    
+    
 }
 
 - (IBAction)showMyProfile:(id)sender {
