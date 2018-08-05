@@ -8,6 +8,7 @@ The main features of Readoop are grouped in 4 main categories. This categories a
 
 ###Profile 
 Profile Info
+![Screen Shot](Resources/ProfileStrip.png)
 
 ###Social
 Social Info
