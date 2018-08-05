@@ -1,3 +1,3 @@
 # Welcome to Readoop
 
-![Readoop Logo](resources/logo.png)
+![Readoop Logo](Resources/logo.png)
