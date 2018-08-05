@@ -65,6 +65,7 @@ The features of this section are:
 * Rating books
 * Adding new writings if you are suitable status-wise (pdf format - from the iCloud drive)
 * Buying and writings writings from other users
+![Screen Shot](Resources/LibraryStrip.png)
 
 ## Author's Linkedin 
 [Marin Chitan](https://www.linkedin.com/in/chi%C5%A3an-marin-6061ab136/)
