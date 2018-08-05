@@ -60,11 +60,11 @@ The features of this section are
 Library is the main section of the application. In this section users can rate books, add them to their collections and most importantly they can 
 add their creative writings if they have the suitable status.
 The features of this section are
-- Searching for new books (search as you type)
-- Addin books to personal collection
-- Rating books
-- Adding new writings if you are suitable status-wise (pdf format - from the iCloud drive)
-- Buying and writings writings from other users
++ Searching for new books (search as you type)
++ Addin books to personal collection
++ Rating books
++ Adding new writings if you are suitable status-wise (pdf format - from the iCloud drive)
++ Buying and writings writings from other users
 ![Screen Shot](Resources/LibraryStrip.png)
 
 ## Author's Linkedin 
