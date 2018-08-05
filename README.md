@@ -1,3 +1,3 @@
 # Welcome to Readoop
 
-![Readoop Logo](.Resoruces/logo.png)
+![Readoop Logo](./Resoruces/logo.png)
