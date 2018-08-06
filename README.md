@@ -30,6 +30,8 @@ The main features of Readoop are grouped in 4 main categories. This categories a
 In the profile section the users have the possibility to customize their profiles creating an unique identity
 as a user of the application.
 Main features of this section are
+
+###Profile 
 * Changing the avatar
 * Editing personal info
 * Quick access to your books collection and list of friends
