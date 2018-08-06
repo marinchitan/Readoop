@@ -1,16 +1,16 @@
 # Welcome to Readoop
-
+![Screen Shot](Resources/logo.png)
 ## About Readoop
 
-### Summary
+#### Summary
 
 Readoop is a social network application built as an iOS app. This application have a very narrow niche and targets specific audience. Readoop is meant to bring together the literature enthusiasts  creating a close community of amateur readers, creative writers and literature critics. The app brings in a set of minimalistic and clean design solutions that makes it very simple and intuitive in usage. 
 
-### Usage
+#### Usage
 
 Using the Readoop application the users will have the possibility to rate and store their favorite books in the personal collection. Also the creative writers will have the possibility to add their writings to the internal shop for a symbolic price thus getting a feel of the book selling industry, which would make for a great first time experience. All these functionalities will be wrapped in a intuitive lightweight application.
 
-### Technologies
+#### Technologies
 * [XCode](https://developer.apple.com/xcode/)
 * [CocoaPods](https://cocoapods.org/)
 * [Realm](https://github.com/realm)
@@ -19,7 +19,7 @@ Using the Readoop application the users will have the possibility to rate and st
 * [npm](https://www.npmjs.com/)
 * [MongoDB](https://www.mongodb.com/)
 
-### Frameworks
+#### Frameworks
 * [Masonry](https://github.com/SnapKit/Masonry)
 * [ReactiveObjC](https://github.com/ReactiveCocoa/ReactiveObjC)
 * [JHChainableAnimation](https://github.com/jhurray/JHChainableAnimations)
@@ -31,29 +31,29 @@ Using the Readoop application the users will have the possibility to rate and st
 The main features of Readoop are grouped in 4 main categories. This categories are as follows:
 
 
-### Profile 
+#### Profile 
 * Changing the avatar
 * Editing personal info
-* Quick access to your books collection and list of friends <br/> In the profile section the users have the possibility to customize their profiles creating an unique identity
+* Quick access to your books collection and list of friends <br/> <br/> In the profile section the users have the possibility to customize their profiles creating an unique identity
 as a user of the application.
 
 ![Screen Shot](Resources/ProfileStrip.png)
 
 
-### Social
+#### Social
 * Searching for new friends (search as you type)
-* Acces to current friends list\ In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
+* Acces to current friends list <br/> <br/> In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
 
 ![Screen Shot](Resources/SocialStrip.png)
 
 
-### Feed
+#### Feed
 * Adding new posts
-* Upvotind or downvoting posts from other users\ In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
+* Upvotind or downvoting posts from other users <br/> <br/> In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
 from his friends. The posts can be upvoted or downvoted. The upvotes bring you status points. 
 Startng with the amateur status, the users will have the possibility to post their creative writings.
 
-#### Statuses
+##### Statuses
 * Beginner (0 status points)
 * Amateur (10 status points)
 * Experienced (50 status points)
@@ -62,12 +62,12 @@ Startng with the amateur status, the users will have the possibility to post the
 ![Screen Shot](Resources/FeedStrip.png)
 
 
-### Library
+#### Library
 * Searching for new books (search as you type)
 * Addin books to personal collection
 * Rating books
 * Adding new writings if you are suitable status-wise (pdf format - from the iCloud drive)
-* Buying and writings writings from other users\ Library is the main section of the application. In this section users can rate books, add them to their collections and most importantly they can 
+* Buying and writings writings from other users <br/> <br/> Library is the main section of the application. In this section users can rate books, add them to their collections and most importantly they can 
 add their creative writings if they have the suitable status.
 ![Screen Shot](Resources/LibraryStrip.png)
 
@@ -80,6 +80,3 @@ Feel free to contact me for any collaborations.
 ## Additional Info
 This application was built as a final project for my bachelor thesis, at the Academy of Economic Studeis Bucharest,
 facculty of Economic Informatics.
-
-## Readoop Logo
-![Screen Shot](Resources/logo.png)
