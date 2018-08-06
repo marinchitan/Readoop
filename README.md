@@ -32,6 +32,7 @@ as a user of the application.
 Main features of this section are
 
 ###Profile 
+sdxcvbnntfdfgvhbhgcgd:
 * Changing the avatar
 * Editing personal info
 * Quick access to your books collection and list of friends
