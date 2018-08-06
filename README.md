@@ -39,16 +39,14 @@ as a user of the application.
 
 ###Social
 * Searching for new friends (search as you type)
-* Acces to current friends list\
-In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
+* Acces to current friends list\ In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
 
 ![Screen Shot](Resources/SocialStrip.png)
 
 
 ###Feed
 * Adding new posts
-* Upvotind or downvoting posts from other users
-...In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
+* Upvotind or downvoting posts from other users\ In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
 from his friends. The posts can be upvoted or downvoted. The upvotes bring you status points. 
 Startng with the amateur status, the users will have the possibility to post their creative writings.
 
