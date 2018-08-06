@@ -39,8 +39,8 @@ as a user of the application.
 
 ###Social
 * Searching for new friends (search as you type)
-* Acces to current friends list
-...In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
+* Acces to current friends list\
+In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
 
 ![Screen Shot](Resources/SocialStrip.png)
 
