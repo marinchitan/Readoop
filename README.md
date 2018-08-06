@@ -31,7 +31,7 @@ The main features of Readoop are grouped in 4 main categories. This categories a
 * Changing the avatar
 * Editing personal info
 * Quick access to your books collection and list of friends
-In the profile section the users have the possibility to customize their profiles creating an unique identity
+...In the profile section the users have the possibility to customize their profiles creating an unique identity
 as a user of the application.
 
 ![Screen Shot](Resources/ProfileStrip.png)
@@ -40,7 +40,7 @@ as a user of the application.
 ###Social
 * Searching for new friends (search as you type)
 * Acces to current friends list
-In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
+...In the social section the user have the possibility to search for new friends and visualize the list of their current friends.
 
 ![Screen Shot](Resources/SocialStrip.png)
 
@@ -48,7 +48,7 @@ In the social section the user have the possibility to search for new friends an
 ###Feed
 * Adding new posts
 * Upvotind or downvoting posts from other users
-In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
+...In the feed section the user can post some of his thoughts about any books or authors. Also the users can visualize the posts of other users or the posts
 from his friends. The posts can be upvoted or downvoted. The upvotes bring you status points. 
 Startng with the amateur status, the users will have the possibility to post their creative writings.
 
@@ -67,7 +67,7 @@ Startng with the amateur status, the users will have the possibility to post the
 * Rating books
 * Adding new writings if you are suitable status-wise (pdf format - from the iCloud drive)
 * Buying and writings writings from other users
-Library is the main section of the application. In this section users can rate books, add them to their collections and most importantly they can 
+...Library is the main section of the application. In this section users can rate books, add them to their collections and most importantly they can 
 add their creative writings if they have the suitable status.
 ![Screen Shot](Resources/LibraryStrip.png)
 
