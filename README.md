@@ -1,9 +1,13 @@
 # Welcome to Readoop
 
 ##About Readoop
+
 ###Summary
+
 Readoop is a social network application built as an iOS app. This application have a very narrow niche and targets specific audience. Readoop is meant to bring together the literature enthusiasts  creating a close community of amateur readers, creative writers and literature critics. The app brings in a set of minimalistic and clean design solutions that makes it very simple and intuitive in usage. 
+
 ###Usage
+
 Using the Readoop application the users will have the possibility to rate and store their favorite books in the personal collection. Also the creative writers will have the possibility to add their writings to the internal shop for a symbolic price thus getting a feel of the book selling industry, which would make for a great first time experience. All these functionalities will be wrapped in a intuitive lightweight application.
 
 ###Technologies
@@ -30,7 +34,7 @@ The main features of Readoop are grouped in 4 main categories. This categories a
 ###Profile 
 * Changing the avatar
 * Editing personal info
-* Quick access to your books collection and list of friends\ In the profile section the users have the possibility to customize their profiles creating an unique identity
+* Quick access to your books collection and list of friends <br/> In the profile section the users have the possibility to customize their profiles creating an unique identity
 as a user of the application.
 
 ![Screen Shot](Resources/ProfileStrip.png)
